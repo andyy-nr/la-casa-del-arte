@@ -53,6 +53,10 @@
         FrmUsuario.Show()
     End Sub
 
+    Private Sub BtnProductos_Click(sender As Object, e As EventArgs) Handles BtnProductos.Click
+        FrmProductos.Show()
+    End Sub
+
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
         If PanMovimientos.Visible = False Then
             PanMovimientos.Visible = True

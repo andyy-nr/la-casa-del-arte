@@ -82,6 +82,12 @@
     <Compile Include="Formularios\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FrmProductos.Designer.vb">
+      <DependentUpon>FrmProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmUsuario.Designer.vb">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
     </Compile>
@@ -116,6 +122,9 @@
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmProductos.resx">
+      <DependentUpon>FrmProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
     </EmbeddedResource>
@@ -140,9 +149,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu.png" />
@@ -172,16 +178,7 @@
     <None Include="Resources\logoNuevo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cancelar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ingresar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\usuario-de-perfil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\perfil.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\usuario.png" />
@@ -193,10 +190,22 @@
     <None Include="Resources\eliminarUser.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\modificarUser.png" />
+    <None Include="Resources\limpiarCampos.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\limpiarCampos.png" />
+    <None Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregarProd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminarProd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarProd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarUser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

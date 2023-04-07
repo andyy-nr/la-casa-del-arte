@@ -1,4 +1,4 @@
-﻿Public Class FrmUsuario
+﻿Public Class FrmProductos
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -19,21 +19,11 @@
     End Sub
 
 
+
     'Ajustar tamaño del formulario a la pantalla.
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
     End Sub
-
-
-    'Botones
-    Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
-        If CebMostrarPwd.Checked = True Then
-            TxtPwd.UseSystemPasswordChar = False
-        Else
-            TxtPwd.UseSystemPasswordChar = True
-        End If
-    End Sub
-
 
 End Class

@@ -27,6 +27,11 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.agregarProd">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.agregarUser">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -37,12 +42,22 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:SistemaInventarioLCDA.My.Resources.Resources.cancelar">
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.categoriaprod">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:SistemaInventarioLCDA.My.Resources.Resources.categoriaprod">
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.editarProd">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.editarUser">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.eliminarProd">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -53,6 +68,11 @@ SistemaInventarioLCDA
 </summary>
 </member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.ingresar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.lapiz">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -72,17 +92,7 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:SistemaInventarioLCDA.My.Resources.Resources.modificarUser">
-<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.movimientos">
-<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:SistemaInventarioLCDA.My.Resources.Resources.perfil">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -97,17 +107,7 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:SistemaInventarioLCDA.My.Resources.Resources.user">
-<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.usuario">
-<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:SistemaInventarioLCDA.My.Resources.Resources.usuario_de_perfil">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

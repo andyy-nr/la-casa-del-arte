@@ -64,9 +64,8 @@ Partial Class FrmPrincipal
         Me.PanSuperior.Controls.Add(Me.MzButtonWindows1)
         Me.PanSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanSuperior.Location = New System.Drawing.Point(0, 0)
-        Me.PanSuperior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PanSuperior.Name = "PanSuperior"
-        Me.PanSuperior.Size = New System.Drawing.Size(1243, 52)
+        Me.PanSuperior.Size = New System.Drawing.Size(932, 42)
         Me.PanSuperior.TabIndex = 0
         '
         'Label2
@@ -75,10 +74,9 @@ Partial Class FrmPrincipal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Nirmala UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(363, 7)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(272, 6)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(510, 37)
+        Me.Label2.Size = New System.Drawing.Size(389, 30)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Sistema de Inventario La Casa del Arte"
         '
@@ -90,8 +88,7 @@ Partial Class FrmPrincipal
         Me.MzButtonWindows3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MzButtonWindows3.Enabled = False
         Me.MzButtonWindows3.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows3.Location = New System.Drawing.Point(1163, 0)
-        Me.MzButtonWindows3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MzButtonWindows3.Location = New System.Drawing.Point(852, 0)
         Me.MzButtonWindows3.Name = "MzButtonWindows3"
         Me.MzButtonWindows3.ParentControl = Me
         Me.MzButtonWindows3.Size = New System.Drawing.Size(40, 24)
@@ -106,8 +103,7 @@ Partial Class FrmPrincipal
         Me.MzButtonWindows2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.MzButtonWindows2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MzButtonWindows2.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows2.Location = New System.Drawing.Point(1123, 0)
-        Me.MzButtonWindows2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MzButtonWindows2.Location = New System.Drawing.Point(812, 0)
         Me.MzButtonWindows2.Name = "MzButtonWindows2"
         Me.MzButtonWindows2.ParentControl = Me
         Me.MzButtonWindows2.Size = New System.Drawing.Size(40, 24)
@@ -122,8 +118,7 @@ Partial Class FrmPrincipal
         Me.MzButtonWindows1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.MzButtonWindows1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MzButtonWindows1.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows1.Location = New System.Drawing.Point(1203, 0)
-        Me.MzButtonWindows1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MzButtonWindows1.Location = New System.Drawing.Point(892, 0)
         Me.MzButtonWindows1.Name = "MzButtonWindows1"
         Me.MzButtonWindows1.ParentControl = Me
         Me.MzButtonWindows1.Size = New System.Drawing.Size(40, 24)
@@ -145,10 +140,9 @@ Partial Class FrmPrincipal
         Me.PanMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanMenu.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanMenu.ForeColor = System.Drawing.Color.Black
-        Me.PanMenu.Location = New System.Drawing.Point(0, 52)
-        Me.PanMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanMenu.Location = New System.Drawing.Point(0, 42)
         Me.PanMenu.Name = "PanMenu"
-        Me.PanMenu.Size = New System.Drawing.Size(293, 613)
+        Me.PanMenu.Size = New System.Drawing.Size(220, 498)
         Me.PanMenu.TabIndex = 1
         '
         'BtnReportes
@@ -160,10 +154,9 @@ Partial Class FrmPrincipal
         Me.BtnReportes.ForeColor = System.Drawing.Color.Black
         Me.BtnReportes.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
         Me.BtnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnReportes.Location = New System.Drawing.Point(0, 510)
-        Me.BtnReportes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnReportes.Location = New System.Drawing.Point(0, 414)
         Me.BtnReportes.Name = "BtnReportes"
-        Me.BtnReportes.Size = New System.Drawing.Size(293, 62)
+        Me.BtnReportes.Size = New System.Drawing.Size(220, 50)
         Me.BtnReportes.TabIndex = 8
         Me.BtnReportes.Text = "Reportes"
         Me.BtnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -178,10 +171,9 @@ Partial Class FrmPrincipal
         Me.BtnMovimientos.ForeColor = System.Drawing.Color.Black
         Me.BtnMovimientos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
         Me.BtnMovimientos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMovimientos.Location = New System.Drawing.Point(0, 441)
-        Me.BtnMovimientos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnMovimientos.Location = New System.Drawing.Point(0, 358)
         Me.BtnMovimientos.Name = "BtnMovimientos"
-        Me.BtnMovimientos.Size = New System.Drawing.Size(293, 62)
+        Me.BtnMovimientos.Size = New System.Drawing.Size(220, 50)
         Me.BtnMovimientos.TabIndex = 7
         Me.BtnMovimientos.Text = "Movimientos"
         Me.BtnMovimientos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -196,10 +188,9 @@ Partial Class FrmPrincipal
         Me.BtnProductos.ForeColor = System.Drawing.Color.Black
         Me.BtnProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.productosman
         Me.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnProductos.Location = New System.Drawing.Point(0, 372)
-        Me.BtnProductos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnProductos.Location = New System.Drawing.Point(0, 302)
         Me.BtnProductos.Name = "BtnProductos"
-        Me.BtnProductos.Size = New System.Drawing.Size(293, 62)
+        Me.BtnProductos.Size = New System.Drawing.Size(220, 50)
         Me.BtnProductos.TabIndex = 6
         Me.BtnProductos.Text = "Productos"
         Me.BtnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -214,10 +205,9 @@ Partial Class FrmPrincipal
         Me.BtnCategorias.ForeColor = System.Drawing.Color.Black
         Me.BtnCategorias.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.categoriaprod
         Me.BtnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCategorias.Location = New System.Drawing.Point(0, 303)
-        Me.BtnCategorias.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnCategorias.Location = New System.Drawing.Point(0, 246)
         Me.BtnCategorias.Name = "BtnCategorias"
-        Me.BtnCategorias.Size = New System.Drawing.Size(293, 62)
+        Me.BtnCategorias.Size = New System.Drawing.Size(220, 50)
         Me.BtnCategorias.TabIndex = 5
         Me.BtnCategorias.Text = "Categorías"
         Me.BtnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -232,10 +222,9 @@ Partial Class FrmPrincipal
         Me.BtnUsuarios.ForeColor = System.Drawing.Color.Black
         Me.BtnUsuarios.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.usuarios
         Me.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 234)
-        Me.BtnUsuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 190)
         Me.BtnUsuarios.Name = "BtnUsuarios"
-        Me.BtnUsuarios.Size = New System.Drawing.Size(293, 62)
+        Me.BtnUsuarios.Size = New System.Drawing.Size(220, 50)
         Me.BtnUsuarios.TabIndex = 4
         Me.BtnUsuarios.Text = "Usuarios"
         Me.BtnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -250,10 +239,9 @@ Partial Class FrmPrincipal
         Me.BtnRoles.ForeColor = System.Drawing.Color.Black
         Me.BtnRoles.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.admin
         Me.BtnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRoles.Location = New System.Drawing.Point(0, 165)
-        Me.BtnRoles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnRoles.Location = New System.Drawing.Point(0, 134)
         Me.BtnRoles.Name = "BtnRoles"
-        Me.BtnRoles.Size = New System.Drawing.Size(293, 62)
+        Me.BtnRoles.Size = New System.Drawing.Size(220, 50)
         Me.BtnRoles.TabIndex = 3
         Me.BtnRoles.Text = "Roles"
         Me.BtnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -264,20 +252,18 @@ Partial Class FrmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(136, 94)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(102, 76)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 37)
+        Me.Label1.Size = New System.Drawing.Size(68, 30)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Inicio"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.boton_de_inicio
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 73)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Location = New System.Drawing.Point(0, 59)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(80, 74)
+        Me.PictureBox2.Size = New System.Drawing.Size(60, 60)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
@@ -287,10 +273,9 @@ Partial Class FrmPrincipal
         Me.PibMenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PibMenu.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibMenu.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.menu
-        Me.PibMenu.Location = New System.Drawing.Point(219, 7)
-        Me.PibMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PibMenu.Location = New System.Drawing.Point(164, 6)
         Me.PibMenu.Name = "PibMenu"
-        Me.PibMenu.Size = New System.Drawing.Size(67, 62)
+        Me.PibMenu.Size = New System.Drawing.Size(50, 50)
         Me.PibMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibMenu.TabIndex = 0
         Me.PibMenu.TabStop = False
@@ -299,10 +284,9 @@ Partial Class FrmPrincipal
         '
         Me.PanMovimientos.Controls.Add(Me.Button2)
         Me.PanMovimientos.Controls.Add(Me.Button1)
-        Me.PanMovimientos.Location = New System.Drawing.Point(8, 407)
-        Me.PanMovimientos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanMovimientos.Location = New System.Drawing.Point(6, 331)
         Me.PanMovimientos.Name = "PanMovimientos"
-        Me.PanMovimientos.Size = New System.Drawing.Size(293, 130)
+        Me.PanMovimientos.Size = New System.Drawing.Size(220, 106)
         Me.PanMovimientos.TabIndex = 1
         Me.PanMovimientos.Visible = False
         '
@@ -316,10 +300,9 @@ Partial Class FrmPrincipal
         Me.Button2.ForeColor = System.Drawing.Color.Black
         Me.Button2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(0, 69)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Location = New System.Drawing.Point(0, 56)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(293, 62)
+        Me.Button2.Size = New System.Drawing.Size(220, 50)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Salidas"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -336,9 +319,8 @@ Partial Class FrmPrincipal
         Me.Button1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(0, 0)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(293, 62)
+        Me.Button1.Size = New System.Drawing.Size(220, 50)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Entradas"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -350,18 +332,16 @@ Partial Class FrmPrincipal
         Me.PanPrincipal.Controls.Add(Me.PanMovimientos)
         Me.PanPrincipal.Controls.Add(Me.PictureBox3)
         Me.PanPrincipal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanPrincipal.Location = New System.Drawing.Point(293, 52)
-        Me.PanPrincipal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanPrincipal.Location = New System.Drawing.Point(220, 42)
         Me.PanPrincipal.Name = "PanPrincipal"
-        Me.PanPrincipal.Size = New System.Drawing.Size(950, 613)
+        Me.PanPrincipal.Size = New System.Drawing.Size(712, 498)
         Me.PanPrincipal.TabIndex = 3
         '
         'PictureBox3
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox3.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
-        Me.PictureBox3.Location = New System.Drawing.Point(144, 0)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox3.Location = New System.Drawing.Point(108, 0)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(500, 500)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -376,14 +356,14 @@ Partial Class FrmPrincipal
         '
         'FrmPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1243, 665)
+        Me.ClientSize = New System.Drawing.Size(932, 540)
         Me.Controls.Add(Me.PanPrincipal)
         Me.Controls.Add(Me.PanMenu)
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FrmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sistema de Inventario La Casa del Arte"

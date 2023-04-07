@@ -15,3 +15,4 @@ D:\Programacion\ProyectoCasaDelArteVB\SistemaInventarioLCDA\SistemaInventarioLCD
 D:\Programacion\ProyectoCasaDelArteVB\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\BWCMM.dll
 D:\Programacion\ProyectoCasaDelArteVB\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.vbproj.CopyComplete
 D:\Programacion\ProyectoCasaDelArteVB\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmLogin.resources
+D:\Programacion\ProyectoCasaDelArteVB\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmProductos.resources
