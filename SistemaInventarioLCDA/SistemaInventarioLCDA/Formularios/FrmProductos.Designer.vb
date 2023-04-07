@@ -141,6 +141,7 @@ Partial Class FrmProductos
         'TxtStockTotal
         '
         Me.TxtStockTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStockTotal.Enabled = False
         Me.TxtStockTotal.Location = New System.Drawing.Point(746, 251)
         Me.TxtStockTotal.Name = "TxtStockTotal"
         Me.TxtStockTotal.Size = New System.Drawing.Size(82, 29)
@@ -215,7 +216,7 @@ Partial Class FrmProductos
         Me.CobCategoria.Location = New System.Drawing.Point(102, 199)
         Me.CobCategoria.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.CobCategoria.Name = "CobCategoria"
-        Me.CobCategoria.Size = New System.Drawing.Size(278, 29)
+        Me.CobCategoria.Size = New System.Drawing.Size(299, 29)
         Me.CobCategoria.TabIndex = 13
         Me.CobCategoria.Text = "Seleccione la categoría..."
         '
@@ -243,19 +244,19 @@ Partial Class FrmProductos
         'TxtMarcaProd
         '
         Me.TxtMarcaProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtMarcaProd.Location = New System.Drawing.Point(78, 146)
+        Me.TxtMarcaProd.Location = New System.Drawing.Point(93, 146)
         Me.TxtMarcaProd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtMarcaProd.Name = "TxtMarcaProd"
-        Me.TxtMarcaProd.Size = New System.Drawing.Size(302, 29)
+        Me.TxtMarcaProd.Size = New System.Drawing.Size(308, 29)
         Me.TxtMarcaProd.TabIndex = 8
         '
         'TxtNombreProd
         '
         Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreProd.Location = New System.Drawing.Point(93, 98)
+        Me.TxtNombreProd.Location = New System.Drawing.Point(93, 96)
         Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtNombreProd.Name = "TxtNombreProd"
-        Me.TxtNombreProd.Size = New System.Drawing.Size(287, 29)
+        Me.TxtNombreProd.Size = New System.Drawing.Size(308, 29)
         Me.TxtNombreProd.TabIndex = 7
         '
         'Label6
@@ -291,16 +292,16 @@ Partial Class FrmProductos
         'TxtIdProd
         '
         Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdProd.Location = New System.Drawing.Point(85, 47)
+        Me.TxtIdProd.Location = New System.Drawing.Point(93, 47)
         Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtIdProd.Name = "TxtIdProd"
-        Me.TxtIdProd.Size = New System.Drawing.Size(295, 29)
+        Me.TxtIdProd.Size = New System.Drawing.Size(308, 29)
         Me.TxtIdProd.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 148)
+        Me.Label3.Location = New System.Drawing.Point(32, 148)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 21)
@@ -310,7 +311,7 @@ Partial Class FrmProductos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(18, 100)
+        Me.Label2.Location = New System.Drawing.Point(18, 98)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 21)
@@ -320,7 +321,7 @@ Partial Class FrmProductos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 49)
+        Me.Label1.Location = New System.Drawing.Point(25, 49)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 21)
