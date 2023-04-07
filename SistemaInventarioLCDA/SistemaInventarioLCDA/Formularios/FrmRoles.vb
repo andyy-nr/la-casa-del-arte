@@ -1,4 +1,4 @@
-﻿Public Class FrmUsuario
+﻿Public Class FrmRoles
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -17,21 +17,4 @@
     Private Sub PanSuperior_MouseUp(sender As Object, e As MouseEventArgs) Handles PanSuperior.MouseUp
         Arrastre = False
     End Sub
-
-    Private Sub GobDatos_Enter(sender As Object, e As EventArgs) Handles GobDatos.Enter
-
-    End Sub
-
-    Private Sub PanSuperior_Paint(sender As Object, e As PaintEventArgs) Handles PanSuperior.Paint
-
-    End Sub
-
-    Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
-        If CebMostrarPwd.Checked = True Then
-            TxtPwd.UseSystemPasswordChar = False
-        Else
-            TxtPwd.UseSystemPasswordChar = True
-        End If
-    End Sub
-
 End Class

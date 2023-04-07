@@ -360,7 +360,7 @@ Partial Class FrmPrincipal
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox3.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
-        Me.PictureBox3.Location = New System.Drawing.Point(144, 0)
+        Me.PictureBox3.Location = New System.Drawing.Point(145, 0)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(500, 500)

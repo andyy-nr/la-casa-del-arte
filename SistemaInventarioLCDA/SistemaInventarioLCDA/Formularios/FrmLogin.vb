@@ -23,6 +23,7 @@
     'Botones
     Private Sub BtnEntrar_Click(sender As Object, e As EventArgs) Handles BtnEntrar.Click
         FrmPrincipal.Show()
+        Me.Hide()
     End Sub
 
     Private Sub CebMostrarPwdL_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwdL.CheckedChanged

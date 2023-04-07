@@ -50,7 +50,18 @@
 
     'Botones
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
+        Me.Hide()
         FrmUsuario.Show()
+    End Sub
+
+    Private Sub BtnRoles_Click(sender As Object, e As EventArgs) Handles BtnRoles.Click
+        Me.Hide()
+        FrmRoles.Show()
+    End Sub
+
+    Private Sub BtnCategorias_Click(sender As Object, e As EventArgs) Handles BtnCategorias.Click
+        Me.Hide()
+        FrmCategorias.Show()
     End Sub
 
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click

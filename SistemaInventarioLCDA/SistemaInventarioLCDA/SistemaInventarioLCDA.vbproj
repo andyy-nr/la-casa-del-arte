@@ -76,10 +76,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FrmCategorias.Designer.vb">
+      <DependentUpon>FrmCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRoles.Designer.vb">
+      <DependentUpon>FrmRoles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRoles.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmUsuario.Designer.vb">
@@ -113,8 +125,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmCategorias.resx">
+      <DependentUpon>FrmCategorias.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRoles.resx">
+      <DependentUpon>FrmRoles.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
