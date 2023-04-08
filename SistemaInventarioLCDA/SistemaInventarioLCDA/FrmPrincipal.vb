@@ -64,6 +64,10 @@
         FrmCategorias.Show()
     End Sub
 
+    Private Sub MzButtonWindows_Click(sender As Object, e As EventArgs) Handles MzButtonWindows1.Click
+        FrmLogin.Close()
+    End Sub
+
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
         If PanMovimientos.Visible = False Then
             PanMovimientos.Visible = True

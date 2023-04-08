@@ -18,14 +18,6 @@
         Arrastre = False
     End Sub
 
-    Private Sub GobDatos_Enter(sender As Object, e As EventArgs) Handles GobDatos.Enter
-
-    End Sub
-
-    Private Sub PanSuperior_Paint(sender As Object, e As PaintEventArgs) Handles PanSuperior.Paint
-
-    End Sub
-
     Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
         If CebMostrarPwd.Checked = True Then
             TxtPwd.UseSystemPasswordChar = False
