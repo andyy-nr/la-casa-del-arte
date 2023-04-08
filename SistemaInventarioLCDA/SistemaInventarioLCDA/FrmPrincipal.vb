@@ -50,7 +50,17 @@
 
     'Botones
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
+        Me.Close()
         FrmUsuario.Show()
+
+
+    End Sub
+
+    Private Sub BtnEntradas_Click(sender As Object, e As EventArgs) Handles BtnEntradas.Click
+        Me.Close()
+        FrmLogin.Hide()
+        FrmEntradas.Show()
+
     End Sub
 
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click

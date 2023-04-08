@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FrmEntradas.Designer.vb">
+      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmEntradas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmEntradas.resx">
+      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +206,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\limpiarCampos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgEntrada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregarProd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarProd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminarProd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
