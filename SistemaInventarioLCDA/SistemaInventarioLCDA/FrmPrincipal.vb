@@ -21,6 +21,14 @@
 
 
 
+    'Ajustar tamaño del formulario a la pantalla.
+    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Size = Screen.PrimaryScreen.WorkingArea.Size
+        Location = Screen.PrimaryScreen.WorkingArea.Location
+    End Sub
+
+
+
     'Animaciones del menú.
     Private Sub TmrOcultar_Tick(sender As Object, e As EventArgs) Handles TmrOcultar.Tick
         If PanMenu.Width <= 60 Then
@@ -50,11 +58,15 @@
 
     'Botones
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
-        FrmUsuario.Show()
+        FrmUsuarios.Show()
     End Sub
 
     Private Sub BtnProductos_Click(sender As Object, e As EventArgs) Handles BtnProductos.Click
         FrmProductos.Show()
+    End Sub
+
+    Private Sub BtnReportes_Click(sender As Object, e As EventArgs) Handles BtnReportes.Click
+        FrmReportes.Show()
     End Sub
 
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
