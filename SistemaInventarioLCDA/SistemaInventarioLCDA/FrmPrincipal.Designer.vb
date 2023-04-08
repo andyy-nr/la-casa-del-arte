@@ -26,33 +26,33 @@ Partial Class FrmPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrincipal))
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.MzButtonWindows3 = New BWCMM.MZButtonWindows()
+        Me.MzButtonWindows2 = New BWCMM.MZButtonWindows()
+        Me.MzButtonWindows1 = New BWCMM.MZButtonWindows()
         Me.PanMenu = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PanMovimientos = New System.Windows.Forms.Panel()
-        Me.PanPrincipal = New System.Windows.Forms.Panel()
-        Me.TmrOcultar = New System.Windows.Forms.Timer(Me.components)
-        Me.TmrMostrar = New System.Windows.Forms.Timer(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.BtnEntradas = New System.Windows.Forms.Button()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.BtnReportes = New System.Windows.Forms.Button()
         Me.BtnMovimientos = New System.Windows.Forms.Button()
         Me.BtnProductos = New System.Windows.Forms.Button()
         Me.BtnCategorias = New System.Windows.Forms.Button()
         Me.BtnUsuarios = New System.Windows.Forms.Button()
         Me.BtnRoles = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PibMenu = New System.Windows.Forms.PictureBox()
-        Me.MzButtonWindows3 = New BWCMM.MZButtonWindows()
-        Me.MzButtonWindows2 = New BWCMM.MZButtonWindows()
-        Me.MzButtonWindows1 = New BWCMM.MZButtonWindows()
+        Me.PanMovimientos = New System.Windows.Forms.Panel()
+        Me.BtnSalidas = New System.Windows.Forms.Button()
+        Me.BtnEntradas = New System.Windows.Forms.Button()
+        Me.PanPrincipal = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.TmrOcultar = New System.Windows.Forms.Timer(Me.components)
+        Me.TmrMostrar = New System.Windows.Forms.Timer(Me.components)
         Me.PanSuperior.SuspendLayout()
         Me.PanMenu.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanMovimientos.SuspendLayout()
         Me.PanPrincipal.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -82,6 +82,54 @@ Partial Class FrmPrincipal
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Sistema de Inventario La Casa del Arte"
         '
+        'MzButtonWindows3
+        '
+        Me.MzButtonWindows3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MzButtonWindows3.BackgroundImage = CType(resources.GetObject("MzButtonWindows3.BackgroundImage"), System.Drawing.Image)
+        Me.MzButtonWindows3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.MzButtonWindows3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MzButtonWindows3.Enabled = False
+        Me.MzButtonWindows3.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
+        Me.MzButtonWindows3.Location = New System.Drawing.Point(1163, 0)
+        Me.MzButtonWindows3.Margin = New System.Windows.Forms.Padding(4)
+        Me.MzButtonWindows3.Name = "MzButtonWindows3"
+        Me.MzButtonWindows3.ParentControl = Me
+        Me.MzButtonWindows3.Size = New System.Drawing.Size(40, 24)
+        Me.MzButtonWindows3.TabIndex = 2
+        Me.MzButtonWindows3.TipoButton = BWCMM.MZButtonWindows.ModeButton.Maximize
+        '
+        'MzButtonWindows2
+        '
+        Me.MzButtonWindows2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MzButtonWindows2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.MzButtonWindows2.BackgroundImage = CType(resources.GetObject("MzButtonWindows2.BackgroundImage"), System.Drawing.Image)
+        Me.MzButtonWindows2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.MzButtonWindows2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MzButtonWindows2.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
+        Me.MzButtonWindows2.Location = New System.Drawing.Point(1123, 0)
+        Me.MzButtonWindows2.Margin = New System.Windows.Forms.Padding(4)
+        Me.MzButtonWindows2.Name = "MzButtonWindows2"
+        Me.MzButtonWindows2.ParentControl = Me
+        Me.MzButtonWindows2.Size = New System.Drawing.Size(40, 24)
+        Me.MzButtonWindows2.TabIndex = 1
+        Me.MzButtonWindows2.TipoButton = BWCMM.MZButtonWindows.ModeButton.Minimize
+        '
+        'MzButtonWindows1
+        '
+        Me.MzButtonWindows1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MzButtonWindows1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.MzButtonWindows1.BackgroundImage = CType(resources.GetObject("MzButtonWindows1.BackgroundImage"), System.Drawing.Image)
+        Me.MzButtonWindows1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.MzButtonWindows1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MzButtonWindows1.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
+        Me.MzButtonWindows1.Location = New System.Drawing.Point(1203, 0)
+        Me.MzButtonWindows1.Margin = New System.Windows.Forms.Padding(4)
+        Me.MzButtonWindows1.Name = "MzButtonWindows1"
+        Me.MzButtonWindows1.ParentControl = Me
+        Me.MzButtonWindows1.Size = New System.Drawing.Size(40, 24)
+        Me.MzButtonWindows1.TabIndex = 0
+        Me.MzButtonWindows1.TipoButton = BWCMM.MZButtonWindows.ModeButton.Close
+        '
         'PanMenu
         '
         Me.PanMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -102,97 +150,6 @@ Partial Class FrmPrincipal
         Me.PanMenu.Name = "PanMenu"
         Me.PanMenu.Size = New System.Drawing.Size(293, 613)
         Me.PanMenu.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(136, 94)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 37)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Inicio"
-        '
-        'PanMovimientos
-        '
-        Me.PanMovimientos.Controls.Add(Me.Button2)
-        Me.PanMovimientos.Controls.Add(Me.BtnEntradas)
-        Me.PanMovimientos.Location = New System.Drawing.Point(8, 407)
-        Me.PanMovimientos.Margin = New System.Windows.Forms.Padding(4)
-        Me.PanMovimientos.Name = "PanMovimientos"
-        Me.PanMovimientos.Size = New System.Drawing.Size(293, 130)
-        Me.PanMovimientos.TabIndex = 1
-        Me.PanMovimientos.Visible = False
-        '
-        'PanPrincipal
-        '
-        Me.PanPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.PanPrincipal.Controls.Add(Me.PanMovimientos)
-        Me.PanPrincipal.Controls.Add(Me.PictureBox3)
-        Me.PanPrincipal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanPrincipal.Location = New System.Drawing.Point(293, 52)
-        Me.PanPrincipal.Margin = New System.Windows.Forms.Padding(4)
-        Me.PanPrincipal.Name = "PanPrincipal"
-        Me.PanPrincipal.Size = New System.Drawing.Size(950, 613)
-        Me.PanPrincipal.TabIndex = 3
-        '
-        'TmrOcultar
-        '
-        '
-        'TmrMostrar
-        '
-        '
-        'Button2
-        '
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderSize = 2
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(0, 69)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(293, 62)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Salidas"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'BtnEntradas
-        '
-        Me.BtnEntradas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEntradas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEntradas.FlatAppearance.BorderSize = 2
-        Me.BtnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEntradas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEntradas.ForeColor = System.Drawing.Color.Black
-        Me.BtnEntradas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
-        Me.BtnEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEntradas.Location = New System.Drawing.Point(0, 0)
-        Me.BtnEntradas.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnEntradas.Name = "BtnEntradas"
-        Me.BtnEntradas.Size = New System.Drawing.Size(293, 62)
-        Me.BtnEntradas.TabIndex = 8
-        Me.BtnEntradas.Text = "Entradas"
-        Me.BtnEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEntradas.UseVisualStyleBackColor = True
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox3.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
-        Me.PictureBox3.Location = New System.Drawing.Point(144, 0)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(500, 500)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
         '
         'BtnReportes
         '
@@ -302,6 +259,18 @@ Partial Class FrmPrincipal
         Me.BtnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnRoles.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(136, 94)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 37)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Inicio"
+        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.boton_de_inicio
@@ -326,53 +295,84 @@ Partial Class FrmPrincipal
         Me.PibMenu.TabIndex = 0
         Me.PibMenu.TabStop = False
         '
-        'MzButtonWindows3
+        'PanMovimientos
         '
-        Me.MzButtonWindows3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MzButtonWindows3.BackgroundImage = CType(resources.GetObject("MzButtonWindows3.BackgroundImage"), System.Drawing.Image)
-        Me.MzButtonWindows3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MzButtonWindows3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MzButtonWindows3.Enabled = False
-        Me.MzButtonWindows3.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows3.Location = New System.Drawing.Point(1163, 0)
-        Me.MzButtonWindows3.Margin = New System.Windows.Forms.Padding(4)
-        Me.MzButtonWindows3.Name = "MzButtonWindows3"
-        Me.MzButtonWindows3.ParentControl = Me
-        Me.MzButtonWindows3.Size = New System.Drawing.Size(40, 24)
-        Me.MzButtonWindows3.TabIndex = 2
-        Me.MzButtonWindows3.TipoButton = BWCMM.MZButtonWindows.ModeButton.Maximize
+        Me.PanMovimientos.Controls.Add(Me.BtnSalidas)
+        Me.PanMovimientos.Controls.Add(Me.BtnEntradas)
+        Me.PanMovimientos.Location = New System.Drawing.Point(8, 407)
+        Me.PanMovimientos.Margin = New System.Windows.Forms.Padding(4)
+        Me.PanMovimientos.Name = "PanMovimientos"
+        Me.PanMovimientos.Size = New System.Drawing.Size(293, 130)
+        Me.PanMovimientos.TabIndex = 1
+        Me.PanMovimientos.Visible = False
         '
-        'MzButtonWindows2
+        'BtnSalidas
         '
-        Me.MzButtonWindows2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MzButtonWindows2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.MzButtonWindows2.BackgroundImage = CType(resources.GetObject("MzButtonWindows2.BackgroundImage"), System.Drawing.Image)
-        Me.MzButtonWindows2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MzButtonWindows2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MzButtonWindows2.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows2.Location = New System.Drawing.Point(1123, 0)
-        Me.MzButtonWindows2.Margin = New System.Windows.Forms.Padding(4)
-        Me.MzButtonWindows2.Name = "MzButtonWindows2"
-        Me.MzButtonWindows2.ParentControl = Me
-        Me.MzButtonWindows2.Size = New System.Drawing.Size(40, 24)
-        Me.MzButtonWindows2.TabIndex = 1
-        Me.MzButtonWindows2.TipoButton = BWCMM.MZButtonWindows.ModeButton.Minimize
+        Me.BtnSalidas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalidas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnSalidas.FlatAppearance.BorderSize = 2
+        Me.BtnSalidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalidas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalidas.ForeColor = System.Drawing.Color.Black
+        Me.BtnSalidas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
+        Me.BtnSalidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSalidas.Location = New System.Drawing.Point(0, 69)
+        Me.BtnSalidas.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnSalidas.Name = "BtnSalidas"
+        Me.BtnSalidas.Size = New System.Drawing.Size(293, 62)
+        Me.BtnSalidas.TabIndex = 9
+        Me.BtnSalidas.Text = "Salidas"
+        Me.BtnSalidas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnSalidas.UseVisualStyleBackColor = True
         '
-        'MzButtonWindows1
+        'BtnEntradas
         '
-        Me.MzButtonWindows1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MzButtonWindows1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.MzButtonWindows1.BackgroundImage = CType(resources.GetObject("MzButtonWindows1.BackgroundImage"), System.Drawing.Image)
-        Me.MzButtonWindows1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MzButtonWindows1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MzButtonWindows1.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows1.Location = New System.Drawing.Point(1203, 0)
-        Me.MzButtonWindows1.Margin = New System.Windows.Forms.Padding(4)
-        Me.MzButtonWindows1.Name = "MzButtonWindows1"
-        Me.MzButtonWindows1.ParentControl = Me
-        Me.MzButtonWindows1.Size = New System.Drawing.Size(40, 24)
-        Me.MzButtonWindows1.TabIndex = 0
-        Me.MzButtonWindows1.TipoButton = BWCMM.MZButtonWindows.ModeButton.Close
+        Me.BtnEntradas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEntradas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEntradas.FlatAppearance.BorderSize = 2
+        Me.BtnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEntradas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEntradas.ForeColor = System.Drawing.Color.Black
+        Me.BtnEntradas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
+        Me.BtnEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEntradas.Location = New System.Drawing.Point(0, 0)
+        Me.BtnEntradas.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnEntradas.Name = "BtnEntradas"
+        Me.BtnEntradas.Size = New System.Drawing.Size(293, 62)
+        Me.BtnEntradas.TabIndex = 8
+        Me.BtnEntradas.Text = "Entradas"
+        Me.BtnEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEntradas.UseVisualStyleBackColor = True
+        '
+        'PanPrincipal
+        '
+        Me.PanPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.PanPrincipal.Controls.Add(Me.PanMovimientos)
+        Me.PanPrincipal.Controls.Add(Me.PictureBox3)
+        Me.PanPrincipal.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanPrincipal.Location = New System.Drawing.Point(293, 52)
+        Me.PanPrincipal.Margin = New System.Windows.Forms.Padding(4)
+        Me.PanPrincipal.Name = "PanPrincipal"
+        Me.PanPrincipal.Size = New System.Drawing.Size(950, 613)
+        Me.PanPrincipal.TabIndex = 3
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox3.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
+        Me.PictureBox3.Location = New System.Drawing.Point(144, 0)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(500, 500)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
+        'TmrOcultar
+        '
+        '
+        'TmrMostrar
+        '
         '
         'FrmPrincipal
         '
@@ -391,12 +391,12 @@ Partial Class FrmPrincipal
         Me.PanSuperior.PerformLayout()
         Me.PanMenu.ResumeLayout(False)
         Me.PanMenu.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanMovimientos.ResumeLayout(False)
         Me.PanPrincipal.ResumeLayout(False)
         Me.PanPrincipal.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -421,6 +421,6 @@ Partial Class FrmPrincipal
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents TmrOcultar As Timer
     Friend WithEvents TmrMostrar As Timer
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnSalidas As Button
     Friend WithEvents BtnEntradas As Button
 End Class
