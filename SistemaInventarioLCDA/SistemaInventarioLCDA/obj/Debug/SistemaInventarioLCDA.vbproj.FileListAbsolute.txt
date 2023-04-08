@@ -30,3 +30,4 @@ C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLC
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.exe
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.xml
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.pdb
+C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmSalidas.resources

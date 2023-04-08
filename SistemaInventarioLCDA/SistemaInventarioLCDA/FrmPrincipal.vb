@@ -53,6 +53,11 @@
         FrmUsuario.Show()
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnSalidas.Click
+        FrmSalidas.Show()
+
+    End Sub
+
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
         If PanMovimientos.Visible = False Then
             PanMovimientos.Visible = True
@@ -60,5 +65,13 @@
             PanMovimientos.Visible = False
         End If
     End Sub
+
+    'Ajustar tamaño del formulario a la pantalla.
+    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Size = Screen.PrimaryScreen.WorkingArea.Size
+        Location = Screen.PrimaryScreen.WorkingArea.Location
+    End Sub
+
+
 
 End Class

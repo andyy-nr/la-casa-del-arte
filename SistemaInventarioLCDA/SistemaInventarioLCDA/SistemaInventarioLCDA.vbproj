@@ -82,6 +82,12 @@
     <Compile Include="Formularios\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FrmSalidas.Designer.vb">
+      <DependentUpon>FrmSalidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmSalidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmUsuario.Designer.vb">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
     </Compile>
@@ -115,6 +121,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmSalidas.resx">
+      <DependentUpon>FrmSalidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
@@ -197,6 +206,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\limpiarCampos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSalida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregarProd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarProd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminarProd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
