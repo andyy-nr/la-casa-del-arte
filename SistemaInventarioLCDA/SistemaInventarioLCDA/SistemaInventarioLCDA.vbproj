@@ -237,6 +237,15 @@
     <None Include="Resources\editarUser.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\botonCerrar.png" />
+    <None Include="Resources\botonMinimizar.png" />
+    <None Include="Resources\botonMaximizar.png" />
+    <None Include="Resources\cerrarBTN.png" />
+    <None Include="Resources\minimizarBTN.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\usuario-de-perfil.png" />
+    <None Include="Resources\usuario-de-perfil1.png" />
+    <None Include="Resources\lupa.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -29,6 +29,16 @@
 
 
     'Botones
+    Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
+        'Application.Exit()
+        Close()
+    End Sub
+
+
+    Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
     Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
         If CebMostrarPwd.Checked = True Then
             TxtPwd.UseSystemPasswordChar = False

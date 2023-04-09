@@ -42,7 +42,27 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.botonCerrar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.botonMaximizar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.botonMinimizar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.categoriaprod">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -87,7 +107,22 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.logout">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.lupa">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.menu">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -108,6 +143,16 @@ SistemaInventarioLCDA
 </summary>
 </member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.usuario">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.usuario_de_perfil">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.usuario_de_perfil1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

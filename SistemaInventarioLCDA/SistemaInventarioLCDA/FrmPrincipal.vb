@@ -54,9 +54,23 @@
         End If
     End Sub
 
+    Private Sub TmrHoraFecha_Tick(sender As Object, e As EventArgs) Handles TmrHoraFecha.Tick
+        LblHora.Text = DateTime.Now.ToString("hh:mm")
+        LblFecha.Text = DateTime.Now.ToShortDateString
+    End Sub
+
 
 
     'Botones
+    Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
+        'Application.Exit()
+        Close()
+    End Sub
+
+    Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
         FrmUsuarios.Show()
     End Sub

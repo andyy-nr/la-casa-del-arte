@@ -31,4 +31,17 @@
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
     End Sub
+
+
+
+    'Botones
+    Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
+        'Application.Exit()
+        Close()
+    End Sub
+
+    Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
 End Class

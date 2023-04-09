@@ -20,7 +20,50 @@
 
 
 
+    'Cajas de Texto
+    Private Sub TxtUserL_Enter(sender As Object, e As EventArgs) Handles TxtUserL.Enter
+        If TxtUserL.Text = "USUARIO" Then
+            TxtUserL.Text = ""
+            TxtUserL.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub TxtUserL_Leave(sender As Object, e As EventArgs) Handles TxtUserL.Leave
+        If TxtUserL.Text = "" Then
+            TxtUserL.Text = "USUARIO"
+            TxtUserL.ForeColor = Color.DimGray
+        End If
+    End Sub
+
+    Private Sub TxtPwdL_Enter(sender As Object, e As EventArgs) Handles TxtPwdL.Enter
+        If TxtPwdL.Text = "CONTRASEÑA" Then
+            TxtPwdL.Text = ""
+            TxtPwdL.ForeColor = Color.Black
+            TxtPwdL.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+
+    Private Sub TxtPwdL_Leave(sender As Object, e As EventArgs) Handles TxtPwdL.Leave
+        If TxtPwdL.Text = "" Then
+            TxtPwdL.Text = "CONTRASEÑA"
+            TxtPwdL.ForeColor = Color.DimGray
+            TxtPwdL.UseSystemPasswordChar = False
+        End If
+    End Sub
+
+
+
     'Botones
+    Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
+        'Application.Exit()
+        Close()
+    End Sub
+
+    Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
     Private Sub BtnEntrar_Click(sender As Object, e As EventArgs) Handles BtnEntrar.Click
         FrmPrincipal.Show()
     End Sub
