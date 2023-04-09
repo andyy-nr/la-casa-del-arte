@@ -22,15 +22,9 @@ Partial Class FrmEntradas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEntradas))
         Me.PanCentral = New System.Windows.Forms.Panel()
         Me.GobEntrada = New System.Windows.Forms.GroupBox()
         Me.DtpFechaE = New System.Windows.Forms.DateTimePicker()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BtnEliminarE = New System.Windows.Forms.Button()
-        Me.BtnEditarE = New System.Windows.Forms.Button()
-        Me.BtnLimpiarE = New System.Windows.Forms.Button()
-        Me.BtnAgregarE = New System.Windows.Forms.Button()
         Me.TxtStockTotal = New System.Windows.Forms.TextBox()
         Me.TxtCantidad = New System.Windows.Forms.TextBox()
         Me.TxtStockTienda = New System.Windows.Forms.TextBox()
@@ -49,14 +43,18 @@ Partial Class FrmEntradas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanSuperiorE = New System.Windows.Forms.Panel()
-        Me.MzButtonWindows3 = New BWCMM.MZButtonWindows()
-        Me.MzButtonWindows1 = New BWCMM.MZButtonWindows()
-        Me.MzButtonWindows2 = New BWCMM.MZButtonWindows()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnLimpiarE = New System.Windows.Forms.Button()
+        Me.BtnAgregarE = New System.Windows.Forms.Button()
+        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
+        Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.PanCentral.SuspendLayout()
         Me.GobEntrada.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanSuperiorE.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanCentral
@@ -76,8 +74,6 @@ Partial Class FrmEntradas
         Me.GobEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.GobEntrada.Controls.Add(Me.DtpFechaE)
         Me.GobEntrada.Controls.Add(Me.PictureBox1)
-        Me.GobEntrada.Controls.Add(Me.BtnEliminarE)
-        Me.GobEntrada.Controls.Add(Me.BtnEditarE)
         Me.GobEntrada.Controls.Add(Me.BtnLimpiarE)
         Me.GobEntrada.Controls.Add(Me.BtnAgregarE)
         Me.GobEntrada.Controls.Add(Me.TxtStockTotal)
@@ -112,81 +108,6 @@ Partial Class FrmEntradas
         Me.DtpFechaE.Name = "DtpFechaE"
         Me.DtpFechaE.Size = New System.Drawing.Size(249, 34)
         Me.DtpFechaE.TabIndex = 26
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEntrada
-        Me.PictureBox1.Location = New System.Drawing.Point(1276, 53)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(335, 310)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 25
-        Me.PictureBox1.TabStop = False
-        '
-        'BtnEliminarE
-        '
-        Me.BtnEliminarE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminarE.FlatAppearance.BorderSize = 0
-        Me.BtnEliminarE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminarE.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
-        Me.BtnEliminarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarE.Location = New System.Drawing.Point(669, 335)
-        Me.BtnEliminarE.Name = "BtnEliminarE"
-        Me.BtnEliminarE.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarE.TabIndex = 24
-        Me.BtnEliminarE.Text = "Eliminar"
-        Me.BtnEliminarE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminarE.UseVisualStyleBackColor = True
-        '
-        'BtnEditarE
-        '
-        Me.BtnEditarE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditarE.FlatAppearance.BorderSize = 0
-        Me.BtnEditarE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditarE.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
-        Me.BtnEditarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarE.Location = New System.Drawing.Point(475, 335)
-        Me.BtnEditarE.Name = "BtnEditarE"
-        Me.BtnEditarE.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarE.TabIndex = 23
-        Me.BtnEditarE.Text = "Editar"
-        Me.BtnEditarE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEditarE.UseVisualStyleBackColor = True
-        '
-        'BtnLimpiarE
-        '
-        Me.BtnLimpiarE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnLimpiarE.FlatAppearance.BorderSize = 0
-        Me.BtnLimpiarE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLimpiarE.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLimpiarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
-        Me.BtnLimpiarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarE.Location = New System.Drawing.Point(257, 335)
-        Me.BtnLimpiarE.Name = "BtnLimpiarE"
-        Me.BtnLimpiarE.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarE.TabIndex = 22
-        Me.BtnLimpiarE.Text = "Limpiar"
-        Me.BtnLimpiarE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnLimpiarE.UseVisualStyleBackColor = True
-        '
-        'BtnAgregarE
-        '
-        Me.BtnAgregarE.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAgregarE.FlatAppearance.BorderSize = 0
-        Me.BtnAgregarE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregarE.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
-        Me.BtnAgregarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarE.Location = New System.Drawing.Point(30, 335)
-        Me.BtnAgregarE.Name = "BtnAgregarE"
-        Me.BtnAgregarE.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarE.TabIndex = 21
-        Me.BtnAgregarE.Text = "Agregar"
-        Me.BtnAgregarE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnAgregarE.UseVisualStyleBackColor = True
         '
         'TxtStockTotal
         '
@@ -344,59 +265,14 @@ Partial Class FrmEntradas
         'PanSuperiorE
         '
         Me.PanSuperiorE.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.PanSuperiorE.Controls.Add(Me.MzButtonWindows3)
-        Me.PanSuperiorE.Controls.Add(Me.MzButtonWindows1)
-        Me.PanSuperiorE.Controls.Add(Me.MzButtonWindows2)
+        Me.PanSuperiorE.Controls.Add(Me.PibMinimizar)
+        Me.PanSuperiorE.Controls.Add(Me.PibCerrar)
         Me.PanSuperiorE.Controls.Add(Me.Label1)
         Me.PanSuperiorE.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanSuperiorE.Location = New System.Drawing.Point(0, 0)
         Me.PanSuperiorE.Name = "PanSuperiorE"
         Me.PanSuperiorE.Size = New System.Drawing.Size(1733, 54)
         Me.PanSuperiorE.TabIndex = 4
-        '
-        'MzButtonWindows3
-        '
-        Me.MzButtonWindows3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MzButtonWindows3.BackgroundImage = CType(resources.GetObject("MzButtonWindows3.BackgroundImage"), System.Drawing.Image)
-        Me.MzButtonWindows3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MzButtonWindows3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MzButtonWindows3.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows3.Location = New System.Drawing.Point(1613, 0)
-        Me.MzButtonWindows3.Name = "MzButtonWindows3"
-        Me.MzButtonWindows3.ParentControl = Me
-        Me.MzButtonWindows3.Size = New System.Drawing.Size(40, 24)
-        Me.MzButtonWindows3.TabIndex = 22
-        Me.MzButtonWindows3.TipoButton = BWCMM.MZButtonWindows.ModeButton.Minimize
-        '
-        'MzButtonWindows1
-        '
-        Me.MzButtonWindows1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MzButtonWindows1.BackgroundImage = CType(resources.GetObject("MzButtonWindows1.BackgroundImage"), System.Drawing.Image)
-        Me.MzButtonWindows1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MzButtonWindows1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.MzButtonWindows1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MzButtonWindows1.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows1.Location = New System.Drawing.Point(1693, 0)
-        Me.MzButtonWindows1.Name = "MzButtonWindows1"
-        Me.MzButtonWindows1.ParentControl = Me
-        Me.MzButtonWindows1.Size = New System.Drawing.Size(40, 24)
-        Me.MzButtonWindows1.TabIndex = 21
-        Me.MzButtonWindows1.TipoButton = BWCMM.MZButtonWindows.ModeButton.Close
-        '
-        'MzButtonWindows2
-        '
-        Me.MzButtonWindows2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MzButtonWindows2.BackgroundImage = CType(resources.GetObject("MzButtonWindows2.BackgroundImage"), System.Drawing.Image)
-        Me.MzButtonWindows2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MzButtonWindows2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MzButtonWindows2.Enabled = False
-        Me.MzButtonWindows2.EstiloButton = BWCMM.MZButtonWindows.EstiloDeButton.Windows
-        Me.MzButtonWindows2.Location = New System.Drawing.Point(1653, 0)
-        Me.MzButtonWindows2.Name = "MzButtonWindows2"
-        Me.MzButtonWindows2.ParentControl = Me
-        Me.MzButtonWindows2.Size = New System.Drawing.Size(40, 24)
-        Me.MzButtonWindows2.TabIndex = 21
-        Me.MzButtonWindows2.TipoButton = BWCMM.MZButtonWindows.ModeButton.Maximize
         '
         'Label1
         '
@@ -410,6 +286,69 @@ Partial Class FrmEntradas
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Gestionar Entradas"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEntrada
+        Me.PictureBox1.Location = New System.Drawing.Point(1276, 53)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(335, 310)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 25
+        Me.PictureBox1.TabStop = False
+        '
+        'BtnLimpiarE
+        '
+        Me.BtnLimpiarE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnLimpiarE.FlatAppearance.BorderSize = 0
+        Me.BtnLimpiarE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpiarE.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLimpiarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
+        Me.BtnLimpiarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnLimpiarE.Location = New System.Drawing.Point(257, 335)
+        Me.BtnLimpiarE.Name = "BtnLimpiarE"
+        Me.BtnLimpiarE.Size = New System.Drawing.Size(176, 55)
+        Me.BtnLimpiarE.TabIndex = 22
+        Me.BtnLimpiarE.Text = "Limpiar"
+        Me.BtnLimpiarE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnLimpiarE.UseVisualStyleBackColor = True
+        '
+        'BtnAgregarE
+        '
+        Me.BtnAgregarE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAgregarE.FlatAppearance.BorderSize = 0
+        Me.BtnAgregarE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregarE.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAgregarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
+        Me.BtnAgregarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAgregarE.Location = New System.Drawing.Point(30, 335)
+        Me.BtnAgregarE.Name = "BtnAgregarE"
+        Me.BtnAgregarE.Size = New System.Drawing.Size(183, 55)
+        Me.BtnAgregarE.TabIndex = 21
+        Me.BtnAgregarE.Text = "Agregar"
+        Me.BtnAgregarE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnAgregarE.UseVisualStyleBackColor = True
+        '
+        'PibMinimizar
+        '
+        Me.PibMinimizar.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
+        Me.PibMinimizar.Location = New System.Drawing.Point(1577, 3)
+        Me.PibMinimizar.Name = "PibMinimizar"
+        Me.PibMinimizar.Size = New System.Drawing.Size(64, 51)
+        Me.PibMinimizar.TabIndex = 3
+        Me.PibMinimizar.TabStop = False
+        '
+        'PibCerrar
+        '
+        Me.PibCerrar.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
+        Me.PibCerrar.Location = New System.Drawing.Point(1647, 1)
+        Me.PibCerrar.Name = "PibCerrar"
+        Me.PibCerrar.Size = New System.Drawing.Size(74, 86)
+        Me.PibCerrar.TabIndex = 2
+        Me.PibCerrar.TabStop = False
+        '
         'FrmEntradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -422,9 +361,11 @@ Partial Class FrmEntradas
         Me.PanCentral.ResumeLayout(False)
         Me.GobEntrada.ResumeLayout(False)
         Me.GobEntrada.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanSuperiorE.ResumeLayout(False)
         Me.PanSuperiorE.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -449,14 +390,11 @@ Partial Class FrmEntradas
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PanSuperiorE As Panel
-    Friend WithEvents MzButtonWindows3 As BWCMM.MZButtonWindows
-    Friend WithEvents MzButtonWindows1 As BWCMM.MZButtonWindows
-    Friend WithEvents MzButtonWindows2 As BWCMM.MZButtonWindows
     Friend WithEvents Label1 As Label
-    Friend WithEvents BtnEliminarE As Button
-    Friend WithEvents BtnEditarE As Button
     Friend WithEvents BtnLimpiarE As Button
     Friend WithEvents BtnAgregarE As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DtpFechaE As DateTimePicker
+    Friend WithEvents PibCerrar As PictureBox
+    Friend WithEvents PibMinimizar As PictureBox
 End Class

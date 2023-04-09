@@ -19,7 +19,13 @@
         Arrastre = False
     End Sub
 
+    Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 
+    Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
+        Close()
+    End Sub
 
 
     'Ajustar tamaño del formulario a la pantalla.

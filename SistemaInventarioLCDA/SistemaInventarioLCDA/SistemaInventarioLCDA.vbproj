@@ -219,5 +219,11 @@
   <ItemGroup>
     <None Include="Resources\eliminarProd.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarBTN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizarBTN.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
