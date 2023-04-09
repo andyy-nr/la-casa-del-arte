@@ -18,6 +18,14 @@
         Arrastre = False
     End Sub
 
+    Private Sub BtnInicio_Click(sender As Object, e As EventArgs) 
+        Dim Respuesta = MsgBox("¿Esta seguro de que desea cerrar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
+        If Respuesta = vbOK Then
+            Me.Close()
+            FrmPrincipal.Visible = True
+        End If
+    End Sub
+
     Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
         If CebMostrarPwd.Checked = True Then
             TxtPwd.UseSystemPasswordChar = False

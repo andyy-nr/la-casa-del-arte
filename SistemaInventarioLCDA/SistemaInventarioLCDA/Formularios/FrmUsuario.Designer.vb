@@ -50,7 +50,6 @@ Partial Class FrmUsuario
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtnInicio = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         Me.PanelCentral.SuspendLayout()
         Me.GobDatos.SuspendLayout()
@@ -60,7 +59,6 @@ Partial Class FrmUsuario
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.PanSuperior.Controls.Add(Me.BtnInicio)
         Me.PanSuperior.Controls.Add(Me.MzButtonWindows3)
         Me.PanSuperior.Controls.Add(Me.MzButtonWindows2)
         Me.PanSuperior.Controls.Add(Me.MzButtonWindows1)
@@ -122,7 +120,7 @@ Partial Class FrmUsuario
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(287, 5)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(230, 32)
+        Me.Label8.Size = New System.Drawing.Size(282, 41)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Gestionar Usuarios"
         '
@@ -194,7 +192,7 @@ Partial Class FrmUsuario
         Me.CebMostrarPwd.AutoSize = True
         Me.CebMostrarPwd.Location = New System.Drawing.Point(114, 392)
         Me.CebMostrarPwd.Name = "CebMostrarPwd"
-        Me.CebMostrarPwd.Size = New System.Drawing.Size(164, 25)
+        Me.CebMostrarPwd.Size = New System.Drawing.Size(203, 32)
         Me.CebMostrarPwd.TabIndex = 19
         Me.CebMostrarPwd.Text = "Mostrar contraseña"
         Me.CebMostrarPwd.UseVisualStyleBackColor = True
@@ -274,7 +272,7 @@ Partial Class FrmUsuario
         Me.ComboBox1.Location = New System.Drawing.Point(58, 300)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(313, 29)
+        Me.ComboBox1.Size = New System.Drawing.Size(313, 36)
         Me.ComboBox1.TabIndex = 13
         Me.ComboBox1.Text = "Seleccione.."
         '
@@ -284,7 +282,7 @@ Partial Class FrmUsuario
         Me.Label7.Location = New System.Drawing.Point(18, 304)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 21)
+        Me.Label7.Size = New System.Drawing.Size(44, 28)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Rol:"
         '
@@ -294,7 +292,7 @@ Partial Class FrmUsuario
         Me.DateTimePicker1.Location = New System.Drawing.Point(177, 196)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(194, 29)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(194, 34)
         Me.DateTimePicker1.TabIndex = 11
         '
         'TxtPwd
@@ -303,7 +301,7 @@ Partial Class FrmUsuario
         Me.TxtPwd.Location = New System.Drawing.Point(114, 358)
         Me.TxtPwd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtPwd.Name = "TxtPwd"
-        Me.TxtPwd.Size = New System.Drawing.Size(257, 29)
+        Me.TxtPwd.Size = New System.Drawing.Size(257, 34)
         Me.TxtPwd.TabIndex = 10
         Me.TxtPwd.UseSystemPasswordChar = True
         '
@@ -313,7 +311,7 @@ Partial Class FrmUsuario
         Me.TextBox4.Location = New System.Drawing.Point(83, 247)
         Me.TextBox4.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(288, 29)
+        Me.TextBox4.Size = New System.Drawing.Size(288, 34)
         Me.TextBox4.TabIndex = 9
         '
         'TextBox3
@@ -322,7 +320,7 @@ Partial Class FrmUsuario
         Me.TextBox3.Location = New System.Drawing.Point(97, 145)
         Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(274, 29)
+        Me.TextBox3.Size = New System.Drawing.Size(274, 34)
         Me.TextBox3.TabIndex = 8
         '
         'TextBox2
@@ -331,7 +329,7 @@ Partial Class FrmUsuario
         Me.TextBox2.Location = New System.Drawing.Point(100, 97)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(271, 29)
+        Me.TextBox2.Size = New System.Drawing.Size(271, 34)
         Me.TextBox2.TabIndex = 7
         '
         'Label6
@@ -340,7 +338,7 @@ Partial Class FrmUsuario
         Me.Label6.Location = New System.Drawing.Point(18, 361)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(92, 21)
+        Me.Label6.Size = New System.Drawing.Size(114, 28)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Contraseña:"
         '
@@ -350,7 +348,7 @@ Partial Class FrmUsuario
         Me.Label5.Location = New System.Drawing.Point(18, 250)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 21)
+        Me.Label5.Size = New System.Drawing.Size(76, 28)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Cédula:"
         '
@@ -360,7 +358,7 @@ Partial Class FrmUsuario
         Me.Label4.Location = New System.Drawing.Point(18, 203)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 21)
+        Me.Label4.Size = New System.Drawing.Size(195, 28)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Fecha de nacimiento:"
         '
@@ -370,7 +368,7 @@ Partial Class FrmUsuario
         Me.TextBox1.Location = New System.Drawing.Point(100, 46)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(271, 29)
+        Me.TextBox1.Size = New System.Drawing.Size(271, 34)
         Me.TextBox1.TabIndex = 3
         '
         'Label3
@@ -379,7 +377,7 @@ Partial Class FrmUsuario
         Me.Label3.Location = New System.Drawing.Point(18, 148)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(71, 21)
+        Me.Label3.Size = New System.Drawing.Size(90, 28)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Teléfono:"
         '
@@ -389,7 +387,7 @@ Partial Class FrmUsuario
         Me.Label2.Location = New System.Drawing.Point(18, 100)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 21)
+        Me.Label2.Size = New System.Drawing.Size(98, 28)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Apellidos:"
         '
@@ -399,22 +397,13 @@ Partial Class FrmUsuario
         Me.Label1.Location = New System.Drawing.Point(18, 49)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 21)
+        Me.Label1.Size = New System.Drawing.Size(97, 28)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombres:"
         '
-        'BtnInicio
-        '
-        Me.BtnInicio.Location = New System.Drawing.Point(12, 12)
-        Me.BtnInicio.Name = "BtnInicio"
-        Me.BtnInicio.Size = New System.Drawing.Size(75, 23)
-        Me.BtnInicio.TabIndex = 4
-        Me.BtnInicio.Text = "Button1"
-        Me.BtnInicio.UseVisualStyleBackColor = True
-        '
         'FrmUsuario
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(804, 630)
         Me.Controls.Add(Me.PanelCentral)
@@ -463,5 +452,4 @@ Partial Class FrmUsuario
     Friend WithEvents MzButtonWindows3 As BWCMM.MZButtonWindows
     Friend WithEvents MzButtonWindows2 As BWCMM.MZButtonWindows
     Friend WithEvents MzButtonWindows1 As BWCMM.MZButtonWindows
-    Friend WithEvents BtnInicio As Button
 End Class

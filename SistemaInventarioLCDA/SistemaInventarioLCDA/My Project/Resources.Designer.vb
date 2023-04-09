@@ -113,6 +113,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property categorias() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("categorias", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property eliminarUser() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("eliminarUser", resourceCulture)
@@ -246,6 +256,16 @@ Namespace My.Resources
         Friend ReadOnly Property usuarios() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("usuarios", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property usuariosRoles() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("usuariosRoles", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
