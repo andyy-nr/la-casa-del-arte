@@ -45,8 +45,6 @@ Partial Class FrmSalidas
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BtnEliminarS = New System.Windows.Forms.Button()
-        Me.BtnEditarS = New System.Windows.Forms.Button()
         Me.BtnLimpiarS = New System.Windows.Forms.Button()
         Me.BtnAgregarS = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -99,8 +97,6 @@ Partial Class FrmSalidas
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.BtnEliminarS)
-        Me.GroupBox1.Controls.Add(Me.BtnEditarS)
         Me.GroupBox1.Controls.Add(Me.BtnLimpiarS)
         Me.GroupBox1.Controls.Add(Me.BtnAgregarS)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
@@ -291,38 +287,6 @@ Partial Class FrmSalidas
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Producto:"
         '
-        'BtnEliminarS
-        '
-        Me.BtnEliminarS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminarS.FlatAppearance.BorderSize = 0
-        Me.BtnEliminarS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminarS.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminarS.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
-        Me.BtnEliminarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarS.Location = New System.Drawing.Point(584, 319)
-        Me.BtnEliminarS.Name = "BtnEliminarS"
-        Me.BtnEliminarS.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarS.TabIndex = 22
-        Me.BtnEliminarS.Text = "Eliminar"
-        Me.BtnEliminarS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminarS.UseVisualStyleBackColor = True
-        '
-        'BtnEditarS
-        '
-        Me.BtnEditarS.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditarS.FlatAppearance.BorderSize = 0
-        Me.BtnEditarS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditarS.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditarS.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
-        Me.BtnEditarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarS.Location = New System.Drawing.Point(401, 319)
-        Me.BtnEditarS.Name = "BtnEditarS"
-        Me.BtnEditarS.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarS.TabIndex = 21
-        Me.BtnEditarS.Text = "Editar"
-        Me.BtnEditarS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEditarS.UseVisualStyleBackColor = True
-        '
         'BtnLimpiarS
         '
         Me.BtnLimpiarS.Cursor = System.Windows.Forms.Cursors.Hand
@@ -331,7 +295,7 @@ Partial Class FrmSalidas
         Me.BtnLimpiarS.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLimpiarS.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
         Me.BtnLimpiarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarS.Location = New System.Drawing.Point(206, 319)
+        Me.BtnLimpiarS.Location = New System.Drawing.Point(425, 319)
         Me.BtnLimpiarS.Name = "BtnLimpiarS"
         Me.BtnLimpiarS.Size = New System.Drawing.Size(176, 55)
         Me.BtnLimpiarS.TabIndex = 20
@@ -347,7 +311,7 @@ Partial Class FrmSalidas
         Me.BtnAgregarS.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAgregarS.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
         Me.BtnAgregarS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarS.Location = New System.Drawing.Point(0, 319)
+        Me.BtnAgregarS.Location = New System.Drawing.Point(155, 319)
         Me.BtnAgregarS.Name = "BtnAgregarS"
         Me.BtnAgregarS.Size = New System.Drawing.Size(183, 55)
         Me.BtnAgregarS.TabIndex = 19
@@ -452,8 +416,6 @@ Partial Class FrmSalidas
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents BtnEliminarS As Button
-    Friend WithEvents BtnEditarS As Button
     Friend WithEvents BtnLimpiarS As Button
     Friend WithEvents BtnAgregarS As Button
     Friend WithEvents MzButtonWindows3 As BWCMM.MZButtonWindows
