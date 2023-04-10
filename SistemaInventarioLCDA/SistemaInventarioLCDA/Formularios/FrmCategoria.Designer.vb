@@ -43,7 +43,7 @@ Partial Class FrmCategoria
         Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtnRegresar = New System.Windows.Forms.Button()
+        Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,12 +52,13 @@ Partial Class FrmCategoria
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.PanSuperior.Controls.Add(Me.BtnRegresar)
+        Me.PanSuperior.Controls.Add(Me.PibRetornar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
         Me.PanSuperior.Controls.Add(Me.Label8)
@@ -337,15 +338,15 @@ Partial Class FrmCategoria
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
         '
-        'BtnRegresar
+        'PibRetornar
         '
-        Me.BtnRegresar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.ingresar1
-        Me.BtnRegresar.Location = New System.Drawing.Point(9, 2)
-        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(45, 49)
-        Me.BtnRegresar.TabIndex = 10
-        Me.BtnRegresar.UseVisualStyleBackColor = True
+        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.returnPng
+        Me.PibRetornar.Location = New System.Drawing.Point(3, 4)
+        Me.PibRetornar.Name = "PibRetornar"
+        Me.PibRetornar.Size = New System.Drawing.Size(45, 45)
+        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibRetornar.TabIndex = 10
+        Me.PibRetornar.TabStop = False
         '
         'FrmCategoria
         '
@@ -368,6 +369,7 @@ Partial Class FrmCategoria
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -393,5 +395,5 @@ Partial Class FrmCategoria
     Friend WithEvents PibProductos As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents BtnRegresar As Button
+    Friend WithEvents PibRetornar As PictureBox
 End Class

@@ -290,6 +290,11 @@
     <None Include="Resources\cerrar-sesion.png" />
     <None Include="Resources\return1.png" />
     <None Include="Resources\ingresar1.png" />
+    <None Include="Resources\return2.png" />
+    <None Include="Resources\botonRegresar.png" />
+    <None Include="Resources\regresar.png" />
+    <None Include="Resources\returnPng.png" />
+    <None Include="Resources\botonRegresar1.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
