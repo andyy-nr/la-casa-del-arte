@@ -23,15 +23,15 @@ Partial Class FrmReportes
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanSuperior = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
-        Me.PibRetornar = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.PanSuperior.SuspendLayout()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -48,27 +48,15 @@ Partial Class FrmReportes
         Me.PanSuperior.Size = New System.Drawing.Size(1067, 52)
         Me.PanSuperior.TabIndex = 1
         '
-        'Label2
+        'PibRetornar
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Nirmala UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(350, 8)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(367, 37)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Reportes Entradas / Salidas"
-        '
-        'ReportViewer1
-        '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 52)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(1067, 675)
-        Me.ReportViewer1.TabIndex = 3
+        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
+        Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
+        Me.PibRetornar.Name = "PibRetornar"
+        Me.PibRetornar.Size = New System.Drawing.Size(43, 43)
+        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibRetornar.TabIndex = 10
+        Me.PibRetornar.TabStop = False
         '
         'PibMinimizar
         '
@@ -94,15 +82,27 @@ Partial Class FrmReportes
         Me.PibCerrar.TabIndex = 6
         Me.PibCerrar.TabStop = False
         '
-        'PibRetornar
+        'Label2
         '
-        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.returnPng
-        Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
-        Me.PibRetornar.Name = "PibRetornar"
-        Me.PibRetornar.Size = New System.Drawing.Size(45, 45)
-        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibRetornar.TabIndex = 10
-        Me.PibRetornar.TabStop = False
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Nirmala UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(350, 8)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(367, 37)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Reportes Entradas / Salidas"
+        '
+        'ReportViewer1
+        '
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 52)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(1067, 675)
+        Me.ReportViewer1.TabIndex = 3
         '
         'FrmReportes
         '
@@ -117,9 +117,9 @@ Partial Class FrmReportes
         Me.Text = "FrmReportes"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

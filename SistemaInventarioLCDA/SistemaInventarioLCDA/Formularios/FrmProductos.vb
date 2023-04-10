@@ -35,11 +35,15 @@
     End Sub
 
     Private Sub PibRetornar_Click(sender As Object, e As EventArgs) Handles PibRetornar.Click
-        Dim Respuesta = MsgBox("¿Esta seguro de que desea cerrar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
+        Dim Respuesta = MsgBox("¿Esta seguro de que desea regresar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
         If Respuesta = vbOK Then
             Me.Close()
             FrmPrincipal.Visible = True
         End If
+    End Sub
+
+    Private Sub PanSuperior_Paint(sender As Object, e As PaintEventArgs) Handles PanSuperior.Paint
+
     End Sub
 
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click

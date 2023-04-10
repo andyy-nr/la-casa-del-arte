@@ -23,6 +23,7 @@ Partial Class FrmCategoria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanSuperior = New System.Windows.Forms.Panel()
+        Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -43,8 +44,8 @@ Partial Class FrmCategoria
         Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
@@ -52,7 +53,6 @@ Partial Class FrmCategoria
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -68,6 +68,16 @@ Partial Class FrmCategoria
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
         Me.PanSuperior.TabIndex = 3
+        '
+        'PibRetornar
+        '
+        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
+        Me.PibRetornar.Location = New System.Drawing.Point(3, 4)
+        Me.PibRetornar.Name = "PibRetornar"
+        Me.PibRetornar.Size = New System.Drawing.Size(43, 43)
+        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibRetornar.TabIndex = 10
+        Me.PibRetornar.TabStop = False
         '
         'PibMinimizar
         '
@@ -338,16 +348,6 @@ Partial Class FrmCategoria
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
         '
-        'PibRetornar
-        '
-        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.returnPng
-        Me.PibRetornar.Location = New System.Drawing.Point(3, 4)
-        Me.PibRetornar.Name = "PibRetornar"
-        Me.PibRetornar.Size = New System.Drawing.Size(45, 45)
-        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibRetornar.TabIndex = 10
-        Me.PibRetornar.TabStop = False
-        '
         'FrmCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -360,6 +360,7 @@ Partial Class FrmCategoria
         Me.Text = "FrmCategoria"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
@@ -369,7 +370,6 @@ Partial Class FrmCategoria
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

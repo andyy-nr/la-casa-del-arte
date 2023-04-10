@@ -23,36 +23,36 @@ Partial Class FrmRoles
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanSuperior = New System.Windows.Forms.Panel()
+        Me.PibRetornar = New System.Windows.Forms.PictureBox()
+        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
+        Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
-        Me.TxtNombreProd = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtIdProd = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
         Me.BtnEditarP = New System.Windows.Forms.Button()
         Me.BtnLimpiarP = New System.Windows.Forms.Button()
-        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
-        Me.PibCerrar = New System.Windows.Forms.PictureBox()
-        Me.PibRetornar = New System.Windows.Forms.PictureBox()
+        Me.TxtNombreProd = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtIdProd = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PanSuperior.SuspendLayout()
-        Me.PanelCentral.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GobDatosProd.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelCentral.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GobDatosProd.SuspendLayout()
+        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -68,6 +68,40 @@ Partial Class FrmRoles
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
         Me.PanSuperior.TabIndex = 2
+        '
+        'PibRetornar
+        '
+        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
+        Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
+        Me.PibRetornar.Name = "PibRetornar"
+        Me.PibRetornar.Size = New System.Drawing.Size(43, 43)
+        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibRetornar.TabIndex = 10
+        Me.PibRetornar.TabStop = False
+        '
+        'PibMinimizar
+        '
+        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
+        Me.PibMinimizar.Location = New System.Drawing.Point(1634, 3)
+        Me.PibMinimizar.Name = "PibMinimizar"
+        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
+        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMinimizar.TabIndex = 7
+        Me.PibMinimizar.TabStop = False
+        '
+        'PibCerrar
+        '
+        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
+        Me.PibCerrar.Location = New System.Drawing.Point(1685, 4)
+        Me.PibCerrar.Name = "PibCerrar"
+        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
+        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibCerrar.TabIndex = 6
+        Me.PibCerrar.TabStop = False
         '
         'Label8
         '
@@ -111,6 +145,16 @@ Partial Class FrmRoles
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1653, 170)
         Me.DataGridView1.TabIndex = 15
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.lupa
+        Me.PictureBox1.Location = New System.Drawing.Point(41, 516)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(55, 55)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'TxtBuscar
         '
@@ -166,63 +210,6 @@ Partial Class FrmRoles
         Me.CheckedListBox1.Name = "CheckedListBox1"
         Me.CheckedListBox1.Size = New System.Drawing.Size(386, 294)
         Me.CheckedListBox1.TabIndex = 30
-        '
-        'TxtNombreProd
-        '
-        Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreProd.Location = New System.Drawing.Point(163, 121)
-        Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNombreProd.Multiline = True
-        Me.TxtNombreProd.Name = "TxtNombreProd"
-        Me.TxtNombreProd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtNombreProd.Size = New System.Drawing.Size(410, 233)
-        Me.TxtNombreProd.TabIndex = 2
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(734, 62)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 28)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Permisos:"
-        '
-        'TxtIdProd
-        '
-        Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdProd.Location = New System.Drawing.Point(163, 60)
-        Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtIdProd.Name = "TxtIdProd"
-        Me.TxtIdProd.Size = New System.Drawing.Size(410, 34)
-        Me.TxtIdProd.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 121)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 28)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Descripción:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(60, 60)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 28)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre:"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.lupa
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 516)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(55, 55)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'PibProductos
         '
@@ -316,39 +303,52 @@ Partial Class FrmRoles
         Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarP.UseVisualStyleBackColor = True
         '
-        'PibMinimizar
+        'TxtNombreProd
         '
-        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(1634, 3)
-        Me.PibMinimizar.Name = "PibMinimizar"
-        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
-        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibMinimizar.TabIndex = 7
-        Me.PibMinimizar.TabStop = False
+        Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombreProd.Location = New System.Drawing.Point(163, 121)
+        Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNombreProd.Multiline = True
+        Me.TxtNombreProd.Name = "TxtNombreProd"
+        Me.TxtNombreProd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtNombreProd.Size = New System.Drawing.Size(410, 233)
+        Me.TxtNombreProd.TabIndex = 2
         '
-        'PibCerrar
+        'Label5
         '
-        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
-        Me.PibCerrar.Location = New System.Drawing.Point(1685, 4)
-        Me.PibCerrar.Name = "PibCerrar"
-        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
-        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibCerrar.TabIndex = 6
-        Me.PibCerrar.TabStop = False
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(734, 62)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 28)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Permisos:"
         '
-        'PibRetornar
+        'TxtIdProd
         '
-        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.returnPng
-        Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
-        Me.PibRetornar.Name = "PibRetornar"
-        Me.PibRetornar.Size = New System.Drawing.Size(45, 45)
-        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibRetornar.TabIndex = 10
-        Me.PibRetornar.TabStop = False
+        Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtIdProd.Location = New System.Drawing.Point(163, 60)
+        Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtIdProd.Name = "TxtIdProd"
+        Me.TxtIdProd.Size = New System.Drawing.Size(410, 34)
+        Me.TxtIdProd.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(31, 121)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(118, 28)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Descripción:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(60, 60)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nombre:"
         '
         'FrmRoles
         '
@@ -362,16 +362,16 @@ Partial Class FrmRoles
         Me.Text = "FrmRoles"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
+        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
