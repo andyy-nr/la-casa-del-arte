@@ -22,6 +22,11 @@ SistemaInventarioLCDA
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources._return">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.admin">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -67,6 +72,11 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.cerrar_sesion">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -103,6 +113,11 @@ SistemaInventarioLCDA
 </summary>
 </member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.ingresar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.ingresar1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -153,6 +168,11 @@ SistemaInventarioLCDA
 </summary>
 </member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.reportesMov">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.return1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

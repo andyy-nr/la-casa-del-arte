@@ -1,5 +1,6 @@
 ﻿Public Class FrmPrincipal
 
+
     'Movimientos de Ventana.
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -63,7 +64,7 @@
 
     'Botones
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
-        'Application.Exit()
+        Application.Exit()
         Close()
     End Sub
 

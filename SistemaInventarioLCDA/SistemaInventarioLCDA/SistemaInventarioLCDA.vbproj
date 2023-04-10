@@ -286,6 +286,10 @@
     <None Include="Resources\categorias.png" />
     <None Include="Resources\imgEntrada.png" />
     <None Include="Resources\imgSalida.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\cerrar-sesion.png" />
+    <None Include="Resources\return1.png" />
+    <None Include="Resources\ingresar1.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

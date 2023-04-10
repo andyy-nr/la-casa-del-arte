@@ -43,6 +43,7 @@ Partial Class FrmRoles
         Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +57,7 @@ Partial Class FrmRoles
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.BtnRegresar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
         Me.PanSuperior.Controls.Add(Me.Label8)
@@ -337,6 +339,16 @@ Partial Class FrmRoles
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre:"
         '
+        'BtnRegresar
+        '
+        Me.BtnRegresar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.ingresar1
+        Me.BtnRegresar.Location = New System.Drawing.Point(9, 2)
+        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(0)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(45, 49)
+        Me.BtnRegresar.TabIndex = 9
+        Me.BtnRegresar.UseVisualStyleBackColor = True
+        '
         'FrmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -383,4 +395,5 @@ Partial Class FrmRoles
     Friend WithEvents CheckedListBox1 As CheckedListBox
     Friend WithEvents TxtNombreProd As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents BtnRegresar As Button
 End Class

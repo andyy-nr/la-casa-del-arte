@@ -23,6 +23,7 @@ Partial Class FrmSalidas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanSuperior = New System.Windows.Forms.Panel()
+        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -68,6 +69,7 @@ Partial Class FrmSalidas
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.BtnRegresar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
         Me.PanSuperior.Controls.Add(Me.Label8)
@@ -77,6 +79,15 @@ Partial Class FrmSalidas
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
         Me.PanSuperior.TabIndex = 2
+        '
+        'BtnRegresar
+        '
+        Me.BtnRegresar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.ingresar1
+        Me.BtnRegresar.Location = New System.Drawing.Point(12, 0)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(45, 49)
+        Me.BtnRegresar.TabIndex = 8
+        Me.BtnRegresar.UseVisualStyleBackColor = True
         '
         'PibMinimizar
         '
@@ -512,4 +523,5 @@ Partial Class FrmSalidas
     Friend WithEvents Label1 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents DtpFechaSalida As DateTimePicker
+    Friend WithEvents BtnRegresar As Button
 End Class

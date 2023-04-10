@@ -40,6 +40,14 @@
         Close()
     End Sub
 
+    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
+        Dim Respuesta = MsgBox("¿Esta seguro de que desea cerrar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
+        If Respuesta = vbOK Then
+            Me.Close()
+            FrmPrincipal.Visible = True
+        End If
+    End Sub
+
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub

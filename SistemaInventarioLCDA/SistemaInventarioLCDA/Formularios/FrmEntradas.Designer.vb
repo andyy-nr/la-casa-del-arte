@@ -55,6 +55,7 @@ Partial Class FrmEntradas
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +69,7 @@ Partial Class FrmEntradas
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.BtnRegresar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
         Me.PanSuperior.Controls.Add(Me.Label8)
@@ -454,6 +456,16 @@ Partial Class FrmEntradas
         Me.Label12.TabIndex = 6
         Me.Label12.Text = "Buscar:"
         '
+        'BtnRegresar
+        '
+        Me.BtnRegresar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.ingresar1
+        Me.BtnRegresar.Location = New System.Drawing.Point(9, 2)
+        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(0)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(45, 49)
+        Me.BtnRegresar.TabIndex = 10
+        Me.BtnRegresar.UseVisualStyleBackColor = True
+        '
         'FrmEntradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -512,4 +524,5 @@ Partial Class FrmEntradas
     Friend WithEvents Label1 As Label
     Friend WithEvents DtpFechaEntrada As DateTimePicker
     Friend WithEvents Label11 As Label
+    Friend WithEvents BtnRegresar As Button
 End Class
