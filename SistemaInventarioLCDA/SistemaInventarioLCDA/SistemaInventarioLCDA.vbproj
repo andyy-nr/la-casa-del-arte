@@ -100,6 +100,12 @@
     <Compile Include="Formularios\FrmCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FrmEntradas.Designer.vb">
+      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmEntradas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
@@ -122,6 +128,12 @@
       <DependentUpon>FrmRoles.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmRoles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmSalidas.Designer.vb">
+      <DependentUpon>FrmSalidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmSalidas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmUsuarios.Designer.vb">
@@ -159,6 +171,9 @@
     <EmbeddedResource Include="Formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEntradas.resx">
+      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmRoles.resx">
       <DependentUpon>FrmRoles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmSalidas.resx">
+      <DependentUpon>FrmSalidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.vb</DependentUpon>
@@ -266,6 +284,8 @@
     <None Include="Resources\lupa.png" />
     <None Include="Resources\usuariosRoles.png" />
     <None Include="Resources\categorias.png" />
+    <None Include="Resources\imgEntrada.png" />
+    <None Include="Resources\imgSalida.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

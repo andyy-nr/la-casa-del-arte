@@ -1,4 +1,4 @@
-﻿Public Class FrmRoles
+﻿Public Class FrmEntradas
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -37,5 +37,4 @@
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
 End Class

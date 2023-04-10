@@ -32,6 +32,8 @@ Partial Class FrmCategoria
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
@@ -41,8 +43,6 @@ Partial Class FrmCategoria
         Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +96,7 @@ Partial Class FrmCategoria
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Nirmala UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(715, 6)
+        Me.Label8.Location = New System.Drawing.Point(711, 6)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(311, 41)
@@ -182,16 +182,34 @@ Partial Class FrmCategoria
         Me.GobDatosProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.GobDatosProd.Name = "GobDatosProd"
         Me.GobDatosProd.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GobDatosProd.Size = New System.Drawing.Size(1653, 455)
+        Me.GobDatosProd.Size = New System.Drawing.Size(1653, 450)
         Me.GobDatosProd.TabIndex = 5
         Me.GobDatosProd.TabStop = False
         Me.GobDatosProd.Text = "Datos Generales de las Categorias"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Location = New System.Drawing.Point(180, 122)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(679, 34)
+        Me.TextBox1.TabIndex = 32
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(66, 122)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 28)
+        Me.Label3.TabIndex = 31
+        Me.Label3.Text = "Nombre:"
         '
         'PibProductos
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.categorias
-        Me.PibProductos.Location = New System.Drawing.Point(1182, 51)
+        Me.PibProductos.Location = New System.Drawing.Point(1180, 69)
         Me.PibProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PibProductos.Name = "PibProductos"
         Me.PibProductos.Size = New System.Drawing.Size(335, 310)
@@ -210,7 +228,7 @@ Partial Class FrmCategoria
         Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
         Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarP.Location = New System.Drawing.Point(75, 350)
+        Me.BtnAgregarP.Location = New System.Drawing.Point(67, 348)
         Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnAgregarP.Name = "BtnAgregarP"
         Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
@@ -230,7 +248,7 @@ Partial Class FrmCategoria
         Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
         Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarP.Location = New System.Drawing.Point(802, 350)
+        Me.BtnEliminarP.Location = New System.Drawing.Point(794, 348)
         Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnEliminarP.Name = "BtnEliminarP"
         Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
@@ -250,7 +268,7 @@ Partial Class FrmCategoria
         Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
         Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarP.Location = New System.Drawing.Point(582, 350)
+        Me.BtnEditarP.Location = New System.Drawing.Point(574, 348)
         Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnEditarP.Name = "BtnEditarP"
         Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
@@ -270,7 +288,7 @@ Partial Class FrmCategoria
         Me.BtnLimpiarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLimpiarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
         Me.BtnLimpiarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarP.Location = New System.Drawing.Point(328, 350)
+        Me.BtnLimpiarP.Location = New System.Drawing.Point(320, 348)
         Me.BtnLimpiarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnLimpiarP.Name = "BtnLimpiarP"
         Me.BtnLimpiarP.Size = New System.Drawing.Size(176, 55)
@@ -282,27 +300,27 @@ Partial Class FrmCategoria
         'TxtDescCat
         '
         Me.TxtDescCat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescCat.Location = New System.Drawing.Point(159, 184)
+        Me.TxtDescCat.Location = New System.Drawing.Point(180, 174)
         Me.TxtDescCat.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtDescCat.Multiline = True
         Me.TxtDescCat.Name = "TxtDescCat"
         Me.TxtDescCat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDescCat.Size = New System.Drawing.Size(679, 122)
+        Me.TxtDescCat.Size = New System.Drawing.Size(859, 122)
         Me.TxtDescCat.TabIndex = 2
         '
         'TxtIdProd
         '
         Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdProd.Location = New System.Drawing.Point(159, 79)
+        Me.TxtIdProd.Location = New System.Drawing.Point(180, 69)
         Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtIdProd.Name = "TxtIdProd"
-        Me.TxtIdProd.Size = New System.Drawing.Size(679, 34)
+        Me.TxtIdProd.Size = New System.Drawing.Size(430, 34)
         Me.TxtIdProd.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 184)
+        Me.Label2.Location = New System.Drawing.Point(37, 174)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(118, 28)
         Me.Label2.TabIndex = 1
@@ -311,29 +329,11 @@ Partial Class FrmCategoria
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(53, 79)
+        Me.Label1.Location = New System.Drawing.Point(74, 69)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(81, 28)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(159, 132)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(679, 34)
-        Me.TextBox1.TabIndex = 32
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(45, 132)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 28)
-        Me.Label3.TabIndex = 31
-        Me.Label3.Text = "Nombre:"
         '
         'FrmCategoria
         '

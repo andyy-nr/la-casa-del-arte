@@ -96,7 +96,7 @@ Partial Class FrmRoles
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Nirmala UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(715, 6)
+        Me.Label8.Location = New System.Drawing.Point(748, 6)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(236, 41)
@@ -193,16 +193,16 @@ Partial Class FrmRoles
         Me.CheckedListBox1.CheckOnClick = True
         Me.CheckedListBox1.FormattingEnabled = True
         Me.CheckedListBox1.Items.AddRange(New Object() {"Crear rol", "Editar rol", "Eliminar rol", "Asignar rol", "Crear usuario", "Actualizar usuario", "Crear categoría de producto", "Asignar categoría a producto", "Registrar producto", "Actualizar producto", "Asignar stock maximo", "Asignar stock minimo"})
-        Me.CheckedListBox1.Location = New System.Drawing.Point(747, 60)
+        Me.CheckedListBox1.Location = New System.Drawing.Point(846, 60)
         Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(485, 294)
+        Me.CheckedListBox1.Size = New System.Drawing.Size(386, 294)
         Me.CheckedListBox1.TabIndex = 30
         '
         'PibProductos
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.usuariosRoles
-        Me.PibProductos.Location = New System.Drawing.Point(1288, 78)
+        Me.PibProductos.Location = New System.Drawing.Point(1274, 75)
         Me.PibProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PibProductos.Name = "PibProductos"
         Me.PibProductos.Size = New System.Drawing.Size(335, 310)
@@ -293,18 +293,18 @@ Partial Class FrmRoles
         'TxtNombreProd
         '
         Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreProd.Location = New System.Drawing.Point(148, 119)
+        Me.TxtNombreProd.Location = New System.Drawing.Point(163, 121)
         Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtNombreProd.Multiline = True
         Me.TxtNombreProd.Name = "TxtNombreProd"
         Me.TxtNombreProd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtNombreProd.Size = New System.Drawing.Size(410, 89)
+        Me.TxtNombreProd.Size = New System.Drawing.Size(410, 233)
         Me.TxtNombreProd.TabIndex = 2
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(632, 60)
+        Me.Label5.Location = New System.Drawing.Point(734, 62)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(93, 28)
         Me.Label5.TabIndex = 5
@@ -313,7 +313,7 @@ Partial Class FrmRoles
         'TxtIdProd
         '
         Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdProd.Location = New System.Drawing.Point(148, 60)
+        Me.TxtIdProd.Location = New System.Drawing.Point(163, 60)
         Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtIdProd.Name = "TxtIdProd"
         Me.TxtIdProd.Size = New System.Drawing.Size(410, 34)
@@ -322,7 +322,7 @@ Partial Class FrmRoles
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 121)
+        Me.Label2.Location = New System.Drawing.Point(31, 121)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(118, 28)
         Me.Label2.TabIndex = 1
@@ -331,7 +331,7 @@ Partial Class FrmRoles
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(45, 60)
+        Me.Label1.Location = New System.Drawing.Point(60, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 28)
         Me.Label1.TabIndex = 0

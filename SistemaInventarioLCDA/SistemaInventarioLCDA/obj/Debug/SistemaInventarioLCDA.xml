@@ -92,6 +92,16 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.imgEntrada">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.imgSalida">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.ingresar">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
