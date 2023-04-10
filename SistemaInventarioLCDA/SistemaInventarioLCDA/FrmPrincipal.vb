@@ -83,6 +83,14 @@
         FrmReportes.Show()
     End Sub
 
+    Private Sub BtnCategorias_Click(sender As Object, e As EventArgs) Handles BtnCategorias.Click
+        FrmCategoria.Show()
+    End Sub
+
+    Private Sub BtnRoles_Click(sender As Object, e As EventArgs) Handles BtnRoles.Click
+        FrmRoles.Show()
+    End Sub
+
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
         If PanMovimientos.Visible = False Then
             PanMovimientos.Visible = True

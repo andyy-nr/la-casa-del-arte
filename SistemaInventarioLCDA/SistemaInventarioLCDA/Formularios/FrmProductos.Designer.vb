@@ -23,48 +23,48 @@ Partial Class FrmProductos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanSuperior = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
-        Me.PanelCentral = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
-        Me.PibProductos = New System.Windows.Forms.PictureBox()
-        Me.TxtStockTotal = New System.Windows.Forms.TextBox()
-        Me.TxtStockMax = New System.Windows.Forms.TextBox()
-        Me.TxtStockMin = New System.Windows.Forms.TextBox()
-        Me.TxtStockBodega = New System.Windows.Forms.TextBox()
-        Me.TxtStockTienda = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.BtnAgregarP = New System.Windows.Forms.Button()
-        Me.BtnEliminarP = New System.Windows.Forms.Button()
-        Me.BtnEditarP = New System.Windows.Forms.Button()
-        Me.BtnLimpiarP = New System.Windows.Forms.Button()
-        Me.CobCategoria = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
-        Me.TxtMarcaProd = New System.Windows.Forms.TextBox()
-        Me.TxtNombreProd = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtIdProd = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtIdProd = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtNombreProd = New System.Windows.Forms.TextBox()
+        Me.TxtMarcaProd = New System.Windows.Forms.TextBox()
+        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.CobCategoria = New System.Windows.Forms.ComboBox()
+        Me.BtnLimpiarP = New System.Windows.Forms.Button()
+        Me.BtnEditarP = New System.Windows.Forms.Button()
+        Me.BtnEliminarP = New System.Windows.Forms.Button()
+        Me.BtnAgregarP = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TxtStockTienda = New System.Windows.Forms.TextBox()
+        Me.TxtStockBodega = New System.Windows.Forms.TextBox()
+        Me.TxtStockMin = New System.Windows.Forms.TextBox()
+        Me.TxtStockMax = New System.Windows.Forms.TextBox()
+        Me.TxtStockTotal = New System.Windows.Forms.TextBox()
+        Me.PibProductos = New System.Windows.Forms.PictureBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TxtBuscar = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelCentral.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelCentral.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -79,19 +79,6 @@ Partial Class FrmProductos
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
         Me.PanSuperior.TabIndex = 1
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Nirmala UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(715, 6)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(303, 41)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Gestionar Productos"
         '
         'PibMinimizar
         '
@@ -117,63 +104,18 @@ Partial Class FrmProductos
         Me.PibCerrar.TabIndex = 6
         Me.PibCerrar.TabStop = False
         '
-        'PanelCentral
+        'Label8
         '
-        Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.PanelCentral.Controls.Add(Me.DataGridView1)
-        Me.PanelCentral.Controls.Add(Me.PictureBox1)
-        Me.PanelCentral.Controls.Add(Me.TxtBuscar)
-        Me.PanelCentral.Controls.Add(Me.Label12)
-        Me.PanelCentral.Controls.Add(Me.GobDatosProd)
-        Me.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelCentral.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelCentral.Location = New System.Drawing.Point(0, 52)
-        Me.PanelCentral.Margin = New System.Windows.Forms.Padding(4)
-        Me.PanelCentral.Name = "PanelCentral"
-        Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
-        Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
-        Me.PanelCentral.TabIndex = 16
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 599)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1653, 170)
-        Me.DataGridView1.TabIndex = 15
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.lupa
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 516)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(55, 55)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
-        '
-        'TxtBuscar
-        '
-        Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscar.Location = New System.Drawing.Point(181, 525)
-        Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(1513, 34)
-        Me.TxtBuscar.TabIndex = 14
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(102, 525)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(73, 28)
-        Me.Label12.TabIndex = 6
-        Me.Label12.Text = "Buscar:"
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Nirmala UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(715, 6)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(303, 41)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "Gestionar Productos"
         '
         'GobDatosProd
         '
@@ -215,150 +157,118 @@ Partial Class FrmProductos
         Me.GobDatosProd.TabStop = False
         Me.GobDatosProd.Text = "Datos Generales del Producto"
         '
-        'PibProductos
+        'Label1
         '
-        Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.lapiz
-        Me.PibProductos.Location = New System.Drawing.Point(1288, 78)
-        Me.PibProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.PibProductos.Name = "PibProductos"
-        Me.PibProductos.Size = New System.Drawing.Size(335, 310)
-        Me.PibProductos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PibProductos.TabIndex = 29
-        Me.PibProductos.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(33, 60)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Código:"
         '
-        'TxtStockTotal
+        'Label2
         '
-        Me.TxtStockTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtStockTotal.Enabled = False
-        Me.TxtStockTotal.Location = New System.Drawing.Point(995, 309)
-        Me.TxtStockTotal.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtStockTotal.Name = "TxtStockTotal"
-        Me.TxtStockTotal.Size = New System.Drawing.Size(109, 34)
-        Me.TxtStockTotal.TabIndex = 28
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(24, 121)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(89, 28)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Nombre:"
         '
-        'TxtStockMax
+        'Label3
         '
-        Me.TxtStockMax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtStockMax.Location = New System.Drawing.Point(1145, 246)
-        Me.TxtStockMax.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtStockMax.Name = "TxtStockMax"
-        Me.TxtStockMax.Size = New System.Drawing.Size(109, 34)
-        Me.TxtStockMax.TabIndex = 9
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(43, 182)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(70, 28)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Marca:"
         '
-        'TxtStockMin
+        'TxtIdProd
         '
-        Me.TxtStockMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtStockMin.Location = New System.Drawing.Point(1145, 178)
-        Me.TxtStockMin.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtStockMin.Name = "TxtStockMin"
-        Me.TxtStockMin.Size = New System.Drawing.Size(109, 34)
-        Me.TxtStockMin.TabIndex = 8
+        Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtIdProd.Location = New System.Drawing.Point(124, 58)
+        Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtIdProd.Name = "TxtIdProd"
+        Me.TxtIdProd.Size = New System.Drawing.Size(410, 34)
+        Me.TxtIdProd.TabIndex = 1
         '
-        'TxtStockBodega
+        'Label4
         '
-        Me.TxtStockBodega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtStockBodega.Location = New System.Drawing.Point(831, 245)
-        Me.TxtStockBodega.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtStockBodega.Name = "TxtStockBodega"
-        Me.TxtStockBodega.Size = New System.Drawing.Size(109, 34)
-        Me.TxtStockBodega.TabIndex = 7
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(24, 249)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(101, 28)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Categoría:"
         '
-        'TxtStockTienda
+        'Label5
         '
-        Me.TxtStockTienda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtStockTienda.Location = New System.Drawing.Point(831, 180)
-        Me.TxtStockTienda.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtStockTienda.Name = "TxtStockTienda"
-        Me.TxtStockTienda.Size = New System.Drawing.Size(109, 34)
-        Me.TxtStockTienda.TabIndex = 6
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(683, 60)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(118, 28)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Descripción:"
         '
-        'Label11
+        'Label6
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(873, 311)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(111, 28)
-        Me.Label11.TabIndex = 23
-        Me.Label11.Text = "Stock Total:"
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(683, 182)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(127, 28)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Stock Tienda:"
         '
-        'Label10
+        'TxtNombreProd
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(992, 251)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(140, 28)
-        Me.Label10.TabIndex = 22
-        Me.Label10.Text = "Stock Máximo:"
+        Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombreProd.Location = New System.Drawing.Point(124, 118)
+        Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNombreProd.Name = "TxtNombreProd"
+        Me.TxtNombreProd.Size = New System.Drawing.Size(410, 34)
+        Me.TxtNombreProd.TabIndex = 2
         '
-        'Label9
+        'TxtMarcaProd
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(992, 182)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(137, 28)
-        Me.Label9.TabIndex = 21
-        Me.Label9.Text = "Stock Mínimo:"
+        Me.TxtMarcaProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtMarcaProd.Location = New System.Drawing.Point(124, 180)
+        Me.TxtMarcaProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtMarcaProd.Name = "TxtMarcaProd"
+        Me.TxtMarcaProd.Size = New System.Drawing.Size(410, 34)
+        Me.TxtMarcaProd.TabIndex = 3
         '
-        'BtnAgregarP
+        'TxtDescripcion
         '
-        Me.BtnAgregarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAgregarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.BorderSize = 0
-        Me.BtnAgregarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
-        Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarP.Location = New System.Drawing.Point(163, 374)
-        Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnAgregarP.Name = "BtnAgregarP"
-        Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarP.TabIndex = 10
-        Me.BtnAgregarP.Text = "Agregar"
-        Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnAgregarP.UseVisualStyleBackColor = True
+        Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtDescripcion.Location = New System.Drawing.Point(813, 58)
+        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtDescripcion.Multiline = True
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtDescripcion.Size = New System.Drawing.Size(441, 98)
+        Me.TxtDescripcion.TabIndex = 5
         '
-        'BtnEliminarP
+        'Label7
         '
-        Me.BtnEliminarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.BorderSize = 0
-        Me.BtnEliminarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
-        Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarP.Location = New System.Drawing.Point(890, 374)
-        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEliminarP.Name = "BtnEliminarP"
-        Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarP.TabIndex = 13
-        Me.BtnEliminarP.Text = "Eliminar"
-        Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminarP.UseVisualStyleBackColor = True
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(683, 249)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(136, 28)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Stock Bodega:"
         '
-        'BtnEditarP
+        'CobCategoria
         '
-        Me.BtnEditarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.BorderSize = 0
-        Me.BtnEditarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
-        Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarP.Location = New System.Drawing.Point(670, 374)
-        Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEditarP.Name = "BtnEditarP"
-        Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarP.TabIndex = 12
-        Me.BtnEditarP.Text = "Editar"
-        Me.BtnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEditarP.UseVisualStyleBackColor = True
+        Me.CobCategoria.FormattingEnabled = True
+        Me.CobCategoria.Items.AddRange(New Object() {"Manualidades", "Arte", "Escolar", "Profesional"})
+        Me.CobCategoria.Location = New System.Drawing.Point(136, 245)
+        Me.CobCategoria.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.CobCategoria.Name = "CobCategoria"
+        Me.CobCategoria.Size = New System.Drawing.Size(397, 36)
+        Me.CobCategoria.TabIndex = 4
+        Me.CobCategoria.Tag = ""
+        Me.CobCategoria.Text = "Seleccione la categoría..."
         '
         'BtnLimpiarP
         '
@@ -380,118 +290,208 @@ Partial Class FrmProductos
         Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarP.UseVisualStyleBackColor = True
         '
-        'CobCategoria
+        'BtnEditarP
         '
-        Me.CobCategoria.FormattingEnabled = True
-        Me.CobCategoria.Items.AddRange(New Object() {"Manualidades", "Arte", "Escolar", "Profesional"})
-        Me.CobCategoria.Location = New System.Drawing.Point(136, 245)
-        Me.CobCategoria.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.CobCategoria.Name = "CobCategoria"
-        Me.CobCategoria.Size = New System.Drawing.Size(397, 36)
-        Me.CobCategoria.TabIndex = 4
-        Me.CobCategoria.Tag = ""
-        Me.CobCategoria.Text = "Seleccione la categoría..."
+        Me.BtnEditarP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEditarP.FlatAppearance.BorderSize = 0
+        Me.BtnEditarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEditarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
+        Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEditarP.Location = New System.Drawing.Point(670, 374)
+        Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEditarP.Name = "BtnEditarP"
+        Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
+        Me.BtnEditarP.TabIndex = 12
+        Me.BtnEditarP.Text = "Editar"
+        Me.BtnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEditarP.UseVisualStyleBackColor = True
         '
-        'Label7
+        'BtnEliminarP
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(683, 249)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(136, 28)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Stock Bodega:"
+        Me.BtnEliminarP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEliminarP.FlatAppearance.BorderSize = 0
+        Me.BtnEliminarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEliminarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
+        Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEliminarP.Location = New System.Drawing.Point(890, 374)
+        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEliminarP.Name = "BtnEliminarP"
+        Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
+        Me.BtnEliminarP.TabIndex = 13
+        Me.BtnEliminarP.Text = "Eliminar"
+        Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEliminarP.UseVisualStyleBackColor = True
         '
-        'TxtDescripcion
+        'BtnAgregarP
         '
-        Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescripcion.Location = New System.Drawing.Point(813, 58)
-        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtDescripcion.Multiline = True
-        Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDescripcion.Size = New System.Drawing.Size(441, 98)
-        Me.TxtDescripcion.TabIndex = 5
+        Me.BtnAgregarP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAgregarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarP.FlatAppearance.BorderSize = 0
+        Me.BtnAgregarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnAgregarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
+        Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAgregarP.Location = New System.Drawing.Point(163, 374)
+        Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnAgregarP.Name = "BtnAgregarP"
+        Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
+        Me.BtnAgregarP.TabIndex = 10
+        Me.BtnAgregarP.Text = "Agregar"
+        Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnAgregarP.UseVisualStyleBackColor = True
         '
-        'TxtMarcaProd
+        'Label9
         '
-        Me.TxtMarcaProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtMarcaProd.Location = New System.Drawing.Point(124, 180)
-        Me.TxtMarcaProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtMarcaProd.Name = "TxtMarcaProd"
-        Me.TxtMarcaProd.Size = New System.Drawing.Size(410, 34)
-        Me.TxtMarcaProd.TabIndex = 3
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(992, 182)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(137, 28)
+        Me.Label9.TabIndex = 21
+        Me.Label9.Text = "Stock Mínimo:"
         '
-        'TxtNombreProd
+        'Label10
         '
-        Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreProd.Location = New System.Drawing.Point(124, 118)
-        Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNombreProd.Name = "TxtNombreProd"
-        Me.TxtNombreProd.Size = New System.Drawing.Size(410, 34)
-        Me.TxtNombreProd.TabIndex = 2
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(992, 251)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(140, 28)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Stock Máximo:"
         '
-        'Label6
+        'Label11
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(683, 182)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(127, 28)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Stock Tienda:"
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(873, 311)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(111, 28)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Stock Total:"
         '
-        'Label5
+        'TxtStockTienda
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(683, 60)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(118, 28)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Descripción:"
+        Me.TxtStockTienda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStockTienda.Location = New System.Drawing.Point(831, 180)
+        Me.TxtStockTienda.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStockTienda.Name = "TxtStockTienda"
+        Me.TxtStockTienda.Size = New System.Drawing.Size(109, 34)
+        Me.TxtStockTienda.TabIndex = 6
         '
-        'Label4
+        'TxtStockBodega
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(24, 249)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 28)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Categoría:"
+        Me.TxtStockBodega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStockBodega.Location = New System.Drawing.Point(831, 245)
+        Me.TxtStockBodega.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStockBodega.Name = "TxtStockBodega"
+        Me.TxtStockBodega.Size = New System.Drawing.Size(109, 34)
+        Me.TxtStockBodega.TabIndex = 7
         '
-        'TxtIdProd
+        'TxtStockMin
         '
-        Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdProd.Location = New System.Drawing.Point(124, 58)
-        Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtIdProd.Name = "TxtIdProd"
-        Me.TxtIdProd.Size = New System.Drawing.Size(410, 34)
-        Me.TxtIdProd.TabIndex = 1
+        Me.TxtStockMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStockMin.Location = New System.Drawing.Point(1145, 178)
+        Me.TxtStockMin.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStockMin.Name = "TxtStockMin"
+        Me.TxtStockMin.Size = New System.Drawing.Size(109, 34)
+        Me.TxtStockMin.TabIndex = 8
         '
-        'Label3
+        'TxtStockMax
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(43, 182)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(70, 28)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Marca:"
+        Me.TxtStockMax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStockMax.Location = New System.Drawing.Point(1145, 246)
+        Me.TxtStockMax.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStockMax.Name = "TxtStockMax"
+        Me.TxtStockMax.Size = New System.Drawing.Size(109, 34)
+        Me.TxtStockMax.TabIndex = 9
         '
-        'Label2
+        'TxtStockTotal
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 121)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 28)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nombre:"
+        Me.TxtStockTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStockTotal.Enabled = False
+        Me.TxtStockTotal.Location = New System.Drawing.Point(995, 309)
+        Me.TxtStockTotal.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStockTotal.Name = "TxtStockTotal"
+        Me.TxtStockTotal.Size = New System.Drawing.Size(109, 34)
+        Me.TxtStockTotal.TabIndex = 28
         '
-        'Label1
+        'PibProductos
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(33, 60)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 28)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Código:"
+        Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.lapiz
+        Me.PibProductos.Location = New System.Drawing.Point(1288, 78)
+        Me.PibProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.PibProductos.Name = "PibProductos"
+        Me.PibProductos.Size = New System.Drawing.Size(335, 310)
+        Me.PibProductos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PibProductos.TabIndex = 29
+        Me.PibProductos.TabStop = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(102, 525)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(73, 28)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Buscar:"
+        '
+        'TxtBuscar
+        '
+        Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBuscar.Location = New System.Drawing.Point(181, 525)
+        Me.TxtBuscar.Name = "TxtBuscar"
+        Me.TxtBuscar.Size = New System.Drawing.Size(1513, 34)
+        Me.TxtBuscar.TabIndex = 14
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.lupa
+        Me.PictureBox1.Location = New System.Drawing.Point(41, 516)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(55, 55)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(41, 599)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(1653, 170)
+        Me.DataGridView1.TabIndex = 15
+        '
+        'PanelCentral
+        '
+        Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.DataGridView1)
+        Me.PanelCentral.Controls.Add(Me.PictureBox1)
+        Me.PanelCentral.Controls.Add(Me.TxtBuscar)
+        Me.PanelCentral.Controls.Add(Me.Label12)
+        Me.PanelCentral.Controls.Add(Me.GobDatosProd)
+        Me.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelCentral.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelCentral.Location = New System.Drawing.Point(0, 52)
+        Me.PanelCentral.Margin = New System.Windows.Forms.Padding(4)
+        Me.PanelCentral.Name = "PanelCentral"
+        Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
+        Me.PanelCentral.TabIndex = 16
         '
         'FrmProductos
         '
@@ -509,13 +509,13 @@ Partial Class FrmProductos
         Me.PanSuperior.PerformLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelCentral.ResumeLayout(False)
-        Me.PanelCentral.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelCentral.ResumeLayout(False)
+        Me.PanelCentral.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -524,11 +524,6 @@ Partial Class FrmProductos
     Friend WithEvents Label8 As Label
     Friend WithEvents PibMinimizar As PictureBox
     Friend WithEvents PibCerrar As PictureBox
-    Friend WithEvents PanelCentral As Panel
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents Label12 As Label
     Friend WithEvents GobDatosProd As GroupBox
     Friend WithEvents PibProductos As PictureBox
     Friend WithEvents TxtStockTotal As TextBox
@@ -555,4 +550,9 @@ Partial Class FrmProductos
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents TxtBuscar As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents PanelCentral As Panel
 End Class

@@ -94,6 +94,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FrmCategoria.Designer.vb">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
@@ -110,6 +116,12 @@
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRoles.Designer.vb">
+      <DependentUpon>FrmRoles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRoles.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmUsuarios.Designer.vb">
@@ -144,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DiseñosRpt\rptReporte.rdlc" />
+    <EmbeddedResource Include="Formularios\FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReportes.resx">
       <DependentUpon>FrmReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRoles.resx">
+      <DependentUpon>FrmRoles.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.vb</DependentUpon>
@@ -246,6 +264,8 @@
     <None Include="Resources\usuario-de-perfil.png" />
     <None Include="Resources\usuario-de-perfil1.png" />
     <None Include="Resources\lupa.png" />
+    <None Include="Resources\usuariosRoles.png" />
+    <None Include="Resources\categorias.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

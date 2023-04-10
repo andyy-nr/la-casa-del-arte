@@ -26,13 +26,16 @@ Partial Class FrmPrincipal
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanMenu = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TmrOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.TmrMostrar = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanPrincipal = New System.Windows.Forms.Panel()
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
         Me.PanMovimientos = New System.Windows.Forms.Panel()
+        Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
         Me.BtnSalidas = New System.Windows.Forms.Button()
         Me.BtnEntradas = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -47,9 +50,6 @@ Partial Class FrmPrincipal
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
         Me.PanSuperior.SuspendLayout()
         Me.PanMenu.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -108,12 +108,6 @@ Partial Class FrmPrincipal
         Me.PanMenu.Size = New System.Drawing.Size(293, 700)
         Me.PanMenu.TabIndex = 1
         '
-        'TmrOcultar
-        '
-        '
-        'TmrMostrar
-        '
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(140, Byte), Integer))
@@ -126,6 +120,32 @@ Partial Class FrmPrincipal
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(293, 177)
         Me.Panel1.TabIndex = 10
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(84, 130)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(144, 17)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "*Nombre del Usuario*"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(84, 96)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(114, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "*Rol del Usuario*"
+        '
+        'TmrOcultar
+        '
+        '
+        'TmrMostrar
+        '
         '
         'PanPrincipal
         '
@@ -173,6 +193,10 @@ Partial Class FrmPrincipal
         Me.PanMovimientos.Size = New System.Drawing.Size(293, 133)
         Me.PanMovimientos.TabIndex = 1
         Me.PanMovimientos.Visible = False
+        '
+        'TmrHoraFecha
+        '
+        Me.TmrHoraFecha.Enabled = True
         '
         'BtnSalidas
         '
@@ -419,30 +443,6 @@ Partial Class FrmPrincipal
         Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibCerrar.TabIndex = 4
         Me.PibCerrar.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(84, 96)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 17)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "*Rol del Usuario*"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(84, 130)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(144, 17)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "*Nombre del Usuario*"
-        '
-        'TmrHoraFecha
-        '
-        Me.TmrHoraFecha.Enabled = True
         '
         'FrmPrincipal
         '
