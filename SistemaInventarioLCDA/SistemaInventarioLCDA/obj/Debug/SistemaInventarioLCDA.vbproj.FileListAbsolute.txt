@@ -442,3 +442,4 @@ C:\Users\Pala\Desktop\Miau2\la-casa-del-arte\SistemaInventarioLCDA\SistemaInvent
 C:\Users\Pala\Desktop\Miau2\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.exe
 C:\Users\Pala\Desktop\Miau2\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.xml
 C:\Users\Pala\Desktop\Miau2\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.pdb
+D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.BtnRegresar.resources
