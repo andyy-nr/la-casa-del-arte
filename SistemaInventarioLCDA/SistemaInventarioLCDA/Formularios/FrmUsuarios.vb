@@ -47,6 +47,8 @@
         End If
     End Sub
 
+
+
     Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
         If CebMostrarPwd.Checked = True Then
             TxtPwd.UseSystemPasswordChar = False

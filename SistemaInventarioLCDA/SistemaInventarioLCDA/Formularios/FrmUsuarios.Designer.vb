@@ -28,40 +28,46 @@ Partial Class FrmUsuarios
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.GobUsuario = New System.Windows.Forms.GroupBox()
+        Me.TxtNombreUsuario = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtPwd = New System.Windows.Forms.TextBox()
+        Me.CebMostrarPwd = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.CobRoles = New System.Windows.Forms.ComboBox()
+        Me.PibPerfil = New System.Windows.Forms.PictureBox()
+        Me.BtnAgregarU = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BtnEliminarU = New System.Windows.Forms.Button()
+        Me.BtnEditarU = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnLimpiarU = New System.Windows.Forms.Button()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GobDatosUser = New System.Windows.Forms.GroupBox()
-        Me.BtnAgregarU = New System.Windows.Forms.Button()
-        Me.CebMostrarPwd = New System.Windows.Forms.CheckBox()
-        Me.BtnEliminarU = New System.Windows.Forms.Button()
-        Me.BtnEditarU = New System.Windows.Forms.Button()
-        Me.BtnLimpiarU = New System.Windows.Forms.Button()
-        Me.PibPerfil = New System.Windows.Forms.PictureBox()
-        Me.CobRoles = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.DtpFechaNac = New System.Windows.Forms.DateTimePicker()
-        Me.TxtPwd = New System.Windows.Forms.TextBox()
-        Me.TxtCelular = New System.Windows.Forms.TextBox()
-        Me.TxtTelefono = New System.Windows.Forms.TextBox()
-        Me.TxtApellidos = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtNombres = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtApellido2 = New System.Windows.Forms.TextBox()
+        Me.TextNombre2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtNombre1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtApellido1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DtpFechaNac = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtCedula = New System.Windows.Forms.TextBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
+        Me.GobUsuario.SuspendLayout()
+        CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosUser.SuspendLayout()
-        CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -119,15 +125,20 @@ Partial Class FrmUsuarios
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(725, 6)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(282, 41)
+        Me.Label8.Size = New System.Drawing.Size(297, 41)
         Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Gestionar Usuarios"
+        Me.Label8.Text = "Gestión de Usuarios"
         '
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.GobUsuario)
+        Me.PanelCentral.Controls.Add(Me.BtnAgregarU)
         Me.PanelCentral.Controls.Add(Me.DataGridView1)
+        Me.PanelCentral.Controls.Add(Me.BtnEliminarU)
+        Me.PanelCentral.Controls.Add(Me.BtnEditarU)
         Me.PanelCentral.Controls.Add(Me.PictureBox1)
+        Me.PanelCentral.Controls.Add(Me.BtnLimpiarU)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
         Me.PanelCentral.Controls.Add(Me.Label12)
         Me.PanelCentral.Controls.Add(Me.GobDatosUser)
@@ -139,18 +150,190 @@ Partial Class FrmUsuarios
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 17
         '
+        'GobUsuario
+        '
+        Me.GobUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GobUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GobUsuario.Controls.Add(Me.TxtNombreUsuario)
+        Me.GobUsuario.Controls.Add(Me.Label9)
+        Me.GobUsuario.Controls.Add(Me.Label6)
+        Me.GobUsuario.Controls.Add(Me.TxtPwd)
+        Me.GobUsuario.Controls.Add(Me.CebMostrarPwd)
+        Me.GobUsuario.Controls.Add(Me.Label7)
+        Me.GobUsuario.Controls.Add(Me.CobRoles)
+        Me.GobUsuario.Controls.Add(Me.PibPerfil)
+        Me.GobUsuario.Location = New System.Drawing.Point(732, 41)
+        Me.GobUsuario.Name = "GobUsuario"
+        Me.GobUsuario.Size = New System.Drawing.Size(962, 364)
+        Me.GobUsuario.TabIndex = 15
+        Me.GobUsuario.TabStop = False
+        Me.GobUsuario.Text = "Datos Generale de Usuario"
+        '
+        'TxtNombreUsuario
+        '
+        Me.TxtNombreUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombreUsuario.Location = New System.Drawing.Point(231, 49)
+        Me.TxtNombreUsuario.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtNombreUsuario.Name = "TxtNombreUsuario"
+        Me.TxtNombreUsuario.Size = New System.Drawing.Size(331, 34)
+        Me.TxtNombreUsuario.TabIndex = 16
+        Me.TxtNombreUsuario.UseSystemPasswordChar = True
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(27, 49)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(188, 28)
+        Me.Label9.TabIndex = 16
+        Me.Label9.Text = "Nombre de Usuario:"
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(101, 162)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(114, 28)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Contraseña:"
+        '
+        'TxtPwd
+        '
+        Me.TxtPwd.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtPwd.Location = New System.Drawing.Point(231, 159)
+        Me.TxtPwd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtPwd.Name = "TxtPwd"
+        Me.TxtPwd.Size = New System.Drawing.Size(331, 34)
+        Me.TxtPwd.TabIndex = 6
+        Me.TxtPwd.UseSystemPasswordChar = True
+        '
+        'CebMostrarPwd
+        '
+        Me.CebMostrarPwd.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.CebMostrarPwd.AutoSize = True
+        Me.CebMostrarPwd.Location = New System.Drawing.Point(231, 197)
+        Me.CebMostrarPwd.Name = "CebMostrarPwd"
+        Me.CebMostrarPwd.Size = New System.Drawing.Size(203, 32)
+        Me.CebMostrarPwd.TabIndex = 7
+        Me.CebMostrarPwd.Text = "Mostrar contraseña"
+        Me.CebMostrarPwd.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(171, 107)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(44, 28)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Rol:"
+        '
+        'CobRoles
+        '
+        Me.CobRoles.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.CobRoles.FormattingEnabled = True
+        Me.CobRoles.Items.AddRange(New Object() {"Administrador", "Digitador", "Bodeguero", "Vendedor", "etc..."})
+        Me.CobRoles.Location = New System.Drawing.Point(231, 104)
+        Me.CobRoles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.CobRoles.Name = "CobRoles"
+        Me.CobRoles.Size = New System.Drawing.Size(331, 36)
+        Me.CobRoles.TabIndex = 8
+        Me.CobRoles.Text = "Seleccione el rol.."
+        '
+        'PibPerfil
+        '
+        Me.PibPerfil.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PibPerfil.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.usuario
+        Me.PibPerfil.Location = New System.Drawing.Point(612, 31)
+        Me.PibPerfil.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.PibPerfil.Name = "PibPerfil"
+        Me.PibPerfil.Size = New System.Drawing.Size(335, 310)
+        Me.PibPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PibPerfil.TabIndex = 14
+        Me.PibPerfil.TabStop = False
+        '
+        'BtnAgregarU
+        '
+        Me.BtnAgregarU.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnAgregarU.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAgregarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarU.FlatAppearance.BorderSize = 0
+        Me.BtnAgregarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnAgregarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnAgregarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAgregarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarUser
+        Me.BtnAgregarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAgregarU.Location = New System.Drawing.Point(422, 409)
+        Me.BtnAgregarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.BtnAgregarU.Name = "BtnAgregarU"
+        Me.BtnAgregarU.Size = New System.Drawing.Size(183, 55)
+        Me.BtnAgregarU.TabIndex = 9
+        Me.BtnAgregarU.Text = "Agregar"
+        Me.BtnAgregarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnAgregarU.UseVisualStyleBackColor = True
+        '
         'DataGridView1
         '
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 547)
+        Me.DataGridView1.Location = New System.Drawing.Point(41, 541)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1653, 223)
         Me.DataGridView1.TabIndex = 14
+        '
+        'BtnEliminarU
+        '
+        Me.BtnEliminarU.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEliminarU.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEliminarU.FlatAppearance.BorderSize = 0
+        Me.BtnEliminarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEliminarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEliminarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEliminarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarUser
+        Me.BtnEliminarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEliminarU.Location = New System.Drawing.Point(1067, 409)
+        Me.BtnEliminarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.BtnEliminarU.Name = "BtnEliminarU"
+        Me.BtnEliminarU.Size = New System.Drawing.Size(191, 55)
+        Me.BtnEliminarU.TabIndex = 12
+        Me.BtnEliminarU.Text = "Eliminar"
+        Me.BtnEliminarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEliminarU.UseVisualStyleBackColor = True
+        '
+        'BtnEditarU
+        '
+        Me.BtnEditarU.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEditarU.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEditarU.FlatAppearance.BorderSize = 0
+        Me.BtnEditarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEditarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEditarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarUser
+        Me.BtnEditarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEditarU.Location = New System.Drawing.Point(865, 409)
+        Me.BtnEditarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.BtnEditarU.Name = "BtnEditarU"
+        Me.BtnEditarU.Size = New System.Drawing.Size(157, 55)
+        Me.BtnEditarU.TabIndex = 11
+        Me.BtnEditarU.Text = "Editar"
+        Me.BtnEditarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEditarU.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -161,6 +344,27 @@ Partial Class FrmUsuarios
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
+        '
+        'BtnLimpiarU
+        '
+        Me.BtnLimpiarU.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnLimpiarU.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnLimpiarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnLimpiarU.FlatAppearance.BorderSize = 0
+        Me.BtnLimpiarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnLimpiarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnLimpiarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpiarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLimpiarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
+        Me.BtnLimpiarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnLimpiarU.Location = New System.Drawing.Point(659, 409)
+        Me.BtnLimpiarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.BtnLimpiarU.Name = "BtnLimpiarU"
+        Me.BtnLimpiarU.Size = New System.Drawing.Size(176, 55)
+        Me.BtnLimpiarU.TabIndex = 10
+        Me.BtnLimpiarU.Text = "Limpiar"
+        Me.BtnLimpiarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnLimpiarU.UseVisualStyleBackColor = True
         '
         'TxtBuscar
         '
@@ -185,273 +389,152 @@ Partial Class FrmUsuarios
         Me.GobDatosUser.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GobDatosUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GobDatosUser.Controls.Add(Me.BtnAgregarU)
-        Me.GobDatosUser.Controls.Add(Me.CebMostrarPwd)
-        Me.GobDatosUser.Controls.Add(Me.BtnEliminarU)
-        Me.GobDatosUser.Controls.Add(Me.BtnEditarU)
-        Me.GobDatosUser.Controls.Add(Me.BtnLimpiarU)
-        Me.GobDatosUser.Controls.Add(Me.PibPerfil)
-        Me.GobDatosUser.Controls.Add(Me.CobRoles)
-        Me.GobDatosUser.Controls.Add(Me.Label7)
-        Me.GobDatosUser.Controls.Add(Me.DtpFechaNac)
-        Me.GobDatosUser.Controls.Add(Me.TxtPwd)
-        Me.GobDatosUser.Controls.Add(Me.TxtCelular)
-        Me.GobDatosUser.Controls.Add(Me.TxtTelefono)
-        Me.GobDatosUser.Controls.Add(Me.TxtApellidos)
-        Me.GobDatosUser.Controls.Add(Me.Label6)
-        Me.GobDatosUser.Controls.Add(Me.Label5)
-        Me.GobDatosUser.Controls.Add(Me.Label4)
-        Me.GobDatosUser.Controls.Add(Me.TxtNombres)
-        Me.GobDatosUser.Controls.Add(Me.Label3)
-        Me.GobDatosUser.Controls.Add(Me.Label2)
+        Me.GobDatosUser.Controls.Add(Me.TxtApellido2)
+        Me.GobDatosUser.Controls.Add(Me.TextNombre2)
         Me.GobDatosUser.Controls.Add(Me.Label1)
+        Me.GobDatosUser.Controls.Add(Me.TxtNombre1)
+        Me.GobDatosUser.Controls.Add(Me.Label2)
+        Me.GobDatosUser.Controls.Add(Me.TxtApellido1)
+        Me.GobDatosUser.Controls.Add(Me.Label4)
+        Me.GobDatosUser.Controls.Add(Me.DtpFechaNac)
+        Me.GobDatosUser.Controls.Add(Me.Label3)
+        Me.GobDatosUser.Controls.Add(Me.TxtTelefono)
+        Me.GobDatosUser.Controls.Add(Me.Label5)
+        Me.GobDatosUser.Controls.Add(Me.TxtCedula)
         Me.GobDatosUser.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GobDatosUser.Location = New System.Drawing.Point(41, 41)
         Me.GobDatosUser.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.GobDatosUser.Name = "GobDatosUser"
         Me.GobDatosUser.Padding = New System.Windows.Forms.Padding(2)
-        Me.GobDatosUser.Size = New System.Drawing.Size(1653, 404)
+        Me.GobDatosUser.Size = New System.Drawing.Size(663, 364)
         Me.GobDatosUser.TabIndex = 4
         Me.GobDatosUser.TabStop = False
-        Me.GobDatosUser.Text = "Datos Generales del Usuario"
+        Me.GobDatosUser.Text = "Datos Personales"
         '
-        'BtnAgregarU
+        'TxtApellido2
         '
-        Me.BtnAgregarU.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAgregarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarU.FlatAppearance.BorderSize = 0
-        Me.BtnAgregarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnAgregarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnAgregarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarUser
-        Me.BtnAgregarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarU.Location = New System.Drawing.Point(162, 309)
-        Me.BtnAgregarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.BtnAgregarU.Name = "BtnAgregarU"
-        Me.BtnAgregarU.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarU.TabIndex = 9
-        Me.BtnAgregarU.Text = "Agregar"
-        Me.BtnAgregarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnAgregarU.UseVisualStyleBackColor = True
+        Me.TxtApellido2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtApellido2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtApellido2.Location = New System.Drawing.Point(425, 101)
+        Me.TxtApellido2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtApellido2.Name = "TxtApellido2"
+        Me.TxtApellido2.Size = New System.Drawing.Size(218, 34)
+        Me.TxtApellido2.TabIndex = 3
         '
-        'CebMostrarPwd
+        'TextNombre2
         '
-        Me.CebMostrarPwd.AutoSize = True
-        Me.CebMostrarPwd.Location = New System.Drawing.Point(820, 146)
-        Me.CebMostrarPwd.Name = "CebMostrarPwd"
-        Me.CebMostrarPwd.Size = New System.Drawing.Size(203, 32)
-        Me.CebMostrarPwd.TabIndex = 7
-        Me.CebMostrarPwd.Text = "Mostrar contraseña"
-        Me.CebMostrarPwd.UseVisualStyleBackColor = True
+        Me.TextNombre2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TextNombre2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextNombre2.Location = New System.Drawing.Point(423, 47)
+        Me.TextNombre2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TextNombre2.Name = "TextNombre2"
+        Me.TextNombre2.Size = New System.Drawing.Size(220, 34)
+        Me.TextNombre2.TabIndex = 2
         '
-        'BtnEliminarU
+        'Label1
         '
-        Me.BtnEliminarU.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEliminarU.FlatAppearance.BorderSize = 0
-        Me.BtnEliminarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEliminarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEliminarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarUser
-        Me.BtnEliminarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarU.Location = New System.Drawing.Point(906, 309)
-        Me.BtnEliminarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.BtnEliminarU.Name = "BtnEliminarU"
-        Me.BtnEliminarU.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarU.TabIndex = 12
-        Me.BtnEliminarU.Text = "Eliminar"
-        Me.BtnEliminarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminarU.UseVisualStyleBackColor = True
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(37, 47)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(97, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nombres:"
         '
-        'BtnEditarU
+        'TxtNombre1
         '
-        Me.BtnEditarU.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEditarU.FlatAppearance.BorderSize = 0
-        Me.BtnEditarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEditarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEditarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarUser
-        Me.BtnEditarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarU.Location = New System.Drawing.Point(661, 309)
-        Me.BtnEditarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.BtnEditarU.Name = "BtnEditarU"
-        Me.BtnEditarU.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarU.TabIndex = 11
-        Me.BtnEditarU.Text = "Editar"
-        Me.BtnEditarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEditarU.UseVisualStyleBackColor = True
-        '
-        'BtnLimpiarU
-        '
-        Me.BtnLimpiarU.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnLimpiarU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnLimpiarU.FlatAppearance.BorderSize = 0
-        Me.BtnLimpiarU.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnLimpiarU.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnLimpiarU.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLimpiarU.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLimpiarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
-        Me.BtnLimpiarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarU.Location = New System.Drawing.Point(407, 309)
-        Me.BtnLimpiarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.BtnLimpiarU.Name = "BtnLimpiarU"
-        Me.BtnLimpiarU.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarU.TabIndex = 10
-        Me.BtnLimpiarU.Text = "Limpiar"
-        Me.BtnLimpiarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnLimpiarU.UseVisualStyleBackColor = True
-        '
-        'PibPerfil
-        '
-        Me.PibPerfil.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PibPerfil.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.usuario
-        Me.PibPerfil.Location = New System.Drawing.Point(1287, 54)
-        Me.PibPerfil.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.PibPerfil.Name = "PibPerfil"
-        Me.PibPerfil.Size = New System.Drawing.Size(335, 310)
-        Me.PibPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PibPerfil.TabIndex = 14
-        Me.PibPerfil.TabStop = False
-        '
-        'CobRoles
-        '
-        Me.CobRoles.FormattingEnabled = True
-        Me.CobRoles.Items.AddRange(New Object() {"Administrador", "Digitador", "Bodeguero", "Vendedor", "etc..."})
-        Me.CobRoles.Location = New System.Drawing.Point(765, 196)
-        Me.CobRoles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.CobRoles.Name = "CobRoles"
-        Me.CobRoles.Size = New System.Drawing.Size(328, 36)
-        Me.CobRoles.TabIndex = 8
-        Me.CobRoles.Text = "Seleccione el rol.."
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(689, 199)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(62, 28)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Roles:"
-        '
-        'DtpFechaNac
-        '
-        Me.DtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpFechaNac.Location = New System.Drawing.Point(901, 48)
-        Me.DtpFechaNac.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.DtpFechaNac.Name = "DtpFechaNac"
-        Me.DtpFechaNac.Size = New System.Drawing.Size(354, 34)
-        Me.DtpFechaNac.TabIndex = 5
-        '
-        'TxtPwd
-        '
-        Me.TxtPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtPwd.Location = New System.Drawing.Point(820, 108)
-        Me.TxtPwd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TxtPwd.Name = "TxtPwd"
-        Me.TxtPwd.Size = New System.Drawing.Size(435, 34)
-        Me.TxtPwd.TabIndex = 6
-        Me.TxtPwd.UseSystemPasswordChar = True
-        '
-        'TxtCelular
-        '
-        Me.TxtCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCelular.Location = New System.Drawing.Point(128, 233)
-        Me.TxtCelular.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TxtCelular.Name = "TxtCelular"
-        Me.TxtCelular.Size = New System.Drawing.Size(410, 34)
-        Me.TxtCelular.TabIndex = 4
-        '
-        'TxtTelefono
-        '
-        Me.TxtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtTelefono.Location = New System.Drawing.Point(128, 170)
-        Me.TxtTelefono.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(410, 34)
-        Me.TxtTelefono.TabIndex = 3
-        '
-        'TxtApellidos
-        '
-        Me.TxtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtApellidos.Location = New System.Drawing.Point(128, 107)
-        Me.TxtApellidos.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TxtApellidos.Name = "TxtApellidos"
-        Me.TxtApellidos.Size = New System.Drawing.Size(410, 34)
-        Me.TxtApellidos.TabIndex = 2
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(689, 110)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(114, 28)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Contraseña:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(35, 234)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(76, 28)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Cédula:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(688, 47)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(195, 28)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Fecha de nacimiento:"
-        '
-        'TxtNombres
-        '
-        Me.TxtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombres.Location = New System.Drawing.Point(128, 48)
-        Me.TxtNombres.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TxtNombres.Name = "TxtNombres"
-        Me.TxtNombres.Size = New System.Drawing.Size(410, 34)
-        Me.TxtNombres.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(24, 170)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 28)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Teléfono:"
+        Me.TxtNombre1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtNombre1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombre1.Location = New System.Drawing.Point(187, 47)
+        Me.TxtNombre1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtNombre1.Name = "TxtNombre1"
+        Me.TxtNombre1.Size = New System.Drawing.Size(220, 34)
+        Me.TxtNombre1.TabIndex = 1
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 110)
+        Me.Label2.Location = New System.Drawing.Point(36, 101)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(98, 28)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Apellidos:"
         '
-        'Label1
+        'TxtApellido1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 50)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 28)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombres:"
+        Me.TxtApellido1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtApellido1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtApellido1.Location = New System.Drawing.Point(189, 101)
+        Me.TxtApellido1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtApellido1.Name = "TxtApellido1"
+        Me.TxtApellido1.Size = New System.Drawing.Size(218, 34)
+        Me.TxtApellido1.TabIndex = 2
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(36, 162)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(195, 28)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Fecha de nacimiento:"
+        '
+        'DtpFechaNac
+        '
+        Me.DtpFechaNac.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.DtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpFechaNac.Location = New System.Drawing.Point(258, 156)
+        Me.DtpFechaNac.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.DtpFechaNac.Name = "DtpFechaNac"
+        Me.DtpFechaNac.Size = New System.Drawing.Size(385, 34)
+        Me.DtpFechaNac.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(-5, 224)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(193, 28)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Número de teléfono:"
+        '
+        'TxtTelefono
+        '
+        Me.TxtTelefono.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtTelefono.Location = New System.Drawing.Point(189, 222)
+        Me.TxtTelefono.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtTelefono.Name = "TxtTelefono"
+        Me.TxtTelefono.Size = New System.Drawing.Size(454, 34)
+        Me.TxtTelefono.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(58, 305)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(76, 28)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Cédula:"
+        '
+        'TxtCedula
+        '
+        Me.TxtCedula.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCedula.Location = New System.Drawing.Point(187, 305)
+        Me.TxtCedula.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtCedula.Name = "TxtCedula"
+        Me.TxtCedula.Size = New System.Drawing.Size(456, 34)
+        Me.TxtCedula.TabIndex = 4
         '
         'FrmUsuarios
         '
@@ -470,11 +553,13 @@ Partial Class FrmUsuarios
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
+        Me.GobUsuario.ResumeLayout(False)
+        Me.GobUsuario.PerformLayout()
+        CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosUser.ResumeLayout(False)
         Me.GobDatosUser.PerformLayout()
-        CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -495,13 +580,13 @@ Partial Class FrmUsuarios
     Friend WithEvents Label7 As Label
     Friend WithEvents DtpFechaNac As DateTimePicker
     Friend WithEvents TxtPwd As TextBox
-    Friend WithEvents TxtCelular As TextBox
+    Friend WithEvents TxtCedula As TextBox
     Friend WithEvents TxtTelefono As TextBox
-    Friend WithEvents TxtApellidos As TextBox
+    Friend WithEvents TxtApellido1 As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TxtNombres As TextBox
+    Friend WithEvents TxtNombre1 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -510,4 +595,9 @@ Partial Class FrmUsuarios
     Friend WithEvents Label12 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents PibRetornar As PictureBox
+    Friend WithEvents GobUsuario As GroupBox
+    Friend WithEvents TxtNombreUsuario As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TxtApellido2 As TextBox
+    Friend WithEvents TextNombre2 As TextBox
 End Class

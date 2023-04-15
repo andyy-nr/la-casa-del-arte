@@ -22,6 +22,7 @@ Partial Class FrmCategoria
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
@@ -33,7 +34,7 @@ Partial Class FrmCategoria
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtNombreCat = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
@@ -41,9 +42,10 @@ Partial Class FrmCategoria
         Me.BtnEditarP = New System.Windows.Forms.Button()
         Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.TxtDescCat = New System.Windows.Forms.TextBox()
-        Me.TxtIdProd = New System.Windows.Forms.TextBox()
+        Me.TxtIdCat = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,6 +80,7 @@ Partial Class FrmCategoria
         Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibRetornar.TabIndex = 10
         Me.PibRetornar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
         '
         'PibMinimizar
         '
@@ -90,6 +93,7 @@ Partial Class FrmCategoria
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibMinimizar.TabIndex = 7
         Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimmizar")
         '
         'PibCerrar
         '
@@ -102,6 +106,7 @@ Partial Class FrmCategoria
         Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibCerrar.TabIndex = 6
         Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'Label8
         '
@@ -112,9 +117,9 @@ Partial Class FrmCategoria
         Me.Label8.Location = New System.Drawing.Point(711, 6)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(311, 41)
+        Me.Label8.Size = New System.Drawing.Size(326, 41)
         Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Gestionar Categorias"
+        Me.Label8.Text = "Gestión de Categorías"
         '
         'PanelCentral
         '
@@ -122,8 +127,12 @@ Partial Class FrmCategoria
         Me.PanelCentral.Controls.Add(Me.DataGridView1)
         Me.PanelCentral.Controls.Add(Me.PictureBox1)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
+        Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
         Me.PanelCentral.Controls.Add(Me.Label12)
+        Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
         Me.PanelCentral.Controls.Add(Me.GobDatosProd)
+        Me.PanelCentral.Controls.Add(Me.BtnEditarP)
+        Me.PanelCentral.Controls.Add(Me.BtnLimpiarP)
         Me.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelCentral.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelCentral.Location = New System.Drawing.Point(0, 52)
@@ -139,11 +148,11 @@ Partial Class FrmCategoria
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 599)
+        Me.DataGridView1.Location = New System.Drawing.Point(41, 594)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1653, 170)
+        Me.DataGridView1.Size = New System.Drawing.Size(1653, 247)
         Me.DataGridView1.TabIndex = 15
         '
         'PictureBox1
@@ -163,7 +172,7 @@ Partial Class FrmCategoria
         Me.TxtBuscar.Location = New System.Drawing.Point(181, 525)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(1513, 34)
-        Me.TxtBuscar.TabIndex = 14
+        Me.TxtBuscar.TabIndex = 8
         '
         'Label12
         '
@@ -179,15 +188,11 @@ Partial Class FrmCategoria
         Me.GobDatosProd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GobDatosProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GobDatosProd.Controls.Add(Me.TextBox1)
+        Me.GobDatosProd.Controls.Add(Me.TxtNombreCat)
         Me.GobDatosProd.Controls.Add(Me.Label3)
         Me.GobDatosProd.Controls.Add(Me.PibProductos)
-        Me.GobDatosProd.Controls.Add(Me.BtnAgregarP)
-        Me.GobDatosProd.Controls.Add(Me.BtnEliminarP)
-        Me.GobDatosProd.Controls.Add(Me.BtnEditarP)
-        Me.GobDatosProd.Controls.Add(Me.BtnLimpiarP)
         Me.GobDatosProd.Controls.Add(Me.TxtDescCat)
-        Me.GobDatosProd.Controls.Add(Me.TxtIdProd)
+        Me.GobDatosProd.Controls.Add(Me.TxtIdCat)
         Me.GobDatosProd.Controls.Add(Me.Label2)
         Me.GobDatosProd.Controls.Add(Me.Label1)
         Me.GobDatosProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -195,19 +200,19 @@ Partial Class FrmCategoria
         Me.GobDatosProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.GobDatosProd.Name = "GobDatosProd"
         Me.GobDatosProd.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GobDatosProd.Size = New System.Drawing.Size(1653, 450)
+        Me.GobDatosProd.Size = New System.Drawing.Size(1653, 368)
         Me.GobDatosProd.TabIndex = 5
         Me.GobDatosProd.TabStop = False
-        Me.GobDatosProd.Text = "Datos Generales de las Categorias"
+        Me.GobDatosProd.Text = "Datos Generales de la Categoria"
         '
-        'TextBox1
+        'TxtNombreCat
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(180, 122)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(679, 34)
-        Me.TextBox1.TabIndex = 32
+        Me.TxtNombreCat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombreCat.Location = New System.Drawing.Point(180, 122)
+        Me.TxtNombreCat.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNombreCat.Name = "TxtNombreCat"
+        Me.TxtNombreCat.Size = New System.Drawing.Size(430, 34)
+        Me.TxtNombreCat.TabIndex = 2
         '
         'Label3
         '
@@ -222,7 +227,7 @@ Partial Class FrmCategoria
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.categorias
-        Me.PibProductos.Location = New System.Drawing.Point(1180, 69)
+        Me.PibProductos.Location = New System.Drawing.Point(1248, 30)
         Me.PibProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PibProductos.Name = "PibProductos"
         Me.PibProductos.Size = New System.Drawing.Size(335, 310)
@@ -241,11 +246,11 @@ Partial Class FrmCategoria
         Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
         Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarP.Location = New System.Drawing.Point(67, 348)
+        Me.BtnAgregarP.Location = New System.Drawing.Point(416, 441)
         Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnAgregarP.Name = "BtnAgregarP"
         Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarP.TabIndex = 10
+        Me.BtnAgregarP.TabIndex = 4
         Me.BtnAgregarP.Text = "Agregar"
         Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnAgregarP.UseVisualStyleBackColor = True
@@ -261,11 +266,11 @@ Partial Class FrmCategoria
         Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
         Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarP.Location = New System.Drawing.Point(794, 348)
+        Me.BtnEliminarP.Location = New System.Drawing.Point(1143, 441)
         Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnEliminarP.Name = "BtnEliminarP"
         Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarP.TabIndex = 13
+        Me.BtnEliminarP.TabIndex = 7
         Me.BtnEliminarP.Text = "Eliminar"
         Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEliminarP.UseVisualStyleBackColor = True
@@ -281,11 +286,11 @@ Partial Class FrmCategoria
         Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
         Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarP.Location = New System.Drawing.Point(574, 348)
+        Me.BtnEditarP.Location = New System.Drawing.Point(923, 441)
         Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnEditarP.Name = "BtnEditarP"
         Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarP.TabIndex = 12
+        Me.BtnEditarP.TabIndex = 6
         Me.BtnEditarP.Text = "Editar"
         Me.BtnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEditarP.UseVisualStyleBackColor = True
@@ -301,11 +306,11 @@ Partial Class FrmCategoria
         Me.BtnLimpiarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLimpiarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
         Me.BtnLimpiarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarP.Location = New System.Drawing.Point(320, 348)
+        Me.BtnLimpiarP.Location = New System.Drawing.Point(669, 441)
         Me.BtnLimpiarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnLimpiarP.Name = "BtnLimpiarP"
         Me.BtnLimpiarP.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarP.TabIndex = 11
+        Me.BtnLimpiarP.TabIndex = 5
         Me.BtnLimpiarP.Text = "Limpiar"
         Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarP.UseVisualStyleBackColor = True
@@ -319,16 +324,16 @@ Partial Class FrmCategoria
         Me.TxtDescCat.Name = "TxtDescCat"
         Me.TxtDescCat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TxtDescCat.Size = New System.Drawing.Size(859, 122)
-        Me.TxtDescCat.TabIndex = 2
+        Me.TxtDescCat.TabIndex = 3
         '
-        'TxtIdProd
+        'TxtIdCat
         '
-        Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdProd.Location = New System.Drawing.Point(180, 69)
-        Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtIdProd.Name = "TxtIdProd"
-        Me.TxtIdProd.Size = New System.Drawing.Size(430, 34)
-        Me.TxtIdProd.TabIndex = 1
+        Me.TxtIdCat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtIdCat.Location = New System.Drawing.Point(180, 69)
+        Me.TxtIdCat.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtIdCat.Name = "TxtIdCat"
+        Me.TxtIdCat.Size = New System.Drawing.Size(430, 34)
+        Me.TxtIdCat.TabIndex = 1
         '
         'Label2
         '
@@ -389,11 +394,12 @@ Partial Class FrmCategoria
     Friend WithEvents BtnEditarP As Button
     Friend WithEvents BtnLimpiarP As Button
     Friend WithEvents TxtDescCat As TextBox
-    Friend WithEvents TxtIdProd As TextBox
+    Friend WithEvents TxtIdCat As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PibProductos As PictureBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtNombreCat As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents PibRetornar As PictureBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
