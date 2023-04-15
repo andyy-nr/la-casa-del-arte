@@ -22,6 +22,7 @@ Partial Class FrmRoles
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
@@ -30,20 +31,21 @@ Partial Class FrmRoles
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnAgregarP = New System.Windows.Forms.Button()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
+        Me.BtnEliminarP = New System.Windows.Forms.Button()
+        Me.BtnEditarP = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
         Me.ChLstRol = New System.Windows.Forms.CheckedListBox()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
-        Me.BtnAgregarP = New System.Windows.Forms.Button()
-        Me.BtnEliminarP = New System.Windows.Forms.Button()
-        Me.BtnEditarP = New System.Windows.Forms.Button()
-        Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.TxtNombreProd = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +73,7 @@ Partial Class FrmRoles
         '
         'PibRetornar
         '
+        Me.PibRetornar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
         Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
         Me.PibRetornar.Name = "PibRetornar"
@@ -78,6 +81,7 @@ Partial Class FrmRoles
         Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibRetornar.TabIndex = 10
         Me.PibRetornar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
         '
         'PibMinimizar
         '
@@ -90,6 +94,7 @@ Partial Class FrmRoles
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibMinimizar.TabIndex = 7
         Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
         '
         'PibCerrar
         '
@@ -102,6 +107,7 @@ Partial Class FrmRoles
         Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibCerrar.TabIndex = 6
         Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'Label8
         '
@@ -148,7 +154,7 @@ Partial Class FrmRoles
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1653, 170)
-        Me.DataGridView1.TabIndex = 15
+        Me.DataGridView1.TabIndex = 9
         '
         'PictureBox1
         '
@@ -160,6 +166,27 @@ Partial Class FrmRoles
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'BtnAgregarP
+        '
+        Me.BtnAgregarP.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnAgregarP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAgregarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarP.FlatAppearance.BorderSize = 0
+        Me.BtnAgregarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnAgregarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
+        Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAgregarP.Location = New System.Drawing.Point(386, 452)
+        Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnAgregarP.Name = "BtnAgregarP"
+        Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
+        Me.BtnAgregarP.TabIndex = 4
+        Me.BtnAgregarP.Text = "Agregar"
+        Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnAgregarP.UseVisualStyleBackColor = True
+        '
         'TxtBuscar
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -167,7 +194,49 @@ Partial Class FrmRoles
         Me.TxtBuscar.Location = New System.Drawing.Point(181, 525)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(1513, 34)
-        Me.TxtBuscar.TabIndex = 14
+        Me.TxtBuscar.TabIndex = 8
+        '
+        'BtnEliminarP
+        '
+        Me.BtnEliminarP.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEliminarP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEliminarP.FlatAppearance.BorderSize = 0
+        Me.BtnEliminarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEliminarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
+        Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEliminarP.Location = New System.Drawing.Point(1113, 452)
+        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEliminarP.Name = "BtnEliminarP"
+        Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
+        Me.BtnEliminarP.TabIndex = 7
+        Me.BtnEliminarP.Text = "Eliminar"
+        Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEliminarP.UseVisualStyleBackColor = True
+        '
+        'BtnEditarP
+        '
+        Me.BtnEditarP.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEditarP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEditarP.FlatAppearance.BorderSize = 0
+        Me.BtnEditarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEditarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
+        Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEditarP.Location = New System.Drawing.Point(893, 452)
+        Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEditarP.Name = "BtnEditarP"
+        Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
+        Me.BtnEditarP.TabIndex = 6
+        Me.BtnEditarP.Text = "Editar"
+        Me.BtnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEditarP.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -177,6 +246,27 @@ Partial Class FrmRoles
         Me.Label12.Size = New System.Drawing.Size(73, 28)
         Me.Label12.TabIndex = 6
         Me.Label12.Text = "Buscar:"
+        '
+        'BtnLimpiarP
+        '
+        Me.BtnLimpiarP.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnLimpiarP.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnLimpiarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnLimpiarP.FlatAppearance.BorderSize = 0
+        Me.BtnLimpiarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnLimpiarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnLimpiarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpiarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLimpiarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
+        Me.BtnLimpiarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnLimpiarP.Location = New System.Drawing.Point(639, 452)
+        Me.BtnLimpiarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnLimpiarP.Name = "BtnLimpiarP"
+        Me.BtnLimpiarP.Size = New System.Drawing.Size(176, 55)
+        Me.BtnLimpiarP.TabIndex = 5
+        Me.BtnLimpiarP.Text = "Limpiar"
+        Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnLimpiarP.UseVisualStyleBackColor = True
         '
         'GobDatosProd
         '
@@ -210,7 +300,7 @@ Partial Class FrmRoles
         Me.ChLstRol.Location = New System.Drawing.Point(730, 121)
         Me.ChLstRol.Name = "ChLstRol"
         Me.ChLstRol.Size = New System.Drawing.Size(279, 145)
-        Me.ChLstRol.TabIndex = 30
+        Me.ChLstRol.TabIndex = 3
         '
         'PibProductos
         '
@@ -223,90 +313,6 @@ Partial Class FrmRoles
         Me.PibProductos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PibProductos.TabIndex = 29
         Me.PibProductos.TabStop = False
-        '
-        'BtnAgregarP
-        '
-        Me.BtnAgregarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnAgregarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAgregarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.BorderSize = 0
-        Me.BtnAgregarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.agregarProd
-        Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarP.Location = New System.Drawing.Point(386, 452)
-        Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnAgregarP.Name = "BtnAgregarP"
-        Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarP.TabIndex = 10
-        Me.BtnAgregarP.Text = "Agregar"
-        Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnAgregarP.UseVisualStyleBackColor = True
-        '
-        'BtnEliminarP
-        '
-        Me.BtnEliminarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnEliminarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.BorderSize = 0
-        Me.BtnEliminarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.eliminarProd
-        Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarP.Location = New System.Drawing.Point(1113, 452)
-        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEliminarP.Name = "BtnEliminarP"
-        Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarP.TabIndex = 13
-        Me.BtnEliminarP.Text = "Eliminar"
-        Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminarP.UseVisualStyleBackColor = True
-        '
-        'BtnEditarP
-        '
-        Me.BtnEditarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnEditarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.BorderSize = 0
-        Me.BtnEditarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.editarProd
-        Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarP.Location = New System.Drawing.Point(893, 452)
-        Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEditarP.Name = "BtnEditarP"
-        Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarP.TabIndex = 12
-        Me.BtnEditarP.Text = "Editar"
-        Me.BtnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEditarP.UseVisualStyleBackColor = True
-        '
-        'BtnLimpiarP
-        '
-        Me.BtnLimpiarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnLimpiarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnLimpiarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnLimpiarP.FlatAppearance.BorderSize = 0
-        Me.BtnLimpiarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnLimpiarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnLimpiarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLimpiarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLimpiarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.limpiarCampos
-        Me.BtnLimpiarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarP.Location = New System.Drawing.Point(639, 452)
-        Me.BtnLimpiarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnLimpiarP.Name = "BtnLimpiarP"
-        Me.BtnLimpiarP.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarP.TabIndex = 11
-        Me.BtnLimpiarP.Text = "Limpiar"
-        Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnLimpiarP.UseVisualStyleBackColor = True
         '
         'TxtNombreProd
         '
@@ -403,4 +409,5 @@ Partial Class FrmRoles
     Friend WithEvents TxtNombreProd As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PibRetornar As PictureBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

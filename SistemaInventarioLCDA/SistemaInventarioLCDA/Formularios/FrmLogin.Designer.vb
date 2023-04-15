@@ -22,23 +22,25 @@ Partial Class FrmLogin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanSuperiorL = New System.Windows.Forms.Panel()
+        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
+        Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.PanIzquierdo = New System.Windows.Forms.Panel()
+        Me.PibLogoL = New System.Windows.Forms.PictureBox()
         Me.PanCentral = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnEntrar = New System.Windows.Forms.Button()
         Me.TxtPwdL = New System.Windows.Forms.TextBox()
         Me.CebMostrarPwdL = New System.Windows.Forms.CheckBox()
         Me.TxtUserL = New System.Windows.Forms.TextBox()
-        Me.PibLogoL = New System.Windows.Forms.PictureBox()
-        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
-        Me.PibCerrar = New System.Windows.Forms.PictureBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperiorL.SuspendLayout()
-        Me.PanIzquierdo.SuspendLayout()
-        Me.PanCentral.SuspendLayout()
-        CType(Me.PibLogoL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanIzquierdo.SuspendLayout()
+        CType(Me.PibLogoL, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanCentral.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanSuperiorL
@@ -53,6 +55,30 @@ Partial Class FrmLogin
         Me.PanSuperiorL.Size = New System.Drawing.Size(1076, 52)
         Me.PanSuperiorL.TabIndex = 0
         '
+        'PibMinimizar
+        '
+        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
+        Me.PibMinimizar.Location = New System.Drawing.Point(977, 3)
+        Me.PibMinimizar.Name = "PibMinimizar"
+        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
+        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMinimizar.TabIndex = 1
+        Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
+        '
+        'PibCerrar
+        '
+        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
+        Me.PibCerrar.Location = New System.Drawing.Point(1028, 4)
+        Me.PibCerrar.Name = "PibCerrar"
+        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
+        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibCerrar.TabIndex = 0
+        Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
+        '
         'PanIzquierdo
         '
         Me.PanIzquierdo.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
@@ -62,6 +88,18 @@ Partial Class FrmLogin
         Me.PanIzquierdo.Name = "PanIzquierdo"
         Me.PanIzquierdo.Size = New System.Drawing.Size(333, 400)
         Me.PanIzquierdo.TabIndex = 3
+        '
+        'PibLogoL
+        '
+        Me.PibLogoL.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PibLogoL.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
+        Me.PibLogoL.Location = New System.Drawing.Point(10, 39)
+        Me.PibLogoL.Margin = New System.Windows.Forms.Padding(4)
+        Me.PibLogoL.Name = "PibLogoL"
+        Me.PibLogoL.Size = New System.Drawing.Size(315, 310)
+        Me.PibLogoL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibLogoL.TabIndex = 1
+        Me.PibLogoL.TabStop = False
         '
         'PanCentral
         '
@@ -144,40 +182,6 @@ Partial Class FrmLogin
         Me.TxtUserL.TabIndex = 1
         Me.TxtUserL.Text = "USUARIO"
         '
-        'PibLogoL
-        '
-        Me.PibLogoL.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PibLogoL.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
-        Me.PibLogoL.Location = New System.Drawing.Point(10, 39)
-        Me.PibLogoL.Margin = New System.Windows.Forms.Padding(4)
-        Me.PibLogoL.Name = "PibLogoL"
-        Me.PibLogoL.Size = New System.Drawing.Size(315, 310)
-        Me.PibLogoL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibLogoL.TabIndex = 1
-        Me.PibLogoL.TabStop = False
-        '
-        'PibMinimizar
-        '
-        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(977, 3)
-        Me.PibMinimizar.Name = "PibMinimizar"
-        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
-        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibMinimizar.TabIndex = 1
-        Me.PibMinimizar.TabStop = False
-        '
-        'PibCerrar
-        '
-        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
-        Me.PibCerrar.Location = New System.Drawing.Point(1028, 4)
-        Me.PibCerrar.Name = "PibCerrar"
-        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
-        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibCerrar.TabIndex = 0
-        Me.PibCerrar.TabStop = False
-        '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -192,12 +196,12 @@ Partial Class FrmLogin
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "
         Me.PanSuperiorL.ResumeLayout(False)
-        Me.PanIzquierdo.ResumeLayout(False)
-        Me.PanCentral.ResumeLayout(False)
-        Me.PanCentral.PerformLayout()
-        CType(Me.PibLogoL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanIzquierdo.ResumeLayout(False)
+        CType(Me.PibLogoL, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanCentral.ResumeLayout(False)
+        Me.PanCentral.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -213,4 +217,5 @@ Partial Class FrmLogin
     Friend WithEvents PibMinimizar As PictureBox
     Friend WithEvents PibCerrar As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

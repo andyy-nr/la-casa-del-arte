@@ -22,6 +22,7 @@ Partial Class FrmUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
@@ -58,6 +59,7 @@ Partial Class FrmUsuarios
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtCedula = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +87,7 @@ Partial Class FrmUsuarios
         '
         'PibRetornar
         '
+        Me.PibRetornar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
         Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
         Me.PibRetornar.Name = "PibRetornar"
@@ -92,6 +95,7 @@ Partial Class FrmUsuarios
         Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibRetornar.TabIndex = 10
         Me.PibRetornar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
         '
         'PibMinimizar
         '
@@ -104,6 +108,7 @@ Partial Class FrmUsuarios
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibMinimizar.TabIndex = 7
         Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
         '
         'PibCerrar
         '
@@ -116,6 +121,7 @@ Partial Class FrmUsuarios
         Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibCerrar.TabIndex = 6
         Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'Label8
         '
@@ -177,7 +183,7 @@ Partial Class FrmUsuarios
         Me.TxtNombreUsuario.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtNombreUsuario.Name = "TxtNombreUsuario"
         Me.TxtNombreUsuario.Size = New System.Drawing.Size(331, 34)
-        Me.TxtNombreUsuario.TabIndex = 16
+        Me.TxtNombreUsuario.TabIndex = 8
         Me.TxtNombreUsuario.UseSystemPasswordChar = True
         '
         'Label9
@@ -210,7 +216,7 @@ Partial Class FrmUsuarios
         Me.TxtPwd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtPwd.Name = "TxtPwd"
         Me.TxtPwd.Size = New System.Drawing.Size(331, 34)
-        Me.TxtPwd.TabIndex = 6
+        Me.TxtPwd.TabIndex = 10
         Me.TxtPwd.UseSystemPasswordChar = True
         '
         'CebMostrarPwd
@@ -220,7 +226,7 @@ Partial Class FrmUsuarios
         Me.CebMostrarPwd.Location = New System.Drawing.Point(231, 197)
         Me.CebMostrarPwd.Name = "CebMostrarPwd"
         Me.CebMostrarPwd.Size = New System.Drawing.Size(203, 32)
-        Me.CebMostrarPwd.TabIndex = 7
+        Me.CebMostrarPwd.TabIndex = 11
         Me.CebMostrarPwd.Text = "Mostrar contraseña"
         Me.CebMostrarPwd.UseVisualStyleBackColor = True
         '
@@ -244,7 +250,7 @@ Partial Class FrmUsuarios
         Me.CobRoles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.CobRoles.Name = "CobRoles"
         Me.CobRoles.Size = New System.Drawing.Size(331, 36)
-        Me.CobRoles.TabIndex = 8
+        Me.CobRoles.TabIndex = 9
         Me.CobRoles.Text = "Seleccione el rol.."
         '
         'PibPerfil
@@ -275,7 +281,7 @@ Partial Class FrmUsuarios
         Me.BtnAgregarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnAgregarU.Name = "BtnAgregarU"
         Me.BtnAgregarU.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarU.TabIndex = 9
+        Me.BtnAgregarU.TabIndex = 12
         Me.BtnAgregarU.Text = "Agregar"
         Me.BtnAgregarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnAgregarU.UseVisualStyleBackColor = True
@@ -291,7 +297,7 @@ Partial Class FrmUsuarios
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1653, 223)
-        Me.DataGridView1.TabIndex = 14
+        Me.DataGridView1.TabIndex = 17
         '
         'BtnEliminarU
         '
@@ -309,7 +315,7 @@ Partial Class FrmUsuarios
         Me.BtnEliminarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnEliminarU.Name = "BtnEliminarU"
         Me.BtnEliminarU.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarU.TabIndex = 12
+        Me.BtnEliminarU.TabIndex = 15
         Me.BtnEliminarU.Text = "Eliminar"
         Me.BtnEliminarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEliminarU.UseVisualStyleBackColor = True
@@ -330,7 +336,7 @@ Partial Class FrmUsuarios
         Me.BtnEditarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnEditarU.Name = "BtnEditarU"
         Me.BtnEditarU.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarU.TabIndex = 11
+        Me.BtnEditarU.TabIndex = 14
         Me.BtnEditarU.Text = "Editar"
         Me.BtnEditarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEditarU.UseVisualStyleBackColor = True
@@ -361,7 +367,7 @@ Partial Class FrmUsuarios
         Me.BtnLimpiarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnLimpiarU.Name = "BtnLimpiarU"
         Me.BtnLimpiarU.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarU.TabIndex = 10
+        Me.BtnLimpiarU.TabIndex = 13
         Me.BtnLimpiarU.Text = "Limpiar"
         Me.BtnLimpiarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarU.UseVisualStyleBackColor = True
@@ -373,7 +379,7 @@ Partial Class FrmUsuarios
         Me.TxtBuscar.Location = New System.Drawing.Point(181, 477)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(1513, 34)
-        Me.TxtBuscar.TabIndex = 13
+        Me.TxtBuscar.TabIndex = 16
         '
         'Label12
         '
@@ -419,7 +425,7 @@ Partial Class FrmUsuarios
         Me.TxtApellido2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtApellido2.Name = "TxtApellido2"
         Me.TxtApellido2.Size = New System.Drawing.Size(218, 34)
-        Me.TxtApellido2.TabIndex = 3
+        Me.TxtApellido2.TabIndex = 4
         '
         'TextNombre2
         '
@@ -471,7 +477,7 @@ Partial Class FrmUsuarios
         Me.TxtApellido1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtApellido1.Name = "TxtApellido1"
         Me.TxtApellido1.Size = New System.Drawing.Size(218, 34)
-        Me.TxtApellido1.TabIndex = 2
+        Me.TxtApellido1.TabIndex = 3
         '
         'Label4
         '
@@ -513,7 +519,7 @@ Partial Class FrmUsuarios
         Me.TxtTelefono.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtTelefono.Name = "TxtTelefono"
         Me.TxtTelefono.Size = New System.Drawing.Size(454, 34)
-        Me.TxtTelefono.TabIndex = 3
+        Me.TxtTelefono.TabIndex = 6
         '
         'Label5
         '
@@ -534,7 +540,7 @@ Partial Class FrmUsuarios
         Me.TxtCedula.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtCedula.Name = "TxtCedula"
         Me.TxtCedula.Size = New System.Drawing.Size(456, 34)
-        Me.TxtCedula.TabIndex = 4
+        Me.TxtCedula.TabIndex = 7
         '
         'FrmUsuarios
         '
@@ -600,4 +606,5 @@ Partial Class FrmUsuarios
     Friend WithEvents Label9 As Label
     Friend WithEvents TxtApellido2 As TextBox
     Friend WithEvents TextNombre2 As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

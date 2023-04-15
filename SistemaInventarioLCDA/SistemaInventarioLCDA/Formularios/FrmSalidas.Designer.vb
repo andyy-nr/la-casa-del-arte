@@ -22,6 +22,7 @@ Partial Class FrmSalidas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
@@ -63,6 +64,8 @@ Partial Class FrmSalidas
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BtnLimpiarS = New System.Windows.Forms.Button()
         Me.BtnAgregarS = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +94,7 @@ Partial Class FrmSalidas
         '
         'PibRetornar
         '
+        Me.PibRetornar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
         Me.PibRetornar.Location = New System.Drawing.Point(3, 4)
         Me.PibRetornar.Name = "PibRetornar"
@@ -98,6 +102,7 @@ Partial Class FrmSalidas
         Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibRetornar.TabIndex = 9
         Me.PibRetornar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
         '
         'PibMinimizar
         '
@@ -110,6 +115,7 @@ Partial Class FrmSalidas
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibMinimizar.TabIndex = 7
         Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
         '
         'PibCerrar
         '
@@ -122,6 +128,7 @@ Partial Class FrmSalidas
         Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PibCerrar.TabIndex = 6
         Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'Label8
         '
@@ -194,7 +201,7 @@ Partial Class FrmSalidas
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(109, 34)
-        Me.TextBox1.TabIndex = 33
+        Me.TextBox1.TabIndex = 13
         '
         'TxtUsuarioSal
         '
@@ -203,7 +210,7 @@ Partial Class FrmSalidas
         Me.TxtUsuarioSal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtUsuarioSal.Name = "TxtUsuarioSal"
         Me.TxtUsuarioSal.Size = New System.Drawing.Size(409, 34)
-        Me.TxtUsuarioSal.TabIndex = 32
+        Me.TxtUsuarioSal.TabIndex = 9
         '
         'TxtCantidadUP
         '
@@ -212,7 +219,7 @@ Partial Class FrmSalidas
         Me.TxtCantidadUP.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCantidadUP.Name = "TxtCantidadUP"
         Me.TxtCantidadUP.Size = New System.Drawing.Size(109, 34)
-        Me.TxtCantidadUP.TabIndex = 3
+        Me.TxtCantidadUP.TabIndex = 12
         '
         'Label14
         '
@@ -243,7 +250,7 @@ Partial Class FrmSalidas
         Me.TxtDesSal.Name = "TxtDesSal"
         Me.TxtDesSal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TxtDesSal.Size = New System.Drawing.Size(415, 83)
-        Me.TxtDesSal.TabIndex = 23
+        Me.TxtDesSal.TabIndex = 11
         '
         'Label13
         '
@@ -281,7 +288,7 @@ Partial Class FrmSalidas
         Me.DtpFechaSalida.Location = New System.Drawing.Point(191, 106)
         Me.DtpFechaSalida.Name = "DtpFechaSalida"
         Me.DtpFechaSalida.Size = New System.Drawing.Size(409, 34)
-        Me.DtpFechaSalida.TabIndex = 2
+        Me.DtpFechaSalida.TabIndex = 10
         '
         'DataGridView1
         '
@@ -294,7 +301,7 @@ Partial Class FrmSalidas
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1653, 210)
-        Me.DataGridView1.TabIndex = 7
+        Me.DataGridView1.TabIndex = 17
         '
         'PictureBox1
         '
@@ -313,7 +320,7 @@ Partial Class FrmSalidas
         Me.TxtBuscar.Location = New System.Drawing.Point(181, 499)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(1513, 34)
-        Me.TxtBuscar.TabIndex = 6
+        Me.TxtBuscar.TabIndex = 16
         '
         'Label12
         '
@@ -397,7 +404,7 @@ Partial Class FrmSalidas
         Me.TxtStockTotal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtStockTotal.Name = "TxtStockTotal"
         Me.TxtStockTotal.Size = New System.Drawing.Size(109, 34)
-        Me.TxtStockTotal.TabIndex = 9
+        Me.TxtStockTotal.TabIndex = 8
         '
         'Label2
         '
@@ -492,7 +499,7 @@ Partial Class FrmSalidas
         Me.TxtCategoriaS.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtCategoriaS.Name = "TxtCategoriaS"
         Me.TxtCategoriaS.Size = New System.Drawing.Size(453, 34)
-        Me.TxtCategoriaS.TabIndex = 1
+        Me.TxtCategoriaS.TabIndex = 4
         '
         'TxtDescripcionS
         '
@@ -543,7 +550,7 @@ Partial Class FrmSalidas
         Me.BtnLimpiarS.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnLimpiarS.Name = "BtnLimpiarS"
         Me.BtnLimpiarS.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarS.TabIndex = 5
+        Me.BtnLimpiarS.TabIndex = 15
         Me.BtnLimpiarS.Text = "Limpiar"
         Me.BtnLimpiarS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarS.UseVisualStyleBackColor = True
@@ -564,7 +571,7 @@ Partial Class FrmSalidas
         Me.BtnAgregarS.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnAgregarS.Name = "BtnAgregarS"
         Me.BtnAgregarS.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarS.TabIndex = 4
+        Me.BtnAgregarS.TabIndex = 14
         Me.BtnAgregarS.Text = "Agregar"
         Me.BtnAgregarS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnAgregarS.UseVisualStyleBackColor = True
@@ -638,4 +645,6 @@ Partial Class FrmSalidas
     Friend WithEvents Label15 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TxtUsuarioSal As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ToolTip2 As ToolTip
 End Class
