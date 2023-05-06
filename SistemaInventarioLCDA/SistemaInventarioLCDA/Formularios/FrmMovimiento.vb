@@ -1,4 +1,4 @@
-﻿Public Class FrmEntradas
+﻿Public Class FrmMovimiento
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean

@@ -100,10 +100,10 @@
     <Compile Include="Formularios\FrmCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmEntradas.Designer.vb">
-      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    <Compile Include="Formularios\FrmMovimiento.Designer.vb">
+      <DependentUpon>FrmMovimiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmEntradas.vb">
+    <Compile Include="Formularios\FrmMovimiento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.vb">
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="Formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmEntradas.resx">
-      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmMovimiento.resx">
+      <DependentUpon>FrmMovimiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>

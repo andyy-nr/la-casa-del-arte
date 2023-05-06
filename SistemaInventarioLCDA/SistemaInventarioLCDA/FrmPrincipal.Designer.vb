@@ -45,9 +45,6 @@ Partial Class FrmPrincipal
         Me.PanPrincipal = New System.Windows.Forms.Panel()
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
-        Me.PanMovimientos = New System.Windows.Forms.Panel()
-        Me.BtnSalidas = New System.Windows.Forms.Button()
-        Me.BtnEntradas = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -59,7 +56,6 @@ Partial Class FrmPrincipal
         CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanPrincipal.SuspendLayout()
-        Me.PanMovimientos.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -345,7 +341,6 @@ Partial Class FrmPrincipal
         Me.PanPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.PanPrincipal.Controls.Add(Me.LblFecha)
         Me.PanPrincipal.Controls.Add(Me.LblHora)
-        Me.PanPrincipal.Controls.Add(Me.PanMovimientos)
         Me.PanPrincipal.Controls.Add(Me.PictureBox3)
         Me.PanPrincipal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanPrincipal.Location = New System.Drawing.Point(293, 52)
@@ -375,61 +370,6 @@ Partial Class FrmPrincipal
         Me.LblHora.Size = New System.Drawing.Size(50, 23)
         Me.LblHora.TabIndex = 2
         Me.LblHora.Text = "00:00"
-        '
-        'PanMovimientos
-        '
-        Me.PanMovimientos.Controls.Add(Me.BtnSalidas)
-        Me.PanMovimientos.Controls.Add(Me.BtnEntradas)
-        Me.PanMovimientos.Location = New System.Drawing.Point(8, 462)
-        Me.PanMovimientos.Margin = New System.Windows.Forms.Padding(4)
-        Me.PanMovimientos.Name = "PanMovimientos"
-        Me.PanMovimientos.Size = New System.Drawing.Size(293, 133)
-        Me.PanMovimientos.TabIndex = 1
-        Me.PanMovimientos.Visible = False
-        '
-        'BtnSalidas
-        '
-        Me.BtnSalidas.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.BtnSalidas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSalidas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnSalidas.FlatAppearance.BorderSize = 0
-        Me.BtnSalidas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.BtnSalidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
-        Me.BtnSalidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSalidas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSalidas.ForeColor = System.Drawing.Color.Black
-        Me.BtnSalidas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
-        Me.BtnSalidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSalidas.Location = New System.Drawing.Point(0, 69)
-        Me.BtnSalidas.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnSalidas.Name = "BtnSalidas"
-        Me.BtnSalidas.Size = New System.Drawing.Size(293, 62)
-        Me.BtnSalidas.TabIndex = 9
-        Me.BtnSalidas.Text = "Salidas"
-        Me.BtnSalidas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnSalidas.UseVisualStyleBackColor = False
-        '
-        'BtnEntradas
-        '
-        Me.BtnEntradas.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.BtnEntradas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEntradas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEntradas.FlatAppearance.BorderSize = 0
-        Me.BtnEntradas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.BtnEntradas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
-        Me.BtnEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEntradas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEntradas.ForeColor = System.Drawing.Color.Black
-        Me.BtnEntradas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
-        Me.BtnEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEntradas.Location = New System.Drawing.Point(0, 0)
-        Me.BtnEntradas.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnEntradas.Name = "BtnEntradas"
-        Me.BtnEntradas.Size = New System.Drawing.Size(293, 62)
-        Me.BtnEntradas.TabIndex = 8
-        Me.BtnEntradas.Text = "Entradas"
-        Me.BtnEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEntradas.UseVisualStyleBackColor = False
         '
         'PictureBox3
         '
@@ -471,7 +411,6 @@ Partial Class FrmPrincipal
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanPrincipal.ResumeLayout(False)
         Me.PanPrincipal.PerformLayout()
-        Me.PanMovimientos.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -497,9 +436,6 @@ Partial Class FrmPrincipal
     Friend WithEvents PanPrincipal As Panel
     Friend WithEvents LblFecha As Label
     Friend WithEvents LblHora As Label
-    Friend WithEvents PanMovimientos As Panel
-    Friend WithEvents BtnSalidas As Button
-    Friend WithEvents BtnEntradas As Button
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
