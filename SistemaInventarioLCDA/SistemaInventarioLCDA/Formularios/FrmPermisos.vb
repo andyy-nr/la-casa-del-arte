@@ -1,4 +1,4 @@
-﻿Public Class FrmCategoria
+﻿Public Class FrmPermiso
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -21,10 +21,11 @@
 
 
     'Ajustar tamaño del formulario a la pantalla.
-    Private Sub FrmCategoria_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmPermisos_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
     End Sub
+
 
 
     'Botones
@@ -44,5 +45,4 @@
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
 End Class

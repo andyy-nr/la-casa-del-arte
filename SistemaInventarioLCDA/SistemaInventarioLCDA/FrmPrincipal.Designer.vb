@@ -28,6 +28,8 @@ Partial Class FrmPrincipal
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanMenu = New System.Windows.Forms.Panel()
+        Me.BtnPermisos = New System.Windows.Forms.Button()
+        Me.BtnMarca = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.BtnReportes = New System.Windows.Forms.Button()
         Me.BtnMovimientos = New System.Windows.Forms.Button()
@@ -42,12 +44,12 @@ Partial Class FrmPrincipal
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TmrOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.TmrMostrar = New System.Windows.Forms.Timer(Me.components)
+        Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanPrincipal = New System.Windows.Forms.Panel()
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +116,8 @@ Partial Class FrmPrincipal
         'PanMenu
         '
         Me.PanMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanMenu.Controls.Add(Me.BtnPermisos)
+        Me.PanMenu.Controls.Add(Me.BtnMarca)
         Me.PanMenu.Controls.Add(Me.BtnSalir)
         Me.PanMenu.Controls.Add(Me.BtnReportes)
         Me.PanMenu.Controls.Add(Me.BtnMovimientos)
@@ -128,8 +132,48 @@ Partial Class FrmPrincipal
         Me.PanMenu.Location = New System.Drawing.Point(0, 52)
         Me.PanMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.PanMenu.Name = "PanMenu"
-        Me.PanMenu.Size = New System.Drawing.Size(293, 700)
+        Me.PanMenu.Size = New System.Drawing.Size(293, 848)
         Me.PanMenu.TabIndex = 1
+        '
+        'BtnPermisos
+        '
+        Me.BtnPermisos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnPermisos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnPermisos.FlatAppearance.BorderSize = 0
+        Me.BtnPermisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnPermisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPermisos.ForeColor = System.Drawing.Color.Black
+        Me.BtnPermisos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnPermiso
+        Me.BtnPermisos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnPermisos.Location = New System.Drawing.Point(0, 220)
+        Me.BtnPermisos.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnPermisos.Name = "BtnPermisos"
+        Me.BtnPermisos.Size = New System.Drawing.Size(293, 62)
+        Me.BtnPermisos.TabIndex = 12
+        Me.BtnPermisos.Text = "Permisos"
+        Me.BtnPermisos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnPermisos.UseVisualStyleBackColor = True
+        '
+        'BtnMarca
+        '
+        Me.BtnMarca.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMarca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnMarca.FlatAppearance.BorderSize = 0
+        Me.BtnMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMarca.ForeColor = System.Drawing.Color.Black
+        Me.BtnMarca.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnMarcas
+        Me.BtnMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnMarca.Location = New System.Drawing.Point(0, 427)
+        Me.BtnMarca.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnMarca.Name = "BtnMarca"
+        Me.BtnMarca.Size = New System.Drawing.Size(293, 62)
+        Me.BtnMarca.TabIndex = 11
+        Me.BtnMarca.Text = "Marcas"
+        Me.BtnMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnMarca.UseVisualStyleBackColor = True
         '
         'BtnSalir
         '
@@ -144,7 +188,7 @@ Partial Class FrmPrincipal
         Me.BtnSalir.ForeColor = System.Drawing.Color.Black
         Me.BtnSalir.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logout
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSalir.Location = New System.Drawing.Point(0, 639)
+        Me.BtnSalir.Location = New System.Drawing.Point(0, 787)
         Me.BtnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(293, 62)
@@ -164,7 +208,7 @@ Partial Class FrmPrincipal
         Me.BtnReportes.ForeColor = System.Drawing.Color.Black
         Me.BtnReportes.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
         Me.BtnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnReportes.Location = New System.Drawing.Point(0, 560)
+        Me.BtnReportes.Location = New System.Drawing.Point(0, 708)
         Me.BtnReportes.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnReportes.Name = "BtnReportes"
         Me.BtnReportes.Size = New System.Drawing.Size(293, 62)
@@ -184,7 +228,7 @@ Partial Class FrmPrincipal
         Me.BtnMovimientos.ForeColor = System.Drawing.Color.Black
         Me.BtnMovimientos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
         Me.BtnMovimientos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMovimientos.Location = New System.Drawing.Point(0, 491)
+        Me.BtnMovimientos.Location = New System.Drawing.Point(0, 639)
         Me.BtnMovimientos.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnMovimientos.Name = "BtnMovimientos"
         Me.BtnMovimientos.Size = New System.Drawing.Size(293, 62)
@@ -204,7 +248,7 @@ Partial Class FrmPrincipal
         Me.BtnProductos.ForeColor = System.Drawing.Color.Black
         Me.BtnProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.productosman
         Me.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnProductos.Location = New System.Drawing.Point(0, 422)
+        Me.BtnProductos.Location = New System.Drawing.Point(0, 570)
         Me.BtnProductos.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnProductos.Name = "BtnProductos"
         Me.BtnProductos.Size = New System.Drawing.Size(293, 62)
@@ -224,7 +268,7 @@ Partial Class FrmPrincipal
         Me.BtnCategorias.ForeColor = System.Drawing.Color.Black
         Me.BtnCategorias.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.categoriaprod
         Me.BtnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCategorias.Location = New System.Drawing.Point(0, 353)
+        Me.BtnCategorias.Location = New System.Drawing.Point(0, 501)
         Me.BtnCategorias.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnCategorias.Name = "BtnCategorias"
         Me.BtnCategorias.Size = New System.Drawing.Size(293, 62)
@@ -244,7 +288,7 @@ Partial Class FrmPrincipal
         Me.BtnUsuarios.ForeColor = System.Drawing.Color.Black
         Me.BtnUsuarios.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.usuarios
         Me.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 284)
+        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 359)
         Me.BtnUsuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnUsuarios.Name = "BtnUsuarios"
         Me.BtnUsuarios.Size = New System.Drawing.Size(293, 62)
@@ -264,7 +308,7 @@ Partial Class FrmPrincipal
         Me.BtnRoles.ForeColor = System.Drawing.Color.Black
         Me.BtnRoles.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.admin
         Me.BtnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRoles.Location = New System.Drawing.Point(0, 215)
+        Me.BtnRoles.Location = New System.Drawing.Point(0, 290)
         Me.BtnRoles.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRoles.Name = "BtnRoles"
         Me.BtnRoles.Size = New System.Drawing.Size(293, 62)
@@ -336,6 +380,10 @@ Partial Class FrmPrincipal
         'TmrMostrar
         '
         '
+        'TmrHoraFecha
+        '
+        Me.TmrHoraFecha.Enabled = True
+        '
         'PanPrincipal
         '
         Me.PanPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
@@ -346,15 +394,15 @@ Partial Class FrmPrincipal
         Me.PanPrincipal.Location = New System.Drawing.Point(293, 52)
         Me.PanPrincipal.Margin = New System.Windows.Forms.Padding(4)
         Me.PanPrincipal.Name = "PanPrincipal"
-        Me.PanPrincipal.Size = New System.Drawing.Size(1062, 700)
-        Me.PanPrincipal.TabIndex = 6
+        Me.PanPrincipal.Size = New System.Drawing.Size(1062, 848)
+        Me.PanPrincipal.TabIndex = 7
         '
         'LblFecha
         '
         Me.LblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblFecha.AutoSize = True
         Me.LblFecha.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFecha.Location = New System.Drawing.Point(944, 661)
+        Me.LblFecha.Location = New System.Drawing.Point(944, 809)
         Me.LblFecha.Name = "LblFecha"
         Me.LblFecha.Size = New System.Drawing.Size(106, 23)
         Me.LblFecha.TabIndex = 3
@@ -365,7 +413,7 @@ Partial Class FrmPrincipal
         Me.LblHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblHora.AutoSize = True
         Me.LblHora.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblHora.Location = New System.Drawing.Point(972, 636)
+        Me.LblHora.Location = New System.Drawing.Point(972, 784)
         Me.LblHora.Name = "LblHora"
         Me.LblHora.Size = New System.Drawing.Size(50, 23)
         Me.LblHora.TabIndex = 2
@@ -383,15 +431,11 @@ Partial Class FrmPrincipal
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
-        'TmrHoraFecha
-        '
-        Me.TmrHoraFecha.Enabled = True
-        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1355, 752)
+        Me.ClientSize = New System.Drawing.Size(1355, 900)
         Me.Controls.Add(Me.PanPrincipal)
         Me.Controls.Add(Me.PanMenu)
         Me.Controls.Add(Me.PanSuperior)
@@ -433,12 +477,14 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnSalir As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PanPrincipal As Panel
-    Friend WithEvents LblFecha As Label
-    Friend WithEvents LblHora As Label
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents TmrHoraFecha As Timer
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents BtnMarca As Button
+    Friend WithEvents PanPrincipal As Panel
+    Friend WithEvents LblFecha As Label
+    Friend WithEvents LblHora As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents BtnPermisos As Button
 End Class

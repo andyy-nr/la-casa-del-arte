@@ -271,4 +271,16 @@
   <data name="imgCategoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgCategoria1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BtnMarcas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnMarcas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pibMarcas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pibMarcas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnPermiso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnPermiso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PibPermiso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PibPermiso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

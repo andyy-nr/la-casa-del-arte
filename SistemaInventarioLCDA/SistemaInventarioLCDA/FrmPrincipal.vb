@@ -92,6 +92,14 @@
         FrmRoles.Show()
     End Sub
 
+    Private Sub BtnMarca_Click(sender As Object, e As EventArgs) Handles BtnMarca.Click
+        FrmMarcas.Show()
+    End Sub
+
+    Private Sub BtnPermisos_Click(sender As Object, e As EventArgs) Handles BtnPermisos.Click
+        FrmPermiso.Show()
+    End Sub
+
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
         FrmMovimiento.Show()
     End Sub

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmRoles
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FrmPermiso
     Inherits System.Windows.Forms.Form
 
-    'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -14,13 +14,13 @@ Partial Class FrmRoles
         End Try
     End Sub
 
-    'Requerido por el Diseñador de Windows Forms
+    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-    'Se puede modificar usando el Diseñador de Windows Forms.  
-    'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
@@ -30,15 +30,11 @@ Partial Class FrmRoles
         Me.Label12 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
-        Me.TxtDescRolUsuario = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtNomRolUsu = New System.Windows.Forms.TextBox()
+        Me.TxtNombreProd = New System.Windows.Forms.TextBox()
+        Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtCodRolUsuario = New System.Windows.Forms.TextBox()
-        Me.ClbPermisos = New System.Windows.Forms.CheckedListBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
@@ -73,7 +69,7 @@ Partial Class FrmRoles
         Me.PanSuperior.Margin = New System.Windows.Forms.Padding(4)
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
-        Me.PanSuperior.TabIndex = 2
+        Me.PanSuperior.TabIndex = 3
         '
         'Label8
         '
@@ -84,9 +80,9 @@ Partial Class FrmRoles
         Me.Label8.Location = New System.Drawing.Point(661, 6)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(410, 41)
+        Me.Label8.Size = New System.Drawing.Size(427, 41)
         Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Gestión de Roles de Usuario"
+        Me.Label8.Text = "Gestión de Permisos de Roles"
         '
         'PanelCentral
         '
@@ -108,7 +104,7 @@ Partial Class FrmRoles
         Me.PanelCentral.Name = "PanelCentral"
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
-        Me.PanelCentral.TabIndex = 17
+        Me.PanelCentral.TabIndex = 18
         '
         'TxtBuscar
         '
@@ -148,13 +144,9 @@ Partial Class FrmRoles
         Me.GobDatosProd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GobDatosProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GobDatosProd.Controls.Add(Me.ClbPermisos)
-        Me.GobDatosProd.Controls.Add(Me.TxtCodRolUsuario)
-        Me.GobDatosProd.Controls.Add(Me.Label3)
         Me.GobDatosProd.Controls.Add(Me.PibProductos)
-        Me.GobDatosProd.Controls.Add(Me.TxtDescRolUsuario)
-        Me.GobDatosProd.Controls.Add(Me.Label5)
-        Me.GobDatosProd.Controls.Add(Me.TxtNomRolUsu)
+        Me.GobDatosProd.Controls.Add(Me.TxtNombreProd)
+        Me.GobDatosProd.Controls.Add(Me.TxtIdProd)
         Me.GobDatosProd.Controls.Add(Me.Label2)
         Me.GobDatosProd.Controls.Add(Me.Label1)
         Me.GobDatosProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -165,83 +157,46 @@ Partial Class FrmRoles
         Me.GobDatosProd.Size = New System.Drawing.Size(1653, 357)
         Me.GobDatosProd.TabIndex = 5
         Me.GobDatosProd.TabStop = False
-        Me.GobDatosProd.Text = "Datos Generales del Rol de Usuario"
+        Me.GobDatosProd.Text = "Datos Generales del Permiso"
         '
-        'TxtDescRolUsuario
+        'TxtNombreProd
         '
-        Me.TxtDescRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescRolUsuario.Location = New System.Drawing.Point(175, 155)
-        Me.TxtDescRolUsuario.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtDescRolUsuario.Multiline = True
-        Me.TxtDescRolUsuario.Name = "TxtDescRolUsuario"
-        Me.TxtDescRolUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDescRolUsuario.Size = New System.Drawing.Size(513, 185)
-        Me.TxtDescRolUsuario.TabIndex = 2
+        Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombreProd.Location = New System.Drawing.Point(64, 152)
+        Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNombreProd.Multiline = True
+        Me.TxtNombreProd.Name = "TxtNombreProd"
+        Me.TxtNombreProd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtNombreProd.Size = New System.Drawing.Size(792, 185)
+        Me.TxtNombreProd.TabIndex = 2
         '
-        'Label5
+        'TxtIdProd
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(761, 43)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 28)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Permisos:"
-        '
-        'TxtNomRolUsu
-        '
-        Me.TxtNomRolUsu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNomRolUsu.Location = New System.Drawing.Point(175, 99)
-        Me.TxtNomRolUsu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNomRolUsu.Name = "TxtNomRolUsu"
-        Me.TxtNomRolUsu.Size = New System.Drawing.Size(490, 34)
-        Me.TxtNomRolUsu.TabIndex = 1
+        Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtIdProd.Enabled = False
+        Me.TxtIdProd.Location = New System.Drawing.Point(159, 58)
+        Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtIdProd.Name = "TxtIdProd"
+        Me.TxtIdProd.Size = New System.Drawing.Size(247, 34)
+        Me.TxtIdProd.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 155)
+        Me.Label2.Location = New System.Drawing.Point(59, 109)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 28)
+        Me.Label2.Size = New System.Drawing.Size(224, 28)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Descripción:"
+        Me.Label2.Text = "Descripción del Permiso:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 99)
+        Me.Label1.Location = New System.Drawing.Point(59, 60)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 28)
+        Me.Label1.Size = New System.Drawing.Size(81, 28)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(65, 41)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 28)
-        Me.Label3.TabIndex = 30
-        Me.Label3.Text = "Código:"
-        '
-        'TxtCodRolUsuario
-        '
-        Me.TxtCodRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCodRolUsuario.Enabled = False
-        Me.TxtCodRolUsuario.Location = New System.Drawing.Point(175, 41)
-        Me.TxtCodRolUsuario.Name = "TxtCodRolUsuario"
-        Me.TxtCodRolUsuario.Size = New System.Drawing.Size(235, 34)
-        Me.TxtCodRolUsuario.TabIndex = 31
-        '
-        'ClbPermisos
-        '
-        Me.ClbPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.ClbPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ClbPermisos.FormattingEnabled = True
-        Me.ClbPermisos.Items.AddRange(New Object() {"Permiso 1", "Permiso 2", "Permiso 3", "Permiso 4 "})
-        Me.ClbPermisos.Location = New System.Drawing.Point(766, 99)
-        Me.ClbPermisos.Name = "ClbPermisos"
-        Me.ClbPermisos.Size = New System.Drawing.Size(340, 232)
-        Me.ClbPermisos.TabIndex = 34
+        Me.Label1.Text = "Código:"
         '
         'PictureBox2
         '
@@ -252,7 +207,6 @@ Partial Class FrmRoles
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 44
         Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Buscar")
         '
         'PictureBox1
         '
@@ -263,7 +217,6 @@ Partial Class FrmRoles
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 42
         Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Filtrar")
         '
         'BtnAgregarP
         '
@@ -356,7 +309,7 @@ Partial Class FrmRoles
         'PibProductos
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgRoles
+        Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.PibPermiso
         Me.PibProductos.Location = New System.Drawing.Point(1221, 30)
         Me.PibProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PibProductos.Name = "PibProductos"
@@ -403,7 +356,7 @@ Partial Class FrmRoles
         Me.PibCerrar.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
-        'FrmRoles
+        'FrmPermiso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -411,8 +364,8 @@ Partial Class FrmRoles
         Me.Controls.Add(Me.PanelCentral)
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "FrmRoles"
-        Me.Text = "FrmRoles"
+        Me.Name = "FrmPermiso"
+        Me.Text = "FrmOpciones"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
         Me.PanelCentral.ResumeLayout(False)
@@ -431,29 +384,25 @@ Partial Class FrmRoles
     End Sub
 
     Friend WithEvents PanSuperior As Panel
+    Friend WithEvents PibRetornar As PictureBox
     Friend WithEvents PibMinimizar As PictureBox
     Friend WithEvents PibCerrar As PictureBox
     Friend WithEvents Label8 As Label
     Friend WithEvents PanelCentral As Panel
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents GobDatosProd As GroupBox
-    Friend WithEvents PibProductos As PictureBox
-    Friend WithEvents BtnAgregarP As Button
-    Friend WithEvents BtnEliminarP As Button
-    Friend WithEvents BtnEditarP As Button
-    Friend WithEvents BtnLimpiarP As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents TxtNomRolUsu As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TxtDescRolUsuario As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents PibRetornar As PictureBox
-    Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TxtBuscar As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents TxtCodRolUsuario As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents ClbPermisos As CheckedListBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents BtnAgregarP As Button
+    Friend WithEvents BtnEliminarP As Button
+    Friend WithEvents BtnEditarP As Button
+    Friend WithEvents BtnLimpiarP As Button
+    Friend WithEvents GobDatosProd As GroupBox
+    Friend WithEvents PibProductos As PictureBox
+    Friend WithEvents TxtNombreProd As TextBox
+    Friend WithEvents TxtIdProd As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

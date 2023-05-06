@@ -100,6 +100,12 @@
     <Compile Include="Formularios\FrmCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FrmMarcas.Designer.vb">
+      <DependentUpon>FrmMarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmMarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmMovimiento.Designer.vb">
       <DependentUpon>FrmMovimiento.vb</DependentUpon>
     </Compile>
@@ -110,6 +116,12 @@
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPermisos.Designer.vb">
+      <DependentUpon>FrmPermisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPermisos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmProductos.Designer.vb">
@@ -176,11 +188,17 @@
     <EmbeddedResource Include="Formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMarcas.resx">
+      <DependentUpon>FrmMarcas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMovimiento.resx">
       <DependentUpon>FrmMovimiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPermisos.resx">
+      <DependentUpon>FrmPermisos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmProductos.resx">
       <DependentUpon>FrmProductos.vb</DependentUpon>
@@ -319,6 +337,10 @@
     <None Include="Resources\imgEditar2.png" />
     <None Include="Resources\imgRoles1.png" />
     <None Include="Resources\imgCategoria1.png" />
+    <None Include="Resources\BtnMarcas.png" />
+    <None Include="Resources\pibMarcas.png" />
+    <None Include="Resources\PibPermiso.png" />
+    <None Include="Resources\BtnPermiso.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
