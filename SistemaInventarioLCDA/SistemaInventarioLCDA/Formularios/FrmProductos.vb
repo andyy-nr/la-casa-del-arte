@@ -21,7 +21,7 @@
 
 
     'Ajustar tamaño del formulario a la pantalla.
-    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmProductos_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
     End Sub
@@ -30,8 +30,11 @@
 
     'Botones
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
-        'Application.Exit()
-        Close()
+        Dim Respuesta = MsgBox("¿Esta seguro de que desea regresar? Cualquier información no guardada se perderá", MsgBoxStyle.OkCancel, "Cerrar")
+        If Respuesta = vbOK Then
+            Me.Close()
+            FrmPrincipal.Visible = True
+        End If
     End Sub
 
     Private Sub PibRetornar_Click(sender As Object, e As EventArgs) Handles PibRetornar.Click
@@ -40,6 +43,10 @@
             Me.Close()
             FrmPrincipal.Visible = True
         End If
+    End Sub
+
+    Private Sub PibMaximizar_Click(sender As Object, e As EventArgs) Handles PibMaximizar.Click
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click

@@ -142,12 +142,6 @@
     <Compile Include="Formularios\FrmRoles.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmSalidas.Designer.vb">
-      <DependentUpon>FrmSalidas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmSalidas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\FrmUsuarios.Designer.vb">
       <DependentUpon>FrmUsuarios.vb</DependentUpon>
     </Compile>
@@ -208,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmRoles.resx">
       <DependentUpon>FrmRoles.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmSalidas.resx">
-      <DependentUpon>FrmSalidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.vb</DependentUpon>
@@ -341,6 +332,7 @@
     <None Include="Resources\pibMarcas.png" />
     <None Include="Resources\PibPermiso.png" />
     <None Include="Resources\BtnPermiso.png" />
+    <None Include="Resources\btnMaximizar.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

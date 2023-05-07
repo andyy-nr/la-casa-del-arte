@@ -64,12 +64,18 @@
 
     'Botones
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
-        Application.Exit()
-        Close()
+        Dim Respuesta = MsgBox("¿Estas seguro de que deseas salir del programa?", MsgBoxStyle.OkCancel, "Salir")
+        If Respuesta = vbOK Then
+            Application.Exit()
+        End If
     End Sub
 
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub PibMaximizar_Click(sender As Object, e As EventArgs) Handles PibMaximizar.Click
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click

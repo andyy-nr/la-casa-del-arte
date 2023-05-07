@@ -24,10 +24,19 @@ Partial Class FrmPrincipal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
-        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
-        Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanMenu = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TmrOcultar = New System.Windows.Forms.Timer(Me.components)
+        Me.TmrMostrar = New System.Windows.Forms.Timer(Me.components)
+        Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PanPrincipal = New System.Windows.Forms.Panel()
+        Me.LblFecha = New System.Windows.Forms.Label()
+        Me.LblHora = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.BtnPermisos = New System.Windows.Forms.Button()
         Me.BtnMarca = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
@@ -37,33 +46,27 @@ Partial Class FrmPrincipal
         Me.BtnCategorias = New System.Windows.Forms.Button()
         Me.BtnUsuarios = New System.Windows.Forms.Button()
         Me.BtnRoles = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PibMenu = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.TmrOcultar = New System.Windows.Forms.Timer(Me.components)
-        Me.TmrMostrar = New System.Windows.Forms.Timer(Me.components)
-        Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PanPrincipal = New System.Windows.Forms.Panel()
-        Me.LblFecha = New System.Windows.Forms.Label()
-        Me.LblHora = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PibMaximizar = New System.Windows.Forms.PictureBox()
+        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
+        Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
-        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanMenu.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanPrincipal.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.PibMaximizar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
         Me.PanSuperior.Controls.Add(Me.Label2)
@@ -73,32 +76,6 @@ Partial Class FrmPrincipal
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1355, 52)
         Me.PanSuperior.TabIndex = 0
-        '
-        'PibMinimizar
-        '
-        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(1256, 2)
-        Me.PibMinimizar.Name = "PibMinimizar"
-        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
-        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibMinimizar.TabIndex = 5
-        Me.PibMinimizar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
-        '
-        'PibCerrar
-        '
-        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
-        Me.PibCerrar.Location = New System.Drawing.Point(1307, 3)
-        Me.PibCerrar.Name = "PibCerrar"
-        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
-        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibCerrar.TabIndex = 4
-        Me.PibCerrar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'Label2
         '
@@ -134,6 +111,96 @@ Partial Class FrmPrincipal
         Me.PanMenu.Name = "PanMenu"
         Me.PanMenu.Size = New System.Drawing.Size(293, 848)
         Me.PanMenu.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.PibMenu)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(293, 177)
+        Me.Panel1.TabIndex = 10
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(84, 130)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(144, 17)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "*Nombre del Usuario*"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(84, 96)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(114, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "*Rol del Usuario*"
+        '
+        'TmrOcultar
+        '
+        '
+        'TmrMostrar
+        '
+        '
+        'TmrHoraFecha
+        '
+        Me.TmrHoraFecha.Enabled = True
+        '
+        'PanPrincipal
+        '
+        Me.PanPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.PanPrincipal.Controls.Add(Me.LblFecha)
+        Me.PanPrincipal.Controls.Add(Me.LblHora)
+        Me.PanPrincipal.Controls.Add(Me.PictureBox3)
+        Me.PanPrincipal.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanPrincipal.Location = New System.Drawing.Point(293, 52)
+        Me.PanPrincipal.Margin = New System.Windows.Forms.Padding(4)
+        Me.PanPrincipal.Name = "PanPrincipal"
+        Me.PanPrincipal.Size = New System.Drawing.Size(1062, 848)
+        Me.PanPrincipal.TabIndex = 7
+        '
+        'LblFecha
+        '
+        Me.LblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LblFecha.AutoSize = True
+        Me.LblFecha.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblFecha.Location = New System.Drawing.Point(944, 809)
+        Me.LblFecha.Name = "LblFecha"
+        Me.LblFecha.Size = New System.Drawing.Size(106, 23)
+        Me.LblFecha.TabIndex = 3
+        Me.LblFecha.Text = "dd/MM/yyyy"
+        '
+        'LblHora
+        '
+        Me.LblHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LblHora.AutoSize = True
+        Me.LblHora.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblHora.Location = New System.Drawing.Point(972, 784)
+        Me.LblHora.Name = "LblHora"
+        Me.LblHora.Size = New System.Drawing.Size(50, 23)
+        Me.LblHora.TabIndex = 2
+        Me.LblHora.Text = "00:00"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox3.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
+        Me.PictureBox3.Location = New System.Drawing.Point(281, 84)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(500, 500)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
         '
         'BtnPermisos
         '
@@ -317,39 +384,6 @@ Partial Class FrmPrincipal
         Me.BtnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnRoles.UseVisualStyleBackColor = True
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.PibMenu)
-        Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(293, 177)
-        Me.Panel1.TabIndex = 10
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(84, 130)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(144, 17)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "*Nombre del Usuario*"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(84, 96)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 17)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "*Rol del Usuario*"
-        '
         'PibMenu
         '
         Me.PibMenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -374,62 +408,44 @@ Partial Class FrmPrincipal
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
-        'TmrOcultar
+        'PibMaximizar
         '
+        Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
+        Me.PibMaximizar.Location = New System.Drawing.Point(1262, 7)
+        Me.PibMaximizar.Name = "PibMaximizar"
+        Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
+        Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMaximizar.TabIndex = 6
+        Me.PibMaximizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMaximizar, "Maximizar")
         '
-        'TmrMostrar
+        'PibMinimizar
         '
+        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
+        Me.PibMinimizar.Location = New System.Drawing.Point(1211, 4)
+        Me.PibMinimizar.Name = "PibMinimizar"
+        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
+        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMinimizar.TabIndex = 5
+        Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
         '
-        'TmrHoraFecha
+        'PibCerrar
         '
-        Me.TmrHoraFecha.Enabled = True
-        '
-        'PanPrincipal
-        '
-        Me.PanPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.PanPrincipal.Controls.Add(Me.LblFecha)
-        Me.PanPrincipal.Controls.Add(Me.LblHora)
-        Me.PanPrincipal.Controls.Add(Me.PictureBox3)
-        Me.PanPrincipal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanPrincipal.Location = New System.Drawing.Point(293, 52)
-        Me.PanPrincipal.Margin = New System.Windows.Forms.Padding(4)
-        Me.PanPrincipal.Name = "PanPrincipal"
-        Me.PanPrincipal.Size = New System.Drawing.Size(1062, 848)
-        Me.PanPrincipal.TabIndex = 7
-        '
-        'LblFecha
-        '
-        Me.LblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LblFecha.AutoSize = True
-        Me.LblFecha.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFecha.Location = New System.Drawing.Point(944, 809)
-        Me.LblFecha.Name = "LblFecha"
-        Me.LblFecha.Size = New System.Drawing.Size(106, 23)
-        Me.LblFecha.TabIndex = 3
-        Me.LblFecha.Text = "dd/MM/yyyy"
-        '
-        'LblHora
-        '
-        Me.LblHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LblHora.AutoSize = True
-        Me.LblHora.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblHora.Location = New System.Drawing.Point(972, 784)
-        Me.LblHora.Name = "LblHora"
-        Me.LblHora.Size = New System.Drawing.Size(50, 23)
-        Me.LblHora.TabIndex = 2
-        Me.LblHora.Text = "00:00"
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox3.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.logoNuevo
-        Me.PictureBox3.Location = New System.Drawing.Point(281, 84)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(500, 500)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
+        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
+        Me.PibCerrar.Location = New System.Drawing.Point(1307, 3)
+        Me.PibCerrar.Name = "PibCerrar"
+        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
+        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibCerrar.TabIndex = 4
+        Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'FrmPrincipal
         '
@@ -446,16 +462,17 @@ Partial Class FrmPrincipal
         Me.Text = "Sistema de Inventario La Casa del Arte"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
-        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanMenu.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanPrincipal.ResumeLayout(False)
         Me.PanPrincipal.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -487,4 +504,5 @@ Partial Class FrmPrincipal
     Friend WithEvents LblHora As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents BtnPermisos As Button
+    Friend WithEvents PibMaximizar As PictureBox
 End Class

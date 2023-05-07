@@ -24,6 +24,7 @@ Partial Class FrmReportes
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
+        Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
@@ -31,6 +32,7 @@ Partial Class FrmReportes
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,6 +41,7 @@ Partial Class FrmReportes
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.PibMaximizar)
         Me.PanSuperior.Controls.Add(Me.PibRetornar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
@@ -49,6 +52,19 @@ Partial Class FrmReportes
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1067, 52)
         Me.PanSuperior.TabIndex = 1
+        '
+        'PibMaximizar
+        '
+        Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
+        Me.PibMaximizar.Location = New System.Drawing.Point(974, 8)
+        Me.PibMaximizar.Name = "PibMaximizar"
+        Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
+        Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMaximizar.TabIndex = 11
+        Me.PibMaximizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMaximizar, "Maximizar")
         '
         'PibRetornar
         '
@@ -66,7 +82,7 @@ Partial Class FrmReportes
         Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(968, 2)
+        Me.PibMinimizar.Location = New System.Drawing.Point(923, 3)
         Me.PibMinimizar.Name = "PibMinimizar"
         Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -122,6 +138,7 @@ Partial Class FrmReportes
         Me.Text = "FrmReportes"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -136,4 +153,5 @@ Partial Class FrmReportes
     Friend WithEvents PibCerrar As PictureBox
     Friend WithEvents PibRetornar As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PibMaximizar As PictureBox
 End Class

@@ -24,46 +24,49 @@ Partial Class FrmRoles
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
+        Me.PibRetornar = New System.Windows.Forms.PictureBox()
+        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
+        Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BtnAgregarP = New System.Windows.Forms.Button()
+        Me.BtnEliminarP = New System.Windows.Forms.Button()
+        Me.BtnEditarP = New System.Windows.Forms.Button()
+        Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
+        Me.ClbPermisos = New System.Windows.Forms.CheckedListBox()
+        Me.TxtCodRolUsuario = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.TxtDescRolUsuario = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtNomRolUsu = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtCodRolUsuario = New System.Windows.Forms.TextBox()
-        Me.ClbPermisos = New System.Windows.Forms.CheckedListBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BtnAgregarP = New System.Windows.Forms.Button()
-        Me.BtnEliminarP = New System.Windows.Forms.Button()
-        Me.BtnEditarP = New System.Windows.Forms.Button()
-        Me.BtnLimpiarP = New System.Windows.Forms.Button()
-        Me.PibProductos = New System.Windows.Forms.PictureBox()
-        Me.PibRetornar = New System.Windows.Forms.PictureBox()
-        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
-        Me.PibCerrar = New System.Windows.Forms.PictureBox()
+        Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
-        Me.PanelCentral.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GobDatosProd.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelCentral.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GobDatosProd.SuspendLayout()
+        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.PibMaximizar)
         Me.PanSuperior.Controls.Add(Me.PibRetornar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
@@ -74,6 +77,44 @@ Partial Class FrmRoles
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
         Me.PanSuperior.TabIndex = 2
+        '
+        'PibRetornar
+        '
+        Me.PibRetornar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
+        Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
+        Me.PibRetornar.Name = "PibRetornar"
+        Me.PibRetornar.Size = New System.Drawing.Size(43, 43)
+        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibRetornar.TabIndex = 10
+        Me.PibRetornar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
+        '
+        'PibMinimizar
+        '
+        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
+        Me.PibMinimizar.Location = New System.Drawing.Point(1589, 4)
+        Me.PibMinimizar.Name = "PibMinimizar"
+        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
+        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMinimizar.TabIndex = 7
+        Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
+        '
+        'PibCerrar
+        '
+        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
+        Me.PibCerrar.Location = New System.Drawing.Point(1685, 4)
+        Me.PibCerrar.Name = "PibCerrar"
+        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
+        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibCerrar.TabIndex = 6
+        Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'Label8
         '
@@ -110,6 +151,28 @@ Partial Class FrmRoles
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 17
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.PictureBox2.Location = New System.Drawing.Point(111, 473)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 44
+        Me.PictureBox2.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Buscar")
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
+        Me.PictureBox1.Location = New System.Drawing.Point(41, 473)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 42
+        Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Filtrar")
+        '
         'TxtBuscar
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -142,128 +205,6 @@ Partial Class FrmRoles
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1653, 218)
         Me.DataGridView1.TabIndex = 9
-        '
-        'GobDatosProd
-        '
-        Me.GobDatosProd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GobDatosProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GobDatosProd.Controls.Add(Me.ClbPermisos)
-        Me.GobDatosProd.Controls.Add(Me.TxtCodRolUsuario)
-        Me.GobDatosProd.Controls.Add(Me.Label3)
-        Me.GobDatosProd.Controls.Add(Me.PibProductos)
-        Me.GobDatosProd.Controls.Add(Me.TxtDescRolUsuario)
-        Me.GobDatosProd.Controls.Add(Me.Label5)
-        Me.GobDatosProd.Controls.Add(Me.TxtNomRolUsu)
-        Me.GobDatosProd.Controls.Add(Me.Label2)
-        Me.GobDatosProd.Controls.Add(Me.Label1)
-        Me.GobDatosProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GobDatosProd.Location = New System.Drawing.Point(41, 37)
-        Me.GobDatosProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.GobDatosProd.Name = "GobDatosProd"
-        Me.GobDatosProd.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GobDatosProd.Size = New System.Drawing.Size(1653, 357)
-        Me.GobDatosProd.TabIndex = 5
-        Me.GobDatosProd.TabStop = False
-        Me.GobDatosProd.Text = "Datos Generales del Rol de Usuario"
-        '
-        'TxtDescRolUsuario
-        '
-        Me.TxtDescRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescRolUsuario.Location = New System.Drawing.Point(175, 155)
-        Me.TxtDescRolUsuario.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtDescRolUsuario.Multiline = True
-        Me.TxtDescRolUsuario.Name = "TxtDescRolUsuario"
-        Me.TxtDescRolUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDescRolUsuario.Size = New System.Drawing.Size(513, 185)
-        Me.TxtDescRolUsuario.TabIndex = 2
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(761, 43)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(93, 28)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Permisos:"
-        '
-        'TxtNomRolUsu
-        '
-        Me.TxtNomRolUsu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNomRolUsu.Location = New System.Drawing.Point(175, 99)
-        Me.TxtNomRolUsu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNomRolUsu.Name = "TxtNomRolUsu"
-        Me.TxtNomRolUsu.Size = New System.Drawing.Size(490, 34)
-        Me.TxtNomRolUsu.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 155)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 28)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Descripción:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 99)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 28)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(65, 41)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 28)
-        Me.Label3.TabIndex = 30
-        Me.Label3.Text = "Código:"
-        '
-        'TxtCodRolUsuario
-        '
-        Me.TxtCodRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCodRolUsuario.Enabled = False
-        Me.TxtCodRolUsuario.Location = New System.Drawing.Point(175, 41)
-        Me.TxtCodRolUsuario.Name = "TxtCodRolUsuario"
-        Me.TxtCodRolUsuario.Size = New System.Drawing.Size(235, 34)
-        Me.TxtCodRolUsuario.TabIndex = 31
-        '
-        'ClbPermisos
-        '
-        Me.ClbPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.ClbPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ClbPermisos.FormattingEnabled = True
-        Me.ClbPermisos.Items.AddRange(New Object() {"Permiso 1", "Permiso 2", "Permiso 3", "Permiso 4 "})
-        Me.ClbPermisos.Location = New System.Drawing.Point(766, 99)
-        Me.ClbPermisos.Name = "ClbPermisos"
-        Me.ClbPermisos.Size = New System.Drawing.Size(340, 232)
-        Me.ClbPermisos.TabIndex = 34
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 473)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 44
-        Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Buscar")
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 473)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 42
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Filtrar")
         '
         'BtnAgregarP
         '
@@ -353,6 +294,59 @@ Partial Class FrmRoles
         Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarP.UseVisualStyleBackColor = True
         '
+        'GobDatosProd
+        '
+        Me.GobDatosProd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GobDatosProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GobDatosProd.Controls.Add(Me.ClbPermisos)
+        Me.GobDatosProd.Controls.Add(Me.TxtCodRolUsuario)
+        Me.GobDatosProd.Controls.Add(Me.Label3)
+        Me.GobDatosProd.Controls.Add(Me.PibProductos)
+        Me.GobDatosProd.Controls.Add(Me.TxtDescRolUsuario)
+        Me.GobDatosProd.Controls.Add(Me.Label5)
+        Me.GobDatosProd.Controls.Add(Me.TxtNomRolUsu)
+        Me.GobDatosProd.Controls.Add(Me.Label2)
+        Me.GobDatosProd.Controls.Add(Me.Label1)
+        Me.GobDatosProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GobDatosProd.Location = New System.Drawing.Point(41, 37)
+        Me.GobDatosProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.GobDatosProd.Name = "GobDatosProd"
+        Me.GobDatosProd.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GobDatosProd.Size = New System.Drawing.Size(1653, 357)
+        Me.GobDatosProd.TabIndex = 5
+        Me.GobDatosProd.TabStop = False
+        Me.GobDatosProd.Text = "Datos Generales del Rol de Usuario"
+        '
+        'ClbPermisos
+        '
+        Me.ClbPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.ClbPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ClbPermisos.FormattingEnabled = True
+        Me.ClbPermisos.Items.AddRange(New Object() {"Permiso 1", "Permiso 2", "Permiso 3", "Permiso 4 "})
+        Me.ClbPermisos.Location = New System.Drawing.Point(766, 99)
+        Me.ClbPermisos.Name = "ClbPermisos"
+        Me.ClbPermisos.Size = New System.Drawing.Size(340, 232)
+        Me.ClbPermisos.TabIndex = 34
+        '
+        'TxtCodRolUsuario
+        '
+        Me.TxtCodRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCodRolUsuario.Enabled = False
+        Me.TxtCodRolUsuario.Location = New System.Drawing.Point(175, 41)
+        Me.TxtCodRolUsuario.Name = "TxtCodRolUsuario"
+        Me.TxtCodRolUsuario.Size = New System.Drawing.Size(235, 34)
+        Me.TxtCodRolUsuario.TabIndex = 31
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(65, 41)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(81, 28)
+        Me.Label3.TabIndex = 30
+        Me.Label3.Text = "Código:"
+        '
         'PibProductos
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -365,43 +359,65 @@ Partial Class FrmRoles
         Me.PibProductos.TabIndex = 29
         Me.PibProductos.TabStop = False
         '
-        'PibRetornar
+        'TxtDescRolUsuario
         '
-        Me.PibRetornar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
-        Me.PibRetornar.Location = New System.Drawing.Point(3, 3)
-        Me.PibRetornar.Name = "PibRetornar"
-        Me.PibRetornar.Size = New System.Drawing.Size(43, 43)
-        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibRetornar.TabIndex = 10
-        Me.PibRetornar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
+        Me.TxtDescRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtDescRolUsuario.Location = New System.Drawing.Point(175, 155)
+        Me.TxtDescRolUsuario.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtDescRolUsuario.Multiline = True
+        Me.TxtDescRolUsuario.Name = "TxtDescRolUsuario"
+        Me.TxtDescRolUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtDescRolUsuario.Size = New System.Drawing.Size(513, 185)
+        Me.TxtDescRolUsuario.TabIndex = 2
         '
-        'PibMinimizar
+        'Label5
         '
-        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(1634, 3)
-        Me.PibMinimizar.Name = "PibMinimizar"
-        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
-        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibMinimizar.TabIndex = 7
-        Me.PibMinimizar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(761, 43)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(93, 28)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Permisos:"
         '
-        'PibCerrar
+        'TxtNomRolUsu
         '
-        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
-        Me.PibCerrar.Location = New System.Drawing.Point(1685, 4)
-        Me.PibCerrar.Name = "PibCerrar"
-        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
-        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibCerrar.TabIndex = 6
-        Me.PibCerrar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
+        Me.TxtNomRolUsu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNomRolUsu.Location = New System.Drawing.Point(175, 99)
+        Me.TxtNomRolUsu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNomRolUsu.Name = "TxtNomRolUsu"
+        Me.TxtNomRolUsu.Size = New System.Drawing.Size(490, 34)
+        Me.TxtNomRolUsu.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(30, 155)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(118, 28)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Descripción:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(59, 99)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nombre:"
+        '
+        'PibMaximizar
+        '
+        Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
+        Me.PibMaximizar.Location = New System.Drawing.Point(1640, 8)
+        Me.PibMaximizar.Name = "PibMaximizar"
+        Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
+        Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMaximizar.TabIndex = 11
+        Me.PibMaximizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMaximizar, "Maximizar")
         '
         'FrmRoles
         '
@@ -415,17 +431,18 @@ Partial Class FrmRoles
         Me.Text = "FrmRoles"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
-        Me.PanelCentral.ResumeLayout(False)
-        Me.PanelCentral.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GobDatosProd.ResumeLayout(False)
-        Me.GobDatosProd.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelCentral.ResumeLayout(False)
+        Me.PanelCentral.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GobDatosProd.ResumeLayout(False)
+        Me.GobDatosProd.PerformLayout()
+        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -456,4 +473,5 @@ Partial Class FrmRoles
     Friend WithEvents TxtCodRolUsuario As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents ClbPermisos As CheckedListBox
+    Friend WithEvents PibMaximizar As PictureBox
 End Class

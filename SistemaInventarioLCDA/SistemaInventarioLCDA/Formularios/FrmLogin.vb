@@ -56,7 +56,6 @@
 
     'Botones
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
-        'Application.Exit()
         Close()
     End Sub
 

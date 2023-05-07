@@ -33,6 +33,9 @@ Partial Class FrmMovimiento
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GobDatosProdE = New System.Windows.Forms.GroupBox()
+        Me.DtpFechaVen = New System.Windows.Forms.DateTimePicker()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.TxtUnidadesDe = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -47,6 +50,11 @@ Partial Class FrmMovimiento
         Me.TxtCategoriaE = New System.Windows.Forms.TextBox()
         Me.TxtDescripcionE = New System.Windows.Forms.TextBox()
         Me.GopEntrada = New System.Windows.Forms.GroupBox()
+        Me.RBtnSalida = New System.Windows.Forms.RadioButton()
+        Me.RBtnEntrada = New System.Windows.Forms.RadioButton()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TxtCodigoEntrada = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.TxtUsuarioEnt = New System.Windows.Forms.TextBox()
         Me.TxtCantidadUP = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -61,14 +69,7 @@ Partial Class FrmMovimiento
         Me.BtnAgregarE = New System.Windows.Forms.Button()
         Me.BtnLimpiarE = New System.Windows.Forms.Button()
         Me.PanelCentral = New System.Windows.Forms.Panel()
-        Me.TxtPrecio = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.DtpFechaVen = New System.Windows.Forms.DateTimePicker()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.TxtCodigoEntrada = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.RBtnEntrada = New System.Windows.Forms.RadioButton()
-        Me.RBtnSalida = New System.Windows.Forms.RadioButton()
+        Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,11 +81,13 @@ Partial Class FrmMovimiento
         Me.GopEntrada.SuspendLayout()
         CType(Me.PibEntradas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.PibMaximizar)
         Me.PanSuperior.Controls.Add(Me.PibRetornar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
@@ -113,7 +116,7 @@ Partial Class FrmMovimiento
         Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(1634, 3)
+        Me.PibMinimizar.Location = New System.Drawing.Point(1589, 4)
         Me.PibMinimizar.Name = "PibMinimizar"
         Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -206,15 +209,42 @@ Partial Class FrmMovimiento
         Me.GobDatosProdE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.GobDatosProdE.Name = "GobDatosProdE"
         Me.GobDatosProdE.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GobDatosProdE.Size = New System.Drawing.Size(651, 506)
+        Me.GobDatosProdE.Size = New System.Drawing.Size(569, 506)
         Me.GobDatosProdE.TabIndex = 32
         Me.GobDatosProdE.TabStop = False
         Me.GobDatosProdE.Text = "Datos del Producto"
         '
+        'DtpFechaVen
+        '
+        Me.DtpFechaVen.Enabled = False
+        Me.DtpFechaVen.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpFechaVen.Location = New System.Drawing.Point(254, 351)
+        Me.DtpFechaVen.Name = "DtpFechaVen"
+        Me.DtpFechaVen.Size = New System.Drawing.Size(257, 34)
+        Me.DtpFechaVen.TabIndex = 11
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(254, 459)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(130, 34)
+        Me.TextBox2.TabIndex = 10
+        '
+        'TxtPrecio
+        '
+        Me.TxtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtPrecio.Enabled = False
+        Me.TxtPrecio.Location = New System.Drawing.Point(254, 407)
+        Me.TxtPrecio.Name = "TxtPrecio"
+        Me.TxtPrecio.Size = New System.Drawing.Size(130, 34)
+        Me.TxtPrecio.TabIndex = 9
+        '
         'TxtUnidadesDe
         '
         Me.TxtUnidadesDe.AutoSize = True
-        Me.TxtUnidadesDe.Location = New System.Drawing.Point(14, 456)
+        Me.TxtUnidadesDe.Location = New System.Drawing.Point(42, 462)
         Me.TxtUnidadesDe.Name = "TxtUnidadesDe"
         Me.TxtUnidadesDe.Size = New System.Drawing.Size(197, 28)
         Me.TxtUnidadesDe.TabIndex = 8
@@ -223,7 +253,7 @@ Partial Class FrmMovimiento
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(33, 361)
+        Me.Label7.Location = New System.Drawing.Point(33, 351)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(206, 28)
         Me.Label7.TabIndex = 7
@@ -232,7 +262,7 @@ Partial Class FrmMovimiento
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(62, 407)
+        Me.Label6.Location = New System.Drawing.Point(93, 407)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(146, 28)
         Me.Label6.TabIndex = 6
@@ -240,7 +270,6 @@ Partial Class FrmMovimiento
         '
         'Label1
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(54, 38)
         Me.Label1.Name = "Label1"
@@ -250,22 +279,20 @@ Partial Class FrmMovimiento
         '
         'CobProductosE
         '
-        Me.CobProductosE.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.CobProductosE.FormattingEnabled = True
         Me.CobProductosE.Items.AddRange(New Object() {"Producto 1", "Producto 2", "Producto 3"})
         Me.CobProductosE.Location = New System.Drawing.Point(171, 35)
         Me.CobProductosE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.CobProductosE.Name = "CobProductosE"
-        Me.CobProductosE.Size = New System.Drawing.Size(429, 36)
+        Me.CobProductosE.Size = New System.Drawing.Size(340, 36)
         Me.CobProductosE.TabIndex = 1
         Me.CobProductosE.Tag = ""
         Me.CobProductosE.Text = "Seleccione el producto..."
         '
         'Label5
         '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(33, 255)
+        Me.Label5.Location = New System.Drawing.Point(33, 252)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(118, 28)
         Me.Label5.TabIndex = 5
@@ -273,7 +300,6 @@ Partial Class FrmMovimiento
         '
         'Label2
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(62, 90)
         Me.Label2.Name = "Label2"
@@ -283,18 +309,16 @@ Partial Class FrmMovimiento
         '
         'TxtNombreE
         '
-        Me.TxtNombreE.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TxtNombreE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNombreE.Enabled = False
         Me.TxtNombreE.Location = New System.Drawing.Point(171, 88)
         Me.TxtNombreE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtNombreE.Name = "TxtNombreE"
-        Me.TxtNombreE.Size = New System.Drawing.Size(429, 34)
+        Me.TxtNombreE.Size = New System.Drawing.Size(340, 34)
         Me.TxtNombreE.TabIndex = 2
         '
         'Label3
         '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(81, 144)
         Me.Label3.Name = "Label3"
@@ -304,20 +328,18 @@ Partial Class FrmMovimiento
         '
         'TxtMarcaE
         '
-        Me.TxtMarcaE.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TxtMarcaE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtMarcaE.Enabled = False
         Me.TxtMarcaE.Location = New System.Drawing.Point(171, 142)
         Me.TxtMarcaE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtMarcaE.Name = "TxtMarcaE"
-        Me.TxtMarcaE.Size = New System.Drawing.Size(429, 34)
+        Me.TxtMarcaE.Size = New System.Drawing.Size(340, 34)
         Me.TxtMarcaE.TabIndex = 3
         '
         'Label4
         '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(50, 199)
+        Me.Label4.Location = New System.Drawing.Point(50, 200)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(101, 28)
         Me.Label4.TabIndex = 4
@@ -325,26 +347,24 @@ Partial Class FrmMovimiento
         '
         'TxtCategoriaE
         '
-        Me.TxtCategoriaE.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TxtCategoriaE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCategoriaE.Enabled = False
-        Me.TxtCategoriaE.Location = New System.Drawing.Point(171, 197)
+        Me.TxtCategoriaE.Location = New System.Drawing.Point(171, 198)
         Me.TxtCategoriaE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtCategoriaE.Name = "TxtCategoriaE"
-        Me.TxtCategoriaE.Size = New System.Drawing.Size(429, 34)
+        Me.TxtCategoriaE.Size = New System.Drawing.Size(340, 34)
         Me.TxtCategoriaE.TabIndex = 4
         '
         'TxtDescripcionE
         '
-        Me.TxtDescripcionE.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TxtDescripcionE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtDescripcionE.Enabled = False
-        Me.TxtDescripcionE.Location = New System.Drawing.Point(171, 253)
+        Me.TxtDescripcionE.Location = New System.Drawing.Point(171, 250)
         Me.TxtDescripcionE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtDescripcionE.Multiline = True
         Me.TxtDescripcionE.Name = "TxtDescripcionE"
         Me.TxtDescripcionE.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDescripcionE.Size = New System.Drawing.Size(451, 83)
+        Me.TxtDescripcionE.Size = New System.Drawing.Size(360, 83)
         Me.TxtDescripcionE.TabIndex = 5
         '
         'GopEntrada
@@ -366,36 +386,85 @@ Partial Class FrmMovimiento
         Me.GopEntrada.Controls.Add(Me.Label11)
         Me.GopEntrada.Controls.Add(Me.PibEntradas)
         Me.GopEntrada.Controls.Add(Me.DtpFechaEntrada)
-        Me.GopEntrada.Location = New System.Drawing.Point(711, 37)
+        Me.GopEntrada.Location = New System.Drawing.Point(628, 37)
         Me.GopEntrada.Name = "GopEntrada"
-        Me.GopEntrada.Size = New System.Drawing.Size(983, 441)
+        Me.GopEntrada.Size = New System.Drawing.Size(1066, 441)
         Me.GopEntrada.TabIndex = 33
         Me.GopEntrada.TabStop = False
         Me.GopEntrada.Text = "Datos de la Entrada"
+        '
+        'RBtnSalida
+        '
+        Me.RBtnSalida.AutoSize = True
+        Me.RBtnSalida.Location = New System.Drawing.Point(417, 142)
+        Me.RBtnSalida.Name = "RBtnSalida"
+        Me.RBtnSalida.Size = New System.Drawing.Size(86, 32)
+        Me.RBtnSalida.TabIndex = 35
+        Me.RBtnSalida.TabStop = True
+        Me.RBtnSalida.Text = "Salida"
+        Me.RBtnSalida.UseVisualStyleBackColor = True
+        '
+        'RBtnEntrada
+        '
+        Me.RBtnEntrada.AutoSize = True
+        Me.RBtnEntrada.Location = New System.Drawing.Point(282, 142)
+        Me.RBtnEntrada.Name = "RBtnEntrada"
+        Me.RBtnEntrada.Size = New System.Drawing.Size(100, 32)
+        Me.RBtnEntrada.TabIndex = 34
+        Me.RBtnEntrada.TabStop = True
+        Me.RBtnEntrada.Text = "Entrada"
+        Me.RBtnEntrada.UseVisualStyleBackColor = True
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(65, 142)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(194, 28)
+        Me.Label16.TabIndex = 33
+        Me.Label16.Text = "Tipo de Movimiento:"
+        '
+        'TxtCodigoEntrada
+        '
+        Me.TxtCodigoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCodigoEntrada.Enabled = False
+        Me.TxtCodigoEntrada.Location = New System.Drawing.Point(168, 34)
+        Me.TxtCodigoEntrada.Name = "TxtCodigoEntrada"
+        Me.TxtCodigoEntrada.Size = New System.Drawing.Size(300, 34)
+        Me.TxtCodigoEntrada.TabIndex = 32
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(65, 35)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(81, 28)
+        Me.Label15.TabIndex = 31
+        Me.Label15.Text = "Código:"
         '
         'TxtUsuarioEnt
         '
         Me.TxtUsuarioEnt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtUsuarioEnt.Enabled = False
-        Me.TxtUsuarioEnt.Location = New System.Drawing.Point(203, 90)
+        Me.TxtUsuarioEnt.Location = New System.Drawing.Point(168, 86)
         Me.TxtUsuarioEnt.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtUsuarioEnt.Name = "TxtUsuarioEnt"
-        Me.TxtUsuarioEnt.Size = New System.Drawing.Size(391, 34)
+        Me.TxtUsuarioEnt.Size = New System.Drawing.Size(300, 34)
         Me.TxtUsuarioEnt.TabIndex = 9
         '
         'TxtCantidadUP
         '
         Me.TxtCantidadUP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCantidadUP.Location = New System.Drawing.Point(307, 349)
+        Me.TxtCantidadUP.Location = New System.Drawing.Point(299, 263)
         Me.TxtCantidadUP.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCantidadUP.Name = "TxtCantidadUP"
-        Me.TxtCantidadUP.Size = New System.Drawing.Size(109, 34)
+        Me.TxtCantidadUP.Size = New System.Drawing.Size(130, 34)
         Me.TxtCantidadUP.TabIndex = 12
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(65, 244)
+        Me.Label14.Location = New System.Drawing.Point(65, 325)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(118, 28)
         Me.Label14.TabIndex = 23
@@ -404,27 +473,27 @@ Partial Class FrmMovimiento
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(52, 351)
+        Me.Label9.Location = New System.Drawing.Point(65, 265)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(222, 28)
+        Me.Label9.Size = New System.Drawing.Size(216, 28)
         Me.Label9.TabIndex = 21
-        Me.Label9.Text = "Unudades del Producto:"
+        Me.Label9.Text = "Unidades del Producto:"
         '
         'TxtDesEnt
         '
         Me.TxtDesEnt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDesEnt.Location = New System.Drawing.Point(203, 233)
+        Me.TxtDesEnt.Location = New System.Drawing.Point(203, 325)
         Me.TxtDesEnt.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtDesEnt.Multiline = True
         Me.TxtDesEnt.Name = "TxtDesEnt"
         Me.TxtDesEnt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDesEnt.Size = New System.Drawing.Size(415, 83)
+        Me.TxtDesEnt.Size = New System.Drawing.Size(401, 97)
         Me.TxtDesEnt.TabIndex = 11
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(100, 96)
+        Me.Label13.Location = New System.Drawing.Point(63, 88)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(83, 28)
         Me.Label13.TabIndex = 30
@@ -433,17 +502,17 @@ Partial Class FrmMovimiento
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 187)
+        Me.Label11.Location = New System.Drawing.Point(65, 204)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(165, 28)
+        Me.Label11.Size = New System.Drawing.Size(210, 28)
         Me.Label11.TabIndex = 30
-        Me.Label11.Text = "Fecha de Entrada:"
+        Me.Label11.Text = "Fecha del Movimiento:"
         '
         'PibEntradas
         '
         Me.PibEntradas.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PibEntradas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEntrada
-        Me.PibEntradas.Location = New System.Drawing.Point(633, 69)
+        Me.PibEntradas.Location = New System.Drawing.Point(676, 75)
         Me.PibEntradas.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PibEntradas.Name = "PibEntradas"
         Me.PibEntradas.Size = New System.Drawing.Size(335, 310)
@@ -453,10 +522,11 @@ Partial Class FrmMovimiento
         '
         'DtpFechaEntrada
         '
+        Me.DtpFechaEntrada.Enabled = False
         Me.DtpFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpFechaEntrada.Location = New System.Drawing.Point(203, 182)
+        Me.DtpFechaEntrada.Location = New System.Drawing.Point(297, 199)
         Me.DtpFechaEntrada.Name = "DtpFechaEntrada"
-        Me.DtpFechaEntrada.Size = New System.Drawing.Size(391, 34)
+        Me.DtpFechaEntrada.Size = New System.Drawing.Size(284, 34)
         Me.DtpFechaEntrada.TabIndex = 10
         '
         'Label12
@@ -544,77 +614,20 @@ Partial Class FrmMovimiento
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 808)
         Me.PanelCentral.TabIndex = 17
         '
-        'TxtPrecio
+        'PibMaximizar
         '
-        Me.TxtPrecio.Location = New System.Drawing.Point(239, 407)
-        Me.TxtPrecio.Name = "TxtPrecio"
-        Me.TxtPrecio.Size = New System.Drawing.Size(186, 34)
-        Me.TxtPrecio.TabIndex = 9
+        Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
+        Me.PibMaximizar.Location = New System.Drawing.Point(1640, 9)
+        Me.PibMaximizar.Name = "PibMaximizar"
+        Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
+        Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMaximizar.TabIndex = 10
+        Me.PibMaximizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMaximizar, "Maximizar")
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(239, 456)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(186, 34)
-        Me.TextBox2.TabIndex = 10
-        '
-        'DtpFechaVen
-        '
-        Me.DtpFechaVen.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpFechaVen.Location = New System.Drawing.Point(239, 361)
-        Me.DtpFechaVen.Name = "DtpFechaVen"
-        Me.DtpFechaVen.Size = New System.Drawing.Size(334, 34)
-        Me.DtpFechaVen.TabIndex = 11
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(100, 38)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(81, 28)
-        Me.Label15.TabIndex = 31
-        Me.Label15.Text = "Código:"
-        '
-        'TxtCodigoEntrada
-        '
-        Me.TxtCodigoEntrada.Enabled = False
-        Me.TxtCodigoEntrada.Location = New System.Drawing.Point(203, 43)
-        Me.TxtCodigoEntrada.Name = "TxtCodigoEntrada"
-        Me.TxtCodigoEntrada.Size = New System.Drawing.Size(391, 34)
-        Me.TxtCodigoEntrada.TabIndex = 32
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(6, 142)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(194, 28)
-        Me.Label16.TabIndex = 33
-        Me.Label16.Text = "Tipo de Movimiento:"
-        '
-        'RBtnEntrada
-        '
-        Me.RBtnEntrada.AutoSize = True
-        Me.RBtnEntrada.Location = New System.Drawing.Point(225, 140)
-        Me.RBtnEntrada.Name = "RBtnEntrada"
-        Me.RBtnEntrada.Size = New System.Drawing.Size(100, 32)
-        Me.RBtnEntrada.TabIndex = 34
-        Me.RBtnEntrada.TabStop = True
-        Me.RBtnEntrada.Text = "Entrada"
-        Me.RBtnEntrada.UseVisualStyleBackColor = True
-        '
-        'RBtnSalida
-        '
-        Me.RBtnSalida.AutoSize = True
-        Me.RBtnSalida.Location = New System.Drawing.Point(428, 144)
-        Me.RBtnSalida.Name = "RBtnSalida"
-        Me.RBtnSalida.Size = New System.Drawing.Size(86, 32)
-        Me.RBtnSalida.TabIndex = 35
-        Me.RBtnSalida.TabStop = True
-        Me.RBtnSalida.Text = "Salida"
-        Me.RBtnSalida.UseVisualStyleBackColor = True
-        '
-        'FrmEntradas
+        'FrmMovimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -622,7 +635,7 @@ Partial Class FrmMovimiento
         Me.Controls.Add(Me.PanelCentral)
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "FrmEntradas"
+        Me.Name = "FrmMovimiento"
         Me.Text = "FrmEntradas"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
@@ -639,6 +652,7 @@ Partial Class FrmMovimiento
         CType(Me.PibEntradas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -689,4 +703,5 @@ Partial Class FrmMovimiento
     Friend WithEvents Label16 As Label
     Friend WithEvents TxtCodigoEntrada As TextBox
     Friend WithEvents Label15 As Label
+    Friend WithEvents PibMaximizar As PictureBox
 End Class

@@ -24,44 +24,47 @@ Partial Class FrmMarcas
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PanSuperior = New System.Windows.Forms.Panel()
+        Me.PibRetornar = New System.Windows.Forms.PictureBox()
+        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
+        Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BtnAgregarP = New System.Windows.Forms.Button()
+        Me.BtnEliminarP = New System.Windows.Forms.Button()
         Me.GobDatosMarca = New System.Windows.Forms.GroupBox()
         Me.TxtNomMarca = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.TxtDescMarca = New System.Windows.Forms.TextBox()
         Me.TxtCodMarca = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BtnAgregarP = New System.Windows.Forms.Button()
-        Me.BtnEliminarP = New System.Windows.Forms.Button()
-        Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.BtnEditarP = New System.Windows.Forms.Button()
         Me.BtnLimpiarP = New System.Windows.Forms.Button()
-        Me.PibRetornar = New System.Windows.Forms.PictureBox()
-        Me.PibMinimizar = New System.Windows.Forms.PictureBox()
-        Me.PibCerrar = New System.Windows.Forms.PictureBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
-        Me.PanelCentral.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GobDatosMarca.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelCentral.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GobDatosMarca.SuspendLayout()
+        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
         '
         Me.PanSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.PanSuperior.Controls.Add(Me.PibMaximizar)
         Me.PanSuperior.Controls.Add(Me.PibRetornar)
         Me.PanSuperior.Controls.Add(Me.PibMinimizar)
         Me.PanSuperior.Controls.Add(Me.PibCerrar)
@@ -72,6 +75,44 @@ Partial Class FrmMarcas
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
         Me.PanSuperior.TabIndex = 4
+        '
+        'PibRetornar
+        '
+        Me.PibRetornar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
+        Me.PibRetornar.Location = New System.Drawing.Point(3, 4)
+        Me.PibRetornar.Name = "PibRetornar"
+        Me.PibRetornar.Size = New System.Drawing.Size(43, 43)
+        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibRetornar.TabIndex = 10
+        Me.PibRetornar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
+        '
+        'PibMinimizar
+        '
+        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
+        Me.PibMinimizar.Location = New System.Drawing.Point(1589, 4)
+        Me.PibMinimizar.Name = "PibMinimizar"
+        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
+        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMinimizar.TabIndex = 7
+        Me.PibMinimizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
+        '
+        'PibCerrar
+        '
+        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
+        Me.PibCerrar.Location = New System.Drawing.Point(1685, 4)
+        Me.PibCerrar.Name = "PibCerrar"
+        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
+        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibCerrar.TabIndex = 6
+        Me.PibCerrar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
         '
         'Label8
         '
@@ -108,6 +149,26 @@ Partial Class FrmMarcas
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 19
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.PictureBox2.Location = New System.Drawing.Point(111, 472)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 48
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
+        Me.PictureBox1.Location = New System.Drawing.Point(41, 472)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 46
+        Me.PictureBox1.TabStop = False
+        '
         'TxtBuscar
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -140,105 +201,6 @@ Partial Class FrmMarcas
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1653, 218)
         Me.DataGridView1.TabIndex = 9
-        '
-        'GobDatosMarca
-        '
-        Me.GobDatosMarca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GobDatosMarca.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GobDatosMarca.Controls.Add(Me.TxtNomMarca)
-        Me.GobDatosMarca.Controls.Add(Me.Label3)
-        Me.GobDatosMarca.Controls.Add(Me.PibProductos)
-        Me.GobDatosMarca.Controls.Add(Me.TxtDescMarca)
-        Me.GobDatosMarca.Controls.Add(Me.TxtCodMarca)
-        Me.GobDatosMarca.Controls.Add(Me.Label2)
-        Me.GobDatosMarca.Controls.Add(Me.Label1)
-        Me.GobDatosMarca.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GobDatosMarca.Location = New System.Drawing.Point(41, 37)
-        Me.GobDatosMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.GobDatosMarca.Name = "GobDatosMarca"
-        Me.GobDatosMarca.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GobDatosMarca.Size = New System.Drawing.Size(1653, 357)
-        Me.GobDatosMarca.TabIndex = 5
-        Me.GobDatosMarca.TabStop = False
-        Me.GobDatosMarca.Text = "Datos Generales de la Marca"
-        '
-        'TxtNomMarca
-        '
-        Me.TxtNomMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNomMarca.Location = New System.Drawing.Point(171, 122)
-        Me.TxtNomMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNomMarca.Name = "TxtNomMarca"
-        Me.TxtNomMarca.Size = New System.Drawing.Size(430, 34)
-        Me.TxtNomMarca.TabIndex = 2
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(51, 122)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 28)
-        Me.Label3.TabIndex = 31
-        Me.Label3.Text = "Nombre:"
-        '
-        'TxtDescMarca
-        '
-        Me.TxtDescMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescMarca.Location = New System.Drawing.Point(171, 185)
-        Me.TxtDescMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtDescMarca.Multiline = True
-        Me.TxtDescMarca.Name = "TxtDescMarca"
-        Me.TxtDescMarca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDescMarca.Size = New System.Drawing.Size(868, 140)
-        Me.TxtDescMarca.TabIndex = 3
-        '
-        'TxtCodMarca
-        '
-        Me.TxtCodMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCodMarca.Enabled = False
-        Me.TxtCodMarca.Location = New System.Drawing.Point(171, 60)
-        Me.TxtCodMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtCodMarca.Name = "TxtCodMarca"
-        Me.TxtCodMarca.Size = New System.Drawing.Size(430, 34)
-        Me.TxtCodMarca.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(22, 185)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 28)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Descripción:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 60)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 28)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Código:"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 472)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 48
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 472)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 46
-        Me.PictureBox1.TabStop = False
         '
         'BtnAgregarP
         '
@@ -284,6 +246,46 @@ Partial Class FrmMarcas
         Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEliminarP.UseVisualStyleBackColor = True
         '
+        'GobDatosMarca
+        '
+        Me.GobDatosMarca.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GobDatosMarca.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GobDatosMarca.Controls.Add(Me.TxtNomMarca)
+        Me.GobDatosMarca.Controls.Add(Me.Label3)
+        Me.GobDatosMarca.Controls.Add(Me.PibProductos)
+        Me.GobDatosMarca.Controls.Add(Me.TxtDescMarca)
+        Me.GobDatosMarca.Controls.Add(Me.TxtCodMarca)
+        Me.GobDatosMarca.Controls.Add(Me.Label2)
+        Me.GobDatosMarca.Controls.Add(Me.Label1)
+        Me.GobDatosMarca.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GobDatosMarca.Location = New System.Drawing.Point(41, 37)
+        Me.GobDatosMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.GobDatosMarca.Name = "GobDatosMarca"
+        Me.GobDatosMarca.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GobDatosMarca.Size = New System.Drawing.Size(1653, 357)
+        Me.GobDatosMarca.TabIndex = 5
+        Me.GobDatosMarca.TabStop = False
+        Me.GobDatosMarca.Text = "Datos Generales de la Marca"
+        '
+        'TxtNomMarca
+        '
+        Me.TxtNomMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNomMarca.Location = New System.Drawing.Point(171, 122)
+        Me.TxtNomMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNomMarca.Name = "TxtNomMarca"
+        Me.TxtNomMarca.Size = New System.Drawing.Size(430, 34)
+        Me.TxtNomMarca.TabIndex = 2
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(51, 122)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 28)
+        Me.Label3.TabIndex = 31
+        Me.Label3.Text = "Nombre:"
+        '
         'PibProductos
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -295,6 +297,45 @@ Partial Class FrmMarcas
         Me.PibProductos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PibProductos.TabIndex = 30
         Me.PibProductos.TabStop = False
+        '
+        'TxtDescMarca
+        '
+        Me.TxtDescMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtDescMarca.Location = New System.Drawing.Point(171, 185)
+        Me.TxtDescMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtDescMarca.Multiline = True
+        Me.TxtDescMarca.Name = "TxtDescMarca"
+        Me.TxtDescMarca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtDescMarca.Size = New System.Drawing.Size(868, 140)
+        Me.TxtDescMarca.TabIndex = 3
+        '
+        'TxtCodMarca
+        '
+        Me.TxtCodMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCodMarca.Enabled = False
+        Me.TxtCodMarca.Location = New System.Drawing.Point(171, 60)
+        Me.TxtCodMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtCodMarca.Name = "TxtCodMarca"
+        Me.TxtCodMarca.Size = New System.Drawing.Size(430, 34)
+        Me.TxtCodMarca.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(22, 185)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(118, 28)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Descripción:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(59, 60)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Código:"
         '
         'BtnEditarP
         '
@@ -340,43 +381,18 @@ Partial Class FrmMarcas
         Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarP.UseVisualStyleBackColor = True
         '
-        'PibRetornar
+        'PibMaximizar
         '
-        Me.PibRetornar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibRetornar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnRegresar
-        Me.PibRetornar.Location = New System.Drawing.Point(3, 4)
-        Me.PibRetornar.Name = "PibRetornar"
-        Me.PibRetornar.Size = New System.Drawing.Size(43, 43)
-        Me.PibRetornar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibRetornar.TabIndex = 10
-        Me.PibRetornar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibRetornar, "Regresar")
-        '
-        'PibMinimizar
-        '
-        Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(1634, 3)
-        Me.PibMinimizar.Name = "PibMinimizar"
-        Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
-        Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibMinimizar.TabIndex = 7
-        Me.PibMinimizar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibMinimizar, "Minimizar")
-        '
-        'PibCerrar
-        '
-        Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
-        Me.PibCerrar.Location = New System.Drawing.Point(1685, 4)
-        Me.PibCerrar.Name = "PibCerrar"
-        Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
-        Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibCerrar.TabIndex = 6
-        Me.PibCerrar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibCerrar, "Cerrar")
+        Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
+        Me.PibMaximizar.Location = New System.Drawing.Point(1640, 9)
+        Me.PibMaximizar.Name = "PibMaximizar"
+        Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
+        Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMaximizar.TabIndex = 11
+        Me.PibMaximizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMaximizar, "Maximizar")
         '
         'FrmMarcas
         '
@@ -390,17 +406,18 @@ Partial Class FrmMarcas
         Me.Text = "FrmMarcas"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
-        Me.PanelCentral.ResumeLayout(False)
-        Me.PanelCentral.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GobDatosMarca.ResumeLayout(False)
-        Me.GobDatosMarca.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelCentral.ResumeLayout(False)
+        Me.PanelCentral.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GobDatosMarca.ResumeLayout(False)
+        Me.GobDatosMarca.PerformLayout()
+        CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -429,4 +446,5 @@ Partial Class FrmMarcas
     Friend WithEvents BtnEditarP As Button
     Friend WithEvents BtnLimpiarP As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PibMaximizar As PictureBox
 End Class

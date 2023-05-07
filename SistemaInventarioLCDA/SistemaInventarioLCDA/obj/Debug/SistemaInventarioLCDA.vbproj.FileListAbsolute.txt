@@ -200,12 +200,10 @@ D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\Sis
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.vbproj.AssemblyReference.cache
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.vbproj.SuggestedBindingRedirects.cache
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmCategoria.resources
-D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmEntradas.resources
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmLogin.resources
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmProductos.resources
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmReportes.resources
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmRoles.resources
-D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmSalidas.resources
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmUsuarios.resources
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmPrincipal.resources
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.Resources.resources
@@ -747,3 +745,6 @@ C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLC
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.exe
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.xml
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.pdb
+D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmMarcas.resources
+D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmMovimiento.resources
+D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmPermiso.resources
