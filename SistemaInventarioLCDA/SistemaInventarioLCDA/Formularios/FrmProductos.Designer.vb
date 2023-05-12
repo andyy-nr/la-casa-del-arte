@@ -383,12 +383,12 @@ Partial Class FrmProductos
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(753, 158)
+        Me.Label9.Location = New System.Drawing.Point(810, 160)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(216, 28)
+        Me.Label9.Size = New System.Drawing.Size(159, 28)
         Me.Label9.TabIndex = 33
-        Me.Label9.Text = "Unidades del Producto:"
+        Me.Label9.Text = "Inventario Inicial:"
         '
         'Label7
         '
