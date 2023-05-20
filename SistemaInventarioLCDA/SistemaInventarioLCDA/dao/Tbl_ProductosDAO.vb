@@ -128,4 +128,30 @@ Public Class Tbl_ProductosDAO
         Return resp
     End Function
 
+    Public Function editarProducto(ByVal producto As Tbl_Productos) As Boolean
+        Dim resp As Boolean = False
+        Dim tsql As String = "Update Producto SET id_producto=@id_producto, id_categoria=@id_categoria, id_marca=@id_marca, nombreProd=@nombreProd, precio_unitario=@precio_unitario, 
+                              descripcionProd=@descripcionProd, unidadesProd=@unidadesProd, 
+                              estado=@estado where id_producto = @id_producto"
+        Dim conn As New SqlConnection(strConn)
+        conn.Open()
+        Dim cmd As New SqlCommand(tsql, conn)
+        cmd.CommandType = CommandType.Text
+        cmd.Parameters.AddWithValue("@id_producto", producto.Id_producto)
+        cmd.Parameters.AddWithValue("@id_categoria", producto.Id_categoria)
+        cmd.Parameters.AddWithValue("@id_marca", producto.Id_marca)
+        cmd.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
+        cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
+        cmd.Parameters.AddWithValue("@descripcionProd", producto.DescripcionProd)
+        cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
+        cmd.Parameters.AddWithValue("@estado", producto.Estado)
+
+        If (cmd.ExecuteNonQuery <> 0) Then
+            resp = True
+        End If
+        conn.Close()
+        Return resp
+
+    End Function
+
 End Class

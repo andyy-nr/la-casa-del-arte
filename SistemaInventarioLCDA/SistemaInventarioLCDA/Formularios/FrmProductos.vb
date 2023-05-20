@@ -95,6 +95,7 @@
         TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value
         TxtUnidadesProd.Text = DgvProductos.Rows(fila).Cells(6).Value
 
+
     End Sub
 
 
@@ -172,6 +173,30 @@
         Else
             MsgBox("Error al intentar eliminar el producto", MsgBoxStyle.Critical, "Productos")
         End If
+    End Sub
+
+    Private Sub BtnEditarP_Click(sender As Object, e As EventArgs) Handles BtnEditarP.Click
+        Dim Tbl_ProductosDao As New Tbl_ProductosDAO()
+        Dim productos As New Tbl_Productos
+
+        productos.Id_producto = TxtIdProd.Text.Trim()
+        productos.Id_categoria = CbCategoria.SelectedValue
+        productos.Id_marca = CbMarca.SelectedValue
+        productos.NombreProd = TxtNombreProd.Text.Trim()
+        productos.Precio_unitario = TxtPrecioU.Text.Trim()
+        productos.DescripcionProd = TxtDescripcion.Text.Trim()
+        productos.UnidadesProd = TxtUnidadesProd.Text.Trim()
+        Dim resp = Tbl_ProductosDao.editarProducto(productos)
+        If (resp) Then
+            MsgBox("Producto editado exitosamente.", MsgBoxStyle.Information, "Productos")
+        Else
+            MsgBox("Error al intentar editar el producto", MsgBoxStyle.Critical, "Productos")
+
+
+        End If
+        LlenarTabla()
+        Limpiar()
+
     End Sub
 
     Private Sub Limpiar()
