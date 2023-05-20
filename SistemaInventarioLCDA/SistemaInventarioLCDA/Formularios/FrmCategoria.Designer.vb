@@ -23,6 +23,9 @@ Partial Class FrmCategoria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -44,10 +47,11 @@ Partial Class FrmCategoria
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.GbCategorias = New System.Windows.Forms.GroupBox()
+        Me.DgvCategorias = New System.Windows.Forms.DataGridView()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,8 +61,9 @@ Partial Class FrmCategoria
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
+        Me.GbCategorias.SuspendLayout()
+        CType(Me.DgvCategorias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -276,7 +281,7 @@ Partial Class FrmCategoria
         Me.TxtIdCat.Location = New System.Drawing.Point(171, 60)
         Me.TxtIdCat.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtIdCat.Name = "TxtIdCat"
-        Me.TxtIdCat.Size = New System.Drawing.Size(430, 34)
+        Me.TxtIdCat.Size = New System.Drawing.Size(145, 34)
         Me.TxtIdCat.TabIndex = 1
         '
         'Label2
@@ -341,19 +346,6 @@ Partial Class FrmCategoria
         Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnAgregarP.UseVisualStyleBackColor = True
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 537)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1653, 218)
-        Me.DataGridView1.TabIndex = 9
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -377,11 +369,11 @@ Partial Class FrmCategoria
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.GbCategorias)
         Me.PanelCentral.Controls.Add(Me.PictureBox2)
         Me.PanelCentral.Controls.Add(Me.PictureBox1)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
         Me.PanelCentral.Controls.Add(Me.Label12)
-        Me.PanelCentral.Controls.Add(Me.DataGridView1)
         Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
         Me.PanelCentral.Controls.Add(Me.GobDatosProd)
@@ -395,6 +387,68 @@ Partial Class FrmCategoria
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 18
+        '
+        'GbCategorias
+        '
+        Me.GbCategorias.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GbCategorias.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GbCategorias.Controls.Add(Me.DgvCategorias)
+        Me.GbCategorias.Location = New System.Drawing.Point(41, 537)
+        Me.GbCategorias.Name = "GbCategorias"
+        Me.GbCategorias.Size = New System.Drawing.Size(1653, 218)
+        Me.GbCategorias.TabIndex = 51
+        Me.GbCategorias.TabStop = False
+        Me.GbCategorias.Text = "Categorías Registradas: 0"
+        '
+        'DgvCategorias
+        '
+        Me.DgvCategorias.AllowUserToAddRows = False
+        Me.DgvCategorias.AllowUserToResizeColumns = False
+        Me.DgvCategorias.AllowUserToResizeRows = False
+        Me.DgvCategorias.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgvCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvCategorias.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.DgvCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgvCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvCategorias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.DgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCategorias.EnableHeadersVisualStyles = False
+        Me.DgvCategorias.GridColor = System.Drawing.Color.SaddleBrown
+        Me.DgvCategorias.Location = New System.Drawing.Point(5, 32)
+        Me.DgvCategorias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgvCategorias.Name = "DgvCategorias"
+        Me.DgvCategorias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvCategorias.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DgvCategorias.RowHeadersVisible = False
+        Me.DgvCategorias.RowHeadersWidth = 51
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvCategorias.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.DgvCategorias.RowTemplate.Height = 24
+        Me.DgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvCategorias.Size = New System.Drawing.Size(1642, 181)
+        Me.DgvCategorias.TabIndex = 49
         '
         'FrmCategoria
         '
@@ -417,9 +471,10 @@ Partial Class FrmCategoria
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
+        Me.GbCategorias.ResumeLayout(False)
+        CType(Me.DgvCategorias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -442,11 +497,12 @@ Partial Class FrmCategoria
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnEliminarP As Button
     Friend WithEvents BtnAgregarP As Button
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtBuscar As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PanelCentral As Panel
     Friend WithEvents PibMaximizar As PictureBox
+    Friend WithEvents GbCategorias As GroupBox
+    Friend WithEvents DgvCategorias As DataGridView
 End Class

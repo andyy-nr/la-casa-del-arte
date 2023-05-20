@@ -23,17 +23,22 @@ Partial Class FrmMarcas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
+        Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.GbMarcas = New System.Windows.Forms.GroupBox()
+        Me.DgvMarcas = New System.Windows.Forms.DataGridView()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
         Me.GobDatosMarca = New System.Windows.Forms.GroupBox()
@@ -47,18 +52,18 @@ Partial Class FrmMarcas
         Me.BtnEditarP = New System.Windows.Forms.Button()
         Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
+        Me.GbMarcas.SuspendLayout()
+        CType(Me.DgvMarcas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosMarca.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -75,6 +80,19 @@ Partial Class FrmMarcas
         Me.PanSuperior.Name = "PanSuperior"
         Me.PanSuperior.Size = New System.Drawing.Size(1733, 52)
         Me.PanSuperior.TabIndex = 4
+        '
+        'PibMaximizar
+        '
+        Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
+        Me.PibMaximizar.Location = New System.Drawing.Point(1640, 9)
+        Me.PibMaximizar.Name = "PibMaximizar"
+        Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
+        Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PibMaximizar.TabIndex = 11
+        Me.PibMaximizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibMaximizar, "Maximizar")
         '
         'PibRetornar
         '
@@ -130,11 +148,11 @@ Partial Class FrmMarcas
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.GbMarcas)
         Me.PanelCentral.Controls.Add(Me.PictureBox2)
         Me.PanelCentral.Controls.Add(Me.PictureBox1)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
         Me.PanelCentral.Controls.Add(Me.Label12)
-        Me.PanelCentral.Controls.Add(Me.DataGridView1)
         Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
         Me.PanelCentral.Controls.Add(Me.GobDatosMarca)
@@ -148,6 +166,68 @@ Partial Class FrmMarcas
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 19
+        '
+        'GbMarcas
+        '
+        Me.GbMarcas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GbMarcas.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GbMarcas.Controls.Add(Me.DgvMarcas)
+        Me.GbMarcas.Location = New System.Drawing.Point(41, 537)
+        Me.GbMarcas.Name = "GbMarcas"
+        Me.GbMarcas.Size = New System.Drawing.Size(1653, 218)
+        Me.GbMarcas.TabIndex = 50
+        Me.GbMarcas.TabStop = False
+        Me.GbMarcas.Text = "Marcas Registradas: 0"
+        '
+        'DgvMarcas
+        '
+        Me.DgvMarcas.AllowUserToAddRows = False
+        Me.DgvMarcas.AllowUserToResizeColumns = False
+        Me.DgvMarcas.AllowUserToResizeRows = False
+        Me.DgvMarcas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgvMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvMarcas.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.DgvMarcas.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgvMarcas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMarcas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvMarcas.EnableHeadersVisualStyles = False
+        Me.DgvMarcas.GridColor = System.Drawing.Color.SaddleBrown
+        Me.DgvMarcas.Location = New System.Drawing.Point(5, 32)
+        Me.DgvMarcas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgvMarcas.Name = "DgvMarcas"
+        Me.DgvMarcas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMarcas.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgvMarcas.RowHeadersVisible = False
+        Me.DgvMarcas.RowHeadersWidth = 51
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvMarcas.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DgvMarcas.RowTemplate.Height = 24
+        Me.DgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvMarcas.Size = New System.Drawing.Size(1642, 181)
+        Me.DgvMarcas.TabIndex = 49
         '
         'PictureBox2
         '
@@ -188,19 +268,6 @@ Partial Class FrmMarcas
         Me.Label12.Size = New System.Drawing.Size(81, 28)
         Me.Label12.TabIndex = 45
         Me.Label12.Text = "Buscar:"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 537)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1653, 218)
-        Me.DataGridView1.TabIndex = 9
         '
         'BtnAgregarP
         '
@@ -316,7 +383,7 @@ Partial Class FrmMarcas
         Me.TxtCodMarca.Location = New System.Drawing.Point(171, 60)
         Me.TxtCodMarca.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtCodMarca.Name = "TxtCodMarca"
-        Me.TxtCodMarca.Size = New System.Drawing.Size(430, 34)
+        Me.TxtCodMarca.Size = New System.Drawing.Size(145, 34)
         Me.TxtCodMarca.TabIndex = 1
         '
         'Label2
@@ -381,19 +448,6 @@ Partial Class FrmMarcas
         Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnLimpiarP.UseVisualStyleBackColor = True
         '
-        'PibMaximizar
-        '
-        Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
-        Me.PibMaximizar.Location = New System.Drawing.Point(1640, 9)
-        Me.PibMaximizar.Name = "PibMaximizar"
-        Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
-        Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PibMaximizar.TabIndex = 11
-        Me.PibMaximizar.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibMaximizar, "Maximizar")
-        '
         'FrmMarcas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -406,18 +460,19 @@ Partial Class FrmMarcas
         Me.Text = "FrmMarcas"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
+        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
+        Me.GbMarcas.ResumeLayout(False)
+        CType(Me.DgvMarcas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosMarca.ResumeLayout(False)
         Me.GobDatosMarca.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -432,7 +487,6 @@ Partial Class FrmMarcas
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TxtBuscar As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BtnAgregarP As Button
     Friend WithEvents BtnEliminarP As Button
     Friend WithEvents GobDatosMarca As GroupBox
@@ -447,4 +501,6 @@ Partial Class FrmMarcas
     Friend WithEvents BtnLimpiarP As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PibMaximizar As PictureBox
+    Friend WithEvents GbMarcas As GroupBox
+    Friend WithEvents DgvMarcas As DataGridView
 End Class

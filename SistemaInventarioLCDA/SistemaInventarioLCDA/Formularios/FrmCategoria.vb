@@ -24,6 +24,7 @@
     Private Sub FrmCategoria_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
+        LlenarTabla()
     End Sub
 
 
@@ -51,5 +52,27 @@
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+
+    'Datos
+    'Función para rellenar el DataGripViewer de Categorías
+    Sub LlenarTabla()
+        Dim categoriaDAO As New Tbl_CategoriasDAO
+        DgvCategorias.DataSource = categoriaDAO.MostrarCategorias().Tables(0)
+        DgvCategorias.Refresh()
+        GbCategorias.Text = "Categorías Registradas: " & DgvCategorias.RowCount
+    End Sub
+
+
+    'Función para rellenar los campos del formulario
+    Private Sub DgvCategorias_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvCategorias.MouseClick
+        Dim fila As Integer = DgvCategorias.CurrentRow.Index
+
+        TxtIdCat.Text = DgvCategorias.Rows(fila).Cells(0).Value
+        TxtNombreCat.Text = DgvCategorias.Rows(fila).Cells(1).Value
+        TxtDescCat.Text = DgvCategorias.Rows(fila).Cells(2).Value
+
+    End Sub
+
 
 End Class

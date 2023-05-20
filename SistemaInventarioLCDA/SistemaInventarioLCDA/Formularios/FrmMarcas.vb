@@ -24,6 +24,7 @@
     Private Sub FrmMarcas_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
+        LlenarTabla()
     End Sub
 
 
@@ -51,4 +52,26 @@
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+
+    'Datos
+    'Función para rellenar el DataGripViewer de Categorías
+    Sub LlenarTabla()
+        Dim marcaDAO As New Tbl_MarcasDAO
+
+        DgvMarcas.DataSource = marcaDAO.MostrarMarcas().Tables(0)
+        DgvMarcas.Refresh()
+        GbMarcas.Text = "Marcas Registradas: " & DgvMarcas.RowCount
+    End Sub
+
+    Private Sub DgvMarcas_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvMarcas.MouseClick
+        Dim fila As Integer = DgvMarcas.CurrentRow.Index
+
+        TxtCodMarca.Text = DgvMarcas.Rows(fila).Cells(0).Value
+        TxtNomMarca.Text = DgvMarcas.Rows(fila).Cells(1).Value
+        TxtDescMarca.Text = DgvMarcas.Rows(fila).Cells(2).Value
+
+    End Sub
+
+
 End Class

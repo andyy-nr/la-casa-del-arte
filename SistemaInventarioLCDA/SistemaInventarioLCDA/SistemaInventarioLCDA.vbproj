@@ -94,6 +94,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dao\Tbl_CategoriasDAO.vb" />
+    <Compile Include="dao\Tbl_MarcasDAO.vb" />
+    <Compile Include="dao\Tbl_ProductosDAO.vb" />
+    <Compile Include="DBLaCasaDelArteDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBLaCasaDelArteDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="entidades\Tbl_Categorias.vb" />
+    <Compile Include="entidades\Tbl_Marcas.vb" />
+    <Compile Include="entidades\Tbl_Productos.vb" />
     <Compile Include="Formularios\FrmCategoria.Designer.vb">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </Compile>
@@ -222,6 +233,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DBLaCasaDelArteDataSet.xsc">
+      <DependentUpon>DBLaCasaDelArteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBLaCasaDelArteDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBLaCasaDelArteDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBLaCasaDelArteDataSet.xss">
+      <DependentUpon>DBLaCasaDelArteDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

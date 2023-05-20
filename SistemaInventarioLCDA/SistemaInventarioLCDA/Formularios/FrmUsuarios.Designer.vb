@@ -23,6 +23,9 @@ Partial Class FrmUsuarios
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -46,7 +49,6 @@ Partial Class FrmUsuarios
         Me.CobRoles = New System.Windows.Forms.ComboBox()
         Me.PibPerfil = New System.Windows.Forms.PictureBox()
         Me.BtnAgregarU = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BtnEliminarU = New System.Windows.Forms.Button()
         Me.BtnEditarU = New System.Windows.Forms.Button()
         Me.BtnLimpiarU = New System.Windows.Forms.Button()
@@ -64,6 +66,8 @@ Partial Class FrmUsuarios
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtCedula = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.DgvUsuarios = New System.Windows.Forms.DataGridView()
+        Me.GbUsuarios = New System.Windows.Forms.GroupBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,8 +78,8 @@ Partial Class FrmUsuarios
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobUsuario.SuspendLayout()
         CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosUser.SuspendLayout()
+        CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -158,13 +162,14 @@ Partial Class FrmUsuarios
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.DgvUsuarios)
+        Me.PanelCentral.Controls.Add(Me.GbUsuarios)
         Me.PanelCentral.Controls.Add(Me.PictureBox2)
         Me.PanelCentral.Controls.Add(Me.PictureBox1)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
         Me.PanelCentral.Controls.Add(Me.Label12)
         Me.PanelCentral.Controls.Add(Me.GobUsuario)
         Me.PanelCentral.Controls.Add(Me.BtnAgregarU)
-        Me.PanelCentral.Controls.Add(Me.DataGridView1)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarU)
         Me.PanelCentral.Controls.Add(Me.BtnEditarU)
         Me.PanelCentral.Controls.Add(Me.BtnLimpiarU)
@@ -366,19 +371,6 @@ Partial Class FrmUsuarios
         Me.BtnAgregarU.Text = "Agregar"
         Me.BtnAgregarU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnAgregarU.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 541)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1653, 223)
-        Me.DataGridView1.TabIndex = 17
         '
         'BtnEliminarU
         '
@@ -596,6 +588,64 @@ Partial Class FrmUsuarios
         Me.TxtCedula.Size = New System.Drawing.Size(385, 34)
         Me.TxtCedula.TabIndex = 7
         '
+        'DgvUsuarios
+        '
+        Me.DgvUsuarios.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.DgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvUsuarios.EnableHeadersVisualStyles = False
+        Me.DgvUsuarios.GridColor = System.Drawing.Color.SaddleBrown
+        Me.DgvUsuarios.Location = New System.Drawing.Point(47, 573)
+        Me.DgvUsuarios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgvUsuarios.Name = "DgvUsuarios"
+        Me.DgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.DgvUsuarios.RowHeadersVisible = False
+        Me.DgvUsuarios.RowHeadersWidth = 51
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.DgvUsuarios.RowTemplate.Height = 24
+        Me.DgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvUsuarios.Size = New System.Drawing.Size(1642, 184)
+        Me.DgvUsuarios.TabIndex = 42
+        '
+        'GbUsuarios
+        '
+        Me.GbUsuarios.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GbUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GbUsuarios.Location = New System.Drawing.Point(41, 541)
+        Me.GbUsuarios.Name = "GbUsuarios"
+        Me.GbUsuarios.Size = New System.Drawing.Size(1654, 221)
+        Me.GbUsuarios.TabIndex = 43
+        Me.GbUsuarios.TabStop = False
+        Me.GbUsuarios.Text = "Usuarios Registrados: 0"
+        '
         'FrmUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -619,9 +669,9 @@ Partial Class FrmUsuarios
         Me.GobUsuario.ResumeLayout(False)
         Me.GobUsuario.PerformLayout()
         CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosUser.ResumeLayout(False)
         Me.GobDatosUser.PerformLayout()
+        CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -652,7 +702,6 @@ Partial Class FrmUsuarios
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents PibRetornar As PictureBox
     Friend WithEvents GobUsuario As GroupBox
     Friend WithEvents TxtNombreUsuario As TextBox
@@ -667,4 +716,6 @@ Partial Class FrmUsuarios
     Friend WithEvents PibMaximizar As PictureBox
     Friend WithEvents Label10 As Label
     Friend WithEvents TxtCodUser As TextBox
+    Friend WithEvents DgvUsuarios As DataGridView
+    Friend WithEvents GbUsuarios As GroupBox
 End Class

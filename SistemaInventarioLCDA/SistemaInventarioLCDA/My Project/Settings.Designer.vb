@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("DBRHConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=DBLaCasaDelArte;Persist Security Info=True;"& _ 
+            "User ID=sa;Password=jcminion653*")>  _
+        Public ReadOnly Property StrConexion() As String
+            Get
+                Return CType(Me("StrConexion"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
