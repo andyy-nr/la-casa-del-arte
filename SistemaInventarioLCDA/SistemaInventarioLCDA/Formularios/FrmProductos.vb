@@ -106,7 +106,7 @@
 
             producto.Id_producto = TxtIdProd.Text.Trim()
             producto.Id_categoria = CbCategoria.SelectedValue
-            producto.Id_categoria = CbMarca.SelectedValue
+            producto.Id_marca = CbMarca.SelectedValue
             producto.NombreProd = TxtNombreProd.Text.Trim()
             producto.Precio_unitario = TxtPrecioU.Text.Trim()
             producto.DescripcionProd = TxtDescripcion.Text.Trim()
@@ -145,6 +145,44 @@
         TxtUnidadesProd.Clear()
     End Sub
 
+    Private Sub BtnEliminarP_Click(sender As Object, e As EventArgs) Handles BtnEliminarP.Click
+        Dim Id_prod As String = TxtIdProd.Text.Trim()
+        Dim productosDao As New Tbl_ProductosDAO()
+        Dim productos As New Tbl_Productos
+        productos = productosDao.BuscarProducto(Id_prod)
+        If productos.Id_producto Is Nothing Then
+            MsgBox("El producto no existe. ", MsgBoxStyle.Exclamation, "Productos")
+            Exit Sub
+        End If
+        Dim resp As VariantType
+        resp = (MsgBox("Desea eliminar el producto: " & productos.NombreProd, MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Productos"))
+        If (resp = vbNo) Then
+            MsgBox("Tarea cancelada", MsgBoxStyle.Information, "Productos")
+            Exit Sub
 
+        End If
+
+        Dim eliminado = productosDao.EliminarProducto(productos.Id_producto)
+        If (eliminado) Then
+            MsgBox("Producto eliminado exitosamente.", MsgBoxStyle.Information, "Productos")
+
+            LlenarTabla()
+            Limpiar()
+
+        Else
+            MsgBox("Error al intentar eliminar el producto", MsgBoxStyle.Critical, "Productos")
+        End If
+    End Sub
+
+    Private Sub Limpiar()
+        TxtIdProd.Clear()
+        TxtIdProd.Focus()
+        CbCategoria.Text = "Seleccione la categoría..."
+        CbMarca.Text = "Seleccione la marca..."
+        TxtNombreProd.Clear()
+        TxtPrecioU.Clear()
+        TxtDescripcion.Clear()
+        TxtUnidadesProd.Clear()
+    End Sub
 
 End Class
