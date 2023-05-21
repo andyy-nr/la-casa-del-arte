@@ -171,6 +171,9 @@ Partial Class FrmRoles
         '
         'DgvRoles
         '
+        Me.DgvRoles.AllowUserToAddRows = False
+        Me.DgvRoles.AllowUserToResizeColumns = False
+        Me.DgvRoles.AllowUserToResizeRows = False
         Me.DgvRoles.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)

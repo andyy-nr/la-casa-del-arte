@@ -44,14 +44,14 @@ Partial Class FrmPermiso
         Me.BtnEditarP = New System.Windows.Forms.Button()
         Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
+        Me.TxtNomPermiso = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.TxtDescPerm = New System.Windows.Forms.TextBox()
         Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtNomPermiso = New System.Windows.Forms.TextBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,6 +169,9 @@ Partial Class FrmPermiso
         '
         'DgvProductos
         '
+        Me.DgvProductos.AllowUserToAddRows = False
+        Me.DgvProductos.AllowUserToResizeColumns = False
+        Me.DgvProductos.AllowUserToResizeRows = False
         Me.DgvProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -375,6 +378,25 @@ Partial Class FrmPermiso
         Me.GobDatosProd.TabStop = False
         Me.GobDatosProd.Text = "Datos Generales del Permiso"
         '
+        'TxtNomPermiso
+        '
+        Me.TxtNomPermiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNomPermiso.Enabled = False
+        Me.TxtNomPermiso.Location = New System.Drawing.Point(159, 134)
+        Me.TxtNomPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNomPermiso.Name = "TxtNomPermiso"
+        Me.TxtNomPermiso.Size = New System.Drawing.Size(247, 34)
+        Me.TxtNomPermiso.TabIndex = 31
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(59, 134)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(85, 28)
+        Me.Label3.TabIndex = 30
+        Me.Label3.Text = "Permiso:"
+        '
         'PibProductos
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -425,25 +447,6 @@ Partial Class FrmPermiso
         Me.Label1.Size = New System.Drawing.Size(81, 28)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(59, 134)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 28)
-        Me.Label3.TabIndex = 30
-        Me.Label3.Text = "Permiso:"
-        '
-        'TxtNomPermiso
-        '
-        Me.TxtNomPermiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNomPermiso.Enabled = False
-        Me.TxtNomPermiso.Location = New System.Drawing.Point(159, 134)
-        Me.TxtNomPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNomPermiso.Name = "TxtNomPermiso"
-        Me.TxtNomPermiso.Size = New System.Drawing.Size(247, 34)
-        Me.TxtNomPermiso.TabIndex = 31
         '
         'FrmPermiso
         '

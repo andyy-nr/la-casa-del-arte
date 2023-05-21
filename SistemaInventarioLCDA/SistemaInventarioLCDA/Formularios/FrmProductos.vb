@@ -121,9 +121,7 @@
     Private Function validarCampos() As Boolean
         Dim camposLlenados = False
 
-        'Como en los ComboBox ya los cargo directamente con los datos por defecto ya se selecciona un valor entonces se salta esta validacion los combobox al no ser = -1 por defecto es decir no seleccionado
-        'La validacion de los Txt esta correcta solo seria ver los ComboBox
-        If (TxtIdProd.Text <> "" And TxtNombreProd.Text <> "" And CbCategoria.SelectedIndex <> -1 And CbMarca.SelectedIndex <> -1 And TxtPrecioU.Text <> "" And TxtUnidadesProd.Text <> "") Then
+        If (TxtIdProd.Text <> "" And TxtNombreProd.Text <> "" And CbCategoria.Text <> "Seleccione la categoría..." And CbMarca.Text <> "Seleccione la marca..." And TxtPrecioU.Text <> "" And TxtUnidadesProd.Text <> "") Then
             camposLlenados = True
         End If
 
@@ -132,8 +130,6 @@
 
     'Función para validar los campos no obligatorios del formulario
     Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
-        'Si el campo del atributo esta vacio, el objeto creado recibe un valor Nothing(Null) en ese atributo
-        'De lo contrario, el objeto asigna al atributo correspondiente el valor del campo
         If String.IsNullOrEmpty(txt.Text.ToString().Trim) = True Then
             campo = Nothing
         Else
