@@ -23,9 +23,9 @@ Partial Class FrmPermiso
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -33,6 +33,8 @@ Partial Class FrmPermiso
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.DgvProductos = New System.Windows.Forms.DataGridView()
+        Me.GbProductos = New System.Windows.Forms.GroupBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
@@ -43,24 +45,24 @@ Partial Class FrmPermiso
         Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
-        Me.TxtNombreProd = New System.Windows.Forms.TextBox()
+        Me.TxtDescPerm = New System.Windows.Forms.TextBox()
         Me.TxtIdProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.DgvProductos = New System.Windows.Forms.DataGridView()
-        Me.GbProductos = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtNomPermiso = New System.Windows.Forms.TextBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
+        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -164,6 +166,64 @@ Partial Class FrmPermiso
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 18
+        '
+        'DgvProductos
+        '
+        Me.DgvProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.DgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvProductos.EnableHeadersVisualStyles = False
+        Me.DgvProductos.GridColor = System.Drawing.Color.SaddleBrown
+        Me.DgvProductos.Location = New System.Drawing.Point(47, 575)
+        Me.DgvProductos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgvProductos.Name = "DgvProductos"
+        Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgvProductos.RowHeadersVisible = False
+        Me.DgvProductos.RowHeadersWidth = 51
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DgvProductos.RowTemplate.Height = 24
+        Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvProductos.Size = New System.Drawing.Size(1642, 188)
+        Me.DgvProductos.TabIndex = 45
+        '
+        'GbProductos
+        '
+        Me.GbProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GbProductos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GbProductos.Location = New System.Drawing.Point(41, 543)
+        Me.GbProductos.Name = "GbProductos"
+        Me.GbProductos.Size = New System.Drawing.Size(1654, 225)
+        Me.GbProductos.TabIndex = 46
+        Me.GbProductos.TabStop = False
+        Me.GbProductos.Text = "Permisos Registrados: 0"
         '
         'PictureBox2
         '
@@ -298,8 +358,10 @@ Partial Class FrmPermiso
         Me.GobDatosProd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GobDatosProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GobDatosProd.Controls.Add(Me.TxtNomPermiso)
+        Me.GobDatosProd.Controls.Add(Me.Label3)
         Me.GobDatosProd.Controls.Add(Me.PibProductos)
-        Me.GobDatosProd.Controls.Add(Me.TxtNombreProd)
+        Me.GobDatosProd.Controls.Add(Me.TxtDescPerm)
         Me.GobDatosProd.Controls.Add(Me.TxtIdProd)
         Me.GobDatosProd.Controls.Add(Me.Label2)
         Me.GobDatosProd.Controls.Add(Me.Label1)
@@ -325,16 +387,16 @@ Partial Class FrmPermiso
         Me.PibProductos.TabIndex = 29
         Me.PibProductos.TabStop = False
         '
-        'TxtNombreProd
+        'TxtDescPerm
         '
-        Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreProd.Location = New System.Drawing.Point(64, 152)
-        Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNombreProd.Multiline = True
-        Me.TxtNombreProd.Name = "TxtNombreProd"
-        Me.TxtNombreProd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtNombreProd.Size = New System.Drawing.Size(792, 185)
-        Me.TxtNombreProd.TabIndex = 2
+        Me.TxtDescPerm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtDescPerm.Location = New System.Drawing.Point(64, 239)
+        Me.TxtDescPerm.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtDescPerm.Multiline = True
+        Me.TxtDescPerm.Name = "TxtDescPerm"
+        Me.TxtDescPerm.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtDescPerm.Size = New System.Drawing.Size(792, 85)
+        Me.TxtDescPerm.TabIndex = 2
         '
         'TxtIdProd
         '
@@ -349,7 +411,7 @@ Partial Class FrmPermiso
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(59, 109)
+        Me.Label2.Location = New System.Drawing.Point(59, 196)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(224, 28)
         Me.Label2.TabIndex = 1
@@ -364,63 +426,24 @@ Partial Class FrmPermiso
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
         '
-        'DgvProductos
+        'Label3
         '
-        Me.DgvProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.DgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvProductos.EnableHeadersVisualStyles = False
-        Me.DgvProductos.GridColor = System.Drawing.Color.SaddleBrown
-        Me.DgvProductos.Location = New System.Drawing.Point(47, 575)
-        Me.DgvProductos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DgvProductos.Name = "DgvProductos"
-        Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.DgvProductos.RowHeadersVisible = False
-        Me.DgvProductos.RowHeadersWidth = 51
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.DgvProductos.RowTemplate.Height = 24
-        Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvProductos.Size = New System.Drawing.Size(1642, 188)
-        Me.DgvProductos.TabIndex = 45
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(59, 134)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(85, 28)
+        Me.Label3.TabIndex = 30
+        Me.Label3.Text = "Permiso:"
         '
-        'GbProductos
+        'TxtNomPermiso
         '
-        Me.GbProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GbProductos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GbProductos.Location = New System.Drawing.Point(41, 543)
-        Me.GbProductos.Name = "GbProductos"
-        Me.GbProductos.Size = New System.Drawing.Size(1654, 225)
-        Me.GbProductos.TabIndex = 46
-        Me.GbProductos.TabStop = False
-        Me.GbProductos.Text = "Permisos Registrados: 0"
+        Me.TxtNomPermiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNomPermiso.Enabled = False
+        Me.TxtNomPermiso.Location = New System.Drawing.Point(159, 134)
+        Me.TxtNomPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNomPermiso.Name = "TxtNomPermiso"
+        Me.TxtNomPermiso.Size = New System.Drawing.Size(247, 34)
+        Me.TxtNomPermiso.TabIndex = 31
         '
         'FrmPermiso
         '
@@ -440,12 +463,12 @@ Partial Class FrmPermiso
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
+        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -466,7 +489,7 @@ Partial Class FrmPermiso
     Friend WithEvents BtnLimpiarP As Button
     Friend WithEvents GobDatosProd As GroupBox
     Friend WithEvents PibProductos As PictureBox
-    Friend WithEvents TxtNombreProd As TextBox
+    Friend WithEvents TxtDescPerm As TextBox
     Friend WithEvents TxtIdProd As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -474,4 +497,6 @@ Partial Class FrmPermiso
     Friend WithEvents PibMaximizar As PictureBox
     Friend WithEvents DgvProductos As DataGridView
     Friend WithEvents GbProductos As GroupBox
+    Friend WithEvents TxtNomPermiso As TextBox
+    Friend WithEvents Label3 As Label
 End Class

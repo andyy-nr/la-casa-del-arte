@@ -143,7 +143,7 @@
     End Function
 
     'Función para validar si el inventario es un valor correcto, es decir, mayor o igual a 0
-    Private Function validarInventario(ByVal txtbox As TextBox) As Boolean
+    Private Function validarCantidad(ByVal txtbox As TextBox) As Boolean
         Dim cantidad As Integer
 
         If Integer.TryParse(txtbox.Text, cantidad) AndAlso cantidad >= 0 Then
@@ -171,13 +171,23 @@
             producto.Id_categoria = CbCategoria.SelectedValue
             producto.Id_marca = CbMarca.SelectedValue
             producto.NombreProd = TxtNombreProd.Text.Trim()
-            producto.Precio_unitario = TxtPrecioU.Text.Trim()
             producto.DescripcionProd = validarCamposNull(producto.DescripcionProd, TxtDescripcion)
 
-            If validarInventario(TxtUnidadesProd) Then
+            If validarCantidad(TxtPrecioU) Then
+                producto.Precio_unitario = TxtPrecioU.Text.Trim()
+            Else
+                MsgBox("El valor ingresado es incorrecto.", MsgBoxStyle.Exclamation, "Advertencia")
+                TxtPrecioU.Clear()
+                TxtPrecioU.Focus()
+                Exit Sub
+            End If
+
+            If validarCantidad(TxtUnidadesProd) Then
                 producto.UnidadesProd = TxtUnidadesProd.Text.Trim()
             Else
                 MsgBox("El valor ingresado es incorrecto.", MsgBoxStyle.Exclamation, "Advertencia")
+                TxtUnidadesProd.Clear()
+                TxtUnidadesProd.Focus()
                 Exit Sub
             End If
 
@@ -258,13 +268,24 @@
             producto.Id_categoria = CbCategoria.SelectedValue
             producto.Id_marca = CbMarca.SelectedValue
             producto.NombreProd = TxtNombreProd.Text.Trim()
-            producto.Precio_unitario = TxtPrecioU.Text.Trim()
             producto.DescripcionProd = validarCamposNull(producto.DescripcionProd, TxtDescripcion)
 
-            If validarInventario(TxtUnidadesProd) Then
+            If validarCantidad(TxtPrecioU) Then
+                producto.Precio_unitario = TxtPrecioU.Text.Trim()
+            Else
+                MsgBox("El valor ingresado es incorrecto.", MsgBoxStyle.Exclamation, "Advertencia")
+                TxtPrecioU.Clear()
+                TxtPrecioU.Focus()
+                Exit Sub
+            End If
+
+            If validarCantidad(TxtUnidadesProd) Then
                 producto.UnidadesProd = TxtUnidadesProd.Text.Trim()
             Else
                 MsgBox("El valor ingresado es incorrecto.", MsgBoxStyle.Exclamation, "Advertencia")
+                TxtUnidadesProd.Clear()
+                TxtUnidadesProd.Focus()
+
                 Exit Sub
             End If
 
