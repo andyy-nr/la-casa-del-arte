@@ -19,16 +19,9 @@
     End Sub
 
 
-
-    'Ajustar tamaño del formulario a la pantalla.
-    Private Sub FrmMarcas_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Size = Screen.PrimaryScreen.WorkingArea.Size
-        Location = Screen.PrimaryScreen.WorkingArea.Location
-        LlenarTabla()
-    End Sub
-
-
     'Botones
+
+    'Botón para cerrar el formulario
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
         Dim Respuesta = MsgBox("¿Esta seguro de que desea regresar? Cualquier información no guardada se perderá", MsgBoxStyle.OkCancel, "Cerrar")
         If Respuesta = vbOK Then
@@ -37,6 +30,7 @@
         End If
     End Sub
 
+    'Botón para regresar al formulario principal
     Private Sub PibRetornar_Click(sender As Object, e As EventArgs) Handles PibRetornar.Click
         Dim Respuesta = MsgBox("¿Esta seguro de que desea regresar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
         If Respuesta = vbOK Then
@@ -45,16 +39,19 @@
         End If
     End Sub
 
+    'Botón para maximizar el formulario
     Private Sub PibMaximizar_Click(sender As Object, e As EventArgs) Handles PibMaximizar.Click
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
+    'Botón para minimizar el formulario
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
 
     'Datos
+
     'Función para rellenar el DataGripViewer de Categorías
     Sub LlenarTabla()
         Dim marcaDAO As New Tbl_MarcasDAO
@@ -64,6 +61,7 @@
         GbMarcas.Text = "Marcas Registradas: " & DgvMarcas.RowCount
     End Sub
 
+    'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
     Private Sub DgvMarcas_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvMarcas.MouseClick
         Dim fila As Integer = DgvMarcas.CurrentRow.Index
 
@@ -72,6 +70,16 @@
         TxtDescMarca.Text = DgvMarcas.Rows(fila).Cells(2).Value
 
     End Sub
+
+
+    'Función para cargar la información del formulario
+    Private Sub FrmMarcas_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'Ajustar tamaño del formulario a la pantalla.
+        Size = Screen.PrimaryScreen.WorkingArea.Size
+        Location = Screen.PrimaryScreen.WorkingArea.Location
+        LlenarTabla()
+    End Sub
+
 
 
 End Class

@@ -20,6 +20,7 @@ Public Class Tbl_ProductosDAO
         Return ds
     End Function
 
+
     Public Function CargarComboxCatg() As DataSet
         Dim ds As New DataSet
 
@@ -34,6 +35,7 @@ Public Class Tbl_ProductosDAO
 
         Return ds
     End Function
+
 
     Public Function CargarComboxMarca() As DataSet
         Dim ds As New DataSet
@@ -50,6 +52,7 @@ Public Class Tbl_ProductosDAO
         Return ds
     End Function
 
+
     Public Function AgregarProducto(ByVal producto As Tbl_Productos) As Boolean
         Dim resultado As Boolean = False
 
@@ -65,7 +68,7 @@ Public Class Tbl_ProductosDAO
             cmd.Parameters.AddWithValue("@id_marca", producto.Id_marca)
             cmd.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
             cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
-            cmd.Parameters.AddWithValue("@descripcionProd", producto.DescripcionProd)
+            cmd.Parameters.AddWithValue("@descripcionProd", validarValorDBNull(producto.DescripcionProd))
             cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
             cmd.Connection = conn
             cmd.Connection.Open()
@@ -79,6 +82,7 @@ Public Class Tbl_ProductosDAO
         End Try
         Return resultado
     End Function
+
 
     Public Function BuscarProducto(ByVal id_producto As String) As Tbl_Productos
         Dim producto As New Tbl_Productos
@@ -108,6 +112,7 @@ Public Class Tbl_ProductosDAO
         Return producto
     End Function
 
+
     Public Function EliminarProducto(ByVal id_producto As String) As Boolean
         Dim resp As Boolean = False
         Try
@@ -122,13 +127,14 @@ Public Class Tbl_ProductosDAO
             End If
             conn.Close()
         Catch ex As Exception
-            MsgBox("Error al eliminar el producto", MsgBoxStyle.Critical, "Productos")
+            MsgBox("Error al eliminar el producto", MsgBoxStyle.Critical, "Error")
             resp = False
         End Try
         Return resp
     End Function
 
-    Public Function editarProducto(ByVal producto As Tbl_Productos) As Boolean
+
+    Public Function EditarProducto(ByVal producto As Tbl_Productos) As Boolean
         Dim resp As Boolean = False
         Dim tsql As String = "Update Producto SET id_producto=@id_producto, id_categoria=@id_categoria, id_marca=@id_marca, nombreProd=@nombreProd, precio_unitario=@precio_unitario, 
                               descripcionProd=@descripcionProd, unidadesProd=@unidadesProd, 
@@ -142,7 +148,7 @@ Public Class Tbl_ProductosDAO
         cmd.Parameters.AddWithValue("@id_marca", producto.Id_marca)
         cmd.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
         cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
-        cmd.Parameters.AddWithValue("@descripcionProd", producto.DescripcionProd)
+        cmd.Parameters.AddWithValue("@descripcionProd", validarValorDBNull(producto.DescripcionProd))
         cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
         cmd.Parameters.AddWithValue("@estado", producto.Estado)
 
@@ -152,6 +158,51 @@ Public Class Tbl_ProductosDAO
         conn.Close()
         Return resp
 
+    End Function
+
+
+    Public Function BuscarXNombre(ByVal nombreProducto As String) As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim tsql As String = "SELECT Producto.id_producto As N'CÓDIGO', Categoría.nombreCatg As N'CATEGORÍA', Marca.nombreMarca As N'MARCA', Producto.nombreProd As N'PRODUCTO', Producto.precio_unitario As N'PRECIO', Producto.descripcionProd As N'DESCRIPCIÓN', Producto.unidadesProd As N'UNIDADES'
+                                    FROM     Producto INNER JOIN
+                                        Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN
+                                        Marca ON Producto.id_marca = Marca.id_marca
+                                    WHERE nombreProd like @nombreProd"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@nombreProd", nombreProducto)
+            da.Fill(ds)
+        Catch ex As Exception
+
+        End Try
+        Return ds
+    End Function
+
+
+    Public Function validarProducto(ByVal producto As Tbl_Productos) As Boolean
+        Dim resultado = False
+        Try
+            Dim dt As New DataTable
+            Dim conn As New SqlConnection(strConn)
+            Dim tsql As String = "SELECT * FROM Producto WHERE id_producto = @id_producto"
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@id_producto", producto.Id_producto)
+            da.Fill(dt)
+            If (dt.Rows.Count > 0) Then Return True
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al validar la existencia del producto", MsgBoxStyle.Critical, "Error")
+        End Try
+        Return resultado
+    End Function
+
+
+    Public Function validarValorDBNull(ByVal valor As Object) As Object
+        If valor Is Nothing Then
+            Return DBNull.Value
+        Else
+            Return valor
+        End If
     End Function
 
 End Class
