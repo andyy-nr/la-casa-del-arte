@@ -20,12 +20,30 @@
 
 
 
-    'Ajustar tamaño del formulario a la pantalla.
+    'Funcion para cargar los datos en el formulario
     Private Sub FrmPermisos_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'Ajustar tamaño del formulario a la pantalla.
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
-    End Sub
+        TxtNomPermiso.Focus()
+        LlenarTabla()
 
+
+
+    End Sub
+    'Valida que el Data Griv view tenga datos
+    Private Function validarRegistros() As Boolean
+        Dim resp = False
+        If (DgvPermisos.Rows.Count = 0) Then
+            MsgBox("No hay registros guardados, porfavor agregue registros", MsgBoxStyle.Exclamation, "Advertencia")
+            TxtNomPermiso.Focus()
+            Return False
+            Exit Function
+        Else
+            resp = True
+        End If
+        Return True
+    End Function
 
 
     'Botones
@@ -52,4 +70,178 @@
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+    'Datos
+    'Función para rellenar el DGV de Permisos
+    Sub LlenarTabla()
+        Dim permisoDAO As New Tbl_PermisoDAO
+        DgvPermisos.DataSource = permisoDAO.MostrarPermisos().Tables(0)
+        DgvPermisos.Refresh()
+        GbPermisos.Text = "Permisos Registrados: " & DgvPermisos.RowCount
+
+    End Sub
+
+    Private Sub Limpiar()
+        TxtIdPermiso.Clear()
+        TxtNomPermiso.Clear()
+        TxtDescPerm.Clear()
+        TxtNomPermiso.Focus()
+        BtnAgregarPermiso.Enabled = True
+
+    End Sub
+
+    'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
+
+
+    'Validaciones 
+    'Funcion que valida los campos obligatorios del formulario
+    Private Function validarCampos() As Boolean
+        Dim camposLlenados = False
+
+        If (TxtNomPermiso.Text <> "") Then
+            camposLlenados = True
+        End If
+        Return camposLlenados
+    End Function
+
+    'Funcion para validar los campos no obligatorios del formulario
+
+    Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
+        If String.IsNullOrEmpty(txt.Text.ToString().Trim) Then
+            campo = Nothing
+        Else
+            campo = txt.Text
+        End If
+        Return campo
+
+    End Function
+
+    Private Sub BtnLimpiarPermiso_Click(sender As Object, e As EventArgs) Handles BtnLimpiarPermiso.Click
+        Limpiar()
+    End Sub
+
+    Private Sub DgvPermisos_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvPermisos.MouseClick
+
+        If (validarRegistros()) Then
+            Dim fila As Integer = DgvPermisos.CurrentRow.Index
+            TxtIdPermiso.Text = DgvPermisos.Rows(fila).Cells(0).Value
+            TxtNomPermiso.Text = DgvPermisos.Rows(fila).Cells(1).Value
+            TxtDescPerm.Text = DgvPermisos.Rows(fila).Cells(2).Value.ToString()
+            BtnAgregarPermiso.Enabled = False
+
+        End If
+
+    End Sub
+
+    Private Sub BtnEliminarPermiso_Click(sender As Object, e As EventArgs) Handles BtnEliminarPermiso.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+
+            Dim Id_permiso As Integer = TxtIdPermiso.Text.Trim()
+            Dim permisoDao As New Tbl_PermisoDAO()
+            Dim permiso As New Tbl_Permiso
+            permiso = permisoDao.BuscarPermiso(Id_permiso)
+
+            If (permiso.Id_permiso = 0) Then
+                MsgBox("El permiso no existe. ", MsgBoxStyle.Exclamation, "Permisos")
+                Exit Sub
+            End If
+            Dim resp As VariantType
+            resp = (MsgBox("Desea eliminar el permiso: " & permiso.Permiso, MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Permisos"))
+            If (resp = vbNo) Then
+                MsgBox("Tarea cancelada", MsgBoxStyle.Information, "Permisos")
+                Limpiar()
+                Exit Sub
+            End If
+
+            Dim eliminado = permisoDao.EliminarPermiso(permiso.Id_permiso)
+            If (eliminado) Then
+                MsgBox("Permiso eliminado exitosamente", MsgBoxStyle.Information, "Permisos")
+                LlenarTabla()
+                Limpiar()
+
+            Else
+                MsgBox("Error al intenar eliminar el permiso", MsgBoxStyle.Critical, "Permisos")
+                Limpiar()
+            End If
+        Catch ex As Exception
+            MsgBox("Error al intentar eliminar el registro..." & ex.Message, MsgBoxStyle.Critical, "Productos")
+        End Try
+    End Sub
+
+    Private Sub BtnEditarPermiso_Click(sender As Object, e As EventArgs) Handles BtnEditarPermiso.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+
+            Dim permisoDao As New Tbl_PermisoDAO()
+            Dim permiso As New Tbl_Permiso
+
+            permiso.Id_permiso = TxtIdPermiso.Text
+            permiso.Permiso = TxtNomPermiso.Text.Trim()
+            permiso.DescripcionPermiso = validarCamposNull(permiso.DescripcionPermiso, TxtDescPerm)
+
+            Dim resp = permisoDao.EditarPermiso(permiso)
+            If (resp) Then
+                MsgBox("Permiso editado exitosamente.", MsgBoxStyle.Information, "Permiso")
+            Else
+                MsgBox("Error al intentar editar el permiso", MsgBoxStyle.Critical, "Permiso")
+            End If
+
+            Limpiar()
+            LlenarTabla()
+        Catch ex As Exception
+            MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Productos")
+        End Try
+
+    End Sub
+
+    'Botones CRUD (Create, Read, Update, Delete)
+
+    'Botón para agregar un permiso
+    Private Sub BtnAgregarPermiso_Click(sender As Object, e As EventArgs) Handles BtnAgregarPermiso.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("Datos obligatorios del permiso incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+
+            Dim permiso = New Tbl_Permiso() 'Entidad/Tabla de Permisos
+            Dim permisoDao As New Tbl_PermisoDAO 'DAO de Permisos
+
+            permiso.Permiso = TxtNomPermiso.Text.Trim()
+            permiso.DescripcionPermiso = validarCamposNull(permiso.DescripcionPermiso, TxtDescPerm)
+
+            If permisoDao.validarPermiso(permiso) Then
+                MsgBox("El permiso ingresado ya existe", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
+                Exit Sub
+            End If
+
+            Dim resp = permisoDao.agregarPermiso(permiso)
+            If (resp) Then
+                MsgBox("Registro guardado exitosamente", MsgBoxStyle.Information, "Permiso")
+            Else
+                MsgBox("Error al guardar el registro", MsgBoxStyle.Critical, "Permiso")
+
+            End If
+
+            Limpiar()
+            LlenarTabla()
+
+        Catch ex As Exception
+            MsgBox("Error al intentar guardar el registro..." & ex.Message, MsgBoxStyle.Critical, "Permisos")
+        End Try
+    End Sub
+
+
+
+
+
+
 End Class

@@ -95,7 +95,7 @@ Public Class Tbl_ProductosDAO
             End If
             conn.Close()
         Catch ex As Exception
-            MsgBox("Error al eliminar el producto", MsgBoxStyle.Critical, "Error")
+            MsgBox("Error al intentar eliminar el producto", MsgBoxStyle.Critical, "Error")
             resp = False
         End Try
         Return resp

@@ -32,33 +32,33 @@ Partial Class FrmPermiso
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelCentral = New System.Windows.Forms.Panel()
-        Me.DgvProductos = New System.Windows.Forms.DataGridView()
-        Me.GbProductos = New System.Windows.Forms.GroupBox()
+        Me.DgvPermisos = New System.Windows.Forms.DataGridView()
+        Me.GbPermisos = New System.Windows.Forms.GroupBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TxtBuscar = New System.Windows.Forms.TextBox()
+        Me.TxtBuscarPermiso = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.BtnAgregarP = New System.Windows.Forms.Button()
-        Me.BtnEliminarP = New System.Windows.Forms.Button()
-        Me.BtnEditarP = New System.Windows.Forms.Button()
-        Me.BtnLimpiarP = New System.Windows.Forms.Button()
+        Me.BtnAgregarPermiso = New System.Windows.Forms.Button()
+        Me.BtnEliminarPermiso = New System.Windows.Forms.Button()
+        Me.BtnEditarPermiso = New System.Windows.Forms.Button()
+        Me.BtnLimpiarPermiso = New System.Windows.Forms.Button()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
         Me.TxtNomPermiso = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
         Me.TxtDescPerm = New System.Windows.Forms.TextBox()
-        Me.TxtIdProd = New System.Windows.Forms.TextBox()
+        Me.TxtIdPermiso = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
-        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
@@ -147,16 +147,16 @@ Partial Class FrmPermiso
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.PanelCentral.Controls.Add(Me.DgvProductos)
-        Me.PanelCentral.Controls.Add(Me.GbProductos)
+        Me.PanelCentral.Controls.Add(Me.DgvPermisos)
+        Me.PanelCentral.Controls.Add(Me.GbPermisos)
         Me.PanelCentral.Controls.Add(Me.PictureBox2)
         Me.PanelCentral.Controls.Add(Me.PictureBox1)
-        Me.PanelCentral.Controls.Add(Me.TxtBuscar)
+        Me.PanelCentral.Controls.Add(Me.TxtBuscarPermiso)
         Me.PanelCentral.Controls.Add(Me.Label12)
-        Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
-        Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
-        Me.PanelCentral.Controls.Add(Me.BtnEditarP)
-        Me.PanelCentral.Controls.Add(Me.BtnLimpiarP)
+        Me.PanelCentral.Controls.Add(Me.BtnAgregarPermiso)
+        Me.PanelCentral.Controls.Add(Me.BtnEliminarPermiso)
+        Me.PanelCentral.Controls.Add(Me.BtnEditarPermiso)
+        Me.PanelCentral.Controls.Add(Me.BtnLimpiarPermiso)
         Me.PanelCentral.Controls.Add(Me.GobDatosProd)
         Me.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelCentral.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -165,20 +165,20 @@ Partial Class FrmPermiso
         Me.PanelCentral.Name = "PanelCentral"
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
-        Me.PanelCentral.TabIndex = 18
+        Me.PanelCentral.TabIndex = 19
         '
-        'DgvProductos
+        'DgvPermisos
         '
-        Me.DgvProductos.AllowUserToAddRows = False
-        Me.DgvProductos.AllowUserToResizeColumns = False
-        Me.DgvProductos.AllowUserToResizeRows = False
-        Me.DgvProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.DgvPermisos.AllowUserToAddRows = False
+        Me.DgvPermisos.AllowUserToResizeColumns = False
+        Me.DgvPermisos.AllowUserToResizeRows = False
+        Me.DgvPermisos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.DgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DgvPermisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvPermisos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.DgvPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgvPermisos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -186,14 +186,14 @@ Partial Class FrmPermiso
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvProductos.EnableHeadersVisualStyles = False
-        Me.DgvProductos.GridColor = System.Drawing.Color.SaddleBrown
-        Me.DgvProductos.Location = New System.Drawing.Point(47, 575)
-        Me.DgvProductos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DgvProductos.Name = "DgvProductos"
-        Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DgvPermisos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvPermisos.EnableHeadersVisualStyles = False
+        Me.DgvPermisos.GridColor = System.Drawing.Color.SaddleBrown
+        Me.DgvPermisos.Location = New System.Drawing.Point(47, 575)
+        Me.DgvPermisos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgvPermisos.Name = "DgvPermisos"
+        Me.DgvPermisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -201,32 +201,32 @@ Partial Class FrmPermiso
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DgvProductos.RowHeadersVisible = False
-        Me.DgvProductos.RowHeadersWidth = 51
+        Me.DgvPermisos.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgvPermisos.RowHeadersVisible = False
+        Me.DgvPermisos.RowHeadersWidth = 51
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DgvProductos.RowTemplate.Height = 24
-        Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvProductos.Size = New System.Drawing.Size(1642, 188)
-        Me.DgvProductos.TabIndex = 45
+        Me.DgvPermisos.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DgvPermisos.RowTemplate.Height = 24
+        Me.DgvPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvPermisos.Size = New System.Drawing.Size(1642, 188)
+        Me.DgvPermisos.TabIndex = 9
         '
-        'GbProductos
+        'GbPermisos
         '
-        Me.GbProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.GbPermisos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GbProductos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GbProductos.Location = New System.Drawing.Point(41, 543)
-        Me.GbProductos.Name = "GbProductos"
-        Me.GbProductos.Size = New System.Drawing.Size(1654, 225)
-        Me.GbProductos.TabIndex = 46
-        Me.GbProductos.TabStop = False
-        Me.GbProductos.Text = "Permisos Registrados: 0"
+        Me.GbPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GbPermisos.Location = New System.Drawing.Point(41, 543)
+        Me.GbPermisos.Name = "GbPermisos"
+        Me.GbPermisos.Size = New System.Drawing.Size(1654, 225)
+        Me.GbPermisos.TabIndex = 46
+        Me.GbPermisos.TabStop = False
+        Me.GbPermisos.Text = "Permisos Registrados: 0"
         '
         'PictureBox2
         '
@@ -248,14 +248,14 @@ Partial Class FrmPermiso
         Me.PictureBox1.TabIndex = 42
         Me.PictureBox1.TabStop = False
         '
-        'TxtBuscar
+        'TxtBuscarPermiso
         '
-        Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TxtBuscarPermiso.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscar.Location = New System.Drawing.Point(272, 480)
-        Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(1422, 34)
-        Me.TxtBuscar.TabIndex = 43
+        Me.TxtBuscarPermiso.Location = New System.Drawing.Point(272, 480)
+        Me.TxtBuscarPermiso.Name = "TxtBuscarPermiso"
+        Me.TxtBuscarPermiso.Size = New System.Drawing.Size(1422, 34)
+        Me.TxtBuscarPermiso.TabIndex = 8
         '
         'Label12
         '
@@ -268,93 +268,93 @@ Partial Class FrmPermiso
         Me.Label12.TabIndex = 41
         Me.Label12.Text = "Buscar:"
         '
-        'BtnAgregarP
+        'BtnAgregarPermiso
         '
-        Me.BtnAgregarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnAgregarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAgregarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.BorderSize = 0
-        Me.BtnAgregarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregar
-        Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarP.Location = New System.Drawing.Point(407, 410)
-        Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnAgregarP.Name = "BtnAgregarP"
-        Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarP.TabIndex = 4
-        Me.BtnAgregarP.Text = "Agregar"
-        Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnAgregarP.UseVisualStyleBackColor = True
+        Me.BtnAgregarPermiso.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnAgregarPermiso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAgregarPermiso.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarPermiso.FlatAppearance.BorderSize = 0
+        Me.BtnAgregarPermiso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnAgregarPermiso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnAgregarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregarPermiso.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAgregarPermiso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarPermiso.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregar
+        Me.BtnAgregarPermiso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAgregarPermiso.Location = New System.Drawing.Point(407, 410)
+        Me.BtnAgregarPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnAgregarPermiso.Name = "BtnAgregarPermiso"
+        Me.BtnAgregarPermiso.Size = New System.Drawing.Size(183, 55)
+        Me.BtnAgregarPermiso.TabIndex = 3
+        Me.BtnAgregarPermiso.Text = "Agregar"
+        Me.BtnAgregarPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnAgregarPermiso.UseVisualStyleBackColor = True
         '
-        'BtnEliminarP
+        'BtnEliminarPermiso
         '
-        Me.BtnEliminarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnEliminarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.BorderSize = 0
-        Me.BtnEliminarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEliminar
-        Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarP.Location = New System.Drawing.Point(1134, 410)
-        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEliminarP.Name = "BtnEliminarP"
-        Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarP.TabIndex = 7
-        Me.BtnEliminarP.Text = "Eliminar"
-        Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminarP.UseVisualStyleBackColor = True
+        Me.BtnEliminarPermiso.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEliminarPermiso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminarPermiso.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEliminarPermiso.FlatAppearance.BorderSize = 0
+        Me.BtnEliminarPermiso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEliminarPermiso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEliminarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEliminarPermiso.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminarPermiso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEliminarPermiso.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEliminar
+        Me.BtnEliminarPermiso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEliminarPermiso.Location = New System.Drawing.Point(1134, 410)
+        Me.BtnEliminarPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEliminarPermiso.Name = "BtnEliminarPermiso"
+        Me.BtnEliminarPermiso.Size = New System.Drawing.Size(191, 55)
+        Me.BtnEliminarPermiso.TabIndex = 6
+        Me.BtnEliminarPermiso.Text = "Eliminar"
+        Me.BtnEliminarPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEliminarPermiso.UseVisualStyleBackColor = True
         '
-        'BtnEditarP
+        'BtnEditarPermiso
         '
-        Me.BtnEditarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnEditarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.BorderSize = 0
-        Me.BtnEditarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEditar
-        Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarP.Location = New System.Drawing.Point(914, 410)
-        Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEditarP.Name = "BtnEditarP"
-        Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarP.TabIndex = 6
-        Me.BtnEditarP.Text = "Editar"
-        Me.BtnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEditarP.UseVisualStyleBackColor = True
+        Me.BtnEditarPermiso.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEditarPermiso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditarPermiso.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEditarPermiso.FlatAppearance.BorderSize = 0
+        Me.BtnEditarPermiso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEditarPermiso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEditarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditarPermiso.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditarPermiso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEditarPermiso.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEditar
+        Me.BtnEditarPermiso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEditarPermiso.Location = New System.Drawing.Point(914, 410)
+        Me.BtnEditarPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEditarPermiso.Name = "BtnEditarPermiso"
+        Me.BtnEditarPermiso.Size = New System.Drawing.Size(157, 55)
+        Me.BtnEditarPermiso.TabIndex = 5
+        Me.BtnEditarPermiso.Text = "Editar"
+        Me.BtnEditarPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEditarPermiso.UseVisualStyleBackColor = True
         '
-        'BtnLimpiarP
+        'BtnLimpiarPermiso
         '
-        Me.BtnLimpiarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnLimpiarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnLimpiarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnLimpiarP.FlatAppearance.BorderSize = 0
-        Me.BtnLimpiarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnLimpiarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnLimpiarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLimpiarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLimpiarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnLimpiarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgLimpiarCampos
-        Me.BtnLimpiarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarP.Location = New System.Drawing.Point(660, 410)
-        Me.BtnLimpiarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnLimpiarP.Name = "BtnLimpiarP"
-        Me.BtnLimpiarP.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarP.TabIndex = 5
-        Me.BtnLimpiarP.Text = "Limpiar"
-        Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnLimpiarP.UseVisualStyleBackColor = True
+        Me.BtnLimpiarPermiso.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnLimpiarPermiso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnLimpiarPermiso.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnLimpiarPermiso.FlatAppearance.BorderSize = 0
+        Me.BtnLimpiarPermiso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnLimpiarPermiso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnLimpiarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpiarPermiso.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLimpiarPermiso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnLimpiarPermiso.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgLimpiarCampos
+        Me.BtnLimpiarPermiso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnLimpiarPermiso.Location = New System.Drawing.Point(660, 410)
+        Me.BtnLimpiarPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnLimpiarPermiso.Name = "BtnLimpiarPermiso"
+        Me.BtnLimpiarPermiso.Size = New System.Drawing.Size(176, 55)
+        Me.BtnLimpiarPermiso.TabIndex = 4
+        Me.BtnLimpiarPermiso.Text = "Limpiar"
+        Me.BtnLimpiarPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnLimpiarPermiso.UseVisualStyleBackColor = True
         '
         'GobDatosProd
         '
@@ -365,7 +365,7 @@ Partial Class FrmPermiso
         Me.GobDatosProd.Controls.Add(Me.Label3)
         Me.GobDatosProd.Controls.Add(Me.PibProductos)
         Me.GobDatosProd.Controls.Add(Me.TxtDescPerm)
-        Me.GobDatosProd.Controls.Add(Me.TxtIdProd)
+        Me.GobDatosProd.Controls.Add(Me.TxtIdPermiso)
         Me.GobDatosProd.Controls.Add(Me.Label2)
         Me.GobDatosProd.Controls.Add(Me.Label1)
         Me.GobDatosProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -381,12 +381,11 @@ Partial Class FrmPermiso
         'TxtNomPermiso
         '
         Me.TxtNomPermiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNomPermiso.Enabled = False
         Me.TxtNomPermiso.Location = New System.Drawing.Point(159, 134)
         Me.TxtNomPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtNomPermiso.Name = "TxtNomPermiso"
         Me.TxtNomPermiso.Size = New System.Drawing.Size(247, 34)
-        Me.TxtNomPermiso.TabIndex = 31
+        Me.TxtNomPermiso.TabIndex = 1
         '
         'Label3
         '
@@ -420,15 +419,15 @@ Partial Class FrmPermiso
         Me.TxtDescPerm.Size = New System.Drawing.Size(792, 85)
         Me.TxtDescPerm.TabIndex = 2
         '
-        'TxtIdProd
+        'TxtIdPermiso
         '
-        Me.TxtIdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdProd.Enabled = False
-        Me.TxtIdProd.Location = New System.Drawing.Point(159, 58)
-        Me.TxtIdProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtIdProd.Name = "TxtIdProd"
-        Me.TxtIdProd.Size = New System.Drawing.Size(247, 34)
-        Me.TxtIdProd.TabIndex = 1
+        Me.TxtIdPermiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtIdPermiso.Enabled = False
+        Me.TxtIdPermiso.Location = New System.Drawing.Point(159, 58)
+        Me.TxtIdPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtIdPermiso.Name = "TxtIdPermiso"
+        Me.TxtIdPermiso.Size = New System.Drawing.Size(247, 34)
+        Me.TxtIdPermiso.TabIndex = 10
         '
         'Label2
         '
@@ -466,7 +465,7 @@ Partial Class FrmPermiso
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
-        CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvPermisos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosProd.ResumeLayout(False)
@@ -481,25 +480,25 @@ Partial Class FrmPermiso
     Friend WithEvents PibMinimizar As PictureBox
     Friend WithEvents PibCerrar As PictureBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents PanelCentral As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents BtnAgregarP As Button
-    Friend WithEvents BtnEliminarP As Button
-    Friend WithEvents BtnEditarP As Button
-    Friend WithEvents BtnLimpiarP As Button
-    Friend WithEvents GobDatosProd As GroupBox
-    Friend WithEvents PibProductos As PictureBox
-    Friend WithEvents TxtDescPerm As TextBox
-    Friend WithEvents TxtIdProd As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PibMaximizar As PictureBox
-    Friend WithEvents DgvProductos As DataGridView
-    Friend WithEvents GbProductos As GroupBox
+    Friend WithEvents PanelCentral As Panel
+    Friend WithEvents DgvPermisos As DataGridView
+    Friend WithEvents GbPermisos As GroupBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TxtBuscarPermiso As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents BtnAgregarPermiso As Button
+    Friend WithEvents BtnEliminarPermiso As Button
+    Friend WithEvents BtnEditarPermiso As Button
+    Friend WithEvents BtnLimpiarPermiso As Button
+    Friend WithEvents GobDatosProd As GroupBox
     Friend WithEvents TxtNomPermiso As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents PibProductos As PictureBox
+    Friend WithEvents TxtDescPerm As TextBox
+    Friend WithEvents TxtIdPermiso As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class

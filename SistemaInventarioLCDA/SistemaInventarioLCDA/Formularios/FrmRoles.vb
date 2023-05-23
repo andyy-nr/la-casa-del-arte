@@ -1,7 +1,10 @@
 ﻿Public Class FrmRoles
+
+    Dim permiso As New Tbl_PermisoDAO
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
+
     Private Sub PanSuperior_MouseDown(sender As Object, e As MouseEventArgs) Handles PanSuperior.MouseDown
         ex = e.X
         ey = e.Y
@@ -24,6 +27,8 @@
     Private Sub FrmRoles_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
+        llenarClbPermiso()
+
     End Sub
 
 
@@ -52,5 +57,18 @@
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+
+
+
+    'Función para llenar los datos en el CheckListBox
+    Sub llenarClbPermiso()
+        Dim ds As New DataSet()
+        ds = permiso.MostrarPermisos()
+        ClbPermisos.DataSource = ds.Tables(0)
+        ClbPermisos.DisplayMember = "Permiso"
+        ClbPermisos.ValueMember = "Código"
+    End Sub
+
 
 End Class

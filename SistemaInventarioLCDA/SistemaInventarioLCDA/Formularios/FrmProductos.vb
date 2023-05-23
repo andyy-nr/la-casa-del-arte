@@ -307,6 +307,7 @@
     End Sub
 
 
+
     'Botón para buscar por nombre de producto
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Dim ds As New DataSet

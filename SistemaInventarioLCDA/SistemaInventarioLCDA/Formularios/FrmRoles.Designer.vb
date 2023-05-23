@@ -388,8 +388,8 @@ Partial Class FrmRoles
         '
         Me.ClbPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.ClbPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ClbPermisos.CheckOnClick = True
         Me.ClbPermisos.FormattingEnabled = True
-        Me.ClbPermisos.Items.AddRange(New Object() {"Permiso 1", "Permiso 2", "Permiso 3", "Permiso 4 "})
         Me.ClbPermisos.Location = New System.Drawing.Point(766, 99)
         Me.ClbPermisos.Name = "ClbPermisos"
         Me.ClbPermisos.Size = New System.Drawing.Size(340, 232)

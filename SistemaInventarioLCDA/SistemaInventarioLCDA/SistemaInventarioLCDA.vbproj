@@ -97,6 +97,7 @@
     <Compile Include="dao\Tbl_CategoriasDAO.vb" />
     <Compile Include="dao\Tbl_MarcasDAO.vb" />
     <Compile Include="dao\Tbl_MovimientosDAO.vb" />
+    <Compile Include="dao\Tbl_PermisoDAO.vb" />
     <Compile Include="dao\Tbl_ProductosDAO.vb" />
     <Compile Include="DBLaCasaDelArteDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,6 +107,7 @@
     <Compile Include="entidades\Tbl_Categorias.vb" />
     <Compile Include="entidades\Tbl_Marcas.vb" />
     <Compile Include="entidades\Tbl_Movimientos.vb" />
+    <Compile Include="entidades\Tbl_Permiso.vb" />
     <Compile Include="entidades\Tbl_Productos.vb" />
     <Compile Include="Formularios\FrmCategoria.Designer.vb">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
