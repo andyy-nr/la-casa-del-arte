@@ -61,36 +61,25 @@
     End Sub
 
     'Función para rellenar el ComboBox de Categoría
+    Dim categoria As New Tbl_CategoriasDAO
     Sub LlenarComboxCatg()
-        Dim productoDao As New Tbl_ProductosDAO
-        CbCategoria.DataSource = productoDao.CargarComboxCatg().Tables(0)
-        CbCategoria.DisplayMember = "nombreCatg"
-        CbCategoria.ValueMember = "id_categoria"
+        Dim ds As New DataSet
+        ds = categoria.MostrarCategorias()
+        CbCategoria.DataSource = ds.Tables(0)
+        CbCategoria.DisplayMember = "CATEGORÍA" 'Nombre del alias
+        CbCategoria.ValueMember = "CÓDIGO" 'Nombre del alias
         CbCategoria.Text = "Seleccione la categoría..."
     End Sub
 
     'Función para rellenar el ComboBox de Marca
+    Dim marca As New Tbl_MarcasDAO
     Sub LlenarComboxMarca()
-        Dim productoDao As New Tbl_ProductosDAO
-        CbMarca.DataSource = productoDao.CargarComboxMarca().Tables(0)
-        CbMarca.DisplayMember = "nombreMarca"
-        CbMarca.ValueMember = "id_marca"
+        Dim ds As New DataSet
+        ds = marca.MostrarMarcas()
+        CbMarca.DataSource = ds.Tables(0)
+        CbMarca.DisplayMember = "MARCA" 'Nombre del alias
+        CbMarca.ValueMember = "CÓDIGO" 'Nombre del alias
         CbMarca.Text = "Seleccione la marca..."
-    End Sub
-
-    'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
-    Private Sub DgvProductos_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvProductos.MouseClick
-        Dim fila As Integer = DgvProductos.CurrentRow.Index
-
-        TxtIdProd.Enabled = False
-        TxtIdProd.Text = DgvProductos.Rows(fila).Cells(0).Value
-        CbCategoria.Text = DgvProductos.Rows(fila).Cells(1).Value
-        CbMarca.Text = DgvProductos.Rows(fila).Cells(2).Value
-        TxtNombreProd.Text = DgvProductos.Rows(fila).Cells(3).Value
-        TxtPrecioU.Text = DgvProductos.Rows(fila).Cells(4).Value
-        TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value.ToString()
-        TxtUnidadesProd.Text = DgvProductos.Rows(fila).Cells(6).Value
-
     End Sub
 
     'Función para limpiar los campos del formulario
@@ -116,6 +105,24 @@
         LlenarComboxCatg()
         LlenarComboxMarca()
     End Sub
+
+    'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
+    Private Sub DgvProductos_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvProductos.MouseClick
+        Dim fila As Integer = DgvProductos.CurrentRow.Index
+
+        TxtIdProd.Enabled = False
+        TxtIdProd.Text = DgvProductos.Rows(fila).Cells(0).Value
+        CbCategoria.Text = DgvProductos.Rows(fila).Cells(1).Value
+        CbMarca.Text = DgvProductos.Rows(fila).Cells(2).Value
+        TxtNombreProd.Text = DgvProductos.Rows(fila).Cells(3).Value
+        TxtPrecioU.Text = DgvProductos.Rows(fila).Cells(4).Value
+        TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value.ToString()
+        TxtUnidadesProd.Text = DgvProductos.Rows(fila).Cells(6).Value
+
+    End Sub
+
+
+    'Validaciones
 
     'Función que valida los campos obligatorios del formulario
     Private Function validarCampos() As Boolean

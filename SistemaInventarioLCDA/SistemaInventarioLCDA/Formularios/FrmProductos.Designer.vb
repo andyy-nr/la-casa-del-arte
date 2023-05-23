@@ -557,7 +557,7 @@ Partial Class FrmProductos
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmProductos"
+        Me.Text = " "
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()

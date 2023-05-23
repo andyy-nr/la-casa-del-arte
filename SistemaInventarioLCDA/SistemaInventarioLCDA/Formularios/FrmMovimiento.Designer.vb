@@ -23,9 +23,9 @@ Partial Class FrmMovimiento
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -43,8 +43,6 @@ Partial Class FrmMovimiento
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GbMovimiento = New System.Windows.Forms.GroupBox()
-        Me.RBtnSalida = New System.Windows.Forms.RadioButton()
-        Me.RBtnEntrada = New System.Windows.Forms.RadioButton()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtCodigoMov = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -65,13 +63,12 @@ Partial Class FrmMovimiento
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CbProductos = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtNombreProd = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtMarcaProd = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtCategoriaProd = New System.Windows.Forms.TextBox()
         Me.TxtDescripcionProd = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,14 +218,14 @@ Partial Class FrmMovimiento
         Me.DgvMovimientos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvMovimientos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMovimientos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.DgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvMovimientos.EnableHeadersVisualStyles = False
         Me.DgvMovimientos.GridColor = System.Drawing.Color.SaddleBrown
@@ -236,22 +233,22 @@ Partial Class FrmMovimiento
         Me.DgvMovimientos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DgvMovimientos.Name = "DgvMovimientos"
         Me.DgvMovimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvMovimientos.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMovimientos.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.DgvMovimientos.RowHeadersVisible = False
         Me.DgvMovimientos.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvMovimientos.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvMovimientos.RowsDefaultCellStyle = DataGridViewCellStyle21
         Me.DgvMovimientos.RowTemplate.Height = 24
         Me.DgvMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvMovimientos.Size = New System.Drawing.Size(1642, 134)
@@ -283,7 +280,7 @@ Partial Class FrmMovimiento
         Me.BtnLimpiarE.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnLimpiarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgLimpiarCampos
         Me.BtnLimpiarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarE.Location = New System.Drawing.Point(1139, 493)
+        Me.BtnLimpiarE.Location = New System.Drawing.Point(1246, 492)
         Me.BtnLimpiarE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnLimpiarE.Name = "BtnLimpiarE"
         Me.BtnLimpiarE.Size = New System.Drawing.Size(176, 55)
@@ -305,7 +302,7 @@ Partial Class FrmMovimiento
         Me.BtnAgregarE.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnAgregarE.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregar
         Me.BtnAgregarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarE.Location = New System.Drawing.Point(823, 493)
+        Me.BtnAgregarE.Location = New System.Drawing.Point(930, 492)
         Me.BtnAgregarE.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnAgregarE.Name = "BtnAgregarE"
         Me.BtnAgregarE.Size = New System.Drawing.Size(183, 55)
@@ -339,8 +336,7 @@ Partial Class FrmMovimiento
         Me.GbMovimiento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GbMovimiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GbMovimiento.Controls.Add(Me.RBtnSalida)
-        Me.GbMovimiento.Controls.Add(Me.RBtnEntrada)
+        Me.GbMovimiento.Controls.Add(Me.ComboBox1)
         Me.GbMovimiento.Controls.Add(Me.Label16)
         Me.GbMovimiento.Controls.Add(Me.TxtCodigoMov)
         Me.GbMovimiento.Controls.Add(Me.Label15)
@@ -360,28 +356,6 @@ Partial Class FrmMovimiento
         Me.GbMovimiento.TabStop = False
         Me.GbMovimiento.Text = "Datos del Movimiento"
         '
-        'RBtnSalida
-        '
-        Me.RBtnSalida.AutoSize = True
-        Me.RBtnSalida.Location = New System.Drawing.Point(417, 142)
-        Me.RBtnSalida.Name = "RBtnSalida"
-        Me.RBtnSalida.Size = New System.Drawing.Size(86, 32)
-        Me.RBtnSalida.TabIndex = 35
-        Me.RBtnSalida.TabStop = True
-        Me.RBtnSalida.Text = "Salida"
-        Me.RBtnSalida.UseVisualStyleBackColor = True
-        '
-        'RBtnEntrada
-        '
-        Me.RBtnEntrada.AutoSize = True
-        Me.RBtnEntrada.Location = New System.Drawing.Point(282, 142)
-        Me.RBtnEntrada.Name = "RBtnEntrada"
-        Me.RBtnEntrada.Size = New System.Drawing.Size(100, 32)
-        Me.RBtnEntrada.TabIndex = 34
-        Me.RBtnEntrada.TabStop = True
-        Me.RBtnEntrada.Text = "Entrada"
-        Me.RBtnEntrada.UseVisualStyleBackColor = True
-        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -397,7 +371,7 @@ Partial Class FrmMovimiento
         Me.TxtCodigoMov.Enabled = False
         Me.TxtCodigoMov.Location = New System.Drawing.Point(168, 34)
         Me.TxtCodigoMov.Name = "TxtCodigoMov"
-        Me.TxtCodigoMov.Size = New System.Drawing.Size(300, 34)
+        Me.TxtCodigoMov.Size = New System.Drawing.Size(160, 34)
         Me.TxtCodigoMov.TabIndex = 32
         '
         'Label15
@@ -416,7 +390,7 @@ Partial Class FrmMovimiento
         Me.TxtUsuarioMov.Location = New System.Drawing.Point(168, 86)
         Me.TxtUsuarioMov.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtUsuarioMov.Name = "TxtUsuarioMov"
-        Me.TxtUsuarioMov.Size = New System.Drawing.Size(300, 34)
+        Me.TxtUsuarioMov.Size = New System.Drawing.Size(413, 34)
         Me.TxtUsuarioMov.TabIndex = 9
         '
         'TxtCantidadUP
@@ -506,8 +480,6 @@ Partial Class FrmMovimiento
         Me.GbDatosProd.Controls.Add(Me.Label1)
         Me.GbDatosProd.Controls.Add(Me.CbProductos)
         Me.GbDatosProd.Controls.Add(Me.Label5)
-        Me.GbDatosProd.Controls.Add(Me.Label2)
-        Me.GbDatosProd.Controls.Add(Me.TxtNombreProd)
         Me.GbDatosProd.Controls.Add(Me.Label3)
         Me.GbDatosProd.Controls.Add(Me.TxtMarcaProd)
         Me.GbDatosProd.Controls.Add(Me.Label4)
@@ -527,7 +499,7 @@ Partial Class FrmMovimiento
         '
         Me.TxtUnidadesProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtUnidadesProd.Enabled = False
-        Me.TxtUnidadesProd.Location = New System.Drawing.Point(254, 452)
+        Me.TxtUnidadesProd.Location = New System.Drawing.Point(256, 426)
         Me.TxtUnidadesProd.Name = "TxtUnidadesProd"
         Me.TxtUnidadesProd.Size = New System.Drawing.Size(130, 34)
         Me.TxtUnidadesProd.TabIndex = 10
@@ -536,7 +508,7 @@ Partial Class FrmMovimiento
         '
         Me.TxtPrecioProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtPrecioProd.Enabled = False
-        Me.TxtPrecioProd.Location = New System.Drawing.Point(254, 388)
+        Me.TxtPrecioProd.Location = New System.Drawing.Point(256, 362)
         Me.TxtPrecioProd.Name = "TxtPrecioProd"
         Me.TxtPrecioProd.Size = New System.Drawing.Size(130, 34)
         Me.TxtPrecioProd.TabIndex = 9
@@ -544,7 +516,7 @@ Partial Class FrmMovimiento
         'TxtUnidadesDe
         '
         Me.TxtUnidadesDe.AutoSize = True
-        Me.TxtUnidadesDe.Location = New System.Drawing.Point(42, 455)
+        Me.TxtUnidadesDe.Location = New System.Drawing.Point(44, 429)
         Me.TxtUnidadesDe.Name = "TxtUnidadesDe"
         Me.TxtUnidadesDe.Size = New System.Drawing.Size(197, 28)
         Me.TxtUnidadesDe.TabIndex = 8
@@ -553,7 +525,7 @@ Partial Class FrmMovimiento
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(93, 388)
+        Me.Label6.Location = New System.Drawing.Point(95, 362)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(146, 28)
         Me.Label6.TabIndex = 6
@@ -562,7 +534,7 @@ Partial Class FrmMovimiento
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(54, 38)
+        Me.Label1.Location = New System.Drawing.Point(56, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 28)
         Me.Label1.TabIndex = 0
@@ -572,7 +544,7 @@ Partial Class FrmMovimiento
         '
         Me.CbProductos.FormattingEnabled = True
         Me.CbProductos.Items.AddRange(New Object() {"Producto 1", "Producto 2", "Producto 3"})
-        Me.CbProductos.Location = New System.Drawing.Point(171, 35)
+        Me.CbProductos.Location = New System.Drawing.Point(173, 65)
         Me.CbProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.CbProductos.Name = "CbProductos"
         Me.CbProductos.Size = New System.Drawing.Size(340, 36)
@@ -583,35 +555,16 @@ Partial Class FrmMovimiento
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(33, 278)
+        Me.Label5.Location = New System.Drawing.Point(35, 252)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(118, 28)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Descripción:"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(62, 97)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 28)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nombre:"
-        '
-        'TxtNombreProd
-        '
-        Me.TxtNombreProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreProd.Enabled = False
-        Me.TxtNombreProd.Location = New System.Drawing.Point(171, 95)
-        Me.TxtNombreProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNombreProd.Name = "TxtNombreProd"
-        Me.TxtNombreProd.Size = New System.Drawing.Size(340, 34)
-        Me.TxtNombreProd.TabIndex = 2
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(81, 155)
+        Me.Label3.Location = New System.Drawing.Point(83, 129)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(70, 28)
         Me.Label3.TabIndex = 2
@@ -621,7 +574,7 @@ Partial Class FrmMovimiento
         '
         Me.TxtMarcaProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtMarcaProd.Enabled = False
-        Me.TxtMarcaProd.Location = New System.Drawing.Point(171, 153)
+        Me.TxtMarcaProd.Location = New System.Drawing.Point(173, 127)
         Me.TxtMarcaProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtMarcaProd.Name = "TxtMarcaProd"
         Me.TxtMarcaProd.Size = New System.Drawing.Size(340, 34)
@@ -630,7 +583,7 @@ Partial Class FrmMovimiento
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(50, 216)
+        Me.Label4.Location = New System.Drawing.Point(52, 190)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(101, 28)
         Me.Label4.TabIndex = 4
@@ -640,7 +593,7 @@ Partial Class FrmMovimiento
         '
         Me.TxtCategoriaProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCategoriaProd.Enabled = False
-        Me.TxtCategoriaProd.Location = New System.Drawing.Point(171, 214)
+        Me.TxtCategoriaProd.Location = New System.Drawing.Point(173, 188)
         Me.TxtCategoriaProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtCategoriaProd.Name = "TxtCategoriaProd"
         Me.TxtCategoriaProd.Size = New System.Drawing.Size(340, 34)
@@ -650,13 +603,22 @@ Partial Class FrmMovimiento
         '
         Me.TxtDescripcionProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtDescripcionProd.Enabled = False
-        Me.TxtDescripcionProd.Location = New System.Drawing.Point(171, 276)
+        Me.TxtDescripcionProd.Location = New System.Drawing.Point(173, 250)
         Me.TxtDescripcionProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtDescripcionProd.Multiline = True
         Me.TxtDescripcionProd.Name = "TxtDescripcionProd"
         Me.TxtDescripcionProd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TxtDescripcionProd.Size = New System.Drawing.Size(360, 83)
         Me.TxtDescripcionProd.TabIndex = 5
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Entrada", "Salida"})
+        Me.ComboBox1.Location = New System.Drawing.Point(281, 139)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(300, 36)
+        Me.ComboBox1.TabIndex = 34
         '
         'FrmMovimiento
         '
@@ -705,8 +667,6 @@ Partial Class FrmMovimiento
     Friend WithEvents TxtBuscar As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents GbMovimiento As GroupBox
-    Friend WithEvents RBtnSalida As RadioButton
-    Friend WithEvents RBtnEntrada As RadioButton
     Friend WithEvents Label16 As Label
     Friend WithEvents TxtCodigoMov As TextBox
     Friend WithEvents Label15 As Label
@@ -727,11 +687,10 @@ Partial Class FrmMovimiento
     Friend WithEvents Label1 As Label
     Friend WithEvents CbProductos As ComboBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TxtNombreProd As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents TxtMarcaProd As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtCategoriaProd As TextBox
     Friend WithEvents TxtDescripcionProd As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

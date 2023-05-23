@@ -21,38 +21,6 @@ Public Class Tbl_ProductosDAO
     End Function
 
 
-    Public Function CargarComboxCatg() As DataSet
-        Dim ds As New DataSet
-
-        Try
-            Dim tsql As String = "SELECT id_categoria, nombreCatg FROM Categoría"
-            Dim conn As New SqlConnection(strConn)
-            Dim da As New SqlDataAdapter(tsql, conn)
-            da.Fill(ds)
-        Catch ex As Exception
-            MsgBox("Ocurrió un error al obtener los registros de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
-        End Try
-
-        Return ds
-    End Function
-
-
-    Public Function CargarComboxMarca() As DataSet
-        Dim ds As New DataSet
-
-        Try
-            Dim tsql As String = "SELECT id_marca, nombreMarca FROM Marca"
-            Dim conn As New SqlConnection(strConn)
-            Dim da As New SqlDataAdapter(tsql, conn)
-            da.Fill(ds)
-        Catch ex As Exception
-            MsgBox("Ocurrió un error al obtener los registros de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
-        End Try
-
-        Return ds
-    End Function
-
-
     Public Function AgregarProducto(ByVal producto As Tbl_Productos) As Boolean
         Dim resultado As Boolean = False
 
