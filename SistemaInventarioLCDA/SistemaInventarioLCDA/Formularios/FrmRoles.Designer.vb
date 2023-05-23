@@ -35,10 +35,7 @@ Partial Class FrmRoles
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.DgvRoles = New System.Windows.Forms.DataGridView()
         Me.GbRoles = New System.Windows.Forms.GroupBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
         Me.BtnEditarP = New System.Windows.Forms.Button()
@@ -54,6 +51,7 @@ Partial Class FrmRoles
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnBuscarRol = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,8 +59,6 @@ Partial Class FrmRoles
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
         CType(Me.DgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -149,12 +145,10 @@ Partial Class FrmRoles
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.BtnBuscarRol)
         Me.PanelCentral.Controls.Add(Me.DgvRoles)
         Me.PanelCentral.Controls.Add(Me.GbRoles)
-        Me.PanelCentral.Controls.Add(Me.PictureBox2)
-        Me.PanelCentral.Controls.Add(Me.PictureBox1)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
-        Me.PanelCentral.Controls.Add(Me.Label12)
         Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
         Me.PanelCentral.Controls.Add(Me.BtnEditarP)
@@ -230,47 +224,14 @@ Partial Class FrmRoles
         Me.GbRoles.TabStop = False
         Me.GbRoles.Text = "Roles Registrados: 0"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 473)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 44
-        Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Buscar")
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 473)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 42
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Filtrar")
-        '
         'TxtBuscar
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscar.Location = New System.Drawing.Point(272, 480)
+        Me.TxtBuscar.Location = New System.Drawing.Point(41, 489)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(1422, 34)
         Me.TxtBuscar.TabIndex = 43
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(171, 480)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(81, 28)
-        Me.Label12.TabIndex = 41
-        Me.Label12.Text = "Buscar:"
         '
         'BtnAgregarP
         '
@@ -472,6 +433,28 @@ Partial Class FrmRoles
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre:"
         '
+        'BtnBuscarRol
+        '
+        Me.BtnBuscarRol.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscarRol.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBuscarRol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarRol.FlatAppearance.BorderSize = 0
+        Me.BtnBuscarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnBuscarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnBuscarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscarRol.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarRol.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.BtnBuscarRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnBuscarRol.Location = New System.Drawing.Point(1512, 479)
+        Me.BtnBuscarRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnBuscarRol.Name = "BtnBuscarRol"
+        Me.BtnBuscarRol.Size = New System.Drawing.Size(183, 55)
+        Me.BtnBuscarRol.TabIndex = 48
+        Me.BtnBuscarRol.Text = "Buscar"
+        Me.BtnBuscarRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnBuscarRol.UseVisualStyleBackColor = True
+        '
         'FrmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -491,8 +474,6 @@ Partial Class FrmRoles
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
         CType(Me.DgvRoles, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -518,14 +499,12 @@ Partial Class FrmRoles
     Friend WithEvents Label2 As Label
     Friend WithEvents PibRetornar As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents Label12 As Label
     Friend WithEvents TxtCodRolUsuario As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents ClbPermisos As CheckedListBox
     Friend WithEvents PibMaximizar As PictureBox
     Friend WithEvents DgvRoles As DataGridView
     Friend WithEvents GbRoles As GroupBox
+    Friend WithEvents BtnBuscarRol As Button
 End Class

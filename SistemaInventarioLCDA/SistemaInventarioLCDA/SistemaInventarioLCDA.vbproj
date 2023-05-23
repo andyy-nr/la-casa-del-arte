@@ -99,6 +99,7 @@
     <Compile Include="dao\Tbl_MovimientosDAO.vb" />
     <Compile Include="dao\Tbl_PermisoDAO.vb" />
     <Compile Include="dao\Tbl_ProductosDAO.vb" />
+    <Compile Include="dao\Tbl_RolesDAO.vb" />
     <Compile Include="DBLaCasaDelArteDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +110,7 @@
     <Compile Include="entidades\Tbl_Movimientos.vb" />
     <Compile Include="entidades\Tbl_Permiso.vb" />
     <Compile Include="entidades\Tbl_Productos.vb" />
+    <Compile Include="entidades\Tbl_Roles.vb" />
     <Compile Include="Formularios\FrmCategoria.Designer.vb">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </Compile>

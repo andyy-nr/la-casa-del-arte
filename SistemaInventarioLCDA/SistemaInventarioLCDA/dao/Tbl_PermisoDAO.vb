@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Imports Microsoft.Reporting.Map.WebForms.BingMaps
+
 
 Public Class Tbl_PermisoDAO
     Dim strConn As String = My.Settings.StrConexion
@@ -7,7 +7,7 @@ Public Class Tbl_PermisoDAO
     Public Function MostrarPermisos() As DataSet
         Dim ds As New DataSet
         Try
-            Dim tsql As String = "Select id_permiso as N'Código', permiso as N'Permiso', descripcion as N'Descripción' from Permiso"
+            Dim tsql As String = "Select id_permiso as N'CÓDIGO', permiso as N'PERMISO', descripcion as N'DESCRIPCIÓN' from Permiso"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
@@ -132,6 +132,21 @@ Public Class Tbl_PermisoDAO
             resp = False
         End Try
         Return resp
+    End Function
+
+    Public Function BuscarXNombre(ByVal permiso As String) As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim tsql As String = "Select id_permiso as N'CÓDIGO', permiso as N'PERMISO', descripcion as N'DESCRIPCIÓN' from Permiso WHERE permiso like @permiso "
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@permiso", permiso)
+            da.Fill(ds)
+
+        Catch ex As Exception
+
+        End Try
+        Return ds
     End Function
 
 

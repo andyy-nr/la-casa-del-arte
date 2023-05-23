@@ -23,9 +23,9 @@ Partial Class FrmProductos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -33,11 +33,8 @@ Partial Class FrmProductos
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.DgvProductos = New System.Windows.Forms.DataGridView()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
         Me.BtnAgregarP = New System.Windows.Forms.Button()
@@ -60,13 +57,12 @@ Partial Class FrmProductos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.GbProductos = New System.Windows.Forms.GroupBox()
+        Me.BtnBuscarProducto = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
         CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbDatosProd.SuspendLayout()
@@ -154,37 +150,11 @@ Partial Class FrmProductos
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Gestión de Productos"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 519)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 46)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 40
-        Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Buscar")
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 519)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 46)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 38
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Filtrar")
-        '
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.PanelCentral.Controls.Add(Me.PictureBox2)
-        Me.PanelCentral.Controls.Add(Me.PictureBox1)
+        Me.PanelCentral.Controls.Add(Me.BtnBuscarProducto)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
-        Me.PanelCentral.Controls.Add(Me.Label12)
         Me.PanelCentral.Controls.Add(Me.DgvProductos)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
         Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
@@ -205,22 +175,11 @@ Partial Class FrmProductos
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscar.Location = New System.Drawing.Point(272, 526)
+        Me.TxtBuscar.Location = New System.Drawing.Point(41, 530)
         Me.TxtBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(1422, 34)
         Me.TxtBuscar.TabIndex = 39
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(171, 526)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(81, 28)
-        Me.Label12.TabIndex = 37
-        Me.Label12.Text = "Buscar:"
         '
         'DgvProductos
         '
@@ -234,14 +193,14 @@ Partial Class FrmProductos
         Me.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvProductos.EnableHeadersVisualStyles = False
         Me.DgvProductos.GridColor = System.Drawing.Color.SaddleBrown
@@ -249,22 +208,22 @@ Partial Class FrmProductos
         Me.DgvProductos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DgvProductos.Name = "DgvProductos"
         Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvProductos.RowHeadersVisible = False
         Me.DgvProductos.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DgvProductos.RowTemplate.Height = 24
         Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvProductos.Size = New System.Drawing.Size(1642, 145)
@@ -546,6 +505,28 @@ Partial Class FrmProductos
         Me.GbProductos.TabStop = False
         Me.GbProductos.Text = "Productos Almacenados: 0"
         '
+        'BtnBuscarProducto
+        '
+        Me.BtnBuscarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBuscarProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarProducto.FlatAppearance.BorderSize = 0
+        Me.BtnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscarProducto.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarProducto.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.BtnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnBuscarProducto.Location = New System.Drawing.Point(1506, 520)
+        Me.BtnBuscarProducto.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnBuscarProducto.Name = "BtnBuscarProducto"
+        Me.BtnBuscarProducto.Size = New System.Drawing.Size(183, 55)
+        Me.BtnBuscarProducto.TabIndex = 48
+        Me.BtnBuscarProducto.Text = "Buscar"
+        Me.BtnBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnBuscarProducto.UseVisualStyleBackColor = True
+        '
         'FrmProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -564,8 +545,6 @@ Partial Class FrmProductos
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
         CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -583,10 +562,7 @@ Partial Class FrmProductos
     Friend WithEvents PibRetornar As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PanelCentral As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents Label12 As Label
     Friend WithEvents DgvProductos As DataGridView
     Friend WithEvents BtnEliminarP As Button
     Friend WithEvents BtnAgregarP As Button
@@ -610,4 +586,5 @@ Partial Class FrmProductos
     Friend WithEvents TxtDescripcion As TextBox
     Friend WithEvents PibMaximizar As PictureBox
     Friend WithEvents GbProductos As GroupBox
+    Friend WithEvents BtnBuscarProducto As Button
 End Class

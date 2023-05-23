@@ -93,6 +93,7 @@
         TxtPrecioU.Clear()
         TxtDescripcion.Clear()
         TxtUnidadesProd.Clear()
+        BtnAgregarP.Enabled = True
     End Sub
 
     'Función para cargar la información del formulario
@@ -108,16 +109,20 @@
 
     'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
     Private Sub DgvProductos_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvProductos.MouseClick
-        Dim fila As Integer = DgvProductos.CurrentRow.Index
 
-        TxtIdProd.Enabled = False
-        TxtIdProd.Text = DgvProductos.Rows(fila).Cells(0).Value
-        CbCategoria.Text = DgvProductos.Rows(fila).Cells(1).Value
-        CbMarca.Text = DgvProductos.Rows(fila).Cells(2).Value
-        TxtNombreProd.Text = DgvProductos.Rows(fila).Cells(3).Value
-        TxtPrecioU.Text = DgvProductos.Rows(fila).Cells(4).Value
-        TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value.ToString()
-        TxtUnidadesProd.Text = DgvProductos.Rows(fila).Cells(6).Value
+
+        If (validarRegistros()) Then
+            Dim fila As Integer = DgvProductos.CurrentRow.Index
+            TxtIdProd.Enabled = False
+            TxtIdProd.Text = DgvProductos.Rows(fila).Cells(0).Value
+            CbCategoria.Text = DgvProductos.Rows(fila).Cells(1).Value
+            CbMarca.Text = DgvProductos.Rows(fila).Cells(2).Value
+            TxtNombreProd.Text = DgvProductos.Rows(fila).Cells(3).Value
+            TxtPrecioU.Text = DgvProductos.Rows(fila).Cells(4).Value
+            TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value.ToString()
+            TxtUnidadesProd.Text = DgvProductos.Rows(fila).Cells(6).Value
+            BtnAgregarP.Enabled = False
+        End If
 
     End Sub
 
@@ -154,6 +159,20 @@
         Else
             Return False
         End If
+    End Function
+
+    'Validar que el DataGridView tenga datos
+    Private Function validarRegistros() As Boolean
+        Dim resp = False
+        If (DgvProductos.Rows.Count = 0) Then
+            MsgBox("No hay registros guardados, porfavor agregue registros", MsgBoxStyle.Exclamation, "Advertencia")
+            TxtIdProd.Focus()
+            Return False
+            Exit Function
+        Else
+            resp = True
+        End If
+        Return True
     End Function
 
 
@@ -255,7 +274,6 @@
         End Try
     End Sub
 
-
     'Botón para editar un producto
     Private Sub BtnEditarP_Click(sender As Object, e As EventArgs) Handles BtnEditarP.Click
         Try
@@ -309,7 +327,7 @@
 
 
     'Botón para buscar por nombre de producto
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub BtnBuscarProducto_Click(sender As Object, e As EventArgs) Handles BtnBuscarProducto.Click
         Dim ds As New DataSet
         Dim dao As New Tbl_ProductosDAO
 
@@ -320,7 +338,6 @@
         If TxtBuscar.Text = "" Then
             LlenarTabla()
         End If
-
     End Sub
 
 

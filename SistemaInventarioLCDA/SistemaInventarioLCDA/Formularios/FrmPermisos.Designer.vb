@@ -23,9 +23,9 @@ Partial Class FrmPermiso
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -36,10 +36,7 @@ Partial Class FrmPermiso
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.DgvPermisos = New System.Windows.Forms.DataGridView()
         Me.GbPermisos = New System.Windows.Forms.GroupBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscarPermiso = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.BtnAgregarPermiso = New System.Windows.Forms.Button()
         Me.BtnEliminarPermiso = New System.Windows.Forms.Button()
         Me.BtnEditarPermiso = New System.Windows.Forms.Button()
@@ -52,6 +49,8 @@ Partial Class FrmPermiso
         Me.TxtIdPermiso = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DbLaCasaDelArteDataSet1 = New SistemaInventarioLCDA.DBLaCasaDelArteDataSet()
+        Me.BtnBuscarPermiso = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,10 +58,9 @@ Partial Class FrmPermiso
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
         CType(Me.DgvPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DbLaCasaDelArteDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -147,12 +145,10 @@ Partial Class FrmPermiso
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.BtnBuscarPermiso)
         Me.PanelCentral.Controls.Add(Me.DgvPermisos)
         Me.PanelCentral.Controls.Add(Me.GbPermisos)
-        Me.PanelCentral.Controls.Add(Me.PictureBox2)
-        Me.PanelCentral.Controls.Add(Me.PictureBox1)
         Me.PanelCentral.Controls.Add(Me.TxtBuscarPermiso)
-        Me.PanelCentral.Controls.Add(Me.Label12)
         Me.PanelCentral.Controls.Add(Me.BtnAgregarPermiso)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarPermiso)
         Me.PanelCentral.Controls.Add(Me.BtnEditarPermiso)
@@ -179,14 +175,14 @@ Partial Class FrmPermiso
         Me.DgvPermisos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvPermisos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvPermisos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvPermisos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DgvPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvPermisos.EnableHeadersVisualStyles = False
         Me.DgvPermisos.GridColor = System.Drawing.Color.SaddleBrown
@@ -194,22 +190,22 @@ Partial Class FrmPermiso
         Me.DgvPermisos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DgvPermisos.Name = "DgvPermisos"
         Me.DgvPermisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvPermisos.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvPermisos.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DgvPermisos.RowHeadersVisible = False
         Me.DgvPermisos.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvPermisos.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvPermisos.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DgvPermisos.RowTemplate.Height = 24
         Me.DgvPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvPermisos.Size = New System.Drawing.Size(1642, 188)
@@ -228,45 +224,14 @@ Partial Class FrmPermiso
         Me.GbPermisos.TabStop = False
         Me.GbPermisos.Text = "Permisos Registrados: 0"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 473)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 44
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 473)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 42
-        Me.PictureBox1.TabStop = False
-        '
         'TxtBuscarPermiso
         '
         Me.TxtBuscarPermiso.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscarPermiso.Location = New System.Drawing.Point(272, 480)
+        Me.TxtBuscarPermiso.Location = New System.Drawing.Point(41, 486)
         Me.TxtBuscarPermiso.Name = "TxtBuscarPermiso"
         Me.TxtBuscarPermiso.Size = New System.Drawing.Size(1422, 34)
         Me.TxtBuscarPermiso.TabIndex = 8
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(171, 480)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(81, 28)
-        Me.Label12.TabIndex = 41
-        Me.Label12.Text = "Buscar:"
         '
         'BtnAgregarPermiso
         '
@@ -447,6 +412,33 @@ Partial Class FrmPermiso
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código:"
         '
+        'DbLaCasaDelArteDataSet1
+        '
+        Me.DbLaCasaDelArteDataSet1.DataSetName = "DBLaCasaDelArteDataSet"
+        Me.DbLaCasaDelArteDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BtnBuscarPermiso
+        '
+        Me.BtnBuscarPermiso.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscarPermiso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBuscarPermiso.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarPermiso.FlatAppearance.BorderSize = 0
+        Me.BtnBuscarPermiso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnBuscarPermiso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnBuscarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscarPermiso.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscarPermiso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarPermiso.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.BtnBuscarPermiso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnBuscarPermiso.Location = New System.Drawing.Point(1506, 476)
+        Me.BtnBuscarPermiso.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnBuscarPermiso.Name = "BtnBuscarPermiso"
+        Me.BtnBuscarPermiso.Size = New System.Drawing.Size(183, 55)
+        Me.BtnBuscarPermiso.TabIndex = 47
+        Me.BtnBuscarPermiso.Text = "Buscar"
+        Me.BtnBuscarPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnBuscarPermiso.UseVisualStyleBackColor = True
+        '
         'FrmPermiso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -466,11 +458,10 @@ Partial Class FrmPermiso
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
         CType(Me.DgvPermisos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobDatosProd.ResumeLayout(False)
         Me.GobDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DbLaCasaDelArteDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -485,10 +476,7 @@ Partial Class FrmPermiso
     Friend WithEvents PanelCentral As Panel
     Friend WithEvents DgvPermisos As DataGridView
     Friend WithEvents GbPermisos As GroupBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TxtBuscarPermiso As TextBox
-    Friend WithEvents Label12 As Label
     Friend WithEvents BtnAgregarPermiso As Button
     Friend WithEvents BtnEliminarPermiso As Button
     Friend WithEvents BtnEditarPermiso As Button
@@ -501,4 +489,6 @@ Partial Class FrmPermiso
     Friend WithEvents TxtIdPermiso As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents DbLaCasaDelArteDataSet1 As DBLaCasaDelArteDataSet
+    Friend WithEvents BtnBuscarPermiso As Button
 End Class
