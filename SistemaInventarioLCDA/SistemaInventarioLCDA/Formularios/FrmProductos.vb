@@ -324,9 +324,14 @@
         End Try
     End Sub
 
-
-
     'Botón para buscar por nombre de producto
+
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
+        If TxtBuscar.Text = "" Then
+            LlenarTabla()
+        End If
+    End Sub
+
     Private Sub BtnBuscarProducto_Click(sender As Object, e As EventArgs) Handles BtnBuscarProducto.Click
         Dim ds As New DataSet
         Dim dao As New Tbl_ProductosDAO
@@ -336,6 +341,7 @@
         DgvProductos.Refresh()
 
         If TxtBuscar.Text = "" Then
+            MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Productos")
             LlenarTabla()
         End If
     End Sub

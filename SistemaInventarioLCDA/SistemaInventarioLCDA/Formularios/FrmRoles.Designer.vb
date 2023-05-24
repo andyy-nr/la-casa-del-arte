@@ -23,9 +23,9 @@ Partial Class FrmRoles
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -33,25 +33,25 @@ Partial Class FrmRoles
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.BtnBuscarRol = New System.Windows.Forms.Button()
         Me.DgvRoles = New System.Windows.Forms.DataGridView()
         Me.GbRoles = New System.Windows.Forms.GroupBox()
-        Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.BtnAgregarP = New System.Windows.Forms.Button()
-        Me.BtnEliminarP = New System.Windows.Forms.Button()
-        Me.BtnEditarP = New System.Windows.Forms.Button()
-        Me.BtnLimpiarP = New System.Windows.Forms.Button()
+        Me.TxtBuscarRol = New System.Windows.Forms.TextBox()
+        Me.BtnAgregarRol = New System.Windows.Forms.Button()
+        Me.BtnEliminarRol = New System.Windows.Forms.Button()
+        Me.BtnEditarRol = New System.Windows.Forms.Button()
+        Me.BtnLimpiarRol = New System.Windows.Forms.Button()
         Me.GobDatosProd = New System.Windows.Forms.GroupBox()
         Me.ClbPermisos = New System.Windows.Forms.CheckedListBox()
-        Me.TxtCodRolUsuario = New System.Windows.Forms.TextBox()
+        Me.TxtIdRol = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PibProductos = New System.Windows.Forms.PictureBox()
-        Me.TxtDescRolUsuario = New System.Windows.Forms.TextBox()
+        Me.TxtDescRol = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtNomRolUsu = New System.Windows.Forms.TextBox()
+        Me.TxtNomRol = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnBuscarRol = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,11 +148,11 @@ Partial Class FrmRoles
         Me.PanelCentral.Controls.Add(Me.BtnBuscarRol)
         Me.PanelCentral.Controls.Add(Me.DgvRoles)
         Me.PanelCentral.Controls.Add(Me.GbRoles)
-        Me.PanelCentral.Controls.Add(Me.TxtBuscar)
-        Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
-        Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
-        Me.PanelCentral.Controls.Add(Me.BtnEditarP)
-        Me.PanelCentral.Controls.Add(Me.BtnLimpiarP)
+        Me.PanelCentral.Controls.Add(Me.TxtBuscarRol)
+        Me.PanelCentral.Controls.Add(Me.BtnAgregarRol)
+        Me.PanelCentral.Controls.Add(Me.BtnEliminarRol)
+        Me.PanelCentral.Controls.Add(Me.BtnEditarRol)
+        Me.PanelCentral.Controls.Add(Me.BtnLimpiarRol)
         Me.PanelCentral.Controls.Add(Me.GobDatosProd)
         Me.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelCentral.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -162,6 +162,28 @@ Partial Class FrmRoles
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 17
+        '
+        'BtnBuscarRol
+        '
+        Me.BtnBuscarRol.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscarRol.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBuscarRol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarRol.FlatAppearance.BorderSize = 0
+        Me.BtnBuscarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnBuscarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnBuscarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscarRol.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarRol.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.BtnBuscarRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnBuscarRol.Location = New System.Drawing.Point(1512, 479)
+        Me.BtnBuscarRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnBuscarRol.Name = "BtnBuscarRol"
+        Me.BtnBuscarRol.Size = New System.Drawing.Size(183, 55)
+        Me.BtnBuscarRol.TabIndex = 48
+        Me.BtnBuscarRol.Text = "Buscar"
+        Me.BtnBuscarRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnBuscarRol.UseVisualStyleBackColor = True
         '
         'DgvRoles
         '
@@ -175,14 +197,14 @@ Partial Class FrmRoles
         Me.DgvRoles.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvRoles.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvRoles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvRoles.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvRoles.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvRoles.EnableHeadersVisualStyles = False
         Me.DgvRoles.GridColor = System.Drawing.Color.SaddleBrown
@@ -190,22 +212,22 @@ Partial Class FrmRoles
         Me.DgvRoles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DgvRoles.Name = "DgvRoles"
         Me.DgvRoles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvRoles.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvRoles.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvRoles.RowHeadersVisible = False
         Me.DgvRoles.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvRoles.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvRoles.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DgvRoles.RowTemplate.Height = 24
         Me.DgvRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvRoles.Size = New System.Drawing.Size(1642, 187)
@@ -224,102 +246,102 @@ Partial Class FrmRoles
         Me.GbRoles.TabStop = False
         Me.GbRoles.Text = "Roles Registrados: 0"
         '
-        'TxtBuscar
+        'TxtBuscarRol
         '
-        Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TxtBuscarRol.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscar.Location = New System.Drawing.Point(41, 489)
-        Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(1422, 34)
-        Me.TxtBuscar.TabIndex = 43
+        Me.TxtBuscarRol.Location = New System.Drawing.Point(41, 489)
+        Me.TxtBuscarRol.Name = "TxtBuscarRol"
+        Me.TxtBuscarRol.Size = New System.Drawing.Size(1422, 34)
+        Me.TxtBuscarRol.TabIndex = 43
         '
-        'BtnAgregarP
+        'BtnAgregarRol
         '
-        Me.BtnAgregarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnAgregarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAgregarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.BorderSize = 0
-        Me.BtnAgregarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregar
-        Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarP.Location = New System.Drawing.Point(407, 410)
-        Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnAgregarP.Name = "BtnAgregarP"
-        Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarP.TabIndex = 4
-        Me.BtnAgregarP.Text = "Agregar"
-        Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnAgregarP.UseVisualStyleBackColor = True
+        Me.BtnAgregarRol.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnAgregarRol.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAgregarRol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarRol.FlatAppearance.BorderSize = 0
+        Me.BtnAgregarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnAgregarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnAgregarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregarRol.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAgregarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarRol.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregar
+        Me.BtnAgregarRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAgregarRol.Location = New System.Drawing.Point(407, 410)
+        Me.BtnAgregarRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnAgregarRol.Name = "BtnAgregarRol"
+        Me.BtnAgregarRol.Size = New System.Drawing.Size(183, 55)
+        Me.BtnAgregarRol.TabIndex = 4
+        Me.BtnAgregarRol.Text = "Agregar"
+        Me.BtnAgregarRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnAgregarRol.UseVisualStyleBackColor = True
         '
-        'BtnEliminarP
+        'BtnEliminarRol
         '
-        Me.BtnEliminarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnEliminarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.BorderSize = 0
-        Me.BtnEliminarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEliminarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEliminarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEliminar
-        Me.BtnEliminarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarP.Location = New System.Drawing.Point(1134, 410)
-        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEliminarP.Name = "BtnEliminarP"
-        Me.BtnEliminarP.Size = New System.Drawing.Size(191, 55)
-        Me.BtnEliminarP.TabIndex = 7
-        Me.BtnEliminarP.Text = "Eliminar"
-        Me.BtnEliminarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminarP.UseVisualStyleBackColor = True
+        Me.BtnEliminarRol.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEliminarRol.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminarRol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEliminarRol.FlatAppearance.BorderSize = 0
+        Me.BtnEliminarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEliminarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEliminarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEliminarRol.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEliminarRol.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEliminar
+        Me.BtnEliminarRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEliminarRol.Location = New System.Drawing.Point(1134, 410)
+        Me.BtnEliminarRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEliminarRol.Name = "BtnEliminarRol"
+        Me.BtnEliminarRol.Size = New System.Drawing.Size(191, 55)
+        Me.BtnEliminarRol.TabIndex = 7
+        Me.BtnEliminarRol.Text = "Eliminar"
+        Me.BtnEliminarRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEliminarRol.UseVisualStyleBackColor = True
         '
-        'BtnEditarP
+        'BtnEditarRol
         '
-        Me.BtnEditarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnEditarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.BorderSize = 0
-        Me.BtnEditarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnEditarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnEditarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEditar
-        Me.BtnEditarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarP.Location = New System.Drawing.Point(914, 410)
-        Me.BtnEditarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnEditarP.Name = "BtnEditarP"
-        Me.BtnEditarP.Size = New System.Drawing.Size(157, 55)
-        Me.BtnEditarP.TabIndex = 6
-        Me.BtnEditarP.Text = "Editar"
-        Me.BtnEditarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEditarP.UseVisualStyleBackColor = True
+        Me.BtnEditarRol.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnEditarRol.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditarRol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEditarRol.FlatAppearance.BorderSize = 0
+        Me.BtnEditarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnEditarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnEditarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditarRol.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnEditarRol.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEditar
+        Me.BtnEditarRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEditarRol.Location = New System.Drawing.Point(914, 410)
+        Me.BtnEditarRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnEditarRol.Name = "BtnEditarRol"
+        Me.BtnEditarRol.Size = New System.Drawing.Size(157, 55)
+        Me.BtnEditarRol.TabIndex = 6
+        Me.BtnEditarRol.Text = "Editar"
+        Me.BtnEditarRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEditarRol.UseVisualStyleBackColor = True
         '
-        'BtnLimpiarP
+        'BtnLimpiarRol
         '
-        Me.BtnLimpiarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnLimpiarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnLimpiarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnLimpiarP.FlatAppearance.BorderSize = 0
-        Me.BtnLimpiarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnLimpiarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnLimpiarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLimpiarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLimpiarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnLimpiarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgLimpiarCampos
-        Me.BtnLimpiarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarP.Location = New System.Drawing.Point(660, 410)
-        Me.BtnLimpiarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnLimpiarP.Name = "BtnLimpiarP"
-        Me.BtnLimpiarP.Size = New System.Drawing.Size(176, 55)
-        Me.BtnLimpiarP.TabIndex = 5
-        Me.BtnLimpiarP.Text = "Limpiar"
-        Me.BtnLimpiarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnLimpiarP.UseVisualStyleBackColor = True
+        Me.BtnLimpiarRol.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnLimpiarRol.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnLimpiarRol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnLimpiarRol.FlatAppearance.BorderSize = 0
+        Me.BtnLimpiarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnLimpiarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnLimpiarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpiarRol.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLimpiarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnLimpiarRol.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgLimpiarCampos
+        Me.BtnLimpiarRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnLimpiarRol.Location = New System.Drawing.Point(660, 410)
+        Me.BtnLimpiarRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnLimpiarRol.Name = "BtnLimpiarRol"
+        Me.BtnLimpiarRol.Size = New System.Drawing.Size(176, 55)
+        Me.BtnLimpiarRol.TabIndex = 5
+        Me.BtnLimpiarRol.Text = "Limpiar"
+        Me.BtnLimpiarRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnLimpiarRol.UseVisualStyleBackColor = True
         '
         'GobDatosProd
         '
@@ -327,12 +349,12 @@ Partial Class FrmRoles
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GobDatosProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.GobDatosProd.Controls.Add(Me.ClbPermisos)
-        Me.GobDatosProd.Controls.Add(Me.TxtCodRolUsuario)
+        Me.GobDatosProd.Controls.Add(Me.TxtIdRol)
         Me.GobDatosProd.Controls.Add(Me.Label3)
         Me.GobDatosProd.Controls.Add(Me.PibProductos)
-        Me.GobDatosProd.Controls.Add(Me.TxtDescRolUsuario)
+        Me.GobDatosProd.Controls.Add(Me.TxtDescRol)
         Me.GobDatosProd.Controls.Add(Me.Label5)
-        Me.GobDatosProd.Controls.Add(Me.TxtNomRolUsu)
+        Me.GobDatosProd.Controls.Add(Me.TxtNomRol)
         Me.GobDatosProd.Controls.Add(Me.Label2)
         Me.GobDatosProd.Controls.Add(Me.Label1)
         Me.GobDatosProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -356,14 +378,14 @@ Partial Class FrmRoles
         Me.ClbPermisos.Size = New System.Drawing.Size(340, 232)
         Me.ClbPermisos.TabIndex = 34
         '
-        'TxtCodRolUsuario
+        'TxtIdRol
         '
-        Me.TxtCodRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCodRolUsuario.Enabled = False
-        Me.TxtCodRolUsuario.Location = New System.Drawing.Point(175, 41)
-        Me.TxtCodRolUsuario.Name = "TxtCodRolUsuario"
-        Me.TxtCodRolUsuario.Size = New System.Drawing.Size(235, 34)
-        Me.TxtCodRolUsuario.TabIndex = 31
+        Me.TxtIdRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtIdRol.Enabled = False
+        Me.TxtIdRol.Location = New System.Drawing.Point(175, 41)
+        Me.TxtIdRol.Name = "TxtIdRol"
+        Me.TxtIdRol.Size = New System.Drawing.Size(235, 34)
+        Me.TxtIdRol.TabIndex = 31
         '
         'Label3
         '
@@ -386,16 +408,16 @@ Partial Class FrmRoles
         Me.PibProductos.TabIndex = 29
         Me.PibProductos.TabStop = False
         '
-        'TxtDescRolUsuario
+        'TxtDescRol
         '
-        Me.TxtDescRolUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescRolUsuario.Location = New System.Drawing.Point(175, 155)
-        Me.TxtDescRolUsuario.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtDescRolUsuario.Multiline = True
-        Me.TxtDescRolUsuario.Name = "TxtDescRolUsuario"
-        Me.TxtDescRolUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtDescRolUsuario.Size = New System.Drawing.Size(513, 185)
-        Me.TxtDescRolUsuario.TabIndex = 2
+        Me.TxtDescRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtDescRol.Location = New System.Drawing.Point(175, 155)
+        Me.TxtDescRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtDescRol.Multiline = True
+        Me.TxtDescRol.Name = "TxtDescRol"
+        Me.TxtDescRol.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TxtDescRol.Size = New System.Drawing.Size(513, 185)
+        Me.TxtDescRol.TabIndex = 2
         '
         'Label5
         '
@@ -406,14 +428,14 @@ Partial Class FrmRoles
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Permisos:"
         '
-        'TxtNomRolUsu
+        'TxtNomRol
         '
-        Me.TxtNomRolUsu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNomRolUsu.Location = New System.Drawing.Point(175, 99)
-        Me.TxtNomRolUsu.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.TxtNomRolUsu.Name = "TxtNomRolUsu"
-        Me.TxtNomRolUsu.Size = New System.Drawing.Size(490, 34)
-        Me.TxtNomRolUsu.TabIndex = 1
+        Me.TxtNomRol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNomRol.Location = New System.Drawing.Point(175, 99)
+        Me.TxtNomRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.TxtNomRol.Name = "TxtNomRol"
+        Me.TxtNomRol.Size = New System.Drawing.Size(490, 34)
+        Me.TxtNomRol.TabIndex = 1
         '
         'Label2
         '
@@ -432,28 +454,6 @@ Partial Class FrmRoles
         Me.Label1.Size = New System.Drawing.Size(89, 28)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre:"
-        '
-        'BtnBuscarRol
-        '
-        Me.BtnBuscarRol.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnBuscarRol.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBuscarRol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscarRol.FlatAppearance.BorderSize = 0
-        Me.BtnBuscarRol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnBuscarRol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnBuscarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscarRol.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscarRol.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.BtnBuscarRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnBuscarRol.Location = New System.Drawing.Point(1512, 479)
-        Me.BtnBuscarRol.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnBuscarRol.Name = "BtnBuscarRol"
-        Me.BtnBuscarRol.Size = New System.Drawing.Size(183, 55)
-        Me.BtnBuscarRol.TabIndex = 48
-        Me.BtnBuscarRol.Text = "Buscar"
-        Me.BtnBuscarRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnBuscarRol.UseVisualStyleBackColor = True
         '
         'FrmRoles
         '
@@ -488,19 +488,19 @@ Partial Class FrmRoles
     Friend WithEvents PanelCentral As Panel
     Friend WithEvents GobDatosProd As GroupBox
     Friend WithEvents PibProductos As PictureBox
-    Friend WithEvents BtnAgregarP As Button
-    Friend WithEvents BtnEliminarP As Button
-    Friend WithEvents BtnEditarP As Button
-    Friend WithEvents BtnLimpiarP As Button
+    Friend WithEvents BtnAgregarRol As Button
+    Friend WithEvents BtnEliminarRol As Button
+    Friend WithEvents BtnEditarRol As Button
+    Friend WithEvents BtnLimpiarRol As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents TxtNomRolUsu As TextBox
+    Friend WithEvents TxtNomRol As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TxtDescRolUsuario As TextBox
+    Friend WithEvents TxtDescRol As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PibRetornar As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents TxtCodRolUsuario As TextBox
+    Friend WithEvents TxtBuscarRol As TextBox
+    Friend WithEvents TxtIdRol As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents ClbPermisos As CheckedListBox
     Friend WithEvents PibMaximizar As PictureBox

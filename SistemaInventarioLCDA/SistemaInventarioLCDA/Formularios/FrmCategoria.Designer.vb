@@ -47,9 +47,9 @@ Partial Class FrmCategoria
         Me.BtnAgregarP = New System.Windows.Forms.Button()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.BtnBuscaCategoria = New System.Windows.Forms.Button()
         Me.GbCategorias = New System.Windows.Forms.GroupBox()
         Me.DgvCategorias = New System.Windows.Forms.DataGridView()
-        Me.BtnBuscaCategoria = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -349,6 +349,28 @@ Partial Class FrmCategoria
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 18
         '
+        'BtnBuscaCategoria
+        '
+        Me.BtnBuscaCategoria.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscaCategoria.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBuscaCategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscaCategoria.FlatAppearance.BorderSize = 0
+        Me.BtnBuscaCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnBuscaCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnBuscaCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscaCategoria.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscaCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscaCategoria.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.BtnBuscaCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnBuscaCategoria.Location = New System.Drawing.Point(1511, 478)
+        Me.BtnBuscaCategoria.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnBuscaCategoria.Name = "BtnBuscaCategoria"
+        Me.BtnBuscaCategoria.Size = New System.Drawing.Size(183, 55)
+        Me.BtnBuscaCategoria.TabIndex = 52
+        Me.BtnBuscaCategoria.Text = "Buscar"
+        Me.BtnBuscaCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnBuscaCategoria.UseVisualStyleBackColor = True
+        '
         'GbCategorias
         '
         Me.GbCategorias.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -410,28 +432,6 @@ Partial Class FrmCategoria
         Me.DgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvCategorias.Size = New System.Drawing.Size(1642, 181)
         Me.DgvCategorias.TabIndex = 49
-        '
-        'BtnBuscaCategoria
-        '
-        Me.BtnBuscaCategoria.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnBuscaCategoria.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBuscaCategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscaCategoria.FlatAppearance.BorderSize = 0
-        Me.BtnBuscaCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnBuscaCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnBuscaCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscaCategoria.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscaCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscaCategoria.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.BtnBuscaCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnBuscaCategoria.Location = New System.Drawing.Point(1511, 467)
-        Me.BtnBuscaCategoria.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnBuscaCategoria.Name = "BtnBuscaCategoria"
-        Me.BtnBuscaCategoria.Size = New System.Drawing.Size(183, 55)
-        Me.BtnBuscaCategoria.TabIndex = 52
-        Me.BtnBuscaCategoria.Text = "Buscar"
-        Me.BtnBuscaCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnBuscaCategoria.UseVisualStyleBackColor = True
         '
         'FrmCategoria
         '

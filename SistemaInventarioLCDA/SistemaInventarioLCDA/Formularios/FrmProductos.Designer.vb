@@ -34,6 +34,7 @@ Partial Class FrmProductos
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.BtnBuscarProducto = New System.Windows.Forms.Button()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.DgvProductos = New System.Windows.Forms.DataGridView()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
@@ -57,7 +58,6 @@ Partial Class FrmProductos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.GbProductos = New System.Windows.Forms.GroupBox()
-        Me.BtnBuscarProducto = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,6 +170,28 @@ Partial Class FrmProductos
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 17
+        '
+        'BtnBuscarProducto
+        '
+        Me.BtnBuscarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBuscarProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarProducto.FlatAppearance.BorderSize = 0
+        Me.BtnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscarProducto.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarProducto.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.BtnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnBuscarProducto.Location = New System.Drawing.Point(1512, 520)
+        Me.BtnBuscarProducto.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnBuscarProducto.Name = "BtnBuscarProducto"
+        Me.BtnBuscarProducto.Size = New System.Drawing.Size(183, 55)
+        Me.BtnBuscarProducto.TabIndex = 48
+        Me.BtnBuscarProducto.Text = "Buscar"
+        Me.BtnBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnBuscarProducto.UseVisualStyleBackColor = True
         '
         'TxtBuscar
         '
@@ -504,28 +526,6 @@ Partial Class FrmProductos
         Me.GbProductos.TabIndex = 41
         Me.GbProductos.TabStop = False
         Me.GbProductos.Text = "Productos Almacenados: 0"
-        '
-        'BtnBuscarProducto
-        '
-        Me.BtnBuscarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBuscarProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscarProducto.FlatAppearance.BorderSize = 0
-        Me.BtnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscarProducto.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscarProducto.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.BtnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnBuscarProducto.Location = New System.Drawing.Point(1506, 520)
-        Me.BtnBuscarProducto.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnBuscarProducto.Name = "BtnBuscarProducto"
-        Me.BtnBuscarProducto.Size = New System.Drawing.Size(183, 55)
-        Me.BtnBuscarProducto.TabIndex = 48
-        Me.BtnBuscarProducto.Text = "Buscar"
-        Me.BtnBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnBuscarProducto.UseVisualStyleBackColor = True
         '
         'FrmProductos
         '

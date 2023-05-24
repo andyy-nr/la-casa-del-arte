@@ -25,7 +25,6 @@
         'Ajustar tamaño del formulario a la pantalla.
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
-        TxtNomPermiso.Focus()
         LlenarTabla()
 
 
@@ -76,9 +75,6 @@
 
     End Sub
 
-    'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
-
-
     'Validaciones 
     'Funcion que valida los campos obligatorios del formulario
     Private Function validarCampos() As Boolean
@@ -91,7 +87,6 @@
     End Function
 
     'Funcion para validar los campos no obligatorios del formulario
-
     Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
         If String.IsNullOrEmpty(txt.Text.ToString().Trim) Then
             campo = Nothing
