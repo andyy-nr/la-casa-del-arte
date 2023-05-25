@@ -103,7 +103,7 @@
     Private Function validarCampos() As Boolean
         Dim camposLlenados = False
 
-        If (TxtNomRol.Text <> "") Then
+        If (TxtNomRol.Text <> "") And ClbPermisos.CheckedItems.Count > 0 Then
             camposLlenados = True
         End If
         Return camposLlenados
@@ -135,20 +135,25 @@
     End Function
 
     Private Sub DgvRoles_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvRoles.MouseClick
+        Limpiar()
         If (validarRegistros()) Then
+            Dim idRol As Integer
+            Dim permisos As New List(Of String)()
+            Dim rolPermisoDAO As New Tbl_rol_permisoDAO()
             Dim fila As Integer = DgvRoles.CurrentRow.Index
+            idRol = DgvRoles.Rows(fila).Cells(0).Value
             TxtIdRol.Text = DgvRoles.Rows(fila).Cells(0).Value
             TxtNomRol.Text = DgvRoles.Rows(fila).Cells(1).Value
-            TxtDescRol.Text = DgvRoles.Rows(fila).Cells(2).Value
+            TxtDescRol.Text = DgvRoles.Rows(fila).Cells(2).Value.ToString()
             BtnAgregarRol.Enabled = False
-            Dim valor As String = DgvRoles.Rows(fila).Cells(3).Value
-            ' ClbPermisos.SetItemChecked(6, True)
-            ' Buscar el índice del item correspondiente al valor
-            Dim index As Integer = ClbPermisos.FindString(valor)
-            ' Marcar el item si se encuentra
-            If index >= 0 Then
-                ClbPermisos.SetItemChecked(index, True)
-            End If
+            permisos = rolPermisoDAO.obtenerPermiso(idRol)
+            For Each per In permisos
+                Dim index As Integer = ClbPermisos.FindString(per)
+                If index >= 0 Then
+                    ClbPermisos.SetItemChecked(index, True)
+                End If
+            Next
+
         End If
     End Sub
 

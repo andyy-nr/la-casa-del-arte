@@ -26,16 +26,26 @@ Public Class Tbl_rol_permisoDAO
         Return resp
     End Function
 
-    Public Function obtenerPermiso(ByVal id_rol As Integer) As DataTable
-        Dim dt As New DataTable
-        Dim tsql As String = "Select Permiso.permiso from RolPermiso INNER JOIN Permiso On Permiso.id_permiso = RolPermiso.id_permiso where id_rol = @id_rol"
-        Dim conn As New SqlConnection(strConn)
-        Dim da As New SqlDataAdapter(tsql, conn)
-        da.SelectCommand.Parameters.AddWithValue("@id_rol", id_rol)
-        da.Fill(dt)
+    Public Function obtenerPermiso(ByVal id_rol As Integer) As List(Of String)
+        Dim permisos As New List(Of String)()
+        Dim tsql As String = "SELECT Permiso.permiso FROM RolPermiso INNER JOIN Permiso ON Permiso.id_permiso = RolPermiso.id_permiso WHERE id_rol = @id_rol"
 
-        Return dt
+        Using conn As New SqlConnection(strConn)
+            Using cmd As New SqlCommand(tsql, conn)
+                cmd.Parameters.AddWithValue("@id_rol", id_rol)
+                conn.Open()
+
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    While reader.Read()
+                        permisos.Add(reader("permiso").ToString())
+                    End While
+                End Using
+            End Using
+        End Using
+
+        Return permisos
     End Function
+
 
 
 
