@@ -93,4 +93,68 @@ Public Class Tbl_RolesDAO
         Return cod
     End Function
 
+    Public Function BuscarRol(ByVal id_rol As Integer) As Tbl_Roles
+        Dim roles As New Tbl_Roles
+        Try
+            Dim tsql As String = "select * from Rol where id_rol = @id_rol"
+            Dim conn As New SqlConnection(strConn)
+            Dim tbl As New DataTable
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@id_rol", id_rol)
+            da.Fill(tbl)
+
+            If tbl.Rows.Count > 0 Then
+
+                roles.Id_rol = tbl.Rows(0).Item("id_rol")
+                roles.NombreRol = tbl.Rows(0).Item("nombreRol")
+                roles.DescripcionRol = tbl.Rows(0).Item("descripcionRol")
+            End If
+        Catch ex As Exception
+
+        End Try
+        Return roles
+
+    End Function
+
+    Public Function eliminarRol(ByVal id_rol As Integer) As Boolean
+        Dim resp As Boolean = False
+        Try
+            Dim tsql As String = "Delete from Rol where id_rol = @id_rol"
+            Dim conn As New SqlConnection(strConn)
+            conn.Open()
+            Dim cmd As New SqlCommand(tsql, conn)
+            cmd.CommandType = CommandType.Text
+            cmd.Parameters.AddWithValue("@id_rol", id_rol)
+            If (cmd.ExecuteNonQuery <> 0) Then
+                resp = True
+            End If
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al intentar eliminar el rol", MsgBoxStyle.Critical, "Error")
+            resp = False
+        End Try
+        Return resp
+    End Function
+
+    Public Function editarRol(ByVal rol As Tbl_Roles) As Boolean
+        Dim resp As Boolean = False
+        Dim tsql = "UPDATE rol set nombreRol = @nombreRol, descripcionRol = @descripcionRol WHERE id_rol = @id_rol"
+        Dim conn As New SqlConnection(strConn)
+        conn.Open()
+        Dim cmd As New SqlCommand(tsql, conn)
+        cmd.CommandType = CommandType.Text
+        cmd.Parameters.AddWithValue("@id_rol", rol.Id_rol)
+        cmd.Parameters.AddWithValue("@nombreRol", rol.NombreRol)
+        cmd.Parameters.AddWithValue("@descripcionRol", validarValorDBNull(rol.DescripcionRol))
+
+        If (cmd.ExecuteNonQuery <> 0) Then
+            resp = True
+        End If
+        conn.Close()
+
+        Return resp
+
+    End Function
+
 End Class

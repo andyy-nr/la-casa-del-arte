@@ -196,7 +196,7 @@
             Limpiar()
             LlenarTabla()
         Catch ex As Exception
-            MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Productos")
+            MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Permisos")
         End Try
 
     End Sub
@@ -208,34 +208,41 @@
                 MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
-
             Dim Id_permiso As Integer = TxtIdPermiso.Text.Trim()
-            Dim permisoDao As New Tbl_PermisoDAO()
-            Dim permiso As New Tbl_Permiso
-            permiso = permisoDao.BuscarPermiso(Id_permiso)
+            Dim rolPermisoDAO As New Tbl_rol_permisoDAO()
+            If Not rolPermisoDAO.validarUnion(Id_permiso) Then
+                Dim permisoDao As New Tbl_PermisoDAO()
+                Dim permiso As New Tbl_Permiso
+                permiso = permisoDao.BuscarPermiso(Id_permiso)
 
-            If (permiso.Id_permiso = 0) Then
-                MsgBox("El permiso no existe. ", MsgBoxStyle.Exclamation, "Permisos")
-                Exit Sub
-            End If
-            Dim resp As VariantType
-            resp = (MsgBox("Desea eliminar el permiso: " & permiso.Permiso, MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Permisos"))
-            If (resp = vbNo) Then
-                MsgBox("Tarea cancelada", MsgBoxStyle.Information, "Permisos")
-                Limpiar()
-                Exit Sub
-            End If
+                If (permiso.Id_permiso = 0) Then
+                    MsgBox("El permiso no existe. ", MsgBoxStyle.Exclamation, "Permisos")
+                    Exit Sub
+                End If
+                Dim resp As VariantType
+                resp = (MsgBox("Desea eliminar el permiso: " & permiso.Permiso, MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Permisos"))
+                If (resp = vbNo) Then
+                    MsgBox("Tarea cancelada", MsgBoxStyle.Information, "Permisos")
+                    Limpiar()
+                    Exit Sub
+                End If
 
-            Dim eliminado = permisoDao.EliminarPermiso(permiso.Id_permiso)
-            If (eliminado) Then
-                MsgBox("Permiso eliminado exitosamente", MsgBoxStyle.Information, "Permisos")
-                LlenarTabla()
-                Limpiar()
+                Dim eliminado = permisoDao.EliminarPermiso(permiso.Id_permiso)
+                If (eliminado) Then
+                    MsgBox("Permiso eliminado exitosamente", MsgBoxStyle.Information, "Permisos")
+                    LlenarTabla()
+                    Limpiar()
 
+                Else
+                    'MsgBox("Error al intenar eliminar el permiso", MsgBoxStyle.Critical, "Permisos")
+                    Limpiar()
+                End If
             Else
-                MsgBox("Error al intenar eliminar el permiso", MsgBoxStyle.Critical, "Permisos")
+                MsgBox("No es posible eliminar el permiso porque esta relacionado con un rol.", MsgBoxStyle.Critical, "Permisos")
                 Limpiar()
             End If
+
+
         Catch ex As Exception
             MsgBox("Error al intentar eliminar el registro..." & ex.Message, MsgBoxStyle.Critical, "Productos")
         End Try

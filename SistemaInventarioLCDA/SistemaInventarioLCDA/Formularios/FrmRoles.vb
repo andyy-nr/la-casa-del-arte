@@ -215,9 +215,97 @@
 
     End Sub
 
+    Private Sub BtnEliminarRol_Click(sender As Object, e As EventArgs) Handles BtnEliminarRol.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+            Dim id_rol As Integer = TxtIdRol.Text.Trim()
+            Dim rolPermisoDAO As New Tbl_rol_permisoDAO()
+            If rolPermisoDAO.eliminarRolPermiso(id_rol) Then
+                Dim rolDAO As New Tbl_RolesDAO()
+                Dim rol As New Tbl_Roles
+                rol = rolDAO.BuscarRol(id_rol)
+
+                If (rol.Id_rol = 0) Then
+                    MsgBox("El rol no existe", MsgBoxStyle.Exclamation, "Roles")
+                    Exit Sub
+                End If
+                Dim resp As VariantType
+                resp = (MsgBox("Desea eliminar el rol: " & rol.NombreRol, MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Roles"))
+                If (resp = vbNo) Then
+                    MsgBox("Tarea cancelada", MsgBoxStyle.Information, "Roles")
+                    Limpiar()
+                    Exit Sub
+                End If
+                Dim eliminado = rolDAO.eliminarRol(rol.Id_rol)
+                If (eliminado) Then
+                    MsgBox("Rol eliminado exitosamente", MsgBoxStyle.Information, "Roles")
+                    LlenarTabla()
+                    Limpiar()
+                Else
+                    Limpiar()
+                End If
+            Else
+                MsgBox("Ocurrio un error al intentar eliminar la union del rol con los permisos", MsgBoxStyle.Critical, "Roles")
+                Limpiar()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub BtnEditarRol_Click(sender As Object, e As EventArgs) Handles BtnEditarRol.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
+            Dim codPerm As Integer
+            Dim rolPermiso As New Tbl_Rol_Permiso
+            Dim rolPermisoDAO As New Tbl_rol_permisoDAO()
+            Dim codRol As Integer
+
+            codRol = TxtIdRol.Text.Trim
+            For Each item As Object In ClbPermisos.CheckedItems
+
+                Dim drvitem As DataRowView = TryCast(item, DataRowView)
+                codPerm = drvitem("Código")
+
+                rolPermiso.Id_rol = codRol
+                rolPermiso.Id_permiso = codPerm
+
+                Dim respDos = rolPermisoDAO.editarRolPermiso(rolPermiso)
+            Next item
+
+            Dim rol As New Tbl_Roles
+            Dim rolDAO As New Tbl_RolesDAO()
+
+            rol.Id_rol = TxtIdRol.Text
+            rol.NombreRol = TxtNomRol.Text.Trim
+            rol.DescripcionRol = validarCamposNull(rol.DescripcionRol, TxtDescRol)
+
+            Dim resp = rolDAO.editarRol(rol)
+            If (resp) Then
+                MsgBox("Rol editado exitosamente.", MsgBoxStyle.Information, "Roles")
+            Else
+                MsgBox("Error al intentar editar el rol", MsgBoxStyle.Critical, "Roles")
+            End If
+
+            Limpiar()
+            LlenarTabla()
+
+
+        Catch ex As Exception
+            MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Roles")
+        End Try
+    End Sub
+
     'Limpiar campos
     Private Sub BtnLimpiarRol_Click(sender As Object, e As EventArgs) Handles BtnLimpiarRol.Click
         Limpiar()
     End Sub
+
+
 
 End Class
