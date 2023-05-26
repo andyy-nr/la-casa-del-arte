@@ -1,4 +1,6 @@
-﻿Public Class FrmUsuarios
+﻿Imports System.Text.RegularExpressions
+
+Public Class FrmUsuarios
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -87,6 +89,49 @@
         Return campo
 
     End Function
+
+    'Función para validar la contraseña
+
+    Private Function validarContraseña(ByVal contraseña As String) As Boolean
+        Dim resp As Boolean = False
+        Dim cont As Integer = 0
+        Dim patron As String = "[^a-zA-Z0-9]" 'coincide con cualquier carácter que no sea una letra (mayúscula o minúscula) ni un número.
+        Dim regex As New Regex(patron) 'Funcion del espacio de nombres System.Text.RegularExpressions 
+        'para crear una expresión regular que busca caracteres que no sean letras ni números
+
+        If Len(contraseña) < 8 Then
+            MsgBox("La contraseña debe tener al menos 8 caracteres", MsgBoxStyle.Exclamation, "Advertencia")
+            Return False
+        End If
+
+        For Each c As Char In contraseña
+            If Char.IsLetter(c) Then
+                cont = cont + 1
+                Exit For
+            End If
+        Next
+
+        For Each c As Char In contraseña
+            If Char.IsNumber(c) Then
+                cont = cont + 1
+                Exit For
+            End If
+        Next
+
+        If regex.IsMatch(contraseña) Then
+            cont = cont + 1
+        End If
+
+        If cont = 3 Then
+            resp = True
+        Else
+            MsgBox("La contraseña debe contener letras, números y caracteres especiales", MsgBoxStyle.Exclamation, "Advertencia")
+            resp = False
+        End If
+
+        Return resp
+    End Function
+
 
     'Función para validar que el DataGridView tenga datos
     Private Function validarRegistros() As Boolean
@@ -187,6 +232,7 @@
                 Exit Sub
             End If
 
+
             Dim usuario = New Tbl_Usuarios() 'Entidad/Tabla de Usuarios
             Dim usuarioDAO As New Tbl_UsuariosDAO() 'DAO de Usuarios
 
@@ -205,6 +251,12 @@
                 MsgBox("El nombre de usuario " & usuario.Nombre_usuario + " no esta disponible")
                 TxtNombreUsuario.Clear()
                 TxtNombreUsuario.Focus()
+                Exit Sub
+            End If
+
+            If Not validarContraseña(usuario.Contraseña) Then
+                TxtPwd.Clear()
+                TxtPwd.Focus()
                 Exit Sub
             End If
 
