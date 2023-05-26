@@ -260,6 +260,7 @@
         Try
             If Not validarCampos() Then
                 MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
             End If
             Dim codPerm As Integer
             Dim rolPermiso As New Tbl_Rol_Permiso
@@ -267,6 +268,7 @@
             Dim codRol As Integer
 
             codRol = TxtIdRol.Text.Trim
+            Dim respDos = rolPermisoDAO.eliminarRolPermiso(codRol)
             For Each item As Object In ClbPermisos.CheckedItems
 
                 Dim drvitem As DataRowView = TryCast(item, DataRowView)
@@ -275,7 +277,9 @@
                 rolPermiso.Id_rol = codRol
                 rolPermiso.Id_permiso = codPerm
 
-                Dim respDos = rolPermisoDAO.editarRolPermiso(rolPermiso)
+                If respDos = True Then
+                    Dim respTres = rolPermisoDAO.agregarRolPermiso(rolPermiso)
+                End If
             Next item
 
             Dim rol As New Tbl_Roles

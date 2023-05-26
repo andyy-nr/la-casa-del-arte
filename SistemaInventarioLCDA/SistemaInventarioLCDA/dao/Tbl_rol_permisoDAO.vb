@@ -69,7 +69,7 @@ Public Class Tbl_rol_permisoDAO
     Public Function eliminarRolPermiso(ByVal id_rol As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "Delete from RolPermiso where id_rol = @id_rol"
+            Dim tsql As String = "DELETE FROM RolPermiso WHERE id_rol = @id_rol"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)
@@ -86,24 +86,5 @@ Public Class Tbl_rol_permisoDAO
         End Try
         Return resp
     End Function
-
-    Public Function editarRolPermiso(ByVal rolPermiso As Tbl_Rol_Permiso) As Boolean
-        Dim resp As Boolean = False
-        Dim tsql = "Update RolPermiso set id_rol = @id_rol, id_permiso = @id_permiso"
-        Dim conn As New SqlConnection(strConn)
-        conn.Open()
-        Dim cmd As New SqlCommand(tsql, conn)
-        cmd.CommandType = CommandType.Text
-        cmd.Parameters.AddWithValue("@id_rol", rolPermiso.Id_rol)
-        cmd.Parameters.AddWithValue("@id_permiso", rolPermiso.Id_permiso)
-        If (cmd.ExecuteNonQuery <> 0) Then
-            resp = True
-        End If
-        conn.Close()
-        Return resp
-    End Function
-
-
-
 
 End Class
