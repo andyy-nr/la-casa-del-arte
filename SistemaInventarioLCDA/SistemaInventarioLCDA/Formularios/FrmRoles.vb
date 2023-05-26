@@ -103,7 +103,7 @@
     Private Function validarCampos() As Boolean
         Dim camposLlenados = False
 
-        If (TxtIdRol.Text <> "") And ClbPermisos.CheckedItems.Count > 0 Then
+        If (TxtNomRol.Text <> "") And ClbPermisos.CheckedItems.Count > 0 Then
             camposLlenados = True
         End If
         Return camposLlenados
@@ -165,53 +165,57 @@
         Dim codRol As Integer
         Dim codPerm As Integer
 
-        If Not validarCampos() Then
-            MsgBox("Datos obligatorios del rol incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
-            Exit Sub
-        End If
-
-        Dim rol = New Tbl_Roles() 'Entidad/Tabla de Roles
-        Dim rolDAO As New Tbl_RolesDAO 'DAO de Roles
-        Dim rolPermiso = New Tbl_Rol_Permiso() 'Entidad/Tabla de Roles
-        Dim rolPermisoDAO As New Tbl_rol_permisoDAO() 'DAO de Rol Permiso
-
-        rol.NombreRol = TxtNomRol.Text.Trim()
-        rol.DescripcionRol = validarCamposNull(rol.DescripcionRol, TxtDescRol)
-        If rolDAO.validarRol(rol) Then
-            MsgBox("El rol ingresado ya existe", MsgBoxStyle.Exclamation, "Advertencia")
-            Limpiar()
-            Exit Sub
-        End If
-
-        Dim resp = rolDAO.agregarRol(rol)
-        If (resp) Then
-            For Each item As Object In ClbPermisos.CheckedItems
-
-                Dim drvitem As DataRowView = TryCast(item, DataRowView)
-
-                codRol = rolDAO.codigoRol()
-                codPerm = drvitem("Código")
-
-                rolPermiso.Id_permiso = codPerm
-                rolPermiso.Id_rol = codRol
-
-                Dim respDos = rolPermisoDAO.agregarRolPermiso(rolPermiso)
-            Next item
-
-            If (resp) Then
-                MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Roles")
-                LlenarTabla()
-                Limpiar()
-            Else
-                MsgBox("Error al guardar el registro.", MsgBoxStyle.Critical, "Roles")
-                Limpiar()
-
+        Try
+            If Not validarCampos() Then
+                MsgBox("Datos obligatorios del rol incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
             End If
 
-        Else
-            MsgBox("Error al guardar el registro Hola", MsgBoxStyle.Critical, "Permiso")
-            Limpiar()
-        End If
+            Dim rol = New Tbl_Roles() 'Entidad/Tabla de Roles
+            Dim rolDAO As New Tbl_RolesDAO 'DAO de Roles
+            Dim rolPermiso = New Tbl_Rol_Permiso() 'Entidad/Tabla de Roles
+            Dim rolPermisoDAO As New Tbl_rol_permisoDAO() 'DAO de Rol Permiso
+
+            rol.NombreRol = TxtNomRol.Text.Trim()
+            rol.DescripcionRol = validarCamposNull(rol.DescripcionRol, TxtDescRol)
+            If rolDAO.validarRol(rol) Then
+                MsgBox("El rol ingresado ya existe", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
+                Exit Sub
+            End If
+
+            Dim resp = rolDAO.agregarRol(rol)
+            If (resp) Then
+                For Each item As Object In ClbPermisos.CheckedItems
+
+                    Dim drvitem As DataRowView = TryCast(item, DataRowView)
+
+                    codRol = rolDAO.codigoRol()
+                    codPerm = drvitem("Código")
+
+                    rolPermiso.Id_permiso = codPerm
+                    rolPermiso.Id_rol = codRol
+
+                    Dim respDos = rolPermisoDAO.agregarRolPermiso(rolPermiso)
+                Next item
+
+                If (resp) Then
+                    MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Roles")
+                    LlenarTabla()
+                    Limpiar()
+                Else
+                    MsgBox("Error al guardar el registro.", MsgBoxStyle.Critical, "Roles")
+                    Limpiar()
+
+                End If
+
+            Else
+                MsgBox("Error al guardar el registro", MsgBoxStyle.Critical, "Permiso")
+                Limpiar()
+            End If
+        Catch ex As Exception
+            MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Roles")
+        End Try
 
     End Sub
 
@@ -252,7 +256,7 @@
                 Limpiar()
             End If
         Catch ex As Exception
-
+            MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Roles")
         End Try
     End Sub
 
@@ -329,7 +333,5 @@
     Private Sub BtnLimpiarRol_Click(sender As Object, e As EventArgs) Handles BtnLimpiarRol.Click
         Limpiar()
     End Sub
-
-
 
 End Class

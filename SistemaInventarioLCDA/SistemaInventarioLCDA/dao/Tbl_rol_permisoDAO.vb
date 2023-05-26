@@ -29,7 +29,9 @@ Public Class Tbl_rol_permisoDAO
 
     Public Function obtenerPermiso(ByVal id_rol As Integer) As List(Of String)
         Dim permisos As New List(Of String)()
-        Dim tsql As String = "SELECT Permiso.permiso FROM RolPermiso INNER JOIN Permiso ON Permiso.id_permiso = RolPermiso.id_permiso WHERE id_rol = @id_rol"
+        Dim tsql As String = "SELECT Permiso.permiso FROM RolPermiso INNER JOIN Permiso 
+                              ON Permiso.id_permiso = RolPermiso.id_permiso 
+                              WHERE id_rol = @id_rol"
 
         Dim conn As New SqlConnection(strConn)
         Dim cmd As New SqlCommand(tsql, conn)

@@ -32,23 +32,24 @@ Partial Class FrmUsuarios
         Me.PibMinimizar = New System.Windows.Forms.PictureBox()
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.DgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.GbUsuarios = New System.Windows.Forms.GroupBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GobUsuario = New System.Windows.Forms.GroupBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TxtCodUser = New System.Windows.Forms.TextBox()
         Me.TxtNombreUsuario = New System.Windows.Forms.TextBox()
+        Me.TxtCodUser = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtPwd = New System.Windows.Forms.TextBox()
         Me.CebMostrarPwd = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.CobRoles = New System.Windows.Forms.ComboBox()
+        Me.CbRoles = New System.Windows.Forms.ComboBox()
         Me.PibPerfil = New System.Windows.Forms.PictureBox()
         Me.BtnAgregarU = New System.Windows.Forms.Button()
         Me.BtnEliminarU = New System.Windows.Forms.Button()
@@ -56,7 +57,7 @@ Partial Class FrmUsuarios
         Me.BtnLimpiarU = New System.Windows.Forms.Button()
         Me.GobDatosUser = New System.Windows.Forms.GroupBox()
         Me.TxtApellido2 = New System.Windows.Forms.TextBox()
-        Me.TextNombre2 = New System.Windows.Forms.TextBox()
+        Me.TxtNombre2 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtNombre1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -67,16 +68,15 @@ Partial Class FrmUsuarios
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtCedula = New System.Windows.Forms.TextBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelCentral.SuspendLayout()
-        CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelCentral.SuspendLayout()
+        CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobUsuario.SuspendLayout()
         CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GobDatosUser.SuspendLayout()
@@ -159,6 +159,28 @@ Partial Class FrmUsuarios
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Gestión de Usuarios"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.PictureBox2.Location = New System.Drawing.Point(111, 477)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 36
+        Me.PictureBox2.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Buscar")
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
+        Me.PictureBox1.Location = New System.Drawing.Point(41, 477)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 34
+        Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Filtrar")
+        '
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -180,7 +202,7 @@ Partial Class FrmUsuarios
         Me.PanelCentral.Name = "PanelCentral"
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(10)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
-        Me.PanelCentral.TabIndex = 17
+        Me.PanelCentral.TabIndex = 18
         '
         'DgvUsuarios
         '
@@ -243,28 +265,6 @@ Partial Class FrmUsuarios
         Me.GbUsuarios.TabStop = False
         Me.GbUsuarios.Text = "Usuarios Registrados: 0"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 477)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 36
-        Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Buscar")
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgFiltrar
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 477)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 34
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Filtrar")
-        '
         'TxtBuscar
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -290,15 +290,15 @@ Partial Class FrmUsuarios
         Me.GobUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GobUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GobUsuario.Controls.Add(Me.Label10)
-        Me.GobUsuario.Controls.Add(Me.TxtCodUser)
         Me.GobUsuario.Controls.Add(Me.TxtNombreUsuario)
+        Me.GobUsuario.Controls.Add(Me.TxtCodUser)
+        Me.GobUsuario.Controls.Add(Me.Label10)
         Me.GobUsuario.Controls.Add(Me.Label9)
         Me.GobUsuario.Controls.Add(Me.Label6)
         Me.GobUsuario.Controls.Add(Me.TxtPwd)
         Me.GobUsuario.Controls.Add(Me.CebMostrarPwd)
         Me.GobUsuario.Controls.Add(Me.Label7)
-        Me.GobUsuario.Controls.Add(Me.CobRoles)
+        Me.GobUsuario.Controls.Add(Me.CbRoles)
         Me.GobUsuario.Controls.Add(Me.PibPerfil)
         Me.GobUsuario.Location = New System.Drawing.Point(732, 41)
         Me.GobUsuario.Name = "GobUsuario"
@@ -306,6 +306,25 @@ Partial Class FrmUsuarios
         Me.GobUsuario.TabIndex = 15
         Me.GobUsuario.TabStop = False
         Me.GobUsuario.Text = "Datos Generale del Usuario"
+        '
+        'TxtNombreUsuario
+        '
+        Me.TxtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombreUsuario.Location = New System.Drawing.Point(231, 106)
+        Me.TxtNombreUsuario.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtNombreUsuario.Name = "TxtNombreUsuario"
+        Me.TxtNombreUsuario.Size = New System.Drawing.Size(331, 34)
+        Me.TxtNombreUsuario.TabIndex = 19
+        '
+        'TxtCodUser
+        '
+        Me.TxtCodUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCodUser.Enabled = False
+        Me.TxtCodUser.Location = New System.Drawing.Point(231, 49)
+        Me.TxtCodUser.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtCodUser.Name = "TxtCodUser"
+        Me.TxtCodUser.Size = New System.Drawing.Size(331, 34)
+        Me.TxtCodUser.TabIndex = 8
         '
         'Label10
         '
@@ -316,27 +335,6 @@ Partial Class FrmUsuarios
         Me.Label10.Size = New System.Drawing.Size(81, 28)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "Código:"
-        '
-        'TxtCodUser
-        '
-        Me.TxtCodUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCodUser.Enabled = False
-        Me.TxtCodUser.Location = New System.Drawing.Point(231, 47)
-        Me.TxtCodUser.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TxtCodUser.Name = "TxtCodUser"
-        Me.TxtCodUser.Size = New System.Drawing.Size(331, 34)
-        Me.TxtCodUser.TabIndex = 17
-        Me.TxtCodUser.UseSystemPasswordChar = True
-        '
-        'TxtNombreUsuario
-        '
-        Me.TxtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreUsuario.Location = New System.Drawing.Point(231, 106)
-        Me.TxtNombreUsuario.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TxtNombreUsuario.Name = "TxtNombreUsuario"
-        Me.TxtNombreUsuario.Size = New System.Drawing.Size(331, 34)
-        Me.TxtNombreUsuario.TabIndex = 8
-        Me.TxtNombreUsuario.UseSystemPasswordChar = True
         '
         'Label9
         '
@@ -388,16 +386,16 @@ Partial Class FrmUsuarios
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Rol:"
         '
-        'CobRoles
+        'CbRoles
         '
-        Me.CobRoles.FormattingEnabled = True
-        Me.CobRoles.Items.AddRange(New Object() {"Administrador", "Digitador", "Bodeguero", "Vendedor", "etc..."})
-        Me.CobRoles.Location = New System.Drawing.Point(231, 165)
-        Me.CobRoles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.CobRoles.Name = "CobRoles"
-        Me.CobRoles.Size = New System.Drawing.Size(331, 36)
-        Me.CobRoles.TabIndex = 9
-        Me.CobRoles.Text = "Seleccione el rol.."
+        Me.CbRoles.FormattingEnabled = True
+        Me.CbRoles.Items.AddRange(New Object() {"Administrador", "Digitador", "Bodeguero", "Vendedor", "etc..."})
+        Me.CbRoles.Location = New System.Drawing.Point(231, 165)
+        Me.CbRoles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.CbRoles.Name = "CbRoles"
+        Me.CbRoles.Size = New System.Drawing.Size(331, 36)
+        Me.CbRoles.TabIndex = 9
+        Me.CbRoles.Text = "Seleccione el rol.."
         '
         'PibPerfil
         '
@@ -503,7 +501,7 @@ Partial Class FrmUsuarios
         '
         Me.GobDatosUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.GobDatosUser.Controls.Add(Me.TxtApellido2)
-        Me.GobDatosUser.Controls.Add(Me.TextNombre2)
+        Me.GobDatosUser.Controls.Add(Me.TxtNombre2)
         Me.GobDatosUser.Controls.Add(Me.Label1)
         Me.GobDatosUser.Controls.Add(Me.TxtNombre1)
         Me.GobDatosUser.Controls.Add(Me.Label2)
@@ -534,15 +532,15 @@ Partial Class FrmUsuarios
         Me.TxtApellido2.Size = New System.Drawing.Size(220, 34)
         Me.TxtApellido2.TabIndex = 4
         '
-        'TextNombre2
+        'TxtNombre2
         '
-        Me.TextNombre2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.TextNombre2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextNombre2.Location = New System.Drawing.Point(423, 47)
-        Me.TextNombre2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.TextNombre2.Name = "TextNombre2"
-        Me.TextNombre2.Size = New System.Drawing.Size(220, 34)
-        Me.TextNombre2.TabIndex = 2
+        Me.TxtNombre2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TxtNombre2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombre2.Location = New System.Drawing.Point(423, 47)
+        Me.TxtNombre2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtNombre2.Name = "TxtNombre2"
+        Me.TxtNombre2.Size = New System.Drawing.Size(220, 34)
+        Me.TxtNombre2.TabIndex = 2
         '
         'Label1
         '
@@ -665,11 +663,11 @@ Partial Class FrmUsuarios
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
         CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GobUsuario.ResumeLayout(False)
         Me.GobUsuario.PerformLayout()
         CType(Me.PibPerfil, System.ComponentModel.ISupportInitialize).EndInit()
@@ -683,42 +681,42 @@ Partial Class FrmUsuarios
     Friend WithEvents Label8 As Label
     Friend WithEvents PibMinimizar As PictureBox
     Friend WithEvents PibCerrar As PictureBox
-    Friend WithEvents PanelCentral As Panel
-    Friend WithEvents GobDatosUser As GroupBox
-    Friend WithEvents BtnAgregarU As Button
-    Friend WithEvents CebMostrarPwd As CheckBox
-    Friend WithEvents BtnEliminarU As Button
-    Friend WithEvents BtnEditarU As Button
-    Friend WithEvents BtnLimpiarU As Button
-    Friend WithEvents PibPerfil As PictureBox
-    Friend WithEvents CobRoles As ComboBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents DtpFechaNac As DateTimePicker
-    Friend WithEvents TxtPwd As TextBox
-    Friend WithEvents TxtCedula As TextBox
-    Friend WithEvents TxtTelefono As TextBox
-    Friend WithEvents TxtApellido1 As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TxtNombre1 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents PibRetornar As PictureBox
-    Friend WithEvents GobUsuario As GroupBox
-    Friend WithEvents TxtNombreUsuario As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TxtApellido2 As TextBox
-    Friend WithEvents TextNombre2 As TextBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PibMaximizar As PictureBox
+    Friend WithEvents PanelCentral As Panel
+    Friend WithEvents DgvUsuarios As DataGridView
+    Friend WithEvents GbUsuarios As GroupBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TxtBuscar As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents PibMaximizar As PictureBox
+    Friend WithEvents GobUsuario As GroupBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TxtPwd As TextBox
+    Friend WithEvents CebMostrarPwd As CheckBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents CbRoles As ComboBox
+    Friend WithEvents PibPerfil As PictureBox
+    Friend WithEvents BtnAgregarU As Button
+    Friend WithEvents BtnEliminarU As Button
+    Friend WithEvents BtnEditarU As Button
+    Friend WithEvents BtnLimpiarU As Button
+    Friend WithEvents GobDatosUser As GroupBox
+    Friend WithEvents TxtApellido2 As TextBox
+    Friend WithEvents TxtNombre2 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtNombre1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtApellido1 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DtpFechaNac As DateTimePicker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TxtTelefono As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TxtCedula As TextBox
+    Friend WithEvents TxtNombreUsuario As TextBox
     Friend WithEvents TxtCodUser As TextBox
-    Friend WithEvents DgvUsuarios As DataGridView
-    Friend WithEvents GbUsuarios As GroupBox
 End Class

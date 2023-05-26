@@ -244,7 +244,7 @@
 
 
         Catch ex As Exception
-            MsgBox("Error al intentar eliminar el registro..." & ex.Message, MsgBoxStyle.Critical, "Productos")
+            MsgBox("Error al intentar eliminar el registro..." & ex.Message, MsgBoxStyle.Critical, "Permisos")
         End Try
     End Sub
 

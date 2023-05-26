@@ -1,5 +1,6 @@
 ﻿Public Class Tbl_Usuarios
     Private _usuario_id As Integer
+    Private _id_rol As Integer
     Private _primer_nombre As String
     Private _segundo_nombre As String
     Private _primer_apellido As String
@@ -14,8 +15,9 @@
 
     End Sub
 
-    Public Sub New(usuario_id As Integer, primer_nombre As String, segundo_nombre As String, primer_apellido As String, segundo_apellido As String, nombre_usuario As String, telefono As String, fecha_nac As Date, cedula As String, contraseña As String)
+    Public Sub New(usuario_id As Integer, id_rol As Integer, primer_nombre As String, segundo_nombre As String, primer_apellido As String, segundo_apellido As String, nombre_usuario As String, telefono As String, fecha_nac As Date, cedula As String, contraseña As String)
         _usuario_id = usuario_id
+        _id_rol = id_rol
         _primer_nombre = primer_nombre
         _segundo_nombre = segundo_nombre
         _primer_apellido = primer_apellido
@@ -27,12 +29,12 @@
         _contraseña = contraseña
     End Sub
 
-    Public Property Usuario_id As Integer
+    Public Property Id_rol As Integer
         Get
-            Return _usuario_id
+            Return _id_rol
         End Get
         Set(value As Integer)
-            _usuario_id = value
+            _id_rol = value
         End Set
     End Property
 

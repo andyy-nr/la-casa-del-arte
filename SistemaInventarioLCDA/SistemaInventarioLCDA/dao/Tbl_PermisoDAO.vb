@@ -93,7 +93,7 @@ Public Class Tbl_PermisoDAO
     Public Function BuscarPermiso(ByVal id_permiso As Integer) As Tbl_Permiso
         Dim permiso As New Tbl_Permiso
         Try
-            Dim tsql As String = "select * from Permiso where id_permiso = @id_permiso"
+            Dim tsql As String = "SELECT * FROM Permiso WHERE id_permiso = @id_permiso"
             Dim conn As New SqlConnection(strConn)
             Dim tbl As New DataTable
             Dim da As New SqlDataAdapter(tsql, conn)
@@ -107,7 +107,7 @@ Public Class Tbl_PermisoDAO
                 permiso.DescripcionPermiso = tbl.Rows(0).Item("descripcion")
             End If
         Catch ex As Exception
-
+            MsgBox("Ocurrio un error buscar el permiso", MsgBoxStyle.Critical, "Error")
         End Try
         Return permiso
 
@@ -116,7 +116,7 @@ Public Class Tbl_PermisoDAO
     Public Function EliminarPermiso(ByVal id_permiso As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "Delete from Permiso where id_permiso = @id_permiso"
+            Dim tsql As String = "DELETE from Permiso WHERE id_permiso = @id_permiso"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)
@@ -137,7 +137,9 @@ Public Class Tbl_PermisoDAO
     Public Function BuscarXNombre(ByVal permiso As String) As DataSet
         Dim ds As New DataSet
         Try
-            Dim tsql As String = "Select id_permiso as N'CÓDIGO', permiso as N'PERMISO', descripcion as N'DESCRIPCIÓN' from Permiso WHERE permiso like @permiso "
+            Dim tsql As String = "SELECT id_permiso as N'CÓDIGO', 
+                                         permiso as N'PERMISO', 
+                                         descripcion as N'DESCRIPCIÓN' FROM Permiso WHERE permiso like @permiso "
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@permiso", permiso)

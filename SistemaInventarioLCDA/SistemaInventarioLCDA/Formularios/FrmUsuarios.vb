@@ -24,6 +24,8 @@
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
+        LlenarComboxRol()
+        LlenarTabla()
     End Sub
 
 
@@ -54,12 +56,186 @@
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
+    Private Sub CebMostrarPwd_CheckedChanged(sender As Object, e As EventArgs)
         If CebMostrarPwd.Checked = True Then
             TxtPwd.UseSystemPasswordChar = False
         Else
             TxtPwd.UseSystemPasswordChar = True
         End If
     End Sub
+    'Validaciones
+    'Función que valida los campos obligatorios del formulario
+    Private Function validarCampos() As Boolean
+        Dim camposLlenados = False
+
+        If (TxtNombre1.Text <> "" And TxtApellido1.Text <> "" And CbRoles.Text <> "Seleccione un rol..." And TxtNombreUsuario.Text <> "" And TxtTelefono.Text <> "" And TxtCedula.Text <> "" And TxtPwd.Text <> "") Then
+            If DtpFechaNac.Checked Then
+                camposLlenados = True
+            End If
+        End If
+
+        Return camposLlenados
+    End Function
+
+    'Función para validar los campos no obligatorios del formulario
+    Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
+        If String.IsNullOrEmpty(txt.Text.ToString().Trim) Then
+            campo = Nothing
+        Else
+            campo = txt.Text
+        End If
+        Return campo
+
+    End Function
+
+    'Función para validar que el DataGridView tenga datos
+    Private Function validarRegistros() As Boolean
+        Dim resp = False
+        If (DgvUsuarios.Rows.Count = 0) Then
+            MsgBox("No hay registros guardados, porfavor agregue registros", MsgBoxStyle.Exclamation, "Advertencia")
+            TxtNombre1.Focus()
+            Return False
+            Exit Function
+        Else
+            resp = True
+        End If
+        Return True
+    End Function
+
+    'Datos
+
+    'Función para rellenar la tabla de usuarios 
+    Sub LlenarTabla()
+        Dim usuariosDAO As New Tbl_UsuariosDAO
+        DgvUsuarios.DataSource = usuariosDAO.MostrarUsuarios().Tables(0)
+        DgvUsuarios.Refresh()
+        GbUsuarios.Text = "Usuarios Almacenados: " & DgvUsuarios.RowCount
+    End Sub
+
+    'Función para rellenar el comboBox de roles
+
+    Dim rolesDAO As New Tbl_RolesDAO()
+
+    Sub LlenarComboxRol()
+        Dim ds As New DataSet
+        ds = rolesDAO.MostrarRolesComboBox()
+        CbRoles.DataSource = ds.Tables(0)
+        CbRoles.DisplayMember = "ROL" 'Nombre del alias
+        CbRoles.ValueMember = "CÓDIGO" 'Nombre del alias 
+        CbRoles.Text = "Seleccione un rol..."
+    End Sub
+
+    'Función para limpiar los campos del formulario
+    Private Sub Limpiar()
+        TxtNombre1.Clear()
+        TxtNombre2.Clear()
+        TxtApellido1.Clear()
+        TxtApellido2.Clear()
+        DtpFechaNac.Text = DateTime.Today.ToString()
+        TxtTelefono.Clear()
+        TxtCedula.Clear()
+        TxtCodUser.Clear()
+        TxtNombreUsuario.Clear()
+        CbRoles.Text = "Seleccione un rol"
+        TxtPwd.Clear()
+        BtnAgregarU.Enabled = True
+        TxtNombre1.Focus()
+    End Sub
+
+    'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
+    Private Sub DgvUsuarios_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvUsuarios.MouseClick
+        Try
+            If (validarRegistros()) Then
+                Dim usuarioDAO As New Tbl_UsuariosDAO()
+                Dim dt As New DataTable
+                Dim usuario_id As Integer
+                Dim fila As Integer = DgvUsuarios.CurrentRow.Index
+                TxtCodUser.Text = DgvUsuarios.Rows(fila).Cells(0).Value
+                CbRoles.Text = DgvUsuarios.Rows(fila).Cells(1).Value
+                usuario_id = Int32.Parse(TxtCodUser.Text)
+                dt = usuarioDAO.obtenerNombre(usuario_id)
+
+                If dt.Rows.Count > 0 Then
+                    Dim filaDos As DataRow = dt.Rows(0)
+                    TxtNombre1.Text = filaDos("primer_nombre").ToString()
+                    TxtNombre2.Text = filaDos("segundo_nombre").ToString()
+                    TxtApellido1.Text = filaDos("primer_apellido").ToString()
+                    TxtApellido2.Text = filaDos("segundo_apellido").ToString()
+                End If
+
+                TxtNombreUsuario.Text = DgvUsuarios.Rows(fila).Cells(3).Value
+                TxtTelefono.Text = DgvUsuarios.Rows(fila).Cells(4).Value
+                DtpFechaNac.Text = DgvUsuarios.Rows(fila).Cells(5).Value
+                TxtCedula.Text = DgvUsuarios.Rows(fila).Cells(6).Value
+                TxtPwd.Text = usuarioDAO.obtenerContraseña(usuario_id)
+                BtnAgregarU.Enabled = False
+            End If
+        Catch ex As Exception
+            MsgBox("Ocurrio al cargar los datos del usuario seleccionado" & ex.Message, MsgBoxStyle.Critical, "Usuarios")
+        End Try
+    End Sub
+
+
+
+    'CRUD de Usuarios
+
+    'Botón para agregar un nuevo usuario
+    Private Sub BtnAgregarU_Click(sender As Object, e As EventArgs) Handles BtnAgregarU.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("Datos obligatorios del usuario incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+
+            Dim usuario = New Tbl_Usuarios() 'Entidad/Tabla de Usuarios
+            Dim usuarioDAO As New Tbl_UsuariosDAO() 'DAO de Usuarios
+
+            usuario.Id_rol = CbRoles.SelectedValue
+            usuario.Primer_nombre = TxtNombre1.Text.Trim
+            usuario.Segundo_nombre = validarCamposNull(usuario.Segundo_nombre, TxtNombre2)
+            usuario.Primer_apellido = TxtApellido1.Text.Trim
+            usuario.Segundo_apellido = validarCamposNull(usuario.Segundo_apellido, TxtApellido2)
+            usuario.Nombre_usuario = TxtNombreUsuario.Text.Trim
+            usuario.Telefono = TxtTelefono.Text.Trim
+            usuario.Fecha_nac = DtpFechaNac.Value
+            usuario.Cedula = TxtCedula.Text.Trim
+            usuario.Contraseña = TxtPwd.Text.Trim
+
+            If usuarioDAO.validarUsuario(usuario) Then
+                MsgBox("El nombre de usuario " & usuario.Nombre_usuario + " no esta disponible")
+                TxtNombreUsuario.Clear()
+                TxtNombreUsuario.Focus()
+                Exit Sub
+            End If
+
+            Dim resp = usuarioDAO.agregarUsuario(usuario)
+            If (resp) Then
+                MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Usuarios")
+                LlenarTabla()
+                Limpiar()
+                Exit Sub
+            End If
+
+        Catch ex As Exception
+            MsgBox("Error al intentar agregar el usuario..." & ex.Message, MsgBoxStyle.Critical, "Usuarios")
+        End Try
+    End Sub
+
+    'Función para mostrar la contraseña
+    Private Sub CebMostrarPwd_CheckedChanged_1(sender As Object, e As EventArgs) Handles CebMostrarPwd.CheckedChanged
+        If CebMostrarPwd.Checked = True Then
+            TxtPwd.UseSystemPasswordChar = False
+        Else
+            TxtPwd.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    'Botón para limpiar los campos del formulario
+    Private Sub BtnLimpiarU_Click(sender As Object, e As EventArgs) Handles BtnLimpiarU.Click
+        Limpiar()
+    End Sub
+
+
+
 
 End Class

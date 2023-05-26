@@ -161,7 +161,7 @@
         End If
     End Function
 
-    'Validar que el DataGridView tenga datos
+    'Función para validar que el DataGridView tenga datos
     Private Function validarRegistros() As Boolean
         Dim resp = False
         If (DgvProductos.Rows.Count = 0) Then

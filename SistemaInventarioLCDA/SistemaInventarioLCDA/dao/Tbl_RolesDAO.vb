@@ -8,15 +8,36 @@ Public Class Tbl_RolesDAO
     Public Function MostrarRoles() As DataSet
         Dim ds As New DataSet
         Try
-            Dim tsql As String = "SELECT Rol.id_rol as N'CÓDIGO' ,Rol.nombreRol as N'ROL', Rol.descripcionRol as N'DESCRIPCION', Permiso.permiso as N'PERMISO' FROM  RolPermiso INNER JOIN
-                  Rol ON Rol.id_rol = RolPermiso.id_rol INNER JOIN
-                  Permiso ON RolPermiso.id_permiso = Permiso.id_permiso"
+            Dim tsql As String = "SELECT Rol.id_rol as N'CÓDIGO', 
+                                         Rol.nombreRol as N'ROL', 
+                                         Rol.descripcionRol as N'DESCRIPCION', 
+                                         Permiso.permiso as N'PERMISO' 
+                                         FROM  RolPermiso INNER JOIN
+                                         Rol ON Rol.id_rol = RolPermiso.id_rol INNER JOIN
+                                         Permiso ON RolPermiso.id_permiso = Permiso.id_permiso"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
 
         Catch ex As Exception
             MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+
+        End Try
+        Return ds
+    End Function
+
+    Public Function MostrarRolesComboBox() As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim tsql As String = "SELECT id_rol as N'CÓDIGO', 
+                                         nombreRol as N'ROL'  
+                                         FROM  Rol"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.Fill(ds)
+
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de roles de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
 
         End Try
         Return ds
@@ -160,9 +181,14 @@ Public Class Tbl_RolesDAO
     Public Function BuscarXNombre(ByVal rol As String) As DataSet
         Dim ds As New DataSet
         Try
-            Dim tsql As String = "SELECT Rol.id_rol as N'CÓDIGO' ,Rol.nombreRol as N'ROL', Rol.descripcionRol as N'DESCRIPCION', Permiso.permiso as N'PERMISO' FROM  RolPermiso INNER JOIN
-                  Rol ON Rol.id_rol = RolPermiso.id_rol INNER JOIN
-                  Permiso ON RolPermiso.id_permiso = Permiso.id_permiso WHERE Rol.nombreRol = @rol"
+            Dim tsql As String = "SELECT Rol.id_rol as N'CÓDIGO' ,
+                                         Rol.nombreRol as N'ROL', 
+                                         Rol.descripcionRol as N'DESCRIPCION', 
+                                         Permiso.permiso as N'PERMISO' 
+                                         FROM  RolPermiso INNER JOIN
+                                         Rol ON Rol.id_rol = RolPermiso.id_rol INNER JOIN
+                                         Permiso ON RolPermiso.id_permiso = Permiso.id_permiso 
+                                         WHERE Rol.nombreRol = @rol"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@rol", rol)
