@@ -103,7 +103,7 @@
     Private Function validarCampos() As Boolean
         Dim camposLlenados = False
 
-        If (TxtNomRol.Text <> "") And ClbPermisos.CheckedItems.Count > 0 Then
+        If (TxtIdRol.Text <> "") And ClbPermisos.CheckedItems.Count > 0 Then
             camposLlenados = True
         End If
         Return camposLlenados
@@ -218,7 +218,7 @@
     Private Sub BtnEliminarRol_Click(sender As Object, e As EventArgs) Handles BtnEliminarRol.Click
         Try
             If Not validarCampos() Then
-                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
             Dim id_rol As Integer = TxtIdRol.Text.Trim()
@@ -259,7 +259,7 @@
     Private Sub BtnEditarRol_Click(sender As Object, e As EventArgs) Handles BtnEditarRol.Click
         Try
             If Not validarCampos() Then
-                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
             Dim codPerm As Integer
@@ -303,6 +303,26 @@
         Catch ex As Exception
             MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Roles")
         End Try
+    End Sub
+
+    Private Sub BtnBuscarRol_Click(sender As Object, e As EventArgs) Handles BtnBuscarRol.Click
+        Dim ds As New DataSet
+        Dim dao As New Tbl_RolesDAO()
+
+        ds = dao.BuscarXNombre(TxtBuscarRol.Text.Trim)
+        DgvRoles.DataSource = ds.Tables(0)
+        DgvRoles.Refresh()
+
+        If TxtBuscarRol.Text = "" Then
+            MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Roles")
+            LlenarTabla()
+        End If
+    End Sub
+
+    Private Sub TxtBuscarRol_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscarRol.TextChanged
+        If TxtBuscarRol.Text = "" Then
+            LlenarTabla()
+        End If
     End Sub
 
     'Limpiar campos

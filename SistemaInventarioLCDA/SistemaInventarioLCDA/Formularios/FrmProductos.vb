@@ -243,6 +243,10 @@
     'Botón para eliminar un producto 
     Private Sub BtnEliminarP_Click(sender As Object, e As EventArgs) Handles BtnEliminarP.Click
         Try
+            If Not validarCampos() Then
+                MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
             Dim Id_prod As String = TxtIdProd.Text.Trim()
             Dim productosDao As New Tbl_ProductosDAO()
             Dim productos As New Tbl_Productos
@@ -278,7 +282,7 @@
     Private Sub BtnEditarP_Click(sender As Object, e As EventArgs) Handles BtnEditarP.Click
         Try
             If Not validarCampos() Then
-                MsgBox("Datos obligatorios del producto incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+                MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
 

@@ -157,4 +157,22 @@ Public Class Tbl_RolesDAO
 
     End Function
 
+    Public Function BuscarXNombre(ByVal rol As String) As DataSet
+        Dim ds As New DataSet
+        Try
+            Dim tsql As String = "SELECT Rol.id_rol as N'CÓDIGO' ,Rol.nombreRol as N'ROL', Rol.descripcionRol as N'DESCRIPCION', Permiso.permiso as N'PERMISO' FROM  RolPermiso INNER JOIN
+                  Rol ON Rol.id_rol = RolPermiso.id_rol INNER JOIN
+                  Permiso ON RolPermiso.id_permiso = Permiso.id_permiso WHERE Rol.nombreRol = @rol"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@rol", rol)
+            da.Fill(ds)
+
+        Catch ex As Exception
+
+        End Try
+        Return ds
+    End Function
+
+
 End Class

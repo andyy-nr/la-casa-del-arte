@@ -175,7 +175,7 @@
     Private Sub BtnEditarPermiso_Click(sender As Object, e As EventArgs) Handles BtnEditarPermiso.Click
         Try
             If Not validarCampos() Then
-                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
 
