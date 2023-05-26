@@ -52,7 +52,12 @@
         End If
     End Sub
 
-
+    Private Sub limpiarCampos()
+        TxtUserL.Clear()
+        TxtPwdL.Clear()
+        TxtUserL.Focus()
+        CebMostrarPwdL.Checked = False
+    End Sub
 
     'Botones
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
@@ -63,9 +68,23 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Dim login As New Tbl_UsuariosDAO
     Private Sub BtnEntrar_Click(sender As Object, e As EventArgs) Handles BtnEntrar.Click
-        FrmPrincipal.Show()
-        Me.Hide()
+        'Comprobación de si el usuario y la contraseña ingresada existen en la base de datos
+        Dim user As String = TxtUserL.Text.Trim
+        Dim pwd As String = TxtPwdL.Text.Trim
+
+        If TxtUserL.Text = "USUARIO" Or TxtPwdL.Text = "CONTRASEÑA" Then
+            MsgBox("Por favor ingrese los datos completos.", MsgBoxStyle.Exclamation, "Advertencia")
+        Else
+            If login.validarLogin(user, pwd) Then
+                limpiarCampos()
+                Me.Hide()
+                FrmPrincipal.Show()
+            Else
+                MsgBox("Usuario y Contraseña Incorrectas.", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
+        End If
     End Sub
 
     Private Sub CebMostrarPwdL_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwdL.CheckedChanged

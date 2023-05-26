@@ -23,9 +23,9 @@ Partial Class FrmUsuarios
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -41,11 +41,14 @@ Partial Class FrmUsuarios
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GobUsuario = New System.Windows.Forms.GroupBox()
+        Me.CebMostrarPwdNew = New System.Windows.Forms.CheckBox()
+        Me.TxtPwdNew = New System.Windows.Forms.TextBox()
+        Me.LblPwdNew = New System.Windows.Forms.Label()
         Me.TxtNombreUsuario = New System.Windows.Forms.TextBox()
         Me.TxtCodUser = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LblPwd = New System.Windows.Forms.Label()
         Me.TxtPwd = New System.Windows.Forms.TextBox()
         Me.CebMostrarPwd = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -68,6 +71,7 @@ Partial Class FrmUsuarios
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtCedula = New System.Windows.Forms.TextBox()
+        Me.LblPwdActual = New System.Windows.Forms.Label()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -216,14 +220,14 @@ Partial Class FrmUsuarios
         Me.DgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvUsuarios.EnableHeadersVisualStyles = False
         Me.DgvUsuarios.GridColor = System.Drawing.Color.SaddleBrown
@@ -231,22 +235,22 @@ Partial Class FrmUsuarios
         Me.DgvUsuarios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DgvUsuarios.Name = "DgvUsuarios"
         Me.DgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvUsuarios.RowHeadersVisible = False
         Me.DgvUsuarios.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DgvUsuarios.RowTemplate.Height = 24
         Me.DgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvUsuarios.Size = New System.Drawing.Size(1642, 184)
@@ -290,11 +294,15 @@ Partial Class FrmUsuarios
         Me.GobUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GobUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.GobUsuario.Controls.Add(Me.LblPwdActual)
+        Me.GobUsuario.Controls.Add(Me.CebMostrarPwdNew)
+        Me.GobUsuario.Controls.Add(Me.TxtPwdNew)
+        Me.GobUsuario.Controls.Add(Me.LblPwdNew)
         Me.GobUsuario.Controls.Add(Me.TxtNombreUsuario)
         Me.GobUsuario.Controls.Add(Me.TxtCodUser)
         Me.GobUsuario.Controls.Add(Me.Label10)
         Me.GobUsuario.Controls.Add(Me.Label9)
-        Me.GobUsuario.Controls.Add(Me.Label6)
+        Me.GobUsuario.Controls.Add(Me.LblPwd)
         Me.GobUsuario.Controls.Add(Me.TxtPwd)
         Me.GobUsuario.Controls.Add(Me.CebMostrarPwd)
         Me.GobUsuario.Controls.Add(Me.Label7)
@@ -302,15 +310,48 @@ Partial Class FrmUsuarios
         Me.GobUsuario.Controls.Add(Me.PibPerfil)
         Me.GobUsuario.Location = New System.Drawing.Point(732, 41)
         Me.GobUsuario.Name = "GobUsuario"
-        Me.GobUsuario.Size = New System.Drawing.Size(962, 364)
+        Me.GobUsuario.Size = New System.Drawing.Size(962, 369)
         Me.GobUsuario.TabIndex = 15
         Me.GobUsuario.TabStop = False
         Me.GobUsuario.Text = "Datos Generale del Usuario"
         '
+        'CebMostrarPwdNew
+        '
+        Me.CebMostrarPwdNew.AutoSize = True
+        Me.CebMostrarPwdNew.Location = New System.Drawing.Point(231, 332)
+        Me.CebMostrarPwdNew.Name = "CebMostrarPwdNew"
+        Me.CebMostrarPwdNew.Size = New System.Drawing.Size(203, 32)
+        Me.CebMostrarPwdNew.TabIndex = 22
+        Me.CebMostrarPwdNew.Text = "Mostrar contraseña"
+        Me.CebMostrarPwdNew.UseVisualStyleBackColor = True
+        Me.CebMostrarPwdNew.Visible = False
+        '
+        'TxtPwdNew
+        '
+        Me.TxtPwdNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtPwdNew.Location = New System.Drawing.Point(231, 294)
+        Me.TxtPwdNew.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.TxtPwdNew.Name = "TxtPwdNew"
+        Me.TxtPwdNew.Size = New System.Drawing.Size(331, 34)
+        Me.TxtPwdNew.TabIndex = 21
+        Me.TxtPwdNew.UseSystemPasswordChar = True
+        Me.TxtPwdNew.Visible = False
+        '
+        'LblPwdNew
+        '
+        Me.LblPwdNew.AutoSize = True
+        Me.LblPwdNew.Location = New System.Drawing.Point(40, 296)
+        Me.LblPwdNew.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblPwdNew.Name = "LblPwdNew"
+        Me.LblPwdNew.Size = New System.Drawing.Size(175, 28)
+        Me.LblPwdNew.TabIndex = 20
+        Me.LblPwdNew.Text = "Contraseña Nueva:"
+        Me.LblPwdNew.Visible = False
+        '
         'TxtNombreUsuario
         '
         Me.TxtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombreUsuario.Location = New System.Drawing.Point(231, 106)
+        Me.TxtNombreUsuario.Location = New System.Drawing.Point(231, 98)
         Me.TxtNombreUsuario.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtNombreUsuario.Name = "TxtNombreUsuario"
         Me.TxtNombreUsuario.Size = New System.Drawing.Size(331, 34)
@@ -320,7 +361,7 @@ Partial Class FrmUsuarios
         '
         Me.TxtCodUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCodUser.Enabled = False
-        Me.TxtCodUser.Location = New System.Drawing.Point(231, 49)
+        Me.TxtCodUser.Location = New System.Drawing.Point(231, 41)
         Me.TxtCodUser.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtCodUser.Name = "TxtCodUser"
         Me.TxtCodUser.Size = New System.Drawing.Size(331, 34)
@@ -329,7 +370,7 @@ Partial Class FrmUsuarios
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(134, 49)
+        Me.Label10.Location = New System.Drawing.Point(134, 41)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(81, 28)
@@ -339,27 +380,27 @@ Partial Class FrmUsuarios
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(27, 106)
+        Me.Label9.Location = New System.Drawing.Point(27, 98)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(188, 28)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Nombre de Usuario:"
         '
-        'Label6
+        'LblPwd
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(101, 230)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(114, 28)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Contraseña:"
+        Me.LblPwd.AutoSize = True
+        Me.LblPwd.Location = New System.Drawing.Point(101, 222)
+        Me.LblPwd.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblPwd.Name = "LblPwd"
+        Me.LblPwd.Size = New System.Drawing.Size(114, 28)
+        Me.LblPwd.TabIndex = 6
+        Me.LblPwd.Text = "Contraseña:"
         '
         'TxtPwd
         '
         Me.TxtPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtPwd.Location = New System.Drawing.Point(231, 227)
+        Me.TxtPwd.Location = New System.Drawing.Point(231, 219)
         Me.TxtPwd.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.TxtPwd.Name = "TxtPwd"
         Me.TxtPwd.Size = New System.Drawing.Size(331, 34)
@@ -369,7 +410,7 @@ Partial Class FrmUsuarios
         'CebMostrarPwd
         '
         Me.CebMostrarPwd.AutoSize = True
-        Me.CebMostrarPwd.Location = New System.Drawing.Point(231, 265)
+        Me.CebMostrarPwd.Location = New System.Drawing.Point(231, 257)
         Me.CebMostrarPwd.Name = "CebMostrarPwd"
         Me.CebMostrarPwd.Size = New System.Drawing.Size(203, 32)
         Me.CebMostrarPwd.TabIndex = 11
@@ -379,7 +420,7 @@ Partial Class FrmUsuarios
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(171, 168)
+        Me.Label7.Location = New System.Drawing.Point(171, 160)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(44, 28)
@@ -390,7 +431,7 @@ Partial Class FrmUsuarios
         '
         Me.CbRoles.FormattingEnabled = True
         Me.CbRoles.Items.AddRange(New Object() {"Administrador", "Digitador", "Bodeguero", "Vendedor", "etc..."})
-        Me.CbRoles.Location = New System.Drawing.Point(231, 165)
+        Me.CbRoles.Location = New System.Drawing.Point(231, 157)
         Me.CbRoles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.CbRoles.Name = "CbRoles"
         Me.CbRoles.Size = New System.Drawing.Size(331, 36)
@@ -401,7 +442,7 @@ Partial Class FrmUsuarios
         '
         Me.PibPerfil.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PibPerfil.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgUsuarios
-        Me.PibPerfil.Location = New System.Drawing.Point(594, 31)
+        Me.PibPerfil.Location = New System.Drawing.Point(594, 34)
         Me.PibPerfil.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.PibPerfil.Name = "PibPerfil"
         Me.PibPerfil.Size = New System.Drawing.Size(335, 310)
@@ -422,7 +463,7 @@ Partial Class FrmUsuarios
         Me.BtnAgregarU.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnAgregarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregarUser
         Me.BtnAgregarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarU.Location = New System.Drawing.Point(408, 414)
+        Me.BtnAgregarU.Location = New System.Drawing.Point(407, 420)
         Me.BtnAgregarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnAgregarU.Name = "BtnAgregarU"
         Me.BtnAgregarU.Size = New System.Drawing.Size(183, 55)
@@ -444,7 +485,7 @@ Partial Class FrmUsuarios
         Me.BtnEliminarU.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnEliminarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEliminarUser
         Me.BtnEliminarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminarU.Location = New System.Drawing.Point(1103, 414)
+        Me.BtnEliminarU.Location = New System.Drawing.Point(1102, 420)
         Me.BtnEliminarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnEliminarU.Name = "BtnEliminarU"
         Me.BtnEliminarU.Size = New System.Drawing.Size(191, 55)
@@ -466,7 +507,7 @@ Partial Class FrmUsuarios
         Me.BtnEditarU.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnEditarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgEditarUser
         Me.BtnEditarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEditarU.Location = New System.Drawing.Point(890, 414)
+        Me.BtnEditarU.Location = New System.Drawing.Point(889, 420)
         Me.BtnEditarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnEditarU.Name = "BtnEditarU"
         Me.BtnEditarU.Size = New System.Drawing.Size(157, 55)
@@ -488,7 +529,7 @@ Partial Class FrmUsuarios
         Me.BtnLimpiarU.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnLimpiarU.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgLimpiarCampos1
         Me.BtnLimpiarU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLimpiarU.Location = New System.Drawing.Point(651, 414)
+        Me.BtnLimpiarU.Location = New System.Drawing.Point(650, 420)
         Me.BtnLimpiarU.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.BtnLimpiarU.Name = "BtnLimpiarU"
         Me.BtnLimpiarU.Size = New System.Drawing.Size(176, 55)
@@ -517,7 +558,7 @@ Partial Class FrmUsuarios
         Me.GobDatosUser.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.GobDatosUser.Name = "GobDatosUser"
         Me.GobDatosUser.Padding = New System.Windows.Forms.Padding(2)
-        Me.GobDatosUser.Size = New System.Drawing.Size(663, 364)
+        Me.GobDatosUser.Size = New System.Drawing.Size(663, 369)
         Me.GobDatosUser.TabIndex = 4
         Me.GobDatosUser.TabStop = False
         Me.GobDatosUser.Text = "Datos Personales"
@@ -647,6 +688,17 @@ Partial Class FrmUsuarios
         Me.TxtCedula.Size = New System.Drawing.Size(385, 34)
         Me.TxtCedula.TabIndex = 7
         '
+        'LblPwdActual
+        '
+        Me.LblPwdActual.AutoSize = True
+        Me.LblPwdActual.Location = New System.Drawing.Point(40, 221)
+        Me.LblPwdActual.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblPwdActual.Name = "LblPwdActual"
+        Me.LblPwdActual.Size = New System.Drawing.Size(174, 28)
+        Me.LblPwdActual.TabIndex = 23
+        Me.LblPwdActual.Text = "Contraseña Actual:"
+        Me.LblPwdActual.Visible = False
+        '
         'FrmUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -694,7 +746,7 @@ Partial Class FrmUsuarios
     Friend WithEvents GobUsuario As GroupBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents LblPwd As Label
     Friend WithEvents TxtPwd As TextBox
     Friend WithEvents CebMostrarPwd As CheckBox
     Friend WithEvents Label7 As Label
@@ -719,4 +771,8 @@ Partial Class FrmUsuarios
     Friend WithEvents TxtCedula As TextBox
     Friend WithEvents TxtNombreUsuario As TextBox
     Friend WithEvents TxtCodUser As TextBox
+    Friend WithEvents LblPwdNew As Label
+    Friend WithEvents TxtPwdNew As TextBox
+    Friend WithEvents CebMostrarPwdNew As CheckBox
+    Friend WithEvents LblPwdActual As Label
 End Class

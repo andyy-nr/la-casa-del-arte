@@ -126,4 +126,25 @@ Public Class Tbl_UsuariosDAO
         Return contraseña
     End Function
 
+    Public Function validarLogin(ByVal nombre_usuario As String, ByVal contraseña As String) As Boolean
+        Dim resp = False
+        Dim dt As New DataTable
+        Try
+            Dim tsql As String = "SELECT nombre_usuario, contraseña
+                                    FROM     Usuario
+                                    WHERE nombre_usuario = @nombre_usuario AND contraseña = @contraseña"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", nombre_usuario)
+            da.SelectCommand.Parameters.AddWithValue("@contraseña", contraseña)
+            da.Fill(dt)
+            If (dt.Rows.Count > 0) Then
+                Return True
+            End If
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al validar el usuario y contraseña", MsgBoxStyle.Critical, "Error")
+        End Try
+        Return resp
+    End Function
+
 End Class

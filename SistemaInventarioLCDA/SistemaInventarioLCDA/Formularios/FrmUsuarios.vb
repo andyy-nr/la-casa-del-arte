@@ -181,9 +181,14 @@ Public Class FrmUsuarios
         TxtCedula.Clear()
         TxtCodUser.Clear()
         TxtNombreUsuario.Clear()
-        CbRoles.Text = "Seleccione un rol"
+        CbRoles.Text = "Seleccione un rol..."
         TxtPwd.Clear()
         BtnAgregarU.Enabled = True
+        LblPwd.Visible = True
+        LblPwdActual.Visible = False
+        LblPwdNew.Visible = False
+        TxtPwdNew.Visible = False
+        CebMostrarPwdNew.Visible = False
         TxtNombre1.Focus()
     End Sub
 
@@ -197,7 +202,7 @@ Public Class FrmUsuarios
                 Dim fila As Integer = DgvUsuarios.CurrentRow.Index
                 TxtCodUser.Text = DgvUsuarios.Rows(fila).Cells(0).Value
                 CbRoles.Text = DgvUsuarios.Rows(fila).Cells(1).Value
-                usuario_id = Int32.Parse(TxtCodUser.Text)
+                usuario_id = Integer.Parse(TxtCodUser.Text)
                 dt = usuarioDAO.obtenerNombre(usuario_id)
 
                 If dt.Rows.Count > 0 Then
@@ -212,8 +217,15 @@ Public Class FrmUsuarios
                 TxtTelefono.Text = DgvUsuarios.Rows(fila).Cells(4).Value
                 DtpFechaNac.Text = DgvUsuarios.Rows(fila).Cells(5).Value
                 TxtCedula.Text = DgvUsuarios.Rows(fila).Cells(6).Value
-                TxtPwd.Text = usuarioDAO.obtenerContraseña(usuario_id)
+                'TxtPwd.Text = usuarioDAO.obtenerContraseña(usuario_id) Permiso Exclusivo para el Administrador
+                TxtPwd.Text = ""
+
                 BtnAgregarU.Enabled = False
+                LblPwd.Visible = False
+                LblPwdActual.Visible = True
+                LblPwdNew.Visible = True
+                TxtPwdNew.Visible = True
+                CebMostrarPwdNew.Visible = True
             End If
         Catch ex As Exception
             MsgBox("Ocurrio al cargar los datos del usuario seleccionado" & ex.Message, MsgBoxStyle.Critical, "Usuarios")
@@ -248,7 +260,7 @@ Public Class FrmUsuarios
             usuario.Contraseña = TxtPwd.Text.Trim
 
             If usuarioDAO.validarUsuario(usuario) Then
-                MsgBox("El nombre de usuario " & usuario.Nombre_usuario + " no esta disponible")
+                MsgBox("El nombre de usuario " & usuario.Nombre_usuario + " no esta disponible", MsgBoxStyle.Exclamation, "Advertencia")
                 TxtNombreUsuario.Clear()
                 TxtNombreUsuario.Focus()
                 Exit Sub
@@ -279,6 +291,14 @@ Public Class FrmUsuarios
             TxtPwd.UseSystemPasswordChar = False
         Else
             TxtPwd.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    Private Sub CebMostrarPwdNew_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwdNew.CheckedChanged
+        If CebMostrarPwdNew.Checked = True Then
+            TxtPwdNew.UseSystemPasswordChar = False
+        Else
+            TxtPwdNew.UseSystemPasswordChar = True
         End If
     End Sub
 

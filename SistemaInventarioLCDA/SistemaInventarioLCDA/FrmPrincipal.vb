@@ -110,4 +110,10 @@
         FrmMovimiento.Show()
     End Sub
 
+    Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
+        Me.Close()
+        FrmLogin.Show()
+    End Sub
+
+
 End Class
