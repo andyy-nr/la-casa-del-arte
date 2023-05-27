@@ -223,10 +223,40 @@ Public Class Tbl_UsuariosDAO
         Return nombre_usuario
     End Function
 
+    Public Function buscarUsuario(ByVal usuario_id) As Tbl_Usuarios
+        Dim usuario As New Tbl_Usuarios
+        Try
+            Dim tsql As String = "SELECT * FROM Usuario WHERE usuario_id = @usuario_id"
+            Dim conn As New SqlConnection(strConn)
+            Dim tbl As New DataTable
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@usuario_id", usuario_id)
+            da.Fill(tbl)
+
+            If tbl.Rows.Count > 0 Then
+
+                usuario.Usuario_id = tbl.Rows(0).Item("usuario_id")
+                usuario.Id_rol = tbl.Rows(0).Item("id_rol")
+                usuario.Primer_nombre = tbl.Rows(0).Item("primer_nombre")
+                usuario.Segundo_nombre = tbl.Rows(0).Item("segundo_nombre")
+                usuario.Primer_apellido = tbl.Rows(0).Item("primer_apellido")
+                usuario.Segundo_apellido = tbl.Rows(0).Item("segundo_apellido")
+                usuario.Nombre_usuario = tbl.Rows(0).Item("nombre_usuario")
+                usuario.Telefono = tbl.Rows(0).Item("telefono")
+                usuario.Fecha_nac = tbl.Rows(0).Item("fecha_nac")
+                usuario.Cedula = tbl.Rows(0).Item("cedula")
+                usuario.Contraseña = tbl.Rows(0).Item("contraseña")
+            End If
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al buscar el usuario" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return usuario
+    End Function
+
     Public Function eliminarUsuario(ByVal usuario_id As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "DELETE * FROM Usuario WHERE usuario_id = @usuario_id"
+            Dim tsql As String = "DELETE FROM Usuario WHERE usuario_id = @usuario_id"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)

@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters
 
 Public Class FrmUsuarios
     'Movimiento de Ventana
@@ -386,15 +387,39 @@ Public Class FrmUsuarios
 
     Private Sub BtnEliminarU_Click(sender As Object, e As EventArgs) Handles BtnEliminarU.Click
         Try
-            If Not validarCampos() Then
+            If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado nigún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
             Dim codUser As Integer = Integer.Parse(TxtCodUser.Text.Trim())
-            'Dim usuario As Tbl_Usuarios
+            Dim usuarioDAO As New Tbl_UsuariosDAO()
+            Dim usuario As New Tbl_Usuarios
+            usuario = usuarioDAO.buscarUsuario(codUser)
+
+            If (usuario.Usuario_id = 0) Then
+                MsgBox("El usuario no existe. ", MsgBoxStyle.Exclamation, "Permisos")
+                Exit Sub
+            End If
+
+            Dim resp As VariantType
+            resp = (MsgBox("Desea eliminar el usuario: " & usuario.Nombre_usuario, MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Permisos"))
+            If (resp = vbNo) Then
+                MsgBox("Tarea cancelada", MsgBoxStyle.Information, "Usuarios")
+                Limpiar()
+                Exit Sub
+            End If
+
+            Dim eliminado = usuarioDAO.eliminarUsuario(usuario.Usuario_id)
+            If (eliminado) Then
+                MsgBox("Usuario eliminado exitosamente", MsgBoxStyle.Information, "Permisos")
+                LlenarTabla()
+                Limpiar()
+            Else
+                Limpiar()
+            End If
 
         Catch ex As Exception
-
+            MsgBox("Error al intentar eliminar el registro... " & ex.Message, MsgBoxStyle.Critical, "Usuarios")
         End Try
     End Sub
 
@@ -402,8 +427,5 @@ Public Class FrmUsuarios
     Private Sub BtnLimpiarU_Click(sender As Object, e As EventArgs) Handles BtnLimpiarU.Click
         Limpiar()
     End Sub
-
-
-
 
 End Class

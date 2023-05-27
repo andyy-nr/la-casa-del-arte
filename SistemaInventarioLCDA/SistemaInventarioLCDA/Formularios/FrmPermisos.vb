@@ -208,7 +208,7 @@
                 MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
-            Dim Id_permiso As Integer = TxtIdPermiso.Text.Trim()
+            Dim Id_permiso As Integer = Integer.Parse(TxtIdPermiso.Text.Trim())
             Dim rolPermisoDAO As New Tbl_rol_permisoDAO()
             If Not rolPermisoDAO.validarUnion(Id_permiso) Then
                 Dim permisoDao As New Tbl_PermisoDAO()

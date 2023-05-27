@@ -75,7 +75,7 @@ Public Class Tbl_ProductosDAO
 
             End If
         Catch ex As Exception
-            MsgBox("Ocurrio un error buscar el producto" & ex.Message, MsgBoxStyle.Critical, "Error")
+            MsgBox("Ocurrio un error al buscar el producto" & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
         Return producto
     End Function
@@ -104,9 +104,10 @@ Public Class Tbl_ProductosDAO
 
     Public Function EditarProducto(ByVal producto As Tbl_Productos) As Boolean
         Dim resp As Boolean = False
-        Dim tsql As String = "Update Producto SET id_producto=@id_producto, id_categoria=@id_categoria, id_marca=@id_marca, nombreProd=@nombreProd, precio_unitario=@precio_unitario, 
-                              descripcionProd=@descripcionProd, unidadesProd=@unidadesProd, 
-                              estado=@estado where id_producto = @id_producto"
+        Dim tsql As String = "Update Producto SET id_producto=@id_producto, 
+                                                  id_categoria=@id_categoria,id_marca=@id_marca, nombreProd=@nombreProd, precio_unitario=@precio_unitario, 
+                              descripcionProd=@descripcionProd, unidadesProd=@unidadesProd
+                              where id_producto = @id_producto"
         Dim conn As New SqlConnection(strConn)
         conn.Open()
         Dim cmd As New SqlCommand(tsql, conn)
@@ -118,7 +119,7 @@ Public Class Tbl_ProductosDAO
         cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
         cmd.Parameters.AddWithValue("@descripcionProd", validarValorDBNull(producto.DescripcionProd))
         cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
-        cmd.Parameters.AddWithValue("@estado", producto.Estado)
+
 
         If (cmd.ExecuteNonQuery <> 0) Then
             resp = True

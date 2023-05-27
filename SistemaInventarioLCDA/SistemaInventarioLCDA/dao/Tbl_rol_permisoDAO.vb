@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Xml
+
 
 Public Class Tbl_rol_permisoDAO
     Dim strConn As String = My.Settings.StrConexion
@@ -35,7 +35,9 @@ Public Class Tbl_rol_permisoDAO
             Using cmd As New SqlCommand(tsql, conn)
                 cmd.Parameters.AddWithValue("@id_rol", id_rol)
                 conn.Open()
-
+                'SqlDataReader se usa junto con una conexiona a una BD y comando SQL para ejecutar una cosulta
+                'este metodo se mueve atraves de los registros devueltos y accede a los 
+                'valores de las columnas correspondientes.
                 Using reader As SqlDataReader = cmd.ExecuteReader()
                     While reader.Read()
                         permisos.Add(reader("permiso").ToString())
@@ -43,7 +45,8 @@ Public Class Tbl_rol_permisoDAO
                 End Using
             End Using
         End Using
-
+        'El bloque using cierra la conexion, y asegura que los recurseos se manejen correctamente
+        'evitando conexiones no cerradas o fugas de memoria
         Return permisos
     End Function
 
