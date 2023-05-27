@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Imports Microsoft.Reporting.Map.WebForms.BingMaps
+
 
 Public Class Tbl_RolesDAO
 
@@ -131,7 +131,7 @@ Public Class Tbl_RolesDAO
                 roles.DescripcionRol = tbl.Rows(0).Item("descripcionRol")
             End If
         Catch ex As Exception
-
+            MsgBox("Ocurrio un error buscar el permiso" & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
         Return roles
 

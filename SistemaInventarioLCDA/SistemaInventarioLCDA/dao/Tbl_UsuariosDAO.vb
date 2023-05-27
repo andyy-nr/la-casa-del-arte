@@ -153,8 +153,8 @@ Public Class Tbl_UsuariosDAO
                                                  primer_nombre = @primer_nombre, 
 				                                 segundo_nombre = @segundo_nombre, 
 				                                 primer_apellido = @primer_apellido, 
-				                                 segundo_apellido = @segundo_apellido, 
-				                                 nombre_usuario = @nombre_usuario, 
+				                                 segundo_apellido = @segundo_apellido,
+                                                 nombre_usuario = @nombre_usuario,
 				                                 telefono = @telefono,
                                                  fecha_nac = @fecha_nac,
 				                                 cedula = @cedula 
@@ -198,6 +198,49 @@ Public Class Tbl_UsuariosDAO
             resp = True
         End If
         conn.Close()
+        Return resp
+    End Function
+
+    Public Function obtenerNomUsuario(ByVal usuario_id As Integer) As String
+        Dim nombre_usuario As String = " "
+        Dim dt As New DataTable
+        Try
+            Dim tsql = "SELECT nombre_usuario FROM Usuario WHERE usuario_id = @usuario_id"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@usuario_id", usuario_id)
+            da.Fill(dt)
+
+            If dt.Rows.Count > 0 Then
+                Dim filaDos As DataRow = dt.Rows(0)
+                nombre_usuario = filaDos("nombre_usuario").ToString()
+                Return nombre_usuario
+            End If
+
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener un dato del usuario de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return nombre_usuario
+    End Function
+
+    Public Function eliminarUsuario(ByVal usuario_id As Integer) As Boolean
+        Dim resp As Boolean = False
+        Try
+            Dim tsql As String = "DELETE * FROM Usuario WHERE usuario_id = @usuario_id"
+            Dim conn As New SqlConnection(strConn)
+            conn.Open()
+            Dim cmd As New SqlCommand(tsql, conn)
+            cmd.CommandType = CommandType.Text
+            cmd.Parameters.AddWithValue("@usuario_id", usuario_id)
+            If (cmd.ExecuteNonQuery <> 0) Then
+                resp = True
+            End If
+            conn.Close()
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al intentar eliminar el usuario" & ex.Message, MsgBoxStyle.Critical, "Error")
+            resp = False
+
+        End Try
         Return resp
     End Function
 End Class

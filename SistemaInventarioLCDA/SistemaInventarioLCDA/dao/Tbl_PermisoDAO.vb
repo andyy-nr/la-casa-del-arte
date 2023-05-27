@@ -101,13 +101,13 @@ Public Class Tbl_PermisoDAO
             da.Fill(tbl)
 
             If tbl.Rows.Count > 0 Then
-
                 permiso.Id_permiso = tbl.Rows(0).Item("id_permiso")
                 permiso.Permiso = tbl.Rows(0).Item("permiso")
                 permiso.DescripcionPermiso = tbl.Rows(0).Item("descripcion")
+
             End If
         Catch ex As Exception
-            MsgBox("Ocurrio un error buscar el permiso", MsgBoxStyle.Critical, "Error")
+            MsgBox("Ocurrio un error buscar el permiso" & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
         Return permiso
 
@@ -116,7 +116,7 @@ Public Class Tbl_PermisoDAO
     Public Function EliminarPermiso(ByVal id_permiso As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "DELETE from Permiso WHERE id_permiso = @id_permiso"
+            Dim tsql As String = "DELETE FROM Permiso WHERE id_permiso = @id_permiso"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)
@@ -126,9 +126,8 @@ Public Class Tbl_PermisoDAO
                 resp = True
             End If
             conn.Close()
-
         Catch ex As Exception
-            MsgBox("Ocurrio un error al intentar eliminar el permiso", MsgBoxStyle.Critical, "Error")
+            MsgBox("Ocurrio un error al intentar eliminar el permiso" & ex.Message, MsgBoxStyle.Critical, "Error")
             resp = False
         End Try
         Return resp

@@ -336,6 +336,15 @@ Public Class FrmUsuarios
             usuario.Fecha_nac = DtpFechaNac.Value
             usuario.Cedula = TxtCedula.Text.Trim
 
+            If Not (usuario.Nombre_usuario = usuarioDAO.obtenerNomUsuario(usuario.Usuario_id)) Then
+                If usuarioDAO.validarUsuario(usuario) Then
+                    MsgBox("El nombre de usuario " & usuario.Nombre_usuario + " no esta disponible", MsgBoxStyle.Exclamation, "Advertencia")
+                    TxtNombreUsuario.Clear()
+                    TxtNombreUsuario.Focus()
+                    Exit Sub
+                End If
+            End If
+
             If (TxtPwd.Text <> "" And TxtPwdNew.Text <> "") Then
                 Dim codUsuario As Integer = Integer.Parse(TxtCodUser.Text)
                 Dim contraActual As String = usuarioDAO.obtenerContraseña(codUsuario)
@@ -372,6 +381,20 @@ Public Class FrmUsuarios
 
         Catch ex As Exception
             MsgBox("Error al intentar editar el usuario..." & ex.Message, MsgBoxStyle.Critical, "Usuarios")
+        End Try
+    End Sub
+
+    Private Sub BtnEliminarU_Click(sender As Object, e As EventArgs) Handles BtnEliminarU.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("No ha seleccionado nigún registro", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+            Dim codUser As Integer = Integer.Parse(TxtCodUser.Text.Trim())
+            'Dim usuario As Tbl_Usuarios
+
+        Catch ex As Exception
+
         End Try
     End Sub
 

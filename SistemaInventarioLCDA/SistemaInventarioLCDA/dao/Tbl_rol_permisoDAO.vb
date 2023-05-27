@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-
+Imports System.Xml
 
 Public Class Tbl_rol_permisoDAO
     Dim strConn As String = My.Settings.StrConexion
@@ -29,38 +29,38 @@ Public Class Tbl_rol_permisoDAO
 
     Public Function obtenerPermiso(ByVal id_rol As Integer) As List(Of String)
         Dim permisos As New List(Of String)()
-        Dim tsql As String = "SELECT Permiso.permiso FROM RolPermiso INNER JOIN Permiso 
-                              ON Permiso.id_permiso = RolPermiso.id_permiso 
-                              WHERE id_rol = @id_rol"
+        Dim tsql As String = "SELECT Permiso.permiso FROM RolPermiso INNER JOIN Permiso ON Permiso.id_permiso = RolPermiso.id_permiso WHERE id_rol = @id_rol"
 
-        Dim conn As New SqlConnection(strConn)
-        Dim cmd As New SqlCommand(tsql, conn)
-        cmd.Parameters.AddWithValue("@id_rol", id_rol)
-        conn.Open()
+        Using conn As New SqlConnection(strConn)
+            Using cmd As New SqlCommand(tsql, conn)
+                cmd.Parameters.AddWithValue("@id_rol", id_rol)
+                conn.Open()
 
-        Dim reader As SqlDataReader = cmd.ExecuteReader()
-        While reader.Read()
-            permisos.Add(reader("permiso").ToString())
-        End While
-
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    While reader.Read()
+                        permisos.Add(reader("permiso").ToString())
+                    End While
+                End Using
+            End Using
+        End Using
 
         Return permisos
     End Function
 
+
     Public Function validarUnion(ByVal id_permiso As Integer) As Boolean
         Dim resp As Boolean = False
+        Dim dt As New DataTable
         Try
             Dim tsql As String = "SELECT * FROM RolPermiso Where id_permiso = @id_permiso"
             Dim conn As New SqlConnection(strConn)
-            Dim cmd As New SqlCommand()
-            cmd.CommandType = CommandType.Text
-            cmd.CommandText = tsql
-            cmd.Parameters.AddWithValue("@id_permiso", id_permiso)
-            cmd.Connection = conn
-            cmd.Connection.Open()
-            If (cmd.ExecuteNonQuery <> 0) Then
-                resp = True
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@id_permiso", id_permiso)
+            da.Fill(dt)
+            If (dt.Rows.Count > 0) Then
+                Return True
             End If
+
         Catch ex As Exception
             MsgBox("Ocurrio un error al intentar validar la union del permiso con un rol", MsgBoxStyle.Critical, "Error")
             resp = False

@@ -75,7 +75,7 @@ Public Class Tbl_ProductosDAO
 
             End If
         Catch ex As Exception
-
+            MsgBox("Ocurrio un error buscar el producto" & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
         Return producto
     End Function

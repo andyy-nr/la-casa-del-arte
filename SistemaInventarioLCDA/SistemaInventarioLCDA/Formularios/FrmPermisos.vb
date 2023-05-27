@@ -205,7 +205,7 @@
     Private Sub BtnEliminarPermiso_Click(sender As Object, e As EventArgs) Handles BtnEliminarPermiso.Click
         Try
             If Not validarCampos() Then
-                MsgBox("No ha seleccionado ningún archivo", MsgBoxStyle.Exclamation, "Advertencia")
+                MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
             Dim Id_permiso As Integer = TxtIdPermiso.Text.Trim()
@@ -244,7 +244,7 @@
 
 
         Catch ex As Exception
-            MsgBox("Error al intentar eliminar el registro..." & ex.Message, MsgBoxStyle.Critical, "Permisos")
+            MsgBox("Error al intentar eliminar el registro... " & ex.Message, MsgBoxStyle.Critical, "Permisos")
         End Try
     End Sub
 
