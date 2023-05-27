@@ -342,8 +342,14 @@ Public Class FrmUsuarios
                 Dim contraEscrita As String = TxtPwd.Text.Trim
                 Dim contraNueva As String = TxtPwdNew.Text.Trim
                 If (contraActual = contraEscrita) Then
-                    If usuarioDAO.editarContraseña(codUsuario, contraNueva) Then
-                        MsgBox("La contraseña se editó correctamente", MsgBoxStyle.Information, "Usuario")
+                    If validarContraseña(contraNueva) Then
+                        If usuarioDAO.editarContraseña(codUsuario, contraNueva) Then
+                            MsgBox("La contraseña se editó correctamente", MsgBoxStyle.Information, "Usuario")
+                        End If
+                    Else
+                        TxtPwdNew.Clear()
+                        TxtPwdNew.Focus()
+                        Exit Sub
                     End If
                 Else
                     MsgBox("Ha escrito incorrectamente la contraseña actual", MsgBoxStyle.Exclamation, "Usuario")
