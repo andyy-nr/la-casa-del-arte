@@ -32,14 +32,13 @@ Public Class Tbl_UsuariosDAO
     Public Function MostrarUsuarios() As DataSet
         Dim ds As New DataSet
         Try
-            Dim tsql As String = "SELECT Usuario.usuario_id as N'CÓDIGO',
-                                                 Rol.nombreRol as N'ROL',
+            Dim tsql As String = "SELECT Usuario.usuario_id as N'CÓDIGO', Rol.nombreRol as N'ROL',
                                                  Usuario.primer_nombre + N' ' + ISNULL(Usuario.segundo_nombre, '') + N' ' + 
                                                  Usuario.primer_apellido  + N' ' + 
                                                  ISNULL(Usuario.segundo_apellido, '') as N'NOMBRE COMPLETO',
                                                  Usuario.nombre_usuario as N'NOMBRE DE USUARIO',
                                                  Usuario.telefono as N'TELÉFONO',
-                                                 Usuario.fecha_nac as N'FECHA DE NACIMIENTO',
+                                                 convert(nvarchar(10),Usuario.fecha_nac, 103) as N'FECHA DE NACIMIENTO',
                                                  Usuario.cedula as N'CÉDULA'
                                                  FROM Usuario INNER JOIN Rol On Usuario.id_rol = Rol.id_rol"
             Dim conn As New SqlConnection(strConn)
@@ -147,4 +146,58 @@ Public Class Tbl_UsuariosDAO
         Return resp
     End Function
 
+    Public Function EditarUsuario(ByVal usuario As Tbl_Usuarios) As Boolean
+        Dim resp As Boolean = False
+        Try
+            Dim tsql As String = "UPDATE Usuario set id_rol = @id_rol, 
+                                                 primer_nombre = @primer_nombre, 
+				                                 segundo_nombre = @segundo_nombre, 
+				                                 primer_apellido = @primer_apellido, 
+				                                 segundo_apellido = @segundo_apellido, 
+				                                 nombre_usuario = @nombre_usuario, 
+				                                 telefono = @telefono,
+                                                 fecha_nac = @fecha_nac,
+				                                 cedula = @cedula 
+                                                 WHERE usuario_id = @usuario_id"
+            Dim conn As New SqlConnection(strConn)
+            conn.Open()
+            Dim cmd As New SqlCommand(tsql, conn)
+            cmd.CommandType = CommandType.Text
+            cmd.Parameters.AddWithValue("@usuario_id", usuario.Usuario_id)
+            cmd.Parameters.AddWithValue("@id_rol", usuario.Id_rol)
+            cmd.Parameters.AddWithValue("@primer_nombre", usuario.Primer_nombre)
+            cmd.Parameters.AddWithValue("@segundo_nombre", validarValorDBNull(usuario.Segundo_nombre))
+            cmd.Parameters.AddWithValue("@primer_apellido", usuario.Primer_apellido)
+            cmd.Parameters.AddWithValue("@segundo_apellido", validarValorDBNull(usuario.Segundo_apellido))
+            cmd.Parameters.AddWithValue("@nombre_usuario", usuario.Nombre_usuario)
+            cmd.Parameters.AddWithValue("@telefono", usuario.Telefono)
+            cmd.Parameters.AddWithValue("@fecha_nac", usuario.Fecha_nac)
+            cmd.Parameters.AddWithValue("@cedula", usuario.Cedula)
+
+            If (cmd.ExecuteNonQuery <> 0) Then
+                resp = True
+            End If
+            conn.Close()
+        Catch ex As Exception
+
+        End Try
+        Return resp
+    End Function
+
+    Public Function editarContraseña(ByVal usuario_id As Integer, ByVal contraseña As String) As Boolean
+        Dim resp As Boolean = False
+        Dim tsql As String = "UPDATE Usuario set contraseña = @contraseña  
+                                                 WHERE usuario_id = @usuario_id"
+        Dim conn As New SqlConnection(strConn)
+        conn.Open()
+        Dim cmd As New SqlCommand(tsql, conn)
+        cmd.CommandType = CommandType.Text
+        cmd.Parameters.AddWithValue("@usuario_id", usuario_id)
+        cmd.Parameters.AddWithValue("@contraseña", contraseña)
+        If (cmd.ExecuteNonQuery <> 0) Then
+            resp = True
+        End If
+        conn.Close()
+        Return resp
+    End Function
 End Class

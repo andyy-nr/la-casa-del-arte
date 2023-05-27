@@ -79,6 +79,18 @@ Public Class FrmUsuarios
         Return camposLlenados
     End Function
 
+    Private Function validarCamposEditar() As Boolean
+        Dim camposLlenados = False
+
+        If (TxtNombre1.Text <> "" And TxtApellido1.Text <> "" And CbRoles.Text <> "Seleccione un rol..." And TxtNombreUsuario.Text <> "" And TxtTelefono.Text <> "" And TxtCedula.Text <> "") Then
+            If DtpFechaNac.Checked Then
+                camposLlenados = True
+            End If
+        End If
+
+        Return camposLlenados
+    End Function
+
     'Función para validar los campos no obligatorios del formulario
     Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
         If String.IsNullOrEmpty(txt.Text.ToString().Trim) Then
@@ -183,6 +195,7 @@ Public Class FrmUsuarios
         TxtNombreUsuario.Clear()
         CbRoles.Text = "Seleccione un rol..."
         TxtPwd.Clear()
+        TxtPwdNew.Clear()
         BtnAgregarU.Enabled = True
         LblPwd.Visible = True
         LblPwdActual.Visible = False
@@ -300,6 +313,60 @@ Public Class FrmUsuarios
         Else
             TxtPwdNew.UseSystemPasswordChar = True
         End If
+    End Sub
+
+    Private Sub BtnEditarU_Click(sender As Object, e As EventArgs) Handles BtnEditarU.Click
+        Try
+            If Not validarCamposEditar() Then
+                MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+
+            Dim usuarioDAO As New Tbl_UsuariosDAO()
+            Dim usuario As New Tbl_Usuarios
+
+            usuario.Usuario_id = TxtCodUser.Text
+            usuario.Id_rol = CbRoles.SelectedValue
+            usuario.Primer_nombre = TxtNombre1.Text.Trim
+            usuario.Segundo_nombre = validarCamposNull(usuario.Segundo_nombre, TxtNombre2)
+            usuario.Primer_apellido = TxtApellido1.Text.Trim
+            usuario.Segundo_apellido = validarCamposNull(usuario.Segundo_apellido, TxtApellido2)
+            usuario.Nombre_usuario = TxtNombreUsuario.Text.Trim
+            usuario.Telefono = TxtTelefono.Text.Trim
+            usuario.Fecha_nac = DtpFechaNac.Value
+            usuario.Cedula = TxtCedula.Text.Trim
+
+            If (TxtPwd.Text <> "" And TxtPwdNew.Text <> "") Then
+                Dim codUsuario As Integer = Integer.Parse(TxtCodUser.Text)
+                Dim contraActual As String = usuarioDAO.obtenerContraseña(codUsuario)
+                Dim contraEscrita As String = TxtPwd.Text.Trim
+                Dim contraNueva As String = TxtPwdNew.Text.Trim
+                If (contraActual = contraEscrita) Then
+                    If usuarioDAO.editarContraseña(codUsuario, contraNueva) Then
+                        MsgBox("La contraseña se editó correctamente", MsgBoxStyle.Information, "Usuario")
+                    End If
+                Else
+                    MsgBox("Ha escrito incorrectamente la contraseña actual", MsgBoxStyle.Exclamation, "Usuario")
+                    TxtPwd.Clear()
+                    TxtPwdNew.Clear()
+                    TxtPwd.Focus()
+                    Exit Sub
+                End If
+            End If
+
+            Dim resp = usuarioDAO.EditarUsuario(usuario)
+            If (resp) Then
+                MsgBox("Usuario editado exitosamente.", MsgBoxStyle.Information, "Usuario")
+            Else
+                MsgBox("Error al intentar editar el Usuario", MsgBoxStyle.Critical, "Usuario")
+            End If
+
+            Limpiar()
+            LlenarTabla()
+
+        Catch ex As Exception
+            MsgBox("Error al intentar editar el usuario..." & ex.Message, MsgBoxStyle.Critical, "Usuarios")
+        End Try
     End Sub
 
     'Botón para limpiar los campos del formulario

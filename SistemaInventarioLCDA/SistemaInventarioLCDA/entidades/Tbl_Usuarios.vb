@@ -118,4 +118,13 @@
             _contraseña = value
         End Set
     End Property
+
+    Public Property Usuario_id As Integer
+        Get
+            Return _usuario_id
+        End Get
+        Set(value As Integer)
+            _usuario_id = value
+        End Set
+    End Property
 End Class
