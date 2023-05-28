@@ -94,13 +94,12 @@ Public Class FrmUsuarios
 
     'Función para validar los campos no obligatorios del formulario
     Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
-        If String.IsNullOrEmpty(txt.Text.ToString().Trim) Then
-            campo = Nothing
+        If String.IsNullOrEmpty(txt.Text.Trim) Then
+            campo = ""
         Else
             campo = txt.Text
         End If
         Return campo
-
     End Function
 
     'Función para validar la contraseña

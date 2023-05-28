@@ -119,7 +119,7 @@
             CbMarca.Text = DgvProductos.Rows(fila).Cells(2).Value
             TxtNombreProd.Text = DgvProductos.Rows(fila).Cells(3).Value
             TxtPrecioU.Text = DgvProductos.Rows(fila).Cells(4).Value
-            TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value.ToString()
+            TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value
             TxtUnidadesProd.Text = DgvProductos.Rows(fila).Cells(6).Value
             BtnAgregarP.Enabled = False
         End If
@@ -142,8 +142,8 @@
 
     'Función para validar los campos no obligatorios del formulario
     Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
-        If String.IsNullOrEmpty(txt.Text.ToString().Trim) = True Then
-            campo = Nothing
+        If String.IsNullOrEmpty(txt.Text.Trim) Then
+            campo = ""
         Else
             campo = txt.Text
         End If

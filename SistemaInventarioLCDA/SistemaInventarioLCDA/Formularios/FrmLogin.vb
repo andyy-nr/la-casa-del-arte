@@ -69,6 +69,8 @@
     End Sub
 
     Dim login As New Tbl_UsuariosDAO
+
+    'Botón para entrar al menú principal
     Private Sub BtnEntrar_Click(sender As Object, e As EventArgs) Handles BtnEntrar.Click
         'Comprobación de si el usuario y la contraseña ingresada existen en la base de datos
         Dim user As String = TxtUserL.Text.Trim
@@ -79,12 +81,18 @@
         Else
             If login.validarLogin(user, pwd) Then
                 limpiarCampos()
+                MsgBox("Bienvenido al Sistema de Inventario La Casa del Arte", MsgBoxStyle.Information, "Login")
                 Me.Hide()
                 FrmPrincipal.Show()
             Else
                 MsgBox("Usuario y Contraseña Incorrectas.", MsgBoxStyle.Exclamation, "Advertencia")
             End If
         End If
+    End Sub
+
+    'Botón para salir del programa
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        Close()
     End Sub
 
     Private Sub CebMostrarPwdL_CheckedChanged(sender As Object, e As EventArgs) Handles CebMostrarPwdL.CheckedChanged

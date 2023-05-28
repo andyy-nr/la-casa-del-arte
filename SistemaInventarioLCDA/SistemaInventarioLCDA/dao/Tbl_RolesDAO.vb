@@ -52,7 +52,7 @@ Public Class Tbl_RolesDAO
             cmd.CommandType = CommandType.Text
             cmd.CommandText = tsql
             cmd.Parameters.AddWithValue("@nombreRol", rol.NombreRol)
-            cmd.Parameters.AddWithValue("@descripcionRol", validarValorDBNull(rol.DescripcionRol))
+            cmd.Parameters.AddWithValue("@descripcionRol", rol.DescripcionRol)
             cmd.Connection = conn
             cmd.Connection.Open()
 
@@ -67,14 +67,6 @@ Public Class Tbl_RolesDAO
         Return resp
     End Function
 
-
-    Public Function validarValorDBNull(ByVal valor As Object) As Object
-        If valor Is Nothing Then
-            Return DBNull.Value
-        Else
-            Return valor
-        End If
-    End Function
 
     Public Function validarRol(ByVal rol As Tbl_Roles) As Boolean
         Dim result = False
@@ -167,7 +159,7 @@ Public Class Tbl_RolesDAO
         cmd.CommandType = CommandType.Text
         cmd.Parameters.AddWithValue("@id_rol", rol.Id_rol)
         cmd.Parameters.AddWithValue("@nombreRol", rol.NombreRol)
-        cmd.Parameters.AddWithValue("@descripcionRol", validarValorDBNull(rol.DescripcionRol))
+        cmd.Parameters.AddWithValue("@descripcionRol", rol.DescripcionRol)
 
         If (cmd.ExecuteNonQuery <> 0) Then
             resp = True

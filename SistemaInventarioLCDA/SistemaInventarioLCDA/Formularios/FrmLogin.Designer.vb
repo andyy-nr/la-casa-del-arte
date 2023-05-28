@@ -35,6 +35,7 @@ Partial Class FrmLogin
         Me.CebMostrarPwdL = New System.Windows.Forms.CheckBox()
         Me.TxtUserL = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.PanSuperiorL.SuspendLayout()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,6 +105,7 @@ Partial Class FrmLogin
         'PanCentral
         '
         Me.PanCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanCentral.Controls.Add(Me.BtnCancelar)
         Me.PanCentral.Controls.Add(Me.Label1)
         Me.PanCentral.Controls.Add(Me.BtnEntrar)
         Me.PanCentral.Controls.Add(Me.TxtPwdL)
@@ -138,9 +140,9 @@ Partial Class FrmLogin
         Me.BtnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEntrar.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEntrar.ForeColor = System.Drawing.Color.White
-        Me.BtnEntrar.Location = New System.Drawing.Point(71, 305)
+        Me.BtnEntrar.Location = New System.Drawing.Point(71, 294)
         Me.BtnEntrar.Name = "BtnEntrar"
-        Me.BtnEntrar.Size = New System.Drawing.Size(601, 55)
+        Me.BtnEntrar.Size = New System.Drawing.Size(270, 55)
         Me.BtnEntrar.TabIndex = 4
         Me.BtnEntrar.Text = "ACCEDER"
         Me.BtnEntrar.UseVisualStyleBackColor = False
@@ -182,6 +184,23 @@ Partial Class FrmLogin
         Me.TxtUserL.TabIndex = 1
         Me.TxtUserL.Text = "USUARIO"
         '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCancelar.FlatAppearance.BorderSize = 0
+        Me.BtnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancelar.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCancelar.ForeColor = System.Drawing.Color.White
+        Me.BtnCancelar.Location = New System.Drawing.Point(402, 294)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(270, 55)
+        Me.BtnCancelar.TabIndex = 25
+        Me.BtnCancelar.Text = "CANCELAR"
+        Me.BtnCancelar.UseVisualStyleBackColor = False
+        '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -218,4 +237,5 @@ Partial Class FrmLogin
     Friend WithEvents PibCerrar As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents BtnCancelar As Button
 End Class

@@ -36,7 +36,7 @@ Public Class Tbl_ProductosDAO
             cmd.Parameters.AddWithValue("@id_marca", producto.Id_marca)
             cmd.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
             cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
-            cmd.Parameters.AddWithValue("@descripcionProd", validarValorDBNull(producto.DescripcionProd))
+            cmd.Parameters.AddWithValue("@descripcionProd", producto.DescripcionProd)
             cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
             cmd.Connection = conn
             cmd.Connection.Open()
@@ -117,7 +117,7 @@ Public Class Tbl_ProductosDAO
         cmd.Parameters.AddWithValue("@id_marca", producto.Id_marca)
         cmd.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
         cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
-        cmd.Parameters.AddWithValue("@descripcionProd", validarValorDBNull(producto.DescripcionProd))
+        cmd.Parameters.AddWithValue("@descripcionProd", producto.DescripcionProd)
         cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
 
 
@@ -163,15 +163,6 @@ Public Class Tbl_ProductosDAO
             MsgBox("Ocurrio un error al validar la existencia del producto", MsgBoxStyle.Critical, "Error")
         End Try
         Return resultado
-    End Function
-
-
-    Public Function validarValorDBNull(ByVal valor As Object) As Object
-        If valor Is Nothing Then
-            Return DBNull.Value
-        Else
-            Return valor
-        End If
     End Function
 
 End Class

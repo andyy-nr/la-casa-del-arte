@@ -111,8 +111,11 @@
     End Sub
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
-        Me.Close()
-        FrmLogin.Show()
+        Dim Respuesta = MsgBox("¿Estas seguro que deseas cerrar sesión?", MsgBoxStyle.OkCancel, "Cerrar Sesión")
+        If Respuesta = vbOK Then
+            Me.Close()
+            FrmLogin.Show()
+        End If
     End Sub
 
 

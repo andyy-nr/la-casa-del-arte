@@ -115,58 +115,58 @@
     <Compile Include="entidades\Tbl_Roles.vb" />
     <Compile Include="entidades\Tbl_Rol_Permiso.vb" />
     <Compile Include="entidades\Tbl_Usuarios.vb" />
-    <Compile Include="Formularios\FrmCategoria.Designer.vb">
+    <Compile Include="formularios\FrmCategoria.Designer.vb">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmCategoria.vb">
+    <Compile Include="formularios\FrmCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmMarcas.Designer.vb">
+    <Compile Include="formularios\FrmMarcas.Designer.vb">
       <DependentUpon>FrmMarcas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmMarcas.vb">
+    <Compile Include="formularios\FrmMarcas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmMovimiento.Designer.vb">
+    <Compile Include="formularios\FrmMovimiento.Designer.vb">
       <DependentUpon>FrmMovimiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmMovimiento.vb">
+    <Compile Include="formularios\FrmMovimiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.Designer.vb">
+    <Compile Include="formularios\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.vb">
+    <Compile Include="formularios\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmPermisos.Designer.vb">
+    <Compile Include="formularios\FrmPermisos.Designer.vb">
       <DependentUpon>FrmPermisos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmPermisos.vb">
+    <Compile Include="formularios\FrmPermisos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmProductos.Designer.vb">
+    <Compile Include="formularios\FrmProductos.Designer.vb">
       <DependentUpon>FrmProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmProductos.vb">
+    <Compile Include="formularios\FrmProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmReportes.Designer.vb">
+    <Compile Include="formularios\FrmReportes.Designer.vb">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmReportes.vb">
+    <Compile Include="formularios\FrmReportes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmRoles.Designer.vb">
+    <Compile Include="formularios\FrmRoles.Designer.vb">
       <DependentUpon>FrmRoles.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmRoles.vb">
+    <Compile Include="formularios\FrmRoles.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmUsuarios.Designer.vb">
+    <Compile Include="formularios\FrmUsuarios.Designer.vb">
       <DependentUpon>FrmUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmUsuarios.vb">
+    <Compile Include="formularios\FrmUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPrincipal.vb">
@@ -199,32 +199,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DiseñosRpt\rptReporte.rdlc" />
-    <EmbeddedResource Include="Formularios\FrmCategoria.resx">
+    <EmbeddedResource Include="diseñosRpt\rptReporte.rdlc" />
+    <EmbeddedResource Include="formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmMarcas.resx">
+    <EmbeddedResource Include="formularios\FrmMarcas.resx">
       <DependentUpon>FrmMarcas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmMovimiento.resx">
+    <EmbeddedResource Include="formularios\FrmMovimiento.resx">
       <DependentUpon>FrmMovimiento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+    <EmbeddedResource Include="formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmPermisos.resx">
+    <EmbeddedResource Include="formularios\FrmPermisos.resx">
       <DependentUpon>FrmPermisos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmProductos.resx">
+    <EmbeddedResource Include="formularios\FrmProductos.resx">
       <DependentUpon>FrmProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmReportes.resx">
+    <EmbeddedResource Include="formularios\FrmReportes.resx">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmRoles.resx">
+    <EmbeddedResource Include="formularios\FrmRoles.resx">
       <DependentUpon>FrmRoles.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmUsuarios.resx">
+    <EmbeddedResource Include="formularios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">

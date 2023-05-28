@@ -3,14 +3,6 @@ Public Class Tbl_UsuariosDAO
 
     Dim strConn As String = My.Settings.StrConexion
 
-    Public Function validarValorDBNull(ByVal valor As Object) As Object
-        If valor Is Nothing Then
-            Return DBNull.Value
-        Else
-            Return valor
-        End If
-    End Function
-
     Public Function validarUsuario(ByVal usuario As Tbl_Usuarios) As Boolean
         Dim resp = False
         Dim dt As New DataTable
@@ -64,9 +56,9 @@ Public Class Tbl_UsuariosDAO
             cmd.CommandText = tsql
             cmd.Parameters.AddWithValue("@id_rol", usuario.Id_rol)
             cmd.Parameters.AddWithValue("@primer_nombre", usuario.Primer_nombre)
-            cmd.Parameters.AddWithValue("@segundo_nombre", validarValorDBNull(usuario.Segundo_nombre))
+            cmd.Parameters.AddWithValue("@segundo_nombre", usuario.Segundo_nombre)
             cmd.Parameters.AddWithValue("@primer_apellido", usuario.Primer_apellido)
-            cmd.Parameters.AddWithValue("@segundo_apellido", validarValorDBNull(usuario.Segundo_apellido))
+            cmd.Parameters.AddWithValue("@segundo_apellido", usuario.Segundo_apellido)
             cmd.Parameters.AddWithValue("@nombre_usuario", usuario.Nombre_usuario)
             cmd.Parameters.AddWithValue("@telefono", usuario.Telefono)
             cmd.Parameters.AddWithValue("@fecha_nac", usuario.Fecha_nac)
@@ -166,9 +158,9 @@ Public Class Tbl_UsuariosDAO
             cmd.Parameters.AddWithValue("@usuario_id", usuario.Usuario_id)
             cmd.Parameters.AddWithValue("@id_rol", usuario.Id_rol)
             cmd.Parameters.AddWithValue("@primer_nombre", usuario.Primer_nombre)
-            cmd.Parameters.AddWithValue("@segundo_nombre", validarValorDBNull(usuario.Segundo_nombre))
+            cmd.Parameters.AddWithValue("@segundo_nombre", usuario.Segundo_nombre)
             cmd.Parameters.AddWithValue("@primer_apellido", usuario.Primer_apellido)
-            cmd.Parameters.AddWithValue("@segundo_apellido", validarValorDBNull(usuario.Segundo_apellido))
+            cmd.Parameters.AddWithValue("@segundo_apellido", usuario.Segundo_apellido)
             cmd.Parameters.AddWithValue("@nombre_usuario", usuario.Nombre_usuario)
             cmd.Parameters.AddWithValue("@telefono", usuario.Telefono)
             cmd.Parameters.AddWithValue("@fecha_nac", usuario.Fecha_nac)
