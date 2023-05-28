@@ -75,25 +75,20 @@
         'Comprobación de si el usuario y la contraseña ingresada existen en la base de datos
         Dim user As String = TxtUserL.Text.Trim
         Dim pwd As String = TxtPwdL.Text.Trim
+        Dim usuarioLogin As New Usuario
+        Dim usuarioDAO As New Tbl_UsuariosDAO()
+        Dim rolPermisoDAO As New Tbl_rol_permisoDAO()
 
         If TxtUserL.Text = "USUARIO" Or TxtPwdL.Text = "CONTRASEÑA" Then
             MsgBox("Por favor ingrese los datos completos.", MsgBoxStyle.Exclamation, "Advertencia")
         Else
             If login.validarLogin(user, pwd) Then
-                Dim dt As New DataTable
-                dt = login.cargarUsuarioActual(user)
-                Dim fila As DataRow = dt.Rows(0)
-                FrmPrincipal.Lbl_nombreUser.Text = fila("nombre_usuario").ToString()
-                FrmPrincipal.Lbl_rolUsuario.Text = fila("nombreRol").ToString()
-                Dim dt2 As New DataTable
-                dt2 = login.obtenerNombreXUsuario(user)
-                Dim fila2 As DataRow = dt2.Rows(0)
-                FrmMovimiento.TxtUsuarioMov.Text = fila2("nombre_completo").ToString()
+                usuarioLogin = usuarioDAO.usuarioSistema(user)
+                usuarioLogin.ListaPermisos = rolPermisoDAO.obtenerIdPermisoXIdRol(usuarioLogin.IdRol)
                 limpiarCampos()
-                MsgBox("Bienvenido al Sistema de Inventario La Casa del Arte", MsgBoxStyle.Information, "Login")
+                FrmPrincipal.UsuarioSistema = usuarioLogin
                 Me.Hide()
                 FrmPrincipal.Show()
-
             Else
                 MsgBox("Usuario y Contraseña Incorrectas.", MsgBoxStyle.Exclamation, "Advertencia")
             End If

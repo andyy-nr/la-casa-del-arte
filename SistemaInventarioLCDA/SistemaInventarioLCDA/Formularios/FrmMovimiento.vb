@@ -1,4 +1,15 @@
 ﻿Public Class FrmMovimiento
+
+    'Instancia de un objeto de la clase Usuario como atributo del formulario movimiento
+    Private _usuarioSistema As New Usuario()
+    Public Property UsuarioSistema As Usuario
+        Get
+            Return _usuarioSistema
+        End Get
+        Set(value As Usuario)
+            _usuarioSistema = value
+        End Set
+    End Property
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -43,6 +54,7 @@
     Private Sub PibRetornar_Click(sender As Object, e As EventArgs) Handles PibRetornar.Click
         Dim Respuesta = MsgBox("¿Esta seguro de que desea regresar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
         If Respuesta = vbOK Then
+            FrmPrincipal.UsuarioSistema = UsuarioSistema
             Me.Close()
             FrmPrincipal.Visible = True
         End If
@@ -73,6 +85,7 @@
         'Ajustar tamaño del formulario a la pantalla.
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
+        TxtUsuarioMov.Text = UsuarioSistema.NombreCompleto
         LlenarComboxProd()
     End Sub
 

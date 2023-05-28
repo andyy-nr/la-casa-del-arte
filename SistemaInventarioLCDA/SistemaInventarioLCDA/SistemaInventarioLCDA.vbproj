@@ -115,6 +115,7 @@
     <Compile Include="entidades\Tbl_Roles.vb" />
     <Compile Include="entidades\Tbl_Rol_Permiso.vb" />
     <Compile Include="entidades\Tbl_Usuarios.vb" />
+    <Compile Include="entidades\Usuario.vb" />
     <Compile Include="formularios\FrmCategoria.Designer.vb">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </Compile>

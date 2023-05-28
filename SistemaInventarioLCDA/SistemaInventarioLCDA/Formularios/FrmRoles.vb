@@ -1,6 +1,18 @@
 ﻿Public Class FrmRoles
 
     Dim permiso As New Tbl_PermisoDAO
+
+    'Instancia de un objeto de la clase Usuario como atributo del formulario Roles
+    Private _usuarioSistema As New Usuario()
+    Public Property UsuarioSistema As Usuario
+        Get
+            Return _usuarioSistema
+        End Get
+        Set(value As Usuario)
+            _usuarioSistema = value
+        End Set
+    End Property
+
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -47,6 +59,7 @@
     Private Sub PibRetornar_Click(sender As Object, e As EventArgs) Handles PibRetornar.Click
         Dim Respuesta = MsgBox("¿Esta seguro de que desea regresar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
         If Respuesta = vbOK Then
+            FrmPrincipal.UsuarioSistema = UsuarioSistema
             Me.Close()
             FrmPrincipal.Visible = True
         End If
@@ -293,8 +306,22 @@
             rol.DescripcionRol = validarCamposNull(rol.DescripcionRol, TxtDescRol)
 
             Dim resp = rolDAO.editarRol(rol)
+
             If (resp) Then
                 MsgBox("Rol editado exitosamente.", MsgBoxStyle.Information, "Roles")
+
+                'En caso de que el rol editado se el rol del Usuario Actual
+                If UsuarioSistema.IdRol = rol.Id_rol Then
+                    Dim usuarioDAO As New Tbl_UsuariosDAO()
+                    Dim rol_permiso_Dao As New Tbl_rol_permisoDAO()
+                    Dim user As New Usuario()
+                    user = usuarioDAO.cargarUsuarioActual(UsuarioSistema.UsuarioID)
+                    user.ListaPermisos = rol_permiso_Dao.obtenerIdPermisoXIdRol(user.IdRol)
+                    Me.UsuarioSistema = user
+                    FrmPrincipal.UsuarioSistema = user
+                    FrmPrincipal.cargarEtiquetas()
+                    FrmPrincipal.cargarPermisos()
+                End If
             Else
                 MsgBox("Error al intentar editar el rol", MsgBoxStyle.Critical, "Roles")
             End If

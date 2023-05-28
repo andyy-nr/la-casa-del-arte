@@ -20,25 +20,38 @@ Public Class Tbl_UsuariosDAO
         End Try
         Return resp
     End Function
-
-    Public Function cargarUsuarioActual(ByVal usuario As String) As DataTable
+    Public Function cargarUsuarioActual(ByVal usuario_id As Integer) As Usuario
+        Dim user As New Usuario
         Dim dt As New DataTable
         Try
-            Dim tsql As String = "SELECT Usuario.nombre_usuario, Rol.nombreRol 
-                                    FROM     Usuario INNER JOIN
-                                    Rol ON Usuario.ID_Rol = Rol.ID_Rol
-                                    WHERE nombre_usuario = @nombre_usuario"
+            Dim tsql As String = "SELECT Usuario.usuario_id, 
+                                         Usuario.id_rol,
+                                         Rol.nombreRol as N'ROL', 
+                                         Usuario.primer_nombre + ' ' + primer_apellido As 'NOMBRE', nombre_usuario 
+                                         FROM Usuario 
+                                         INNER JOIN ROL 
+                                         ON Usuario.id_rol = Rol.id_rol 
+                                         WHERE usuario_id = @usuario_id"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
-            da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", usuario)
+            da.SelectCommand.Parameters.AddWithValue("usuario_id", usuario_id)
             da.Fill(dt)
 
-        Catch ex As Exception
-            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
-        End Try
-        Return dt
-    End Function
+            If dt.Rows.Count > 0 Then
+                Dim fila As DataRow = dt.Rows(0)
+                user.UsuarioID = Integer.Parse(fila("usuario_id").ToString)
+                user.IdRol = Integer.Parse(fila("id_rol").ToString())
+                user.NombreRol = fila("ROL").ToString()
+                user.NombreCompleto = fila("NOMBRE").ToString()
+                user.NombreUsuario = fila("nombre_usuario").ToString
+            End If
 
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener los datos del usuario en el sistema de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+
+        Return user
+    End Function
     Public Function MostrarUsuarios() As DataSet
         Dim ds As New DataSet
         Try
@@ -107,23 +120,6 @@ Public Class Tbl_UsuariosDAO
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@usuario_id", usuario_id)
-            da.Fill(dt)
-        Catch ex As Exception
-            MsgBox("Ocurrió un error al obtener los nombre del usuario de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
-        End Try
-        Return dt
-
-    End Function
-
-    Public Function obtenerNombreXUsuario(ByVal user As String) As DataTable
-        Dim dt As New DataTable
-        Try
-            Dim tsql As String = "SELECT primer_nombre + N' '+ ISNULL(segundo_nombre, N' ') + N' ' + primer_apellido + N' ' + ISNULL(segundo_apellido, N' ') as nombre_completo
-                             FROM USUARIO 
-                             WHERE nombre_usuario = @nombre_usuario"
-            Dim conn As New SqlConnection(strConn)
-            Dim da As New SqlDataAdapter(tsql, conn)
-            da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", user)
             da.Fill(dt)
         Catch ex As Exception
             MsgBox("Ocurrió un error al obtener los nombre del usuario de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
@@ -301,5 +297,31 @@ Public Class Tbl_UsuariosDAO
 
         End Try
         Return resp
+    End Function
+
+    Public Function usuarioSistema(ByVal nombre_usuario As String) As Usuario
+        Dim user As New Usuario
+        Dim dt As New DataTable
+        Try
+            Dim tsql As String = "SELECT Usuario.usuario_id, Usuario.id_rol,Rol.nombreRol as N'ROL', Usuario.primer_nombre + ' ' + primer_apellido As 'NOMBRE', nombre_usuario FROM Usuario INNER JOIN ROL ON Usuario.id_rol = Rol.id_rol WHERE nombre_usuario = @nombre_usuario"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("nombre_usuario", nombre_usuario)
+            da.Fill(dt)
+
+            If dt.Rows.Count > 0 Then
+                Dim fila As DataRow = dt.Rows(0)
+                user.UsuarioID = Integer.Parse(fila("usuario_id").ToString())
+                user.IdRol = Integer.Parse(fila("id_rol").ToString())
+                user.NombreRol = fila("ROL").ToString()
+                user.NombreCompleto = fila("NOMBRE").ToString()
+                user.NombreUsuario = fila("nombre_usuario").ToString
+            End If
+
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener los datos del usuario en el sistema de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+
+        Return user
     End Function
 End Class

@@ -1,7 +1,16 @@
 ﻿Imports System.Text.RegularExpressions
-Imports SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters
-
 Public Class FrmUsuarios
+
+    'Instancia de un objeto de la clase Usuario como atributo del formulario movimiento
+    Private _usuarioSistema As New Usuario()
+    Public Property UsuarioSistema As Usuario
+        Get
+            Return _usuarioSistema
+        End Get
+        Set(value As Usuario)
+            _usuarioSistema = value
+        End Set
+    End Property
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -50,6 +59,7 @@ Public Class FrmUsuarios
     Private Sub PibRetornar_Click(sender As Object, e As EventArgs) Handles PibRetornar.Click
         Dim Respuesta = MsgBox("¿Esta seguro de que desea regresar? Cualquier información no guardada se perdera", MsgBoxStyle.OkCancel, "Cerrar")
         If Respuesta = vbOK Then
+            FrmPrincipal.UsuarioSistema = UsuarioSistema
             Me.Close()
             FrmPrincipal.Visible = True
         End If
@@ -316,15 +326,16 @@ Public Class FrmUsuarios
     End Sub
 
     Private Sub BtnEditarU_Click(sender As Object, e As EventArgs) Handles BtnEditarU.Click
+
         Try
             If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
+            Dim codUsuario As Integer = Integer.Parse(TxtCodUser.Text)
 
             Dim usuarioDAO As New Tbl_UsuariosDAO()
             Dim usuario As New Tbl_Usuarios
-
 
             usuario.Usuario_id = TxtCodUser.Text
             usuario.Id_rol = CbRoles.SelectedValue
@@ -347,7 +358,7 @@ Public Class FrmUsuarios
             End If
 
             If (TxtPwd.Text <> "" And TxtPwdNew.Text <> "") Then
-                Dim codUsuario As Integer = Integer.Parse(TxtCodUser.Text)
+
                 Dim contraActual As String = usuarioDAO.obtenerContraseña(codUsuario)
                 Dim contraEscrita As String = TxtPwd.Text.Trim
                 Dim contraNueva As String = TxtPwdNew.Text.Trim
@@ -372,17 +383,21 @@ Public Class FrmUsuarios
 
             Dim resp = usuarioDAO.EditarUsuario(usuario)
             If (resp) Then
-                Dim dt As New DataTable
-                Dim user As String = usuarioDAO.obtenerNomUsuario(usuario.Usuario_id)
-                dt = usuarioDAO.cargarUsuarioActual(user)
-                Dim fila2 As DataRow = dt.Rows(0)
-                FrmPrincipal.Lbl_nombreUser.Text = fila2("nombre_usuario").ToString()
-                FrmPrincipal.Lbl_rolUsuario.Text = fila2("nombreRol").ToString()
                 MsgBox("Usuario editado exitosamente.", MsgBoxStyle.Information, "Usuario")
+
+                'En caso de que el usuario actual haya sido editado
+                If UsuarioSistema.UsuarioID = Integer.Parse(TxtCodUser.Text) Then
+                    Dim rol_permiso_Dao As New Tbl_rol_permisoDAO()
+                    Dim user As New Usuario()
+                    user = usuarioDAO.cargarUsuarioActual(UsuarioSistema.UsuarioID)
+                    user.ListaPermisos = rol_permiso_Dao.obtenerIdPermisoXIdRol(user.IdRol)
+                    Me.UsuarioSistema = user
+                    FrmPrincipal.UsuarioSistema = user
+                    FrmPrincipal.cargarEtiquetas()
+                End If
             Else
                 MsgBox("Error al intentar editar el Usuario", MsgBoxStyle.Critical, "Usuario")
             End If
-
             Limpiar()
             LlenarTabla()
 

@@ -1,5 +1,15 @@
 ﻿Public Class FrmPrincipal
 
+    'Instancia de un objeto de la clase Usuario como atributo del formulario principal
+    Private _usuarioSistema As New Usuario()
+    Public Property UsuarioSistema As Usuario
+        Get
+            Return _usuarioSistema
+        End Get
+        Set(value As Usuario)
+            _usuarioSistema = value
+        End Set
+    End Property
 
     'Movimientos de Ventana.
     Dim ex As Integer, ey As Integer
@@ -20,13 +30,61 @@
         Arrastre = False
     End Sub
 
-
-
-
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Ajustar tamaño del formulario a la pantalla.
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
+        cargarEtiquetas()
+        cargarPermisos()
+
+    End Sub
+
+    Public Sub cargarEtiquetas()
+        'Asignar el nombre a los label con los atributos de la clase Usuario
+        Lbl_nombreUser.Text = UsuarioSistema.NombreCompleto
+        Lbl_rolUsuario.Text = UsuarioSistema.NombreRol
+    End Sub
+
+    Public Sub desactivarBotones()
+        BtnUsuarios.Enabled = False
+        BtnRoles.Enabled = False
+        BtnProductos.Enabled = False
+        BtnMarca.Enabled = False
+        BtnCategorias.Enabled = False
+        BtnMovimientos.Enabled = False
+        BtnReportes.Enabled = False
+    End Sub
+
+    Public Sub cargarPermisos()
+        desactivarBotones()
+        Dim resp As Boolean = False
+        Try
+            Dim permisos As List(Of Integer) = UsuarioSistema.ListaPermisos
+            'Habilitar o deshabilitar botones de acuerdo a los permisos de los usuarios
+            For Each per In permisos
+                Select Case per
+                    Case 67
+                        BtnUsuarios.Enabled = True
+                    Case 68
+                        BtnRoles.Enabled = True
+                    Case 69
+                        BtnProductos.Enabled = True
+                    Case 70
+                        BtnMarca.Enabled = True
+                    Case 71
+                        BtnCategorias.Enabled = True
+                    Case 72
+                        BtnMovimientos.Enabled = True
+                    Case 73
+                        BtnReportes.Enabled = True
+
+                End Select
+            Next
+            resp = True
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     'Animaciones del menú.
@@ -78,6 +136,7 @@
     End Sub
 
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
+        FrmUsuarios.UsuarioSistema = UsuarioSistema
         FrmUsuarios.Show()
     End Sub
 
@@ -94,6 +153,7 @@
     End Sub
 
     Private Sub BtnRoles_Click(sender As Object, e As EventArgs) Handles BtnRoles.Click
+        FrmRoles.UsuarioSistema = UsuarioSistema
         FrmRoles.Show()
     End Sub
 
@@ -101,14 +161,28 @@
         FrmMarcas.Show()
     End Sub
 
-    Private Sub BtnPermisos_Click(sender As Object, e As EventArgs) Handles BtnPermisos.Click
+    Private Sub BtnPermisos_Click(sender As Object, e As EventArgs) 
         FrmPermiso.Show()
     End Sub
 
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
+        FrmMovimiento.UsuarioSistema = UsuarioSistema
         FrmMovimiento.Show()
     End Sub
 
+    Private Sub PictureBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox2.MouseClick
+        MsgBox("Nombre Usuario: " & UsuarioSistema.NombreCompleto & "Rol del Usuario: " & UsuarioSistema.NombreRol, MsgBoxStyle.Information, "Principal")
+
+        For Each per In UsuarioSistema.ListaPermisos
+            MsgBox("Id Permisos" & per, MsgBoxStyle.Critical, "Usuario")
+        Next
+
+        cargarPermisos()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+    End Sub
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
         Dim Respuesta = MsgBox("¿Estas seguro que deseas cerrar sesión?", MsgBoxStyle.OkCancel, "Cerrar Sesión")

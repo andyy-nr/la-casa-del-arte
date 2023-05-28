@@ -92,4 +92,26 @@ Public Class Tbl_rol_permisoDAO
         Return resp
     End Function
 
+    Public Function obtenerIdPermisoXIdRol(ByVal id_Rol As Integer) As List(Of Integer)
+        Dim listPermisos As New List(Of Integer)
+
+        Dim tsql As String = "SELECT id_permiso FROM RolPermiso WHERE id_rol = @id_rol"
+        Using conn As New SqlConnection(strConn)
+            Using cmd As New SqlCommand(tsql, conn)
+                cmd.Parameters.AddWithValue("@id_rol", id_Rol)
+                conn.Open()
+                'SqlDataReader se usa junto con una conexiona a una BD y comando SQL para ejecutar una cosulta
+                'este metodo se mueve atraves de los registros devueltos y accede a los 
+                'valores de las columnas correspondientes.
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    While reader.Read()
+                        listPermisos.Add(reader("id_permiso").ToString())
+
+                    End While
+                End Using
+            End Using
+        End Using
+        Return listPermisos
+    End Function
+
 End Class

@@ -29,7 +29,6 @@ Partial Class FrmPrincipal
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanMenu = New System.Windows.Forms.Panel()
-        Me.BtnPermisos = New System.Windows.Forms.Button()
         Me.BtnMarca = New System.Windows.Forms.Button()
         Me.BtnCerrarSesion = New System.Windows.Forms.Button()
         Me.BtnReportes = New System.Windows.Forms.Button()
@@ -132,7 +131,6 @@ Partial Class FrmPrincipal
         'PanMenu
         '
         Me.PanMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.PanMenu.Controls.Add(Me.BtnPermisos)
         Me.PanMenu.Controls.Add(Me.BtnMarca)
         Me.PanMenu.Controls.Add(Me.BtnCerrarSesion)
         Me.PanMenu.Controls.Add(Me.BtnReportes)
@@ -151,29 +149,10 @@ Partial Class FrmPrincipal
         Me.PanMenu.Size = New System.Drawing.Size(293, 848)
         Me.PanMenu.TabIndex = 1
         '
-        'BtnPermisos
-        '
-        Me.BtnPermisos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPermisos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnPermisos.FlatAppearance.BorderSize = 0
-        Me.BtnPermisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.BtnPermisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
-        Me.BtnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPermisos.ForeColor = System.Drawing.Color.Black
-        Me.BtnPermisos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnPermiso
-        Me.BtnPermisos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnPermisos.Location = New System.Drawing.Point(0, 220)
-        Me.BtnPermisos.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnPermisos.Name = "BtnPermisos"
-        Me.BtnPermisos.Size = New System.Drawing.Size(293, 62)
-        Me.BtnPermisos.TabIndex = 12
-        Me.BtnPermisos.Text = "Permisos"
-        Me.BtnPermisos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnPermisos.UseVisualStyleBackColor = True
-        '
         'BtnMarca
         '
         Me.BtnMarca.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMarca.Enabled = False
         Me.BtnMarca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnMarca.FlatAppearance.BorderSize = 0
         Me.BtnMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -182,7 +161,7 @@ Partial Class FrmPrincipal
         Me.BtnMarca.ForeColor = System.Drawing.Color.Black
         Me.BtnMarca.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnMarcas
         Me.BtnMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMarca.Location = New System.Drawing.Point(0, 427)
+        Me.BtnMarca.Location = New System.Drawing.Point(0, 324)
         Me.BtnMarca.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnMarca.Name = "BtnMarca"
         Me.BtnMarca.Size = New System.Drawing.Size(293, 62)
@@ -216,6 +195,7 @@ Partial Class FrmPrincipal
         'BtnReportes
         '
         Me.BtnReportes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnReportes.Enabled = False
         Me.BtnReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnReportes.FlatAppearance.BorderSize = 0
         Me.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -224,7 +204,7 @@ Partial Class FrmPrincipal
         Me.BtnReportes.ForeColor = System.Drawing.Color.Black
         Me.BtnReportes.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
         Me.BtnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnReportes.Location = New System.Drawing.Point(0, 708)
+        Me.BtnReportes.Location = New System.Drawing.Point(0, 604)
         Me.BtnReportes.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnReportes.Name = "BtnReportes"
         Me.BtnReportes.Size = New System.Drawing.Size(293, 62)
@@ -236,6 +216,7 @@ Partial Class FrmPrincipal
         'BtnMovimientos
         '
         Me.BtnMovimientos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMovimientos.Enabled = False
         Me.BtnMovimientos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnMovimientos.FlatAppearance.BorderSize = 0
         Me.BtnMovimientos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -244,7 +225,7 @@ Partial Class FrmPrincipal
         Me.BtnMovimientos.ForeColor = System.Drawing.Color.Black
         Me.BtnMovimientos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
         Me.BtnMovimientos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMovimientos.Location = New System.Drawing.Point(0, 639)
+        Me.BtnMovimientos.Location = New System.Drawing.Point(3, 534)
         Me.BtnMovimientos.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnMovimientos.Name = "BtnMovimientos"
         Me.BtnMovimientos.Size = New System.Drawing.Size(293, 62)
@@ -256,6 +237,7 @@ Partial Class FrmPrincipal
         'BtnProductos
         '
         Me.BtnProductos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnProductos.Enabled = False
         Me.BtnProductos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnProductos.FlatAppearance.BorderSize = 0
         Me.BtnProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -264,7 +246,7 @@ Partial Class FrmPrincipal
         Me.BtnProductos.ForeColor = System.Drawing.Color.Black
         Me.BtnProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.productosman
         Me.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnProductos.Location = New System.Drawing.Point(0, 570)
+        Me.BtnProductos.Location = New System.Drawing.Point(0, 464)
         Me.BtnProductos.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnProductos.Name = "BtnProductos"
         Me.BtnProductos.Size = New System.Drawing.Size(293, 62)
@@ -276,6 +258,7 @@ Partial Class FrmPrincipal
         'BtnCategorias
         '
         Me.BtnCategorias.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCategorias.Enabled = False
         Me.BtnCategorias.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnCategorias.FlatAppearance.BorderSize = 0
         Me.BtnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -284,7 +267,7 @@ Partial Class FrmPrincipal
         Me.BtnCategorias.ForeColor = System.Drawing.Color.Black
         Me.BtnCategorias.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.categoriaprod
         Me.BtnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCategorias.Location = New System.Drawing.Point(0, 501)
+        Me.BtnCategorias.Location = New System.Drawing.Point(0, 394)
         Me.BtnCategorias.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnCategorias.Name = "BtnCategorias"
         Me.BtnCategorias.Size = New System.Drawing.Size(293, 62)
@@ -296,6 +279,7 @@ Partial Class FrmPrincipal
         'BtnUsuarios
         '
         Me.BtnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnUsuarios.Enabled = False
         Me.BtnUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnUsuarios.FlatAppearance.BorderSize = 0
         Me.BtnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -304,7 +288,7 @@ Partial Class FrmPrincipal
         Me.BtnUsuarios.ForeColor = System.Drawing.Color.Black
         Me.BtnUsuarios.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.usuarios
         Me.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 359)
+        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 254)
         Me.BtnUsuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnUsuarios.Name = "BtnUsuarios"
         Me.BtnUsuarios.Size = New System.Drawing.Size(293, 62)
@@ -316,6 +300,7 @@ Partial Class FrmPrincipal
         'BtnRoles
         '
         Me.BtnRoles.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRoles.Enabled = False
         Me.BtnRoles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnRoles.FlatAppearance.BorderSize = 0
         Me.BtnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -324,7 +309,7 @@ Partial Class FrmPrincipal
         Me.BtnRoles.ForeColor = System.Drawing.Color.Black
         Me.BtnRoles.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.admin
         Me.BtnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRoles.Location = New System.Drawing.Point(0, 290)
+        Me.BtnRoles.Location = New System.Drawing.Point(0, 184)
         Me.BtnRoles.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRoles.Name = "BtnRoles"
         Me.BtnRoles.Size = New System.Drawing.Size(293, 62)
@@ -503,6 +488,5 @@ Partial Class FrmPrincipal
     Friend WithEvents LblFecha As Label
     Friend WithEvents LblHora As Label
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents BtnPermisos As Button
     Friend WithEvents PibMaximizar As PictureBox
 End Class
