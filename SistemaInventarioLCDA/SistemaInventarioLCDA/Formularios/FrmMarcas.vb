@@ -94,6 +94,17 @@
         Return camposLlenados
     End Function
 
+    'Función que valida los campos obligatorios del formulario
+    Private Function validarCamposEditar() As Boolean
+        Dim camposLlenados = False
+
+        If (TxtCodMarca.Text <> "" And TxtNomMarca.Text <> "") Then
+            camposLlenados = True
+        End If
+
+        Return camposLlenados
+    End Function
+
     'Función para validar los campos no obligatorios del formulario
     Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
         If String.IsNullOrEmpty(txt.Text.Trim) Then
@@ -121,7 +132,7 @@
     Private Sub BtnAgregarM_Click(sender As Object, e As EventArgs) Handles BtnAgregarM.Click
         Try
             If Not validarCampos() Then
-                MsgBox("Datos obligatorios del producto incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+                MsgBox("Datos obligatorios de la marca incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
 
@@ -158,7 +169,7 @@
 
     Private Sub BtnEditarP_Click(sender As Object, e As EventArgs) Handles BtnEditarP.Click
         Try
-            If Not validarCampos() Then
+            If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
@@ -169,11 +180,6 @@
             marca.Id_marca = TxtCodMarca.Text.Trim()
             marca.NombreMarca = TxtNomMarca.Text.Trim()
             marca.DescripcionMarca = validarCamposNull(marca.DescripcionMarca, TxtDescMarca)
-
-            If marcaDao.validarMarca(marca) Then
-                MsgBox("La marca ingresada ya existe.", MsgBoxStyle.Exclamation, "Advertencia")
-                Exit Sub
-            End If
 
             Dim resp = marcaDao.EditarMarca(marca)
             If (resp) Then
@@ -191,7 +197,7 @@
 
     Private Sub BtnEliminarP_Click(sender As Object, e As EventArgs) Handles BtnEliminarP.Click
         Try
-            If Not validarCampos() Then
+            If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado nigún registro", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
