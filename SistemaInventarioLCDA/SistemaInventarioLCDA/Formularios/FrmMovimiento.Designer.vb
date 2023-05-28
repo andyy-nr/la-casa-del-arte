@@ -43,7 +43,7 @@ Partial Class FrmMovimiento
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GbMovimiento = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CbTipoMovimiento = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtCodigoMov = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -337,7 +337,7 @@ Partial Class FrmMovimiento
         Me.GbMovimiento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GbMovimiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GbMovimiento.Controls.Add(Me.ComboBox1)
+        Me.GbMovimiento.Controls.Add(Me.CbTipoMovimiento)
         Me.GbMovimiento.Controls.Add(Me.Label16)
         Me.GbMovimiento.Controls.Add(Me.TxtCodigoMov)
         Me.GbMovimiento.Controls.Add(Me.Label15)
@@ -357,15 +357,15 @@ Partial Class FrmMovimiento
         Me.GbMovimiento.TabStop = False
         Me.GbMovimiento.Text = "Datos del Movimiento"
         '
-        'ComboBox1
+        'CbTipoMovimiento
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Entrada", "Salida"})
-        Me.ComboBox1.Location = New System.Drawing.Point(281, 139)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(300, 36)
-        Me.ComboBox1.TabIndex = 34
-        Me.ComboBox1.Text = "Seleccione el movimiento..."
+        Me.CbTipoMovimiento.FormattingEnabled = True
+        Me.CbTipoMovimiento.Items.AddRange(New Object() {"Entrada", "Salida"})
+        Me.CbTipoMovimiento.Location = New System.Drawing.Point(281, 139)
+        Me.CbTipoMovimiento.Name = "CbTipoMovimiento"
+        Me.CbTipoMovimiento.Size = New System.Drawing.Size(300, 36)
+        Me.CbTipoMovimiento.TabIndex = 34
+        Me.CbTipoMovimiento.Text = "Seleccione el movimiento..."
         '
         'Label16
         '
@@ -694,5 +694,5 @@ Partial Class FrmMovimiento
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtCategoriaProd As TextBox
     Friend WithEvents TxtDescripcionProd As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CbTipoMovimiento As ComboBox
 End Class

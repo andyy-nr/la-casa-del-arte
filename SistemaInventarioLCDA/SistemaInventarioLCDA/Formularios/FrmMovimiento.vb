@@ -18,6 +18,18 @@
         Arrastre = False
     End Sub
 
+    Private Sub Limpiar()
+        CbProductos.Text = "Seleccione el producto..."
+        TxtMarcaProd.Clear()
+        TxtCategoriaProd.Clear()
+        TxtDescripcionProd.Clear()
+        TxtPrecioProd.Clear()
+        TxtUnidadesProd.Clear()
+        TxtCodigoMov.Clear()
+        CbTipoMovimiento.Text = "Seleccione el movimiento..."
+        TxtCantidadUP.Clear()
+        TxtDesMovimiento.Clear()
+    End Sub
 
     'Botones
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
@@ -67,6 +79,9 @@
     'Función para llenar los datos del producto en los campos del formulario 
     Dim prod As New Tbl_MovimientosDAO
 
+    Private Sub BtnLimpiarE_Click(sender As Object, e As EventArgs) Handles BtnLimpiarE.Click
+        Limpiar()
+    End Sub
 
     Private Sub CbProductos_TextChanged(sender As Object, e As EventArgs) Handles CbProductos.TextChanged
         If CbProductos.Text <> "Seleccione el producto..." Then

@@ -79,7 +79,6 @@
 
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
         FrmUsuarios.Show()
-        'Me.Close()
     End Sub
 
     Private Sub BtnProductos_Click(sender As Object, e As EventArgs) Handles BtnProductos.Click

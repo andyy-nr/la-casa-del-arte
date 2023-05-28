@@ -82,9 +82,13 @@
             If login.validarLogin(user, pwd) Then
                 Dim dt As New DataTable
                 dt = login.cargarUsuarioActual(user)
-                Dim fila2 As DataRow = dt.Rows(0)
-                FrmPrincipal.Lbl_nombreUser.Text = fila2("nombre_usuario").ToString()
-                FrmPrincipal.Lbl_rolUsuario.Text = fila2("nombreRol").ToString()
+                Dim fila As DataRow = dt.Rows(0)
+                FrmPrincipal.Lbl_nombreUser.Text = fila("nombre_usuario").ToString()
+                FrmPrincipal.Lbl_rolUsuario.Text = fila("nombreRol").ToString()
+                Dim dt2 As New DataTable
+                dt2 = login.obtenerNombreXUsuario(user)
+                Dim fila2 As DataRow = dt2.Rows(0)
+                FrmMovimiento.TxtUsuarioMov.Text = fila2("nombre_completo").ToString()
                 limpiarCampos()
                 MsgBox("Bienvenido al Sistema de Inventario La Casa del Arte", MsgBoxStyle.Information, "Login")
                 Me.Hide()

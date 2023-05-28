@@ -115,6 +115,23 @@ Public Class Tbl_UsuariosDAO
 
     End Function
 
+    Public Function obtenerNombreXUsuario(ByVal user As String) As DataTable
+        Dim dt As New DataTable
+        Try
+            Dim tsql As String = "SELECT primer_nombre + N' '+ ISNULL(segundo_nombre, N' ') + N' ' + primer_apellido + N' ' + ISNULL(segundo_apellido, N' ') as nombre_completo
+                             FROM USUARIO 
+                             WHERE nombre_usuario = @nombre_usuario"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", user)
+            da.Fill(dt)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener los nombre del usuario de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return dt
+
+    End Function
+
     Public Function obtenerContraseña(ByVal usuario_id As Integer) As String
         Dim contraseña As String = " "
         Dim dt As New DataTable
