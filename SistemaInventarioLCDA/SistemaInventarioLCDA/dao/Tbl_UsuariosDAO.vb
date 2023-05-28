@@ -21,6 +21,24 @@ Public Class Tbl_UsuariosDAO
         Return resp
     End Function
 
+    Public Function cargarUsuarioActual(ByVal usuario As String) As DataTable
+        Dim dt As New DataTable
+        Try
+            Dim tsql As String = "SELECT Usuario.nombre_usuario, Rol.nombreRol 
+                                    FROM     Usuario INNER JOIN
+                                    Rol ON Usuario.ID_Rol = Rol.ID_Rol
+                                    WHERE nombre_usuario = @nombre_usuario"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", usuario)
+            da.Fill(dt)
+
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return dt
+    End Function
+
     Public Function MostrarUsuarios() As DataSet
         Dim ds As New DataSet
         Try
@@ -42,6 +60,8 @@ Public Class Tbl_UsuariosDAO
         End Try
         Return ds
     End Function
+
+
 
     Public Function agregarUsuario(ByVal usuario As Tbl_Usuarios) As Boolean
         Dim resp As Boolean = False

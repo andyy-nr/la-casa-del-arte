@@ -24,7 +24,7 @@ Public Class FrmUsuarios
 
 
     'Ajustar tamaño del formulario a la pantalla.
-    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmUsuarios_Load(sender As Object, e As EventArgs) Handles Me.Load
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
         LlenarComboxRol()
@@ -325,6 +325,7 @@ Public Class FrmUsuarios
             Dim usuarioDAO As New Tbl_UsuariosDAO()
             Dim usuario As New Tbl_Usuarios
 
+
             usuario.Usuario_id = TxtCodUser.Text
             usuario.Id_rol = CbRoles.SelectedValue
             usuario.Primer_nombre = TxtNombre1.Text.Trim
@@ -371,6 +372,12 @@ Public Class FrmUsuarios
 
             Dim resp = usuarioDAO.EditarUsuario(usuario)
             If (resp) Then
+                Dim dt As New DataTable
+                Dim user As String = usuarioDAO.obtenerNomUsuario(usuario.Usuario_id)
+                dt = usuarioDAO.cargarUsuarioActual(user)
+                Dim fila2 As DataRow = dt.Rows(0)
+                FrmPrincipal.Lbl_nombreUser.Text = fila2("nombre_usuario").ToString()
+                FrmPrincipal.Lbl_rolUsuario.Text = fila2("nombreRol").ToString()
                 MsgBox("Usuario editado exitosamente.", MsgBoxStyle.Information, "Usuario")
             Else
                 MsgBox("Error al intentar editar el Usuario", MsgBoxStyle.Critical, "Usuario")

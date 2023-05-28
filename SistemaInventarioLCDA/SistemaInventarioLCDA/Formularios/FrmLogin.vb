@@ -80,10 +80,16 @@
             MsgBox("Por favor ingrese los datos completos.", MsgBoxStyle.Exclamation, "Advertencia")
         Else
             If login.validarLogin(user, pwd) Then
+                Dim dt As New DataTable
+                dt = login.cargarUsuarioActual(user)
+                Dim fila2 As DataRow = dt.Rows(0)
+                FrmPrincipal.Lbl_nombreUser.Text = fila2("nombre_usuario").ToString()
+                FrmPrincipal.Lbl_rolUsuario.Text = fila2("nombreRol").ToString()
                 limpiarCampos()
                 MsgBox("Bienvenido al Sistema de Inventario La Casa del Arte", MsgBoxStyle.Information, "Login")
                 Me.Hide()
                 FrmPrincipal.Show()
+
             Else
                 MsgBox("Usuario y Contraseña Incorrectas.", MsgBoxStyle.Exclamation, "Advertencia")
             End If

@@ -22,13 +22,12 @@
 
 
 
-    'Ajustar tamaño del formulario a la pantalla.
+
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'Ajustar tamaño del formulario a la pantalla.
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
     End Sub
-
-
 
     'Animaciones del menú.
     Private Sub TmrOcultar_Tick(sender As Object, e As EventArgs) Handles TmrOcultar.Tick
@@ -80,6 +79,7 @@
 
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
         FrmUsuarios.Show()
+        Me.Close()
     End Sub
 
     Private Sub BtnProductos_Click(sender As Object, e As EventArgs) Handles BtnProductos.Click
@@ -109,6 +109,7 @@
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
         FrmMovimiento.Show()
     End Sub
+
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
         Dim Respuesta = MsgBox("¿Estas seguro que deseas cerrar sesión?", MsgBoxStyle.OkCancel, "Cerrar Sesión")
