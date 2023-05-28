@@ -428,7 +428,6 @@ C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\Si
 C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmProductos.resources
 C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmReportes.resources
 C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmRoles.resources
-C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmSalidas.resources
 C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmUsuarios.resources
 C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmPrincipal.resources
 C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.BtnRegresar.resources
@@ -902,3 +901,5 @@ D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\Sis
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.pdb
 C:\Users\PC\Documents\personal\uni\3semestre\dbd\Proyecto\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmMarcas.resources
 C:\Users\PC\Documents\personal\uni\3semestre\dbd\Proyecto\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmPermiso.resources
+C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmMarcas.resources
+C:\Users\prami\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmPermiso.resources

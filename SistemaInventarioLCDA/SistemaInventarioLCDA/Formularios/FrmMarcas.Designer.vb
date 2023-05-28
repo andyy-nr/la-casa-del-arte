@@ -23,9 +23,9 @@ Partial Class FrmMarcas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -37,7 +37,7 @@ Partial Class FrmMarcas
         Me.GbMarcas = New System.Windows.Forms.GroupBox()
         Me.DgvMarcas = New System.Windows.Forms.DataGridView()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.BtnAgregarP = New System.Windows.Forms.Button()
+        Me.BtnAgregarM = New System.Windows.Forms.Button()
         Me.BtnEliminarP = New System.Windows.Forms.Button()
         Me.GobDatosMarca = New System.Windows.Forms.GroupBox()
         Me.TxtNomMarca = New System.Windows.Forms.TextBox()
@@ -147,7 +147,7 @@ Partial Class FrmMarcas
         Me.PanelCentral.Controls.Add(Me.BtnBuscarMarcas)
         Me.PanelCentral.Controls.Add(Me.GbMarcas)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
-        Me.PanelCentral.Controls.Add(Me.BtnAgregarP)
+        Me.PanelCentral.Controls.Add(Me.BtnAgregarM)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarP)
         Me.PanelCentral.Controls.Add(Me.GobDatosMarca)
         Me.PanelCentral.Controls.Add(Me.BtnEditarP)
@@ -209,14 +209,14 @@ Partial Class FrmMarcas
         Me.DgvMarcas.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvMarcas.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvMarcas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvMarcas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMarcas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.DgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvMarcas.EnableHeadersVisualStyles = False
         Me.DgvMarcas.GridColor = System.Drawing.Color.SaddleBrown
@@ -225,22 +225,22 @@ Partial Class FrmMarcas
         Me.DgvMarcas.Name = "DgvMarcas"
         Me.DgvMarcas.ReadOnly = True
         Me.DgvMarcas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvMarcas.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMarcas.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DgvMarcas.RowHeadersVisible = False
         Me.DgvMarcas.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvMarcas.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvMarcas.RowsDefaultCellStyle = DataGridViewCellStyle18
         Me.DgvMarcas.RowTemplate.Height = 24
         Me.DgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvMarcas.Size = New System.Drawing.Size(1642, 181)
@@ -255,27 +255,27 @@ Partial Class FrmMarcas
         Me.TxtBuscar.Size = New System.Drawing.Size(1422, 34)
         Me.TxtBuscar.TabIndex = 47
         '
-        'BtnAgregarP
+        'BtnAgregarM
         '
-        Me.BtnAgregarP.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BtnAgregarP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAgregarP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.BorderSize = 0
-        Me.BtnAgregarP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnAgregarP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregarP.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregarP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnAgregarP.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregar
-        Me.BtnAgregarP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnAgregarP.Location = New System.Drawing.Point(407, 410)
-        Me.BtnAgregarP.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnAgregarP.Name = "BtnAgregarP"
-        Me.BtnAgregarP.Size = New System.Drawing.Size(183, 55)
-        Me.BtnAgregarP.TabIndex = 4
-        Me.BtnAgregarP.Text = "Agregar"
-        Me.BtnAgregarP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnAgregarP.UseVisualStyleBackColor = True
+        Me.BtnAgregarM.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BtnAgregarM.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAgregarM.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarM.FlatAppearance.BorderSize = 0
+        Me.BtnAgregarM.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnAgregarM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnAgregarM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregarM.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAgregarM.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnAgregarM.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgAgregar
+        Me.BtnAgregarM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAgregarM.Location = New System.Drawing.Point(407, 410)
+        Me.BtnAgregarM.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnAgregarM.Name = "BtnAgregarM"
+        Me.BtnAgregarM.Size = New System.Drawing.Size(183, 55)
+        Me.BtnAgregarM.TabIndex = 4
+        Me.BtnAgregarM.Text = "Agregar"
+        Me.BtnAgregarM.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnAgregarM.UseVisualStyleBackColor = True
         '
         'BtnEliminarP
         '
@@ -468,7 +468,7 @@ Partial Class FrmMarcas
     Friend WithEvents Label8 As Label
     Friend WithEvents PanelCentral As Panel
     Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents BtnAgregarP As Button
+    Friend WithEvents BtnAgregarM As Button
     Friend WithEvents BtnEliminarP As Button
     Friend WithEvents GobDatosMarca As GroupBox
     Friend WithEvents TxtNomMarca As TextBox
