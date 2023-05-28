@@ -411,6 +411,7 @@ Partial Class FrmCategoria
         Me.DgvCategorias.Location = New System.Drawing.Point(5, 32)
         Me.DgvCategorias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DgvCategorias.Name = "DgvCategorias"
+        Me.DgvCategorias.ReadOnly = True
         Me.DgvCategorias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))

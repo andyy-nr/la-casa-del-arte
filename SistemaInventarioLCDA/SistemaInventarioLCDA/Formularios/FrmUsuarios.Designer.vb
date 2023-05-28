@@ -234,6 +234,7 @@ Partial Class FrmUsuarios
         Me.DgvUsuarios.Location = New System.Drawing.Point(47, 573)
         Me.DgvUsuarios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DgvUsuarios.Name = "DgvUsuarios"
+        Me.DgvUsuarios.ReadOnly = True
         Me.DgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))

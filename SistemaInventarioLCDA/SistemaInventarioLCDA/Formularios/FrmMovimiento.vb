@@ -66,6 +66,8 @@
 
     'Función para llenar los datos del producto en los campos del formulario 
     Dim prod As New Tbl_MovimientosDAO
+
+
     Private Sub CbProductos_TextChanged(sender As Object, e As EventArgs) Handles CbProductos.TextChanged
         If CbProductos.Text <> "Seleccione el producto..." Then
             Dim Id_prod As String = CbProductos.SelectedValue.ToString()
