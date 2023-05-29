@@ -69,7 +69,7 @@
     End Sub
 
     'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
-    Private Sub DgvCategorias_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvCategorias.MouseClick
+    Private Sub DgvCategorias_MouseClick(sender As Object, e As MouseEventArgs) 
 
         If (validarRegistros()) Then
             Dim fila As Integer = DgvCategorias.CurrentRow.Index
@@ -131,7 +131,7 @@
     End Function
 
 
-    Private Sub BtnAgregarC_Click(sender As Object, e As EventArgs) Handles BtnAgregarC.Click
+    Private Sub BtnAgregarC_Click(sender As Object, e As EventArgs) 
         Try
             If Not validarCampos() Then
                 MsgBox("Datos obligatorios de la marca incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
@@ -164,11 +164,11 @@
         End Try
     End Sub
 
-    Private Sub BtnLimpiarC_Click(sender As Object, e As EventArgs) Handles BtnLimpiarC.Click
+    Private Sub BtnLimpiarC_Click(sender As Object, e As EventArgs) 
         Limpiar()
     End Sub
 
-    Private Sub BtnEditarC_Click(sender As Object, e As EventArgs) Handles BtnEditarC.Click
+    Private Sub BtnEditarC_Click(sender As Object, e As EventArgs) 
         Try
             If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
@@ -197,7 +197,7 @@
     End Sub
 
 
-    Private Sub BtnEliminarC_Click(sender As Object, e As EventArgs) Handles BtnEliminarC.Click
+    Private Sub BtnEliminarC_Click(sender As Object, e As EventArgs) 
         Try
             If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado nigún registro", MsgBoxStyle.Exclamation, "Advertencia")
@@ -237,7 +237,7 @@
     End Sub
 
 
-    Private Sub BtnBuscaCategoria_Click(sender As Object, e As EventArgs) Handles BtnBuscaCategoria.Click
+    Private Sub BtnBuscaCategoria_Click(sender As Object, e As EventArgs) 
         Dim ds As New DataSet
         Dim dao As New Tbl_CategoriasDAO
 
@@ -252,7 +252,7 @@
     End Sub
 
 
-    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) 
         If TxtBuscar.Text = "" Then
             LlenarTabla()
         End If
