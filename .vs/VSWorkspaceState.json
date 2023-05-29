@@ -3,8 +3,9 @@
     "",
     "\\SistemaInventarioLCDA",
     "\\SistemaInventarioLCDA\\SistemaInventarioLCDA",
+    "\\SistemaInventarioLCDA\\SistemaInventarioLCDA\\dao",
     "\\SistemaInventarioLCDA\\SistemaInventarioLCDA\\Formularios"
   ],
-  "SelectedNode": "\\SistemaInventarioLCDA\\SistemaInventarioLCDA\\FrmPrincipal.vb",
+  "SelectedNode": "\\SistemaInventarioLCDA\\SistemaInventarioLCDA\\Formularios\\FrmCategoria.vb",
   "PreviewInSolutionExplorer": false
 }

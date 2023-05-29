@@ -606,7 +606,6 @@ C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLC
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\EnvDTE.dll
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\stdole.dll
-C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\EnvDTE.xml
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
@@ -657,7 +656,6 @@ C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLC
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmProductos.resources
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmReportes.resources
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmRoles.resources
-C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmSalidas.resources
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmUsuarios.resources
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.FrmPrincipal.resources
 C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\obj\Debug\SistemaInventarioLCDA.BtnRegresar.resources
