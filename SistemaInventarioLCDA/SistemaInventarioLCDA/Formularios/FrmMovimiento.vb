@@ -96,6 +96,10 @@
         Limpiar()
     End Sub
 
+    Private Sub BtnAgregarE_Click(sender As Object, e As EventArgs) Handles BtnAgregarE.Click
+        ''HOLA CAMARON CON COLA
+    End Sub
+
     Private Sub CbProductos_TextChanged(sender As Object, e As EventArgs) Handles CbProductos.TextChanged
         If CbProductos.Text <> "Seleccione el producto..." Then
             Dim Id_prod As String = CbProductos.SelectedValue.ToString()
