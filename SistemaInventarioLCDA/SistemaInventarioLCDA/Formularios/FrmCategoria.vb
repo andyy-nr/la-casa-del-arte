@@ -69,8 +69,7 @@
     End Sub
 
     'Función para rellenar los campos del formulario al seleccionar una fila del DataGripViewer
-    Private Sub DgvCategorias_MouseClick(sender As Object, e As MouseEventArgs) 
-
+    Private Sub DgvCategorias_MouseClick_1(sender As Object, e As MouseEventArgs) Handles DgvCategorias.MouseClick
         If (validarRegistros()) Then
             Dim fila As Integer = DgvCategorias.CurrentRow.Index
             TxtIdCat.Text = DgvCategorias.Rows(fila).Cells(0).Value
@@ -78,7 +77,15 @@
             TxtDescCat.Text = DgvCategorias.Rows(fila).Cells(2).Value
             BtnAgregarC.Enabled = False
         End If
+    End Sub
 
+
+
+    'Función para rellenar la tabla una vez se haya hecho una busqueda
+    Private Sub TxtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
+        If TxtBuscar.Text = "" Then
+            LlenarTabla()
+        End If
     End Sub
 
     'Validaciones
@@ -130,45 +137,40 @@
         Return True
     End Function
 
+    'crud
+    'Botón para agregar un nuevo registro al formulario
+    Private Sub BtnAgregarC_Click_1(sender As Object, e As EventArgs) Handles BtnAgregarC.Click
 
-    Private Sub BtnAgregarC_Click(sender As Object, e As EventArgs) 
-        Try
-            If Not validarCampos() Then
-                MsgBox("Datos obligatorios de la marca incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
-                Exit Sub
-            End If
+        If Not validarCampos() Then
+            MsgBox("Datos obligatorios de la marca incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+            Exit Sub
+        End If
 
-            Dim categoriaDAO As New Tbl_CategoriasDAO()
-            Dim categoria As New Tbl_Categorias
+        Dim categoriaDAO As New Tbl_CategoriasDAO()
+        Dim categoria As New Tbl_Categorias
 
-            categoria.NombreCatg = TxtNombreCat.Text.Trim()
-            categoria.DescripcionCatg = validarCamposNull(categoria.DescripcionCatg, TxtDescCat)
+        categoria.NombreCatg = TxtNombreCat.Text.Trim()
+        categoria.DescripcionCatg = validarCamposNull(categoria.DescripcionCatg, TxtDescCat)
 
-            If categoriaDAO.validarCategoria(categoria) Then
-                MsgBox("La categoría ingresada ya existe.", MsgBoxStyle.Exclamation, "Advertencia")
-                Exit Sub
-            End If
+        If categoriaDAO.validarCategoria(categoria) Then
+            MsgBox("La categoría ingresada ya existe.", MsgBoxStyle.Exclamation, "Advertencia")
+            Exit Sub
+        End If
 
-            Dim resp = categoriaDAO.AgregarCategoria(categoria)
-            If (resp) Then
-                MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Categorías")
-            Else
-                MsgBox("Error al guardar el registro.", MsgBoxStyle.Critical, "Categorías")
-            End If
+        Dim resp = categoriaDAO.AgregarCategoria(categoria)
+        If (resp) Then
+            MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Categorías")
+        Else
+            MsgBox("Error al guardar el registro.", MsgBoxStyle.Critical, "Categorías")
+        End If
 
-            Limpiar()
-            LlenarTabla()
-
-        Catch ex As Exception
-            MsgBox("Error al intentar guardar el registro..." & ex.Message, MsgBoxStyle.Critical, "Categorías")
-        End Try
-    End Sub
-
-    Private Sub BtnLimpiarC_Click(sender As Object, e As EventArgs) 
         Limpiar()
+        LlenarTabla()
     End Sub
 
-    Private Sub BtnEditarC_Click(sender As Object, e As EventArgs) 
+
+    'Botón para editar un registro en el formulario
+    Private Sub BtnEditarC_Click_1(sender As Object, e As EventArgs) Handles BtnEditarC.Click
         Try
             If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
@@ -196,8 +198,8 @@
         End Try
     End Sub
 
-
-    Private Sub BtnEliminarC_Click(sender As Object, e As EventArgs) 
+    'Botón para eliminar un registro del formulario
+    Private Sub BtnEliminarC_Click_1(sender As Object, e As EventArgs) Handles BtnEliminarC.Click
         Try
             If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado nigún registro", MsgBoxStyle.Exclamation, "Advertencia")
@@ -236,8 +238,12 @@
         End Try
     End Sub
 
+    Private Sub BtnLimpiarC_Click(sender As Object, e As EventArgs) Handles BtnLimpiarC.Click
+        Limpiar()
+    End Sub
 
-    Private Sub BtnBuscaCategoria_Click(sender As Object, e As EventArgs) 
+    'Botón para buscar un formulario por categoría
+    Private Sub BtnBuscaCategoria_Click_1(sender As Object, e As EventArgs) Handles BtnBuscaCategoria.Click
         Dim ds As New DataSet
         Dim dao As New Tbl_CategoriasDAO
 
@@ -252,11 +258,6 @@
     End Sub
 
 
-    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) 
-        If TxtBuscar.Text = "" Then
-            LlenarTabla()
-        End If
-    End Sub
 
     'Función para cargar la información del formulario
     Private Sub FrmCategoria_Load(sender As Object, e As EventArgs) Handles Me.Load

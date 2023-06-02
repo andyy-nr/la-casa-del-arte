@@ -145,6 +145,8 @@
 
             If marcaDao.validarMarca(marca) Then
                 MsgBox("La marca ingresada ya existe.", MsgBoxStyle.Exclamation, "Advertencia")
+                TxtNomMarca.Clear()
+                TxtNomMarca.Focus()
                 Exit Sub
             End If
 
