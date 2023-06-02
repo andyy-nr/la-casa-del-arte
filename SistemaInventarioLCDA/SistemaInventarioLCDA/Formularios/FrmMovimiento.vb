@@ -139,49 +139,73 @@ Public Class FrmMovimiento
         Return campo
     End Function
 
+    'Validaciones necesarias en caso de que el movimiento sea una salida
 
+    Private Function ValidarUnidades() As Boolean
+        Dim resp As Boolean = False
+        If (CbTipoMovimiento.Text = "Salida") Then
+            If (Integer.Parse(TxtUnidadesProd.Text) < Integer.Parse(TxtCantidadUP.Text)) Then
+                resp = True
+                Return resp
+            End If
+        End If
+        Return resp
+    End Function
+
+    Private Function restarInventario() As Boolean
+        Dim productoDAO As New Tbl_ProductosDAO()
+        Dim resp = productoDAO.restarUnidades(Integer.Parse(TxtCantidadUP.Text), CbProductos.SelectedValue)
+        Return resp
+    End Function
 
     Private Sub BtnLimpiarE_Click(sender As Object, e As EventArgs) Handles BtnLimpiarE.Click
         Limpiar()
     End Sub
 
-    Private Sub CbProductos_MouseClick(sender As Object, e As MouseEventArgs) Handles CbProductos.MouseClick
-
-    End Sub
-
-    Private Sub CbProductos_SelectedValueChanged(sender As Object, e As EventArgs) Handles CbProductos.SelectedValueChanged
-
-    End Sub
-
     Private Sub BtnAgregarE_Click(sender As Object, e As EventArgs) Handles BtnAgregarE.Click
-        Try
-            If Not validarCampos() Then
-                MsgBox("Datos obligatorios del movimiento incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+
+        If Not validarCampos() Then
+            MsgBox("Datos obligatorios del movimiento incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+            Exit Sub
+        End If
+
+
+
+        Dim val As Boolean = False
+        If ValidarUnidades() Then
+            MsgBox("No hay suficientes unidades de producto para realizar esa salida", MsgBoxStyle.Exclamation, "Advertencia")
+            TxtCantidadUP.Clear()
+            TxtCantidadUP.Focus()
+            Exit Sub
+        Else
+            If Not restarInventario() Then
+                MsgBox("Error al restar la cantidad del registro de productos", MsgBoxStyle.Exclamation, "Advertencia")
                 Exit Sub
             End If
+        End If
 
-            Dim movimiento = New Tbl_Movimientos() 'Entidad/Tabla de movimientos
-            Dim movimientoDAO As New Tbl_MovimientosDAO() 'DAO de movimientos
 
-            movimiento.Id_producto = CbProductos.SelectedValue
-            movimiento.Usuario_id = UsuarioSistema.UsuarioID
-            If CbTipoMovimiento.Text = "Entrada" Then
-                movimiento.Tipo_movimiento = True
-            Else
-                movimiento.Tipo_movimiento = False
-            End If
-            movimiento.Fecha_movimiento = DtpFechaMovimiento.Value
-            movimiento.CantidadProd = Integer.Parse(TxtCantidadUP.Text)
-            movimiento.DescripcionMov = validarCamposNull(movimiento.DescripcionMov, TxtDesMovimiento)
-            Dim resp = movimientoDAO.agregarMovimiento(movimiento)
-            If (resp) Then
-                MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Roles")
-                LlenarTabla()
-                Limpiar()
-            End If
-        Catch ex As Exception
 
-        End Try
+        Dim movimiento = New Tbl_Movimientos() 'Entidad/Tabla de movimientos
+        Dim movimientoDAO As New Tbl_MovimientosDAO() 'DAO de movimientos
+
+        movimiento.Id_producto = CbProductos.SelectedValue
+        movimiento.Usuario_id = UsuarioSistema.UsuarioID
+        If CbTipoMovimiento.Text = "Entrada" Then
+            movimiento.Tipo_movimiento = True
+        Else
+            movimiento.Tipo_movimiento = False
+        End If
+        movimiento.Fecha_movimiento = DtpFechaMovimiento.Value
+        movimiento.CantidadProd = Integer.Parse(TxtCantidadUP.Text)
+        movimiento.DescripcionMov = validarCamposNull(movimiento.DescripcionMov, TxtDesMovimiento)
+        Dim resp = movimientoDAO.agregarMovimiento(movimiento)
+        If (resp) Then
+            MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Roles")
+            LlenarTabla()
+            Limpiar()
+        End If
+
     End Sub
 
 End Class

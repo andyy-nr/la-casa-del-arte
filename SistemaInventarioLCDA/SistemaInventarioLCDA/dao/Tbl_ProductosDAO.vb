@@ -165,4 +165,28 @@ Public Class Tbl_ProductosDAO
         Return resultado
     End Function
 
+    Public Function restarUnidades(ByVal cantidadProd As Integer, ByVal id_producto As String) As Boolean
+        Dim resp As Boolean = False
+        Try
+
+            Dim tsql As String = "UPDATE Producto
+                                     SET unidadesProd = unidadesProd - @cantidadProd where id_producto = @id_producto"
+            Dim conn As New SqlConnection(strConn)
+            conn.Open()
+            Dim cmd As New SqlCommand(tsql, conn)
+            cmd.CommandType = CommandType.Text
+            cmd.Parameters.AddWithValue("@id_producto", id_producto)
+            cmd.Parameters.AddWithValue("@cantidadProd", cantidadProd)
+
+            If (cmd.ExecuteNonQuery <> 0) Then
+                resp = True
+            End If
+            conn.Close()
+            Return resp
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al restar el inventario del producto", MsgBoxStyle.Critical, "Error")
+        End Try
+        Return resp
+    End Function
+
 End Class
