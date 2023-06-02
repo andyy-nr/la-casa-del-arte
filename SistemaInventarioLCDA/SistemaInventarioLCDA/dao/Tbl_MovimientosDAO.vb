@@ -6,7 +6,7 @@ Public Class Tbl_MovimientosDAO
         Dim ds As New DataSet
 
         Try
-            Dim tsql As String = ""
+            Dim tsql As String = "SELECT * FROM Movimiento"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
@@ -35,6 +35,34 @@ Public Class Tbl_MovimientosDAO
         End Try
 
         Return dt
+    End Function
+
+    Public Function agregarMovimiento(ByVal movimiento As Tbl_Movimientos) As Boolean
+        Dim resp As Boolean = False
+        Try
+            Dim tsql As String = "INSERT INTO Movimiento (id_producto, usuario_id, tipo_movimiento, fecha_movimiento, cantidadProd, descripcionMov) Values (@id_producto, @usuario_id, @tipo_movimiento, @fecha_movimiento, @cantidadProd, @descripcionMov)"
+            Dim conn As New SqlConnection(strConn)
+            Dim cmd As New SqlCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = tsql
+            cmd.Parameters.AddWithValue("@id_producto", movimiento.Id_producto)
+            cmd.Parameters.AddWithValue("@usuario_id", movimiento.Usuario_id)
+            cmd.Parameters.AddWithValue("@tipo_movimiento", movimiento.Tipo_movimiento)
+            cmd.Parameters.AddWithValue("@cantidadProd", movimiento.CantidadProd)
+            cmd.Parameters.AddWithValue("@fecha_movimiento", movimiento.Fecha_movimiento)
+            cmd.Parameters.AddWithValue("@descripcionMov", movimiento.DescripcionMov)
+            cmd.Connection = conn
+            cmd.Connection.Open()
+
+            If (cmd.ExecuteNonQuery <> 0) Then
+                resp = True
+            End If
+            cmd.Connection.Close()
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al agregar el movimiento a la base de datos ESTOY EN EL DAO" & ex.Message, MsgBoxStyle.Critical, "Error")
+            resp = False
+        End Try
+        Return resp
     End Function
 
 End Class

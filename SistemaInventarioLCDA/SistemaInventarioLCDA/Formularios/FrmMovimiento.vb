@@ -1,4 +1,8 @@
-﻿Public Class FrmMovimiento
+﻿Imports System.Data.SqlClient
+
+Public Class FrmMovimiento
+
+    Dim strConn As String = My.Settings.StrConexion
 
     'Instancia de un objeto de la clase Usuario como atributo del formulario movimiento
     Private _usuarioSistema As New Usuario()
@@ -68,6 +72,14 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Function validarCampos() As Boolean
+        Dim camposLlenados = False
+        If (CbTipoMovimiento.Text <> "Seleccione el movimiento..." And CbProductos.Text <> "Seleccione el producto..." And TxtCantidadUP.Text <> "") Then
+            camposLlenados = True
+        End If
+        Return camposLlenados
+    End Function
+
 
     Dim producto As New Tbl_ProductosDAO
 
@@ -77,7 +89,7 @@
         CbProductos.DataSource = ds.Tables(0)
         CbProductos.DisplayMember = "PRODUCTO" 'Nombre del alias
         CbProductos.ValueMember = "CÓDIGO" 'Nombre del alias
-        CbProductos.Text = "Seleccione el producto..."
+        CbProductos.Text = "Seleccione el producto"
     End Sub
 
     'Función para cargar la información del formulario
@@ -87,19 +99,18 @@
         Location = Screen.PrimaryScreen.WorkingArea.Location
         TxtUsuarioMov.Text = UsuarioSistema.NombreCompleto
         LlenarComboxProd()
+        LlenarTabla()
+    End Sub
+
+    Private Sub LlenarTabla()
+        Dim movimientosDAO As New Tbl_MovimientosDAO
+        DgvMovimientos.DataSource = movimientosDAO.MostrarMovimientos.Tables(0)
+        DgvMovimientos.Refresh()
+        GbMovimientos.Text = "Movimientos Almacenados: " & DgvMovimientos.RowCount
     End Sub
 
     'Función para llenar los datos del producto en los campos del formulario 
     Dim prod As New Tbl_MovimientosDAO
-
-    Private Sub BtnLimpiarE_Click(sender As Object, e As EventArgs) Handles BtnLimpiarE.Click
-        Limpiar()
-    End Sub
-
-    Private Sub BtnAgregarE_Click(sender As Object, e As EventArgs) Handles BtnAgregarE.Click
-        ''HOLA CAMARON CON COLA
-        ''Aca va el proceso para agregar un nuevo movimiento
-    End Sub
 
     Private Sub CbProductos_TextChanged(sender As Object, e As EventArgs) Handles CbProductos.TextChanged
         If CbProductos.Text <> "Seleccione el producto..." Then
@@ -115,6 +126,53 @@
                 TxtUnidadesProd.Text = row("unidadesProd").ToString()
             Next
         End If
+    End Sub
+
+    'Validaciones necesarias para aquellos campos que no sean tan exigidos en la base de datos
+    Private Function validarCamposNull(ByVal campo As String, txt As TextBox) As String
+        If String.IsNullOrEmpty(txt.Text.Trim) Then
+            campo = ""
+        Else
+            campo = txt.Text
+        End If
+        Return campo
+    End Function
+
+
+
+    Private Sub BtnLimpiarE_Click(sender As Object, e As EventArgs) Handles BtnLimpiarE.Click
+        Limpiar()
+    End Sub
+
+    Private Sub BtnAgregarE_Click(sender As Object, e As EventArgs) Handles BtnAgregarE.Click
+        Try
+            If Not validarCampos() Then
+                MsgBox("Datos obligatorios del movimiento incompletos.", MsgBoxStyle.Exclamation, "Advertencia")
+                Exit Sub
+            End If
+
+            Dim movimiento = New Tbl_Movimientos() 'Entidad/Tabla de movimientos
+            Dim movimientoDAO As New Tbl_MovimientosDAO() 'DAO de movimientos
+
+            movimiento.Id_producto = CbProductos.SelectedValue
+            movimiento.Usuario_id = UsuarioSistema.UsuarioID
+            If CbTipoMovimiento.Text = "Entrada" Then
+                movimiento.Tipo_movimiento = True
+            Else
+                movimiento.Tipo_movimiento = False
+            End If
+            movimiento.Fecha_movimiento = DtpFechaMovimiento.Value
+            movimiento.CantidadProd = Integer.Parse(TxtCantidadUP.Text)
+            movimiento.DescripcionMov = validarCamposNull(movimiento.DescripcionMov, TxtDesMovimiento)
+            Dim resp = movimientoDAO.agregarMovimiento(movimiento)
+            If (resp) Then
+                MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Roles")
+                LlenarTabla()
+                Limpiar()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 End Class
