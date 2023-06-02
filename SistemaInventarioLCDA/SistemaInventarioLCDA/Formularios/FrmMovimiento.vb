@@ -98,6 +98,7 @@
 
     Private Sub BtnAgregarE_Click(sender As Object, e As EventArgs) Handles BtnAgregarE.Click
         ''HOLA CAMARON CON COLA
+        ''Aca va el proceso para agregar un nuevo movimiento
     End Sub
 
     Private Sub CbProductos_TextChanged(sender As Object, e As EventArgs) Handles CbProductos.TextChanged
