@@ -100,6 +100,7 @@ Public Class FrmMovimiento
         TxtUsuarioMov.Text = UsuarioSistema.NombreCompleto
         LlenarComboxProd()
         LlenarTabla()
+        Limpiar()
     End Sub
 
     Private Sub LlenarTabla()
@@ -142,6 +143,14 @@ Public Class FrmMovimiento
 
     Private Sub BtnLimpiarE_Click(sender As Object, e As EventArgs) Handles BtnLimpiarE.Click
         Limpiar()
+    End Sub
+
+    Private Sub CbProductos_MouseClick(sender As Object, e As MouseEventArgs) Handles CbProductos.MouseClick
+
+    End Sub
+
+    Private Sub CbProductos_SelectedValueChanged(sender As Object, e As EventArgs) Handles CbProductos.SelectedValueChanged
+
     End Sub
 
     Private Sub BtnAgregarE_Click(sender As Object, e As EventArgs) Handles BtnAgregarE.Click

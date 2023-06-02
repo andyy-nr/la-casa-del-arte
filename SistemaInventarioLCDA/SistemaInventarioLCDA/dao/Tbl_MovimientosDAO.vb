@@ -6,7 +6,15 @@ Public Class Tbl_MovimientosDAO
         Dim ds As New DataSet
 
         Try
-            Dim tsql As String = "SELECT * FROM Movimiento"
+            Dim tsql As String = "SELECT id_movimiento AS N'CÓDIGO', 
+                                         Producto.nombreProd AS N'PRODUCTO', 
+                                         Usuario.primer_nombre + '' + Usuario.primer_apellido AS N'USUARIO', 
+                                         CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS N'TIPO MOVIMIENTO', 
+                                         fecha_movimiento As N'FECHA', 
+                                         cantidadProd AS 'CANTIDAD DE PRODUCTO', 
+                                         descripcionMov AS N'DESCRIPCION MOVIMIENTO' 
+                                         FROM Movimiento INNER JOIN Producto ON Producto.id_producto = Movimiento.id_producto 
+                                         INNER JOIN Usuario ON Usuario.usuario_id = Movimiento.usuario_id"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
