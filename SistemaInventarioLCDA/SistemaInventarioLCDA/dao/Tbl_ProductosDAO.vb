@@ -213,4 +213,22 @@ Public Class Tbl_ProductosDAO
         Return resp
     End Function
 
+    Public Function validarProductoNombre(ByVal producto As Tbl_Productos) As Boolean
+        Dim resp = False
+        Dim dt As New DataTable
+        Try
+            Dim tsql As String = "SELECT * FROM Producto WHERE nombreProd = @nombreProd"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
+            da.Fill(dt)
+            If (dt.Rows.Count > 0) Then
+                Return True
+            End If
+        Catch ex As Exception
+            MsgBox("Ocurrio un error al validar el nombre del producto", MsgBoxStyle.Critical, "Error")
+        End Try
+        Return resp
+    End Function
+
 End Class

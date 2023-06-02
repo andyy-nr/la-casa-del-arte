@@ -94,6 +94,7 @@
         TxtDescripcion.Clear()
         TxtUnidadesProd.Clear()
         BtnAgregarP.Enabled = True
+        TxtIdProd.Focus()
     End Sub
 
     'Función para cargar la información del formulario
@@ -215,8 +216,16 @@
 
             If productoDao.validarProducto(producto) Then
                 MsgBox("El producto ingresado ya existe.", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
                 Exit Sub
             End If
+
+            If productoDao.validarProductoNombre(producto) Then
+                MsgBox("Producto " & producto.NombreProd + " ya se encuentra registrado", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
+                Exit Sub
+            End If
+
 
             Dim resp = productoDao.AgregarProducto(producto)
             If (resp) Then
