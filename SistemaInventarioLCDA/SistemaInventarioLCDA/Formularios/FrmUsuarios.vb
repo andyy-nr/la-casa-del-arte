@@ -469,7 +469,7 @@ Public Class FrmUsuarios
             Case 0
                 ds = usuarioDAO.usuarioNombreCompleto(buscar)
             Case 1
-
+                ds = usuarioDAO.usuarioNombre(buscar)
             Case 2
             Case 3
             Case 4
