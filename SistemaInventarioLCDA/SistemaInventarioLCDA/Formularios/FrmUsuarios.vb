@@ -471,7 +471,9 @@ Public Class FrmUsuarios
             Case 1
                 ds = usuarioDAO.usuarioNombre(buscar)
             Case 2
+                ds = usuarioDAO.usuarioApellido(buscar)
             Case 3
+                ds = usuarioDAO.usuarioNombreUsuario(buscar)
             Case 4
                 ds = usuarioDAO.usuarioPorRol(buscar)
         End Select

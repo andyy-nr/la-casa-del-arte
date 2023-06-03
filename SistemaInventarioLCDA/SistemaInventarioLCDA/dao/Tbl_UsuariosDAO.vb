@@ -412,4 +412,55 @@ Public Class Tbl_UsuariosDAO
         Return ds
     End Function
 
+    Public Function usuarioApellido(ByVal apellido As String) As DataSet
+        Dim ds As New DataSet
+
+        Try
+            Dim tsql As String = "SELECT Usuario.usuario_id as N'CÓDIGO', Rol.nombreRol as N'ROL',
+                                     Usuario.primer_nombre + N' ' + ISNULL(Usuario.segundo_nombre, '') + N' ' + 
+                                     Usuario.primer_apellido  + N' ' + 
+                                     ISNULL(Usuario.segundo_apellido, '') as N'NOMBRE COMPLETO',
+                                     Usuario.nombre_usuario as N'NOMBRE DE USUARIO',
+                                     Usuario.telefono as N'TELÉFONO',
+                                     convert(nvarchar(10),Usuario.fecha_nac, 103) as N'FECHA DE NACIMIENTO',
+                                     Usuario.cedula as N'CÉDULA'
+                                     FROM Usuario INNER JOIN Rol On Usuario.id_rol = Rol.id_rol
+                                     WHERE Usuario.primer_apellido = @apellido 
+                                     OR Usuario.segundo_apellido = @apellido"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@apellido", apellido)
+            da.Fill(ds)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+
+        Return ds
+    End Function
+
+    Public Function usuarioNombreUsuario(ByVal nombreUsuario As String) As DataSet
+        Dim ds As New DataSet
+
+        Try
+            Dim tsql As String = "SELECT Usuario.usuario_id as N'CÓDIGO', Rol.nombreRol as N'ROL',
+                                     Usuario.primer_nombre + N' ' + ISNULL(Usuario.segundo_nombre, '') + N' ' + 
+                                     Usuario.primer_apellido  + N' ' + 
+                                     ISNULL(Usuario.segundo_apellido, '') as N'NOMBRE COMPLETO',
+                                     Usuario.nombre_usuario as N'NOMBRE DE USUARIO',
+                                     Usuario.telefono as N'TELÉFONO',
+                                     convert(nvarchar(10),Usuario.fecha_nac, 103) as N'FECHA DE NACIMIENTO',
+                                     Usuario.cedula as N'CÉDULA'
+                                     FROM Usuario INNER JOIN Rol On Usuario.id_rol = Rol.id_rol
+                                     WHERE Usuario.nombre_usuario = @nombreUsuario"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@nombreUsuario", nombreUsuario)
+            da.Fill(ds)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+
+        Return ds
+    End Function
+
 End Class
