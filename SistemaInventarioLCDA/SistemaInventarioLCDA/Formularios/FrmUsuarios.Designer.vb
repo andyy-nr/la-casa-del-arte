@@ -211,7 +211,7 @@ Partial Class FrmUsuarios
         Me.CmbFiltrarUsuarios.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.CmbFiltrarUsuarios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.CmbFiltrarUsuarios.FormattingEnabled = True
-        Me.CmbFiltrarUsuarios.Items.AddRange(New Object() {"Filtrar por nombre", "Filtrar por apellido", "Filtrar por rol"})
+        Me.CmbFiltrarUsuarios.Items.AddRange(New Object() {"Filtrar por nombre completo", "Filtrar por nombre", "Filtrar por apellido", "Filtrar por nombre de usuario", "Filtrar por rol"})
         Me.CmbFiltrarUsuarios.Location = New System.Drawing.Point(47, 482)
         Me.CmbFiltrarUsuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.CmbFiltrarUsuarios.Name = "CmbFiltrarUsuarios"

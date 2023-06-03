@@ -445,16 +445,21 @@ Public Class FrmUsuarios
     End Sub
 
     Private Sub BtnBuscarUsuario_Click(sender As Object, e As EventArgs) Handles BtnBuscarUsuario.Click
-        Dim buscar As String = TxtBuscarUsuario.Text.Trim()
-        Dim ds As New DataSet
-        ds = FiltrarUsuario(buscar)
-        DgvUsuarios.DataSource = ds.Tables(0)
-        DgvUsuarios.Refresh()
+        Try
+            Dim buscar As String = TxtBuscarUsuario.Text.Trim()
+            Dim ds As New DataSet
+            ds = FiltrarUsuario(buscar)
+            DgvUsuarios.DataSource = ds.Tables(0)
+            DgvUsuarios.Refresh()
+            GbUsuarios.Text = "Usuarios Almacenados: " & DgvUsuarios.RowCount
 
-        If TxtBuscarUsuario.Text = "" Then
-            MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Categorias")
-            LlenarTabla()
-        End If
+            If TxtBuscarUsuario.Text = "" Then
+                MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Categorias")
+                LlenarTabla()
+            End If
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
     End Sub
 
     Private Function FiltrarUsuario(ByVal buscar As String) As DataSet
@@ -463,9 +468,22 @@ Public Class FrmUsuarios
         Select Case CmbFiltrarUsuarios.SelectedIndex
             Case 0
                 ds = usuarioDAO.usuarioNombreCompleto(buscar)
+            Case 1
+
+            Case 2
+            Case 3
+            Case 4
+                ds = usuarioDAO.usuarioPorRol(buscar)
         End Select
         Return ds
     End Function
+
+    Private Sub TxtBuscarUsuario_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscarUsuario.TextChanged
+        If TxtBuscarUsuario.Text = "" Then
+            CmbFiltrarUsuarios.Text = "Filtrar Usuarios"
+            LlenarTabla()
+        End If
+    End Sub
 
     'Botón para limpiar los campos del formulario
     Private Sub BtnLimpiarU_Click(sender As Object, e As EventArgs) Handles BtnLimpiarU.Click
