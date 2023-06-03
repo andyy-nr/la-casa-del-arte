@@ -34,7 +34,7 @@ Partial Class FrmProductos
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelCentral = New System.Windows.Forms.Panel()
-        Me.CmbFiltrarProd = New System.Windows.Forms.ComboBox()
+        Me.CmbFiltrarUsu = New System.Windows.Forms.ComboBox()
         Me.BtnBuscarProducto = New System.Windows.Forms.Button()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.DgvProductos = New System.Windows.Forms.DataGridView()
@@ -155,7 +155,7 @@ Partial Class FrmProductos
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.PanelCentral.Controls.Add(Me.CmbFiltrarProd)
+        Me.PanelCentral.Controls.Add(Me.CmbFiltrarUsu)
         Me.PanelCentral.Controls.Add(Me.BtnBuscarProducto)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
         Me.PanelCentral.Controls.Add(Me.DgvProductos)
@@ -174,20 +174,20 @@ Partial Class FrmProductos
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 17
         '
-        'CmbFiltrarProd
+        'CmbFiltrarUsu
         '
-        Me.CmbFiltrarProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.CmbFiltrarProd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CmbFiltrarProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.CmbFiltrarProd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.CmbFiltrarProd.FormattingEnabled = True
-        Me.CmbFiltrarProd.Items.AddRange(New Object() {"Filtrar por código", "Filtrar por nombre", "Filtrar por marca", "Filtrar por categoría"})
-        Me.CmbFiltrarProd.Location = New System.Drawing.Point(41, 530)
-        Me.CmbFiltrarProd.Margin = New System.Windows.Forms.Padding(4)
-        Me.CmbFiltrarProd.Name = "CmbFiltrarProd"
-        Me.CmbFiltrarProd.Size = New System.Drawing.Size(309, 36)
-        Me.CmbFiltrarProd.TabIndex = 37
-        Me.CmbFiltrarProd.Text = "Filtrar productos"
+        Me.CmbFiltrarUsu.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.CmbFiltrarUsu.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CmbFiltrarUsu.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.CmbFiltrarUsu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.CmbFiltrarUsu.FormattingEnabled = True
+        Me.CmbFiltrarUsu.Items.AddRange(New Object() {"Filtrar por código", "Filtrar por nombre", "Filtrar por marca", "Filtrar por categoría"})
+        Me.CmbFiltrarUsu.Location = New System.Drawing.Point(41, 530)
+        Me.CmbFiltrarUsu.Margin = New System.Windows.Forms.Padding(4)
+        Me.CmbFiltrarUsu.Name = "CmbFiltrarUsu"
+        Me.CmbFiltrarUsu.Size = New System.Drawing.Size(309, 36)
+        Me.CmbFiltrarUsu.TabIndex = 37
+        Me.CmbFiltrarUsu.Text = "Filtrar productos"
         '
         'BtnBuscarProducto
         '
@@ -606,5 +606,5 @@ Partial Class FrmProductos
     Friend WithEvents PibMaximizar As PictureBox
     Friend WithEvents GbProductos As GroupBox
     Friend WithEvents BtnBuscarProducto As Button
-    Friend WithEvents CmbFiltrarProd As ComboBox
+    Friend WithEvents CmbFiltrarUsu As ComboBox
 End Class

@@ -1,6 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 Public Class FrmUsuarios
 
+    ''Comentario prueba
+
     'Instancia de un objeto de la clase Usuario como atributo del formulario movimiento
     Private _usuarioSistema As New Usuario()
     Public Property UsuarioSistema As Usuario

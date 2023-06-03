@@ -416,7 +416,7 @@
         Dim query = From prod In tblProductos
                     Select prod.id_producto, prod.nombreCatg, prod.nombreMarca, prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
 
-        Select Case CmbFiltrarProd.SelectedIndex
+        Select Case CmbFiltrarUsu.SelectedIndex
             Case 0
                 query = From prod In tblProductos Where prod.id_producto.Contains(dato)
                         Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
@@ -446,7 +446,7 @@
 
     Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
         If TxtBuscar.Text = "" Then
-            CmbFiltrarProd.Text = "Filtrar Productos"
+            CmbFiltrarUsu.Text = "Filtrar Productos"
             LlenarTabla()
         End If
     End Sub
@@ -460,7 +460,7 @@
 
         End If
 
-        If (CmbFiltrarProd.Text = "Filtrar Productos") Then
+        If (CmbFiltrarUsu.Text = "Filtrar Productos") Then
             BuscarProd()
             Exit Sub
         Else
