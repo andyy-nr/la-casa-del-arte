@@ -34,6 +34,7 @@ Partial Class FrmProductos
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.CmbFiltrarProd = New System.Windows.Forms.ComboBox()
         Me.BtnBuscarProducto = New System.Windows.Forms.Button()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
         Me.DgvProductos = New System.Windows.Forms.DataGridView()
@@ -154,6 +155,7 @@ Partial Class FrmProductos
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanelCentral.Controls.Add(Me.CmbFiltrarProd)
         Me.PanelCentral.Controls.Add(Me.BtnBuscarProducto)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
         Me.PanelCentral.Controls.Add(Me.DgvProductos)
@@ -172,6 +174,21 @@ Partial Class FrmProductos
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 17
         '
+        'CmbFiltrarProd
+        '
+        Me.CmbFiltrarProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.CmbFiltrarProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CmbFiltrarProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.CmbFiltrarProd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.CmbFiltrarProd.FormattingEnabled = True
+        Me.CmbFiltrarProd.Items.AddRange(New Object() {"Filtrar por código", "Filtrar por nombre", "Filtrar por marca", "Filtrar por categoría"})
+        Me.CmbFiltrarProd.Location = New System.Drawing.Point(41, 530)
+        Me.CmbFiltrarProd.Margin = New System.Windows.Forms.Padding(4)
+        Me.CmbFiltrarProd.Name = "CmbFiltrarProd"
+        Me.CmbFiltrarProd.Size = New System.Drawing.Size(309, 36)
+        Me.CmbFiltrarProd.TabIndex = 37
+        Me.CmbFiltrarProd.Text = "Filtrar productos"
+        '
         'BtnBuscarProducto
         '
         Me.BtnBuscarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -185,10 +202,10 @@ Partial Class FrmProductos
         Me.BtnBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnBuscarProducto.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
         Me.BtnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnBuscarProducto.Location = New System.Drawing.Point(1512, 520)
+        Me.BtnBuscarProducto.Location = New System.Drawing.Point(1540, 511)
         Me.BtnBuscarProducto.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnBuscarProducto.Name = "BtnBuscarProducto"
-        Me.BtnBuscarProducto.Size = New System.Drawing.Size(183, 55)
+        Me.BtnBuscarProducto.Size = New System.Drawing.Size(149, 55)
         Me.BtnBuscarProducto.TabIndex = 48
         Me.BtnBuscarProducto.Text = "Buscar"
         Me.BtnBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -198,10 +215,10 @@ Partial Class FrmProductos
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscar.Location = New System.Drawing.Point(41, 530)
+        Me.TxtBuscar.Location = New System.Drawing.Point(357, 532)
         Me.TxtBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(1422, 34)
+        Me.TxtBuscar.Size = New System.Drawing.Size(1177, 34)
         Me.TxtBuscar.TabIndex = 39
         '
         'DgvProductos
@@ -589,4 +606,5 @@ Partial Class FrmProductos
     Friend WithEvents PibMaximizar As PictureBox
     Friend WithEvents GbProductos As GroupBox
     Friend WithEvents BtnBuscarProducto As Button
+    Friend WithEvents CmbFiltrarProd As ComboBox
 End Class

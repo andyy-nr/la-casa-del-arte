@@ -107,6 +107,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBLaCasaDelArteDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBLaCasaDelArteDataSet.vb">
+      <DependentUpon>DBLaCasaDelArteDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="entidades\Tbl_Categorias.vb" />
     <Compile Include="entidades\Tbl_Marcas.vb" />
     <Compile Include="entidades\Tbl_Movimientos.vb" />

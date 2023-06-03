@@ -1,4 +1,9 @@
 ﻿Public Class FrmProductos
+
+
+    Dim tblProductos As New DBLaCasaDelArteDataSet.DTProductosBuscarDataTable
+    Dim rptProductos As New DBLaCasaDelArteDataSetTableAdapters.DTProductosBuscarTableAdapter
+    Dim tbl As New DataTable
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -52,6 +57,20 @@
 
     'Datos
 
+    'Función para dar diseño al DgvProducos
+
+    Sub DiseñoTabla()
+        'Titulos o encabezados de la tabla
+        DgvProductos.Columns(0).HeaderText = "CÓDIGO"
+        DgvProductos.Columns(1).HeaderText = "CATEGORIA"
+        DgvProductos.Columns(2).HeaderText = "MARCA"
+        DgvProductos.Columns(3).HeaderText = "PRODUCTO"
+        DgvProductos.Columns(4).HeaderText = "PRECIO"
+        DgvProductos.Columns(5).HeaderText = "DESCRIPCIÓN"
+        DgvProductos.Columns(6).HeaderText = "UNIDADES"
+
+    End Sub
+
     'Función para rellenar el DataGripViewer de Productos
     Sub LlenarTabla()
         Dim productoDao As New Tbl_ProductosDAO
@@ -103,7 +122,8 @@
         Size = Screen.PrimaryScreen.WorkingArea.Size
         Location = Screen.PrimaryScreen.WorkingArea.Location
 
-        LlenarTabla()
+        'LlenarTabla()
+        LlenarGridProductos()
         LlenarComboxCatg()
         LlenarComboxMarca()
     End Sub
@@ -235,7 +255,8 @@
             End If
 
             Limpiar()
-            LlenarTabla()
+            'LlenarTabla()
+            LlenarGridProductos()
 
         Catch ex As Exception
             MsgBox("Error al intentar guardar el registro..." & ex.Message, MsgBoxStyle.Critical, "Productos")
@@ -337,25 +358,114 @@
         End Try
     End Sub
 
-    'Botón para buscar por nombre de producto
+    'Método LinkQ para filtrar registros de productos
 
-    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
-        If TxtBuscar.Text = "" Then
-            LlenarTabla()
-        End If
+    'Funcion para llenar la tabla con método LinkQ
+    Sub LlenarGridProductos()
+        rptProductos.Fill(tblProductos)
+        DgvProductos.DataSource = tblProductos
+        DgvProductos.Refresh()
+        DiseñoTabla()
+        GbProductos.Text = "Productos guardados: " & DgvProductos.Rows.Count
     End Sub
 
-    Private Sub BtnBuscarProducto_Click(sender As Object, e As EventArgs) Handles BtnBuscarProducto.Click
+    'Funcion para crear la tabla aplicando método de LinkQ
+    Private Function CrearTablaProductos(query) As DataTable
+        Dim tbl As DataTable = New DataTable("tblProductos")
+        Dim fila As DataRow
+
+        tbl.Columns.Add("id_producto")
+        tbl.Columns.Add("nombreCatg")
+        tbl.Columns.Add("nombreMarca")
+        tbl.Columns.Add("nombreProd")
+        tbl.Columns.Add("precio_unitario")
+        tbl.Columns.Add("descripcionProd")
+        tbl.Columns.Add("unidadesProd")
+
+        For Each prod In query
+            fila = tbl.NewRow
+            fila("id_producto") = prod.id_producto
+            fila("nombreCatg") = prod.nombreCatg
+            fila("nombreMarca") = prod.nombreMarca
+            fila("nombreProd") = prod.nombreProd
+            fila("precio_unitario") = prod.precio_unitario
+            fila("descripcionProd") = prod.descripcionProd
+            fila("unidadesProd") = prod.unidadesProd
+            tbl.Rows.Add(fila)
+
+        Next
+        Return tbl
+
+    End Function
+
+    Private Sub BuscarProd()
         Dim ds As New DataSet
         Dim dao As New Tbl_ProductosDAO
 
         ds = dao.BuscarXNombre(TxtBuscar.Text.Trim)
         DgvProductos.DataSource = ds.Tables(0)
+        DiseñoTabla()
         DgvProductos.Refresh()
+    End Sub
 
+    'Funcion para filtrar productos haciendo uso de linkQ
+    Private Sub FiltrarProducto()
+        Dim dato As String = TxtBuscar.Text.Trim()
+
+        Dim campo As String = "prod.id_producto"
+        Dim query = From prod In tblProductos
+                    Select prod.id_producto, prod.nombreCatg, prod.nombreMarca, prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+
+        Select Case CmbFiltrarProd.SelectedIndex
+            Case 0
+                query = From prod In tblProductos Where prod.id_producto.Contains(dato)
+                        Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+            Case 1
+                query = From prod In tblProductos Where prod.nombreProd Like dato
+                        Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+            Case 2
+                query = From prod In tblProductos Where prod.nombreMarca Like dato
+                        Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+
+            Case 3
+                query = From prod In tblProductos Where prod.nombreCatg Like dato
+                        Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+
+        End Select
+
+        tbl = CrearTablaProductos(query)
+        DgvProductos.DataSource = tbl
+        DiseñoTabla()
+        DgvProductos.Refresh()
+        GbProductos.Text = "Productos almacenados: " & DgvProductos.Rows.Count
+    End Sub
+
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
+        If TxtBuscar.Text = "" Then
+            CmbFiltrarProd.Text = "Filtrar Productos"
+            LlenarTabla()
+        End If
+    End Sub
+
+    'Botón para buscar producto de acuerdo a la opcion seleccionada por el usuario
+    Private Sub BtnBuscarProducto_Click(sender As Object, e As EventArgs) Handles BtnBuscarProducto.Click
         If TxtBuscar.Text = "" Then
             MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Productos")
             LlenarTabla()
+
+
+        End If
+
+        If (CmbFiltrarProd.Text = "Filtrar Productos") Then
+            BuscarProd()
+            Exit Sub
+        Else
+            FiltrarProducto()
+
         End If
     End Sub
 

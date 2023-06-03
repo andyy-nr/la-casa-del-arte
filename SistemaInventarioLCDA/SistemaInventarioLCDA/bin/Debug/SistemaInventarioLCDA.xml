@@ -373,6 +373,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.DTProductosBuscarDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.CategoríaRow">
 <summary>
 Represents strongly named DataRow class.
@@ -414,6 +419,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.UsuarioRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.DTProductosBuscarRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -463,6 +473,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.DTProductosBuscarRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.CategoríaTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -504,6 +519,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.UsuarioTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.DTProductosBuscarTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
