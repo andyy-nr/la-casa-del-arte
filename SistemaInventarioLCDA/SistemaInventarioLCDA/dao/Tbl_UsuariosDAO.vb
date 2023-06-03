@@ -324,4 +324,39 @@ Public Class Tbl_UsuariosDAO
 
         Return user
     End Function
+
+    Public Function usuarioNombreCompleto(ByVal nombre_completo As String) As DataSet
+        Dim ds As New DataSet
+        Dim espacio As String() = nombre_completo.Split(" "c)
+
+        Dim primer_nombre As String = espacio(0)
+        Dim segundo_nombre As String = espacio(1)
+        Dim primer_apellido As String = espacio(2)
+        Dim segundo_apellido As String = espacio(3)
+        Try
+            Dim tsql As String = "SELECT Usuario.usuario_id as N'CÓDIGO', Rol.nombreRol as N'ROL',
+                                                 Usuario.primer_nombre + N' ' + ISNULL(Usuario.segundo_nombre, '') + N' ' + 
+                                                 Usuario.primer_apellido  + N' ' + 
+                                                 ISNULL(Usuario.segundo_apellido, '') as N'NOMBRE COMPLETO',
+                                                 Usuario.nombre_usuario as N'NOMBRE DE USUARIO',
+                                                 Usuario.telefono as N'TELÉFONO',
+                                                 convert(nvarchar(10),Usuario.fecha_nac, 103) as N'FECHA DE NACIMIENTO',
+                                                 Usuario.cedula as N'CÉDULA'
+                                                 FROM Usuario INNER JOIN Rol On Usuario.id_rol = Rol.id_rol
+                                                 WHERE Usuario.primer_nombre = @primer_nombre 
+                                                 AND Usuario.segundo_nombre = @segundo_nombre 
+                                                 And Usuario.primer_apellido = @primer_apellido And Usuario.segundo_apellido = @segundo_apellido"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@primer_nombre", primer_nombre)
+            da.SelectCommand.Parameters.AddWithValue("@segundo_nombre", segundo_nombre)
+            da.SelectCommand.Parameters.AddWithValue("@primer_apellido", primer_apellido)
+            da.SelectCommand.Parameters.AddWithValue("@segundo_apellido", segundo_apellido)
+            da.Fill(ds)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return ds
+
+    End Function
 End Class

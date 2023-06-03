@@ -34,9 +34,11 @@ Partial Class FrmUsuarios
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelCentral = New System.Windows.Forms.Panel()
+        Me.BtnBuscarUsuario = New System.Windows.Forms.Button()
+        Me.CmbFiltrarUsuarios = New System.Windows.Forms.ComboBox()
         Me.DgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.GbUsuarios = New System.Windows.Forms.GroupBox()
-        Me.TxtBuscar = New System.Windows.Forms.TextBox()
+        Me.TxtBuscarUsuario = New System.Windows.Forms.TextBox()
         Me.GobUsuario = New System.Windows.Forms.GroupBox()
         Me.LblPwdActual = New System.Windows.Forms.Label()
         Me.CebMostrarPwdNew = New System.Windows.Forms.CheckBox()
@@ -69,8 +71,6 @@ Partial Class FrmUsuarios
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtCedula = New System.Windows.Forms.TextBox()
-        Me.CmbFiltrarUsuarios = New System.Windows.Forms.ComboBox()
-        Me.BtnBuscarUsuario = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,7 +167,7 @@ Partial Class FrmUsuarios
         Me.PanelCentral.Controls.Add(Me.CmbFiltrarUsuarios)
         Me.PanelCentral.Controls.Add(Me.DgvUsuarios)
         Me.PanelCentral.Controls.Add(Me.GbUsuarios)
-        Me.PanelCentral.Controls.Add(Me.TxtBuscar)
+        Me.PanelCentral.Controls.Add(Me.TxtBuscarUsuario)
         Me.PanelCentral.Controls.Add(Me.GobUsuario)
         Me.PanelCentral.Controls.Add(Me.BtnAgregarU)
         Me.PanelCentral.Controls.Add(Me.BtnEliminarU)
@@ -181,6 +181,43 @@ Partial Class FrmUsuarios
         Me.PanelCentral.Padding = New System.Windows.Forms.Padding(10)
         Me.PanelCentral.Size = New System.Drawing.Size(1733, 798)
         Me.PanelCentral.TabIndex = 18
+        '
+        'BtnBuscarUsuario
+        '
+        Me.BtnBuscarUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBuscarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarUsuario.FlatAppearance.BorderSize = 0
+        Me.BtnBuscarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.BtnBuscarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
+        Me.BtnBuscarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscarUsuario.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscarUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnBuscarUsuario.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
+        Me.BtnBuscarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnBuscarUsuario.Location = New System.Drawing.Point(1540, 472)
+        Me.BtnBuscarUsuario.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
+        Me.BtnBuscarUsuario.Name = "BtnBuscarUsuario"
+        Me.BtnBuscarUsuario.Size = New System.Drawing.Size(149, 55)
+        Me.BtnBuscarUsuario.TabIndex = 49
+        Me.BtnBuscarUsuario.Text = "Buscar"
+        Me.BtnBuscarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnBuscarUsuario.UseVisualStyleBackColor = True
+        '
+        'CmbFiltrarUsuarios
+        '
+        Me.CmbFiltrarUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.CmbFiltrarUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CmbFiltrarUsuarios.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.CmbFiltrarUsuarios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.CmbFiltrarUsuarios.FormattingEnabled = True
+        Me.CmbFiltrarUsuarios.Items.AddRange(New Object() {"Filtrar por nombre", "Filtrar por apellido", "Filtrar por rol"})
+        Me.CmbFiltrarUsuarios.Location = New System.Drawing.Point(47, 482)
+        Me.CmbFiltrarUsuarios.Margin = New System.Windows.Forms.Padding(4)
+        Me.CmbFiltrarUsuarios.Name = "CmbFiltrarUsuarios"
+        Me.CmbFiltrarUsuarios.Size = New System.Drawing.Size(309, 36)
+        Me.CmbFiltrarUsuarios.TabIndex = 38
+        Me.CmbFiltrarUsuarios.Text = "Filtrar usuarios"
         '
         'DgvUsuarios
         '
@@ -244,14 +281,14 @@ Partial Class FrmUsuarios
         Me.GbUsuarios.TabStop = False
         Me.GbUsuarios.Text = "Usuarios Registrados: 0"
         '
-        'TxtBuscar
+        'TxtBuscarUsuario
         '
-        Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TxtBuscarUsuario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBuscar.Location = New System.Drawing.Point(376, 484)
-        Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(1158, 34)
-        Me.TxtBuscar.TabIndex = 35
+        Me.TxtBuscarUsuario.Location = New System.Drawing.Point(376, 484)
+        Me.TxtBuscarUsuario.Name = "TxtBuscarUsuario"
+        Me.TxtBuscarUsuario.Size = New System.Drawing.Size(1158, 34)
+        Me.TxtBuscarUsuario.TabIndex = 35
         '
         'GobUsuario
         '
@@ -663,43 +700,6 @@ Partial Class FrmUsuarios
         Me.TxtCedula.Size = New System.Drawing.Size(385, 34)
         Me.TxtCedula.TabIndex = 7
         '
-        'CmbFiltrarUsuarios
-        '
-        Me.CmbFiltrarUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.CmbFiltrarUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CmbFiltrarUsuarios.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.CmbFiltrarUsuarios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.CmbFiltrarUsuarios.FormattingEnabled = True
-        Me.CmbFiltrarUsuarios.Items.AddRange(New Object() {"Filtrar por nombre", "Filtrar por apellido", "Filtrar por rol"})
-        Me.CmbFiltrarUsuarios.Location = New System.Drawing.Point(47, 482)
-        Me.CmbFiltrarUsuarios.Margin = New System.Windows.Forms.Padding(4)
-        Me.CmbFiltrarUsuarios.Name = "CmbFiltrarUsuarios"
-        Me.CmbFiltrarUsuarios.Size = New System.Drawing.Size(309, 36)
-        Me.CmbFiltrarUsuarios.TabIndex = 38
-        Me.CmbFiltrarUsuarios.Text = "Filtrar productos"
-        '
-        'BtnBuscarUsuario
-        '
-        Me.BtnBuscarUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnBuscarUsuario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBuscarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscarUsuario.FlatAppearance.BorderSize = 0
-        Me.BtnBuscarUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(103, Byte), Integer))
-        Me.BtnBuscarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(193, Byte), Integer), CType(CType(181, Byte), Integer))
-        Me.BtnBuscarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscarUsuario.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscarUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnBuscarUsuario.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
-        Me.BtnBuscarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnBuscarUsuario.Location = New System.Drawing.Point(1540, 472)
-        Me.BtnBuscarUsuario.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.BtnBuscarUsuario.Name = "BtnBuscarUsuario"
-        Me.BtnBuscarUsuario.Size = New System.Drawing.Size(149, 55)
-        Me.BtnBuscarUsuario.TabIndex = 49
-        Me.BtnBuscarUsuario.Text = "Buscar"
-        Me.BtnBuscarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnBuscarUsuario.UseVisualStyleBackColor = True
-        '
         'FrmUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -738,7 +738,7 @@ Partial Class FrmUsuarios
     Friend WithEvents PanelCentral As Panel
     Friend WithEvents DgvUsuarios As DataGridView
     Friend WithEvents GbUsuarios As GroupBox
-    Friend WithEvents TxtBuscar As TextBox
+    Friend WithEvents TxtBuscarUsuario As TextBox
     Friend WithEvents GobUsuario As GroupBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label

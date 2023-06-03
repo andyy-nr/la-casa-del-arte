@@ -1,8 +1,6 @@
 ﻿Imports System.Text.RegularExpressions
 Public Class FrmUsuarios
 
-    ''Comentario prueba
-
     'Instancia de un objeto de la clase Usuario como atributo del formulario movimiento
     Private _usuarioSistema As New Usuario()
     Public Property UsuarioSistema As Usuario
@@ -445,6 +443,29 @@ Public Class FrmUsuarios
             MsgBox("Error al intentar eliminar el registro... " & ex.Message, MsgBoxStyle.Critical, "Usuarios")
         End Try
     End Sub
+
+    Private Sub BtnBuscarUsuario_Click(sender As Object, e As EventArgs) Handles BtnBuscarUsuario.Click
+        Dim buscar As String = TxtBuscarUsuario.Text.Trim()
+        Dim ds As New DataSet
+        ds = FiltrarUsuario(buscar)
+        DgvUsuarios.DataSource = ds.Tables(0)
+        DgvUsuarios.Refresh()
+
+        If TxtBuscarUsuario.Text = "" Then
+            MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Categorias")
+            LlenarTabla()
+        End If
+    End Sub
+
+    Private Function FiltrarUsuario(ByVal buscar As String) As DataSet
+        Dim usuarioDAO As New Tbl_UsuariosDAO()
+        Dim ds As New DataSet
+        Select Case CmbFiltrarUsuarios.SelectedIndex
+            Case 0
+                ds = usuarioDAO.usuarioNombreCompleto(buscar)
+        End Select
+        Return ds
+    End Function
 
     'Botón para limpiar los campos del formulario
     Private Sub BtnLimpiarU_Click(sender As Object, e As EventArgs) Handles BtnLimpiarU.Click

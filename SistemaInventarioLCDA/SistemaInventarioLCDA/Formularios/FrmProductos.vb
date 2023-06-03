@@ -451,6 +451,7 @@
         End If
     End Sub
 
+
     'Botón para buscar producto de acuerdo a la opcion seleccionada por el usuario
     Private Sub BtnBuscarProducto_Click(sender As Object, e As EventArgs) Handles BtnBuscarProducto.Click
         If TxtBuscar.Text = "" Then
