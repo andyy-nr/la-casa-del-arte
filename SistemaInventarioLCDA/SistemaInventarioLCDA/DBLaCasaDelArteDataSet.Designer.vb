@@ -4126,7 +4126,7 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         Private columntipo_movimiento As Global.System.Data.DataColumn
         
-        Private columnInventario_Final As Global.System.Data.DataColumn
+        Private columninventario_final As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -4221,9 +4221,9 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Inventario_FinalColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property inventario_finalColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnInventario_Final
+                Return Me.columninventario_final
             End Get
         End Property
         
@@ -4264,9 +4264,9 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRptMovimientosRow(ByVal fecha_movimiento As Date, ByVal descripcionMov As String, ByVal nombreProd As String, ByVal unidadesProd As Integer, ByVal precio_unitario As Double, ByVal tipo_movimiento As Boolean, ByVal Inventario_Final As Integer) As RptMovimientosRow
+        Public Overloads Function AddRptMovimientosRow(ByVal fecha_movimiento As Date, ByVal descripcionMov As String, ByVal nombreProd As String, ByVal unidadesProd As Integer, ByVal precio_unitario As Double, ByVal tipo_movimiento As String, ByVal inventario_final As Integer) As RptMovimientosRow
             Dim rowRptMovimientosRow As RptMovimientosRow = CType(Me.NewRow,RptMovimientosRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, fecha_movimiento, descripcionMov, nombreProd, unidadesProd, precio_unitario, tipo_movimiento, Inventario_Final}
+            Dim columnValuesArray() As Object = New Object() {Nothing, fecha_movimiento, descripcionMov, nombreProd, unidadesProd, precio_unitario, tipo_movimiento, inventario_final}
             rowRptMovimientosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRptMovimientosRow)
             Return rowRptMovimientosRow
@@ -4302,7 +4302,7 @@ Partial Public Class DBLaCasaDelArteDataSet
             Me.columnunidadesProd = MyBase.Columns("unidadesProd")
             Me.columnprecio_unitario = MyBase.Columns("precio_unitario")
             Me.columntipo_movimiento = MyBase.Columns("tipo_movimiento")
-            Me.columnInventario_Final = MyBase.Columns("Inventario_Final")
+            Me.columninventario_final = MyBase.Columns("inventario_final")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4320,10 +4320,10 @@ Partial Public Class DBLaCasaDelArteDataSet
             MyBase.Columns.Add(Me.columnunidadesProd)
             Me.columnprecio_unitario = New Global.System.Data.DataColumn("precio_unitario", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnprecio_unitario)
-            Me.columntipo_movimiento = New Global.System.Data.DataColumn("tipo_movimiento", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            Me.columntipo_movimiento = New Global.System.Data.DataColumn("tipo_movimiento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntipo_movimiento)
-            Me.columnInventario_Final = New Global.System.Data.DataColumn("Inventario_Final", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnInventario_Final)
+            Me.columninventario_final = New Global.System.Data.DataColumn("inventario_final", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columninventario_final)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_movimiento}, true))
             Me.columnid_movimiento.AutoIncrement = true
             Me.columnid_movimiento.AutoIncrementSeed = -1
@@ -4337,9 +4337,9 @@ Partial Public Class DBLaCasaDelArteDataSet
             Me.columnnombreProd.MaxLength = 50
             Me.columnunidadesProd.AllowDBNull = false
             Me.columnprecio_unitario.AllowDBNull = false
-            Me.columntipo_movimiento.AllowDBNull = false
-            Me.columnInventario_Final.ReadOnly = true
-            Me.columnInventario_Final.Caption = "Column1"
+            Me.columntipo_movimiento.ReadOnly = true
+            Me.columntipo_movimiento.MaxLength = 7
+            Me.columninventario_final.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6103,9 +6103,13 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property tipo_movimiento() As Boolean
+        Public Property tipo_movimiento() As String
             Get
-                Return CType(Me(Me.tableRptMovimientos.tipo_movimientoColumn),Boolean)
+                Try 
+                    Return CType(Me(Me.tableRptMovimientos.tipo_movimientoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'tipo_movimiento' de la tabla 'RptMovimientos' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableRptMovimientos.tipo_movimientoColumn) = value
@@ -6114,17 +6118,17 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Inventario_Final() As Integer
+        Public Property inventario_final() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableRptMovimientos.Inventario_FinalColumn),Integer)
+                    Return CType(Me(Me.tableRptMovimientos.inventario_finalColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Inventario_Final' de la tabla 'RptMovimientos' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'inventario_final' de la tabla 'RptMovimientos' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRptMovimientos.Inventario_FinalColumn) = value
+                Me(Me.tableRptMovimientos.inventario_finalColumn) = value
             End Set
         End Property
         
@@ -6142,14 +6146,26 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsInventario_FinalNull() As Boolean
-            Return Me.IsNull(Me.tableRptMovimientos.Inventario_FinalColumn)
+        Public Function Istipo_movimientoNull() As Boolean
+            Return Me.IsNull(Me.tableRptMovimientos.tipo_movimientoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetInventario_FinalNull()
-            Me(Me.tableRptMovimientos.Inventario_FinalColumn) = Global.System.Convert.DBNull
+        Public Sub Settipo_movimientoNull()
+            Me(Me.tableRptMovimientos.tipo_movimientoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isinventario_finalNull() As Boolean
+            Return Me.IsNull(Me.tableRptMovimientos.inventario_finalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setinventario_finalNull()
+            Me(Me.tableRptMovimientos.inventario_finalColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -10768,7 +10784,7 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             tableMapping.ColumnMappings.Add("unidadesProd", "unidadesProd")
             tableMapping.ColumnMappings.Add("precio_unitario", "precio_unitario")
             tableMapping.ColumnMappings.Add("tipo_movimiento", "tipo_movimiento")
-            tableMapping.ColumnMappings.Add("Column1", "Inventario_Final")
+            tableMapping.ColumnMappings.Add("inventario_final", "inventario_final")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -10786,11 +10802,13 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Movimiento.id_movimiento, Movimiento.fecha_movimiento, Movimiento.descripc"& _ 
-                "ionMov, Producto.nombreProd, Producto.unidadesProd, Producto.precio_unitario, Mo"& _ 
-                "vimiento.tipo_movimiento, Producto.unidadesProd - Movimiento.cantidadProd "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
-                "     Movimiento INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Producto ON Movimiento.id_producto"& _ 
-                " = Producto.id_producto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Usuario ON Movimiento.usua"& _ 
-                "rio_id = Usuario.usuario_id"
+                "ionMov, Producto.nombreProd, Producto.unidadesProd, Producto.precio_unitario, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "                  CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END"& _ 
+                " AS tipo_movimiento, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  CASE WHEN tipo_movimiento = 1 THEN Prod"& _ 
+                "ucto.unidadesProd + Movimiento.cantidadProd ELSE Producto.unidadesProd - Movimie"& _ 
+                "nto.cantidadProd END AS inventario_final"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Movimiento INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
+                "            Producto ON Movimiento.id_producto = Producto.id_producto INNER JOIN"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Usuario ON Movimiento.usuario_id = Usuario.usuario_id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

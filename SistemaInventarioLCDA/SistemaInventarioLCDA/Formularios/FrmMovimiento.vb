@@ -115,7 +115,7 @@ Public Class FrmMovimiento
     Dim prod As New Tbl_MovimientosDAO
 
     Private Sub CbProductos_TextChanged(sender As Object, e As EventArgs) Handles CbProductos.TextChanged
-        If CbProductos.Text <> "Seleccione el producto..." Then
+        If CbProductos.Text <> "Seleccione el producto..." And CbProductos.Text <> "" Then
             Dim Id_prod As String = CbProductos.SelectedValue.ToString()
 
             Dim dt As New DataTable
@@ -179,27 +179,27 @@ Public Class FrmMovimiento
         Return resp
     End Function
 
-    Private Sub restarInventario()
-        Dim productoDAO As New Tbl_ProductosDAO()
-        Dim resp As Boolean = False
-        If (CbTipoMovimiento.Text = "Salida") Then
-            resp = productoDAO.restarUnidades(Integer.Parse(TxtCantidadUP.Text), CbProductos.SelectedValue)
-            If Not resp Then
-                MsgBox("Error al restar la cantidad de producto al inventario", MsgBoxStyle.Exclamation, "Advertencia")
-            End If
-        End If
+    'Private Sub restarInventario()
+    '    Dim productoDAO As New Tbl_ProductosDAO()
+    '    Dim resp As Boolean = False
+    '    If (CbTipoMovimiento.Text = "Salida") Then
+    '        resp = productoDAO.restarUnidades(Integer.Parse(TxtCantidadUP.Text), CbProductos.SelectedValue)
+    '        If Not resp Then
+    '            MsgBox("Error al restar la cantidad de producto al inventario", MsgBoxStyle.Exclamation, "Advertencia")
+    '        End If
+    '    End If
 
-    End Sub
+    'End Sub
 
-    Public Sub sumarInventario()
-        If (CbTipoMovimiento.Text = "Entrada") Then
-            Dim productoDAO As New Tbl_ProductosDAO()
-            Dim resp = productoDAO.sumarUnidades(Integer.Parse(TxtCantidadUP.Text), CbProductos.SelectedValue)
-            If Not resp Then
-                MsgBox("Error al sumar la cantidad de producto al inventario", MsgBoxStyle.Exclamation, "Advertencia")
-            End If
-        End If
-    End Sub
+    'Public Sub sumarInventario()
+    '    If (CbTipoMovimiento.Text = "Entrada") Then
+    '        Dim productoDAO As New Tbl_ProductosDAO()
+    '        Dim resp = productoDAO.sumarUnidades(Integer.Parse(TxtCantidadUP.Text), CbProductos.SelectedValue)
+    '        If Not resp Then
+    '            MsgBox("Error al sumar la cantidad de producto al inventario", MsgBoxStyle.Exclamation, "Advertencia")
+    '        End If
+    '    End If
+    'End Sub
 
     Private Sub BtnLimpiarE_Click(sender As Object, e As EventArgs) Handles BtnLimpiarE.Click
         Limpiar()
@@ -253,8 +253,8 @@ Public Class FrmMovimiento
         movimiento.DescripcionMov = validarCamposNull(movimiento.DescripcionMov, TxtDesMovimiento)
         Dim resp = movimientoDAO.agregarMovimiento(movimiento)
         If (resp) Then
-            sumarInventario()
-            restarInventario()
+            'sumarInventario()
+            'restarInventario()
             MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Roles")
             LlenarTabla()
             Limpiar()
