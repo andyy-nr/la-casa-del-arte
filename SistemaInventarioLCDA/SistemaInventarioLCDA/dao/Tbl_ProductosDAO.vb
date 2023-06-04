@@ -6,7 +6,7 @@ Public Class Tbl_ProductosDAO
         Dim ds As New DataSet
 
         Try
-            Dim tsql As String = "SELECT Producto.id_producto As N'CÓDIGO', Categoría.nombreCatg As N'CATEGORÍA', Marca.nombreMarca As N'MARCA', Producto.nombreProd As N'PRODUCTO', Producto.precio_unitario As N'PRECIO', Producto.descripcionProd As N'DESCRIPCIÓN', Producto.unidadesProd As N'UNIDADES'
+            Dim tsql As String = "SELECT Producto.id_producto As N'CÓDIGO', Categoría.nombreCatg As N'CATEGORÍA', Marca.nombreMarca As N'MARCA', Producto.nombreProd As N'PRODUCTO', Producto.precio_unitario As N'PRECIO', Producto.descripcionProd As N'DESCRIPCIÓN', Producto.inventario_inicial As N'INVENTARIO INICIAL', Producto.cantidad_disponible As N'UNIDADES DISPONIBLES'
                                     FROM     Producto INNER JOIN
                                         Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN
                                         Marca ON Producto.id_marca = Marca.id_marca"
@@ -25,8 +25,8 @@ Public Class Tbl_ProductosDAO
         Dim resultado As Boolean = False
 
         Try
-            Dim tsql As String = "INSERT INTO Producto(id_producto, id_categoria, id_marca, nombreProd, precio_unitario, descripcionProd, unidadesProd) 
-                                  VALUES(@id_producto, @id_categoria, @id_marca, @nombreProd, @precio_unitario, @descripcionProd, @unidadesProd)"
+            Dim tsql As String = "INSERT INTO Producto(id_producto, id_categoria, id_marca, nombreProd, precio_unitario, descripcionProd, inventario_inicial, cantidad_disponible) 
+                                    VALUES(@id_producto, @id_categoria, @id_marca, @nombreProd, @precio_unitario, @descripcionProd, @inventario_inicial, @cantidad_disponible)"
             Dim conn As New SqlConnection(strConn)
             Dim cmd As New SqlCommand()
             cmd.CommandType = CommandType.Text
@@ -37,7 +37,8 @@ Public Class Tbl_ProductosDAO
             cmd.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
             cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
             cmd.Parameters.AddWithValue("@descripcionProd", producto.DescripcionProd)
-            cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
+            cmd.Parameters.AddWithValue("@inventario_inicial", producto.Inventario_inicial)
+            cmd.Parameters.AddWithValue("@cantidad_disponible", producto.Cantidad_disponible)
             cmd.Connection = conn
             cmd.Connection.Open()
             If (cmd.ExecuteNonQuery <> 0) Then
@@ -70,7 +71,8 @@ Public Class Tbl_ProductosDAO
                 producto.NombreProd = tbl.Rows(0).Item("nombreProd")
                 producto.Precio_unitario = tbl.Rows(0).Item("precio_unitario")
                 producto.DescripcionProd = tbl.Rows(0).Item("descripcionProd")
-                producto.UnidadesProd = tbl.Rows(0).Item("unidadesProd")
+                producto.Inventario_inicial = tbl.Rows(0).Item("inventario_inicial")
+                producto.Cantidad_disponible = tbl.Rows(0).Item("cantidad_disponible")
                 producto.Estado = tbl.Rows(0).Item("estado")
 
             End If
@@ -104,10 +106,9 @@ Public Class Tbl_ProductosDAO
 
     Public Function EditarProducto(ByVal producto As Tbl_Productos) As Boolean
         Dim resp As Boolean = False
-        Dim tsql As String = "Update Producto SET id_producto=@id_producto, 
-                                                  id_categoria=@id_categoria,id_marca=@id_marca, nombreProd=@nombreProd, precio_unitario=@precio_unitario, 
-                              descripcionProd=@descripcionProd, unidadesProd=@unidadesProd
-                              where id_producto = @id_producto"
+        Dim tsql As String = "Update Producto SET id_producto=@id_producto, id_categoria=@id_categoria,id_marca=@id_marca, nombreProd=@nombreProd, precio_unitario=@precio_unitario, 
+                                 descripcionProd=@descripcionProd, inventario_inicial=@inventario_inicial, cantidad_disponible=@cantidad_disponible
+                                    WHERE id_producto = @id_producto"
         Dim conn As New SqlConnection(strConn)
         conn.Open()
         Dim cmd As New SqlCommand(tsql, conn)
@@ -118,7 +119,8 @@ Public Class Tbl_ProductosDAO
         cmd.Parameters.AddWithValue("@nombreProd", producto.NombreProd)
         cmd.Parameters.AddWithValue("@precio_unitario", producto.Precio_unitario)
         cmd.Parameters.AddWithValue("@descripcionProd", producto.DescripcionProd)
-        cmd.Parameters.AddWithValue("@unidadesProd", producto.UnidadesProd)
+        cmd.Parameters.AddWithValue("@inventario_inicial", producto.Inventario_inicial)
+        cmd.Parameters.AddWithValue("@cantidad_disponible", producto.Cantidad_disponible)
 
 
         If (cmd.ExecuteNonQuery <> 0) Then
@@ -133,11 +135,11 @@ Public Class Tbl_ProductosDAO
     Public Function BuscarXNombre(ByVal nombreProducto As String) As DataSet
         Dim ds As New DataSet
         Try
-            Dim tsql As String = "SELECT Producto.id_producto As N'CÓDIGO', Categoría.nombreCatg As N'CATEGORÍA', Marca.nombreMarca As N'MARCA', Producto.nombreProd As N'PRODUCTO', Producto.precio_unitario As N'PRECIO', Producto.descripcionProd As N'DESCRIPCIÓN', Producto.unidadesProd As N'UNIDADES'
+            Dim tsql As String = "SELECT Producto.id_producto As N'CÓDIGO', Categoría.nombreCatg As N'CATEGORÍA', Marca.nombreMarca As N'MARCA', Producto.nombreProd As N'PRODUCTO', Producto.precio_unitario As N'PRECIO', Producto.descripcionProd As N'DESCRIPCIÓN', Producto.inventario_inicial As N'INVENTARIO INICIAL', Producto.cantidad_disponible As N'UNIDADES DISPONIBLES'
                                     FROM     Producto INNER JOIN
                                         Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN
                                         Marca ON Producto.id_marca = Marca.id_marca
-                                    WHERE nombreProd like @nombreProd"
+									WHERE nombreProd like @nombreProd"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@nombreProd", nombreProducto)
@@ -169,8 +171,7 @@ Public Class Tbl_ProductosDAO
         Dim resp As Boolean = False
         Try
 
-            Dim tsql As String = "UPDATE Producto
-                                     SET unidadesProd = unidadesProd - @cantidadProd where id_producto = @id_producto"
+            Dim tsql As String = "UPDATE Producto SET cantidad_disponible = cantidad_disponible - @cantidadProd WHERE id_producto = @id_producto"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)
@@ -193,8 +194,7 @@ Public Class Tbl_ProductosDAO
         Dim resp As Boolean = False
         Try
 
-            Dim tsql As String = "UPDATE Producto
-                                     SET unidadesProd = unidadesProd + @cantidadProd where id_producto = @id_producto"
+            Dim tsql As String = "UPDATE Producto SET cantidad_disponible = cantidad_disponible + @cantidadProd WHERE id_producto = @id_producto"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)

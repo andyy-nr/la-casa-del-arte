@@ -67,7 +67,8 @@
         DgvProductos.Columns(3).HeaderText = "PRODUCTO"
         DgvProductos.Columns(4).HeaderText = "PRECIO"
         DgvProductos.Columns(5).HeaderText = "DESCRIPCIÓN"
-        DgvProductos.Columns(6).HeaderText = "UNIDADES"
+        DgvProductos.Columns(6).HeaderText = "INVENTARIO INICIAL"
+        DgvProductos.Columns(7).HeaderText = "UNIDADES DISPONIBLES"
 
     End Sub
 
@@ -104,16 +105,17 @@
     'Función para limpiar los campos del formulario
     Private Sub Limpiar()
         TxtIdProd.Clear()
-        TxtIdProd.Enabled = True
-        TxtIdProd.Focus()
         CbCategoria.Text = "Seleccione la categoría..."
         CbMarca.Text = "Seleccione la marca..."
         TxtNombreProd.Clear()
         TxtPrecioU.Clear()
         TxtDescripcion.Clear()
-        TxtUnidadesProd.Clear()
-        BtnAgregarP.Enabled = True
+        TxtInventarioInit.Clear()
+        TxtCantidadDisp.Clear()
+        TxtInventarioInit.Enabled = True
+        TxtIdProd.Enabled = True
         TxtIdProd.Focus()
+        BtnAgregarP.Enabled = True
     End Sub
 
     'Función para cargar la información del formulario
@@ -134,15 +136,17 @@
 
         If (validarRegistros()) Then
             Dim fila As Integer = DgvProductos.CurrentRow.Index
+            BtnAgregarP.Enabled = False
             TxtIdProd.Enabled = False
+            TxtInventarioInit.Enabled = False
             TxtIdProd.Text = DgvProductos.Rows(fila).Cells(0).Value
             CbCategoria.Text = DgvProductos.Rows(fila).Cells(1).Value
             CbMarca.Text = DgvProductos.Rows(fila).Cells(2).Value
             TxtNombreProd.Text = DgvProductos.Rows(fila).Cells(3).Value
             TxtPrecioU.Text = DgvProductos.Rows(fila).Cells(4).Value
             TxtDescripcion.Text = DgvProductos.Rows(fila).Cells(5).Value
-            TxtUnidadesProd.Text = DgvProductos.Rows(fila).Cells(6).Value
-            BtnAgregarP.Enabled = False
+            TxtInventarioInit.Text = DgvProductos.Rows(fila).Cells(6).Value
+            TxtCantidadDisp.Text = DgvProductos.Rows(fila).Cells(7).Value
         End If
 
     End Sub
@@ -154,7 +158,7 @@
     Private Function validarCampos() As Boolean
         Dim camposLlenados = False
 
-        If (TxtIdProd.Text <> "" And TxtNombreProd.Text <> "" And CbCategoria.Text <> "Seleccione la categoría..." And CbMarca.Text <> "Seleccione la marca..." And TxtPrecioU.Text <> "" And TxtUnidadesProd.Text <> "") Then
+        If (TxtIdProd.Text <> "" And TxtNombreProd.Text <> "" And CbCategoria.Text <> "Seleccione la categoría..." And CbMarca.Text <> "Seleccione la marca..." And TxtPrecioU.Text <> "" And TxtInventarioInit.Text <> "" And TxtCantidadDisp.Text <> "") Then
             camposLlenados = True
         End If
 
@@ -182,6 +186,7 @@
         End If
     End Function
 
+
     'Función para validar que el DataGridView tenga datos
     Private Function validarRegistros() As Boolean
         Dim resp = False
@@ -196,6 +201,10 @@
         Return True
     End Function
 
+    'Función para asigarle el valor a la cantidad disponible del producto
+    Private Sub TxtInventarioInit_TextChanged(sender As Object, e As EventArgs) Handles TxtInventarioInit.TextChanged
+        TxtCantidadDisp.Text = TxtInventarioInit.Text.Trim()
+    End Sub
 
     'Botones CRUD (Create, Read, Update, Delete)
 
@@ -225,12 +234,14 @@
                 Exit Sub
             End If
 
-            If validarCantidad(TxtUnidadesProd) Then
-                producto.UnidadesProd = TxtUnidadesProd.Text.Trim()
+            If validarCantidad(TxtInventarioInit) Then
+                producto.Inventario_inicial = TxtInventarioInit.Text.Trim()
+                producto.Cantidad_disponible = TxtCantidadDisp.Text.Trim()
             Else
                 MsgBox("El valor ingresado es incorrecto.", MsgBoxStyle.Exclamation, "Advertencia")
-                TxtUnidadesProd.Clear()
-                TxtUnidadesProd.Focus()
+                TxtInventarioInit.Clear()
+                TxtCantidadDisp.Clear()
+                TxtInventarioInit.Focus()
                 Exit Sub
             End If
 
@@ -324,6 +335,8 @@
             producto.Id_marca = CbMarca.SelectedValue
             producto.NombreProd = TxtNombreProd.Text.Trim()
             producto.DescripcionProd = validarCamposNull(producto.DescripcionProd, TxtDescripcion)
+            producto.Inventario_inicial = TxtInventarioInit.Text.Trim()
+            producto.Cantidad_disponible = TxtCantidadDisp.Text.Trim()
 
             If validarCantidad(TxtPrecioU) Then
                 producto.Precio_unitario = TxtPrecioU.Text.Trim()
@@ -331,16 +344,6 @@
                 MsgBox("El valor ingresado es incorrecto.", MsgBoxStyle.Exclamation, "Advertencia")
                 TxtPrecioU.Clear()
                 TxtPrecioU.Focus()
-                Exit Sub
-            End If
-
-            If validarCantidad(TxtUnidadesProd) Then
-                producto.UnidadesProd = TxtUnidadesProd.Text.Trim()
-            Else
-                MsgBox("El valor ingresado es incorrecto.", MsgBoxStyle.Exclamation, "Advertencia")
-                TxtUnidadesProd.Clear()
-                TxtUnidadesProd.Focus()
-
                 Exit Sub
             End If
 
@@ -366,7 +369,7 @@
         DgvProductos.DataSource = tblProductos
         DgvProductos.Refresh()
         DiseñoTabla()
-        GbProductos.Text = "Productos guardados: " & DgvProductos.Rows.Count
+        GbProductos.Text = "Productos Almacenados: " & DgvProductos.Rows.Count
     End Sub
 
     'Funcion para crear la tabla aplicando método de LinkQ
@@ -380,7 +383,8 @@
         tbl.Columns.Add("nombreProd")
         tbl.Columns.Add("precio_unitario")
         tbl.Columns.Add("descripcionProd")
-        tbl.Columns.Add("unidadesProd")
+        tbl.Columns.Add("inventario_inicial")
+        tbl.Columns.Add("cantidad_disponible")
 
         For Each prod In query
             fila = tbl.NewRow
@@ -390,7 +394,8 @@
             fila("nombreProd") = prod.nombreProd
             fila("precio_unitario") = prod.precio_unitario
             fila("descripcionProd") = prod.descripcionProd
-            fila("unidadesProd") = prod.unidadesProd
+            fila("inventario_inicial") = prod.inventario_inicial
+            fila("cantidad_disponible") = prod.cantidad_disponible
             tbl.Rows.Add(fila)
 
         Next
@@ -414,26 +419,26 @@
 
         Dim campo As String = "prod.id_producto"
         Dim query = From prod In tblProductos
-                    Select prod.id_producto, prod.nombreCatg, prod.nombreMarca, prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+                    Select prod.id_producto, prod.nombreCatg, prod.nombreMarca, prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.inventario_inicial, prod.cantidad_disponible
 
         Select Case CmbFiltrarUsu.SelectedIndex
             Case 0
                 query = From prod In tblProductos Where prod.id_producto.Contains(dato)
                         Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
-                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.inventario_inicial, prod.cantidad_disponible
             Case 1
                 query = From prod In tblProductos Where prod.nombreProd Like dato
                         Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
-                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.inventario_inicial, prod.cantidad_disponible
             Case 2
                 query = From prod In tblProductos Where prod.nombreMarca Like dato
                         Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
-                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.inventario_inicial, prod.cantidad_disponible
 
             Case 3
                 query = From prod In tblProductos Where prod.nombreCatg Like dato
                         Select prod.id_producto, prod.nombreCatg, prod.nombreMarca,
-                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.unidadesProd
+                               prod.nombreProd, prod.precio_unitario, prod.descripcionProd, prod.inventario_inicial, prod.cantidad_disponible
 
         End Select
 
@@ -441,7 +446,7 @@
         DgvProductos.DataSource = tbl
         DiseñoTabla()
         DgvProductos.Refresh()
-        GbProductos.Text = "Productos almacenados: " & DgvProductos.Rows.Count
+        GbProductos.Text = "Productos Almacenados: " & DgvProductos.Rows.Count
     End Sub
 
     Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged

@@ -23,9 +23,9 @@ Partial Class FrmProductos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -43,7 +43,7 @@ Partial Class FrmProductos
         Me.BtnEditarP = New System.Windows.Forms.Button()
         Me.BtnLimpiarP = New System.Windows.Forms.Button()
         Me.GbDatosProd = New System.Windows.Forms.GroupBox()
-        Me.TxtUnidadesProd = New System.Windows.Forms.TextBox()
+        Me.TxtInventarioInit = New System.Windows.Forms.TextBox()
         Me.TxtPrecioU = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -59,6 +59,8 @@ Partial Class FrmProductos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.GbProductos = New System.Windows.Forms.GroupBox()
+        Me.TxtCantidadDisp = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,14 +235,14 @@ Partial Class FrmProductos
         Me.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvProductos.EnableHeadersVisualStyles = False
         Me.DgvProductos.GridColor = System.Drawing.Color.SaddleBrown
@@ -249,22 +251,22 @@ Partial Class FrmProductos
         Me.DgvProductos.Name = "DgvProductos"
         Me.DgvProductos.ReadOnly = True
         Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DgvProductos.RowHeadersVisible = False
         Me.DgvProductos.RowHeadersWidth = 51
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DgvProductos.RowTemplate.Height = 24
         Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvProductos.Size = New System.Drawing.Size(1642, 145)
@@ -363,7 +365,9 @@ Partial Class FrmProductos
         Me.GbDatosProd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GbDatosProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.GbDatosProd.Controls.Add(Me.TxtUnidadesProd)
+        Me.GbDatosProd.Controls.Add(Me.TxtCantidadDisp)
+        Me.GbDatosProd.Controls.Add(Me.Label6)
+        Me.GbDatosProd.Controls.Add(Me.TxtInventarioInit)
         Me.GbDatosProd.Controls.Add(Me.TxtPrecioU)
         Me.GbDatosProd.Controls.Add(Me.Label9)
         Me.GbDatosProd.Controls.Add(Me.Label7)
@@ -388,19 +392,19 @@ Partial Class FrmProductos
         Me.GbDatosProd.TabStop = False
         Me.GbDatosProd.Text = "Datos del Generales del Producto"
         '
-        'TxtUnidadesProd
+        'TxtInventarioInit
         '
-        Me.TxtUnidadesProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtUnidadesProd.Location = New System.Drawing.Point(921, 273)
-        Me.TxtUnidadesProd.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtUnidadesProd.Name = "TxtUnidadesProd"
-        Me.TxtUnidadesProd.Size = New System.Drawing.Size(130, 34)
-        Me.TxtUnidadesProd.TabIndex = 36
+        Me.TxtInventarioInit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtInventarioInit.Location = New System.Drawing.Point(921, 243)
+        Me.TxtInventarioInit.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtInventarioInit.Name = "TxtInventarioInit"
+        Me.TxtInventarioInit.Size = New System.Drawing.Size(130, 34)
+        Me.TxtInventarioInit.TabIndex = 36
         '
         'TxtPrecioU
         '
         Me.TxtPrecioU.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtPrecioU.Location = New System.Drawing.Point(921, 206)
+        Me.TxtPrecioU.Location = New System.Drawing.Point(921, 189)
         Me.TxtPrecioU.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPrecioU.Name = "TxtPrecioU"
         Me.TxtPrecioU.Size = New System.Drawing.Size(130, 34)
@@ -409,7 +413,7 @@ Partial Class FrmProductos
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(741, 275)
+        Me.Label9.Location = New System.Drawing.Point(741, 245)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(159, 28)
@@ -419,7 +423,7 @@ Partial Class FrmProductos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(754, 206)
+        Me.Label7.Location = New System.Drawing.Point(754, 189)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(146, 28)
@@ -516,7 +520,7 @@ Partial Class FrmProductos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(774, 80)
+        Me.Label5.Location = New System.Drawing.Point(774, 78)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(118, 28)
         Me.Label5.TabIndex = 5
@@ -525,7 +529,7 @@ Partial Class FrmProductos
         'TxtDescripcion
         '
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescripcion.Location = New System.Drawing.Point(921, 80)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(921, 78)
         Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TxtDescripcion.Multiline = True
         Me.TxtDescripcion.Name = "TxtDescripcion"
@@ -545,6 +549,26 @@ Partial Class FrmProductos
         Me.GbProductos.TabIndex = 41
         Me.GbProductos.TabStop = False
         Me.GbProductos.Text = "Productos Almacenados: 0"
+        '
+        'TxtCantidadDisp
+        '
+        Me.TxtCantidadDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCantidadDisp.Enabled = False
+        Me.TxtCantidadDisp.Location = New System.Drawing.Point(921, 300)
+        Me.TxtCantidadDisp.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCantidadDisp.Name = "TxtCantidadDisp"
+        Me.TxtCantidadDisp.Size = New System.Drawing.Size(130, 34)
+        Me.TxtCantidadDisp.TabIndex = 38
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(706, 302)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(194, 28)
+        Me.Label6.TabIndex = 37
+        Me.Label6.Text = "Cantidad Disponible:"
         '
         'FrmProductos
         '
@@ -588,7 +612,7 @@ Partial Class FrmProductos
     Friend WithEvents BtnEditarP As Button
     Friend WithEvents BtnLimpiarP As Button
     Friend WithEvents GbDatosProd As GroupBox
-    Friend WithEvents TxtUnidadesProd As TextBox
+    Friend WithEvents TxtInventarioInit As TextBox
     Friend WithEvents TxtPrecioU As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
@@ -607,4 +631,6 @@ Partial Class FrmProductos
     Friend WithEvents GbProductos As GroupBox
     Friend WithEvents BtnBuscarProducto As Button
     Friend WithEvents CmbFiltrarUsu As ComboBox
+    Friend WithEvents TxtCantidadDisp As TextBox
+    Friend WithEvents Label6 As Label
 End Class

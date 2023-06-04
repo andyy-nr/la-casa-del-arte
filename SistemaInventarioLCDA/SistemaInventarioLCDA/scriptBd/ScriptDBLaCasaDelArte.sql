@@ -2,8 +2,12 @@
  * ER/Studio Data Architect SQL Code Generation
  * Project :      Diagrama ER Casa del Arte.DM1
  *
- * Date Created : Friday, May 19, 2023 16:07:17
+ * Date Created : Sunday, June 04, 2023 09:25:23
  * Target DBMS : Microsoft SQL Server 2017
+ */
+
+/* 
+ * TABLE: Categoría 
  */
 
 /*
@@ -13,10 +17,6 @@ go
 USE DBLaCasaDelArte
 go
 */
-
-/* 
- * TABLE: Categoría 
- */
 
 CREATE TABLE Categoría(
     id_categoria       int              IDENTITY(1,1),
@@ -132,14 +132,15 @@ go
  */
 
 CREATE TABLE Producto(
-    id_producto        nchar(15)        NOT NULL,
-    id_categoria       int              NOT NULL,
-    id_marca           int              NOT NULL,
-    nombreProd         nvarchar(50)     NOT NULL,
-    precio_unitario    float            NOT NULL,
-    descripcionProd    nvarchar(100)    NULL,
-    unidadesProd       int              NOT NULL,
-    estado             bit              DEFAULT 1 NOT NULL,
+    id_producto            nchar(15)        NOT NULL,
+    id_categoria           int              NOT NULL,
+    id_marca               int              NOT NULL,
+    nombreProd             nvarchar(50)     NOT NULL,
+    precio_unitario        float            NOT NULL,
+    descripcionProd        nvarchar(100)    NULL,
+    inventario_inicial     int              NOT NULL,
+    cantidad_disponible    int              NOT NULL,
+    estado                 bit              DEFAULT 1 NOT NULL,
     CONSTRAINT PK1 PRIMARY KEY CLUSTERED (id_producto)
 )
 go

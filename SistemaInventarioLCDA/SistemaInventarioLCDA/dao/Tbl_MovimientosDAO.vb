@@ -29,7 +29,7 @@ Public Class Tbl_MovimientosDAO
         Dim dt As New DataTable
 
         Try
-            Dim tsql As String = "SELECT Producto.id_producto, Categoría.nombreCatg, Marca.nombreMarca, Producto.nombreProd, Producto.precio_unitario, Producto.descripcionProd, Producto.unidadesProd
+            Dim tsql As String = "SELECT Producto.id_producto, Categoría.nombreCatg, Marca.nombreMarca, Producto.nombreProd, Producto.precio_unitario, Producto.descripcionProd, Producto.inventario_inicial, Producto.cantidad_disponible
                                        FROM     Producto INNER JOIN
                                             Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN
                                             Marca ON Producto.id_marca = Marca.id_marca

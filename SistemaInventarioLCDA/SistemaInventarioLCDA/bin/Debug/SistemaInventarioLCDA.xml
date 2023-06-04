@@ -378,12 +378,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMovimientosDataTable">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptProductosDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptProductosDataTable">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMovimientosDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -438,12 +438,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMovimientosRow">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptProductosRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptProductosRow">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMovimientosRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -498,12 +498,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMovimientosRowChangeEvent">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptProductosRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptProductosRowChangeEvent">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMovimientosRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -558,12 +558,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.RptMovimientosTableAdapter">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.RptProductosTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.RptProductosTableAdapter">
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.RptMovimientosTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
