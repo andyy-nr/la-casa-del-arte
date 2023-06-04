@@ -206,7 +206,7 @@ Partial Class FrmUsuarios
         '
         'CmbFiltrarUsuarios
         '
-        Me.CmbFiltrarUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.CmbFiltrarUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.CmbFiltrarUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CmbFiltrarUsuarios.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.CmbFiltrarUsuarios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))

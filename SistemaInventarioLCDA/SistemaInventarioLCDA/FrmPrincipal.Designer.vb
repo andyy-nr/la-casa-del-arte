@@ -47,6 +47,9 @@ Partial Class FrmPrincipal
         Me.TmrHoraFecha = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanPrincipal = New System.Windows.Forms.Panel()
+        Me.PanReportes = New System.Windows.Forms.Panel()
+        Me.BtnRepoMov = New System.Windows.Forms.Button()
+        Me.BtnRepoProd = New System.Windows.Forms.Button()
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -59,6 +62,7 @@ Partial Class FrmPrincipal
         CType(Me.PibMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanPrincipal.SuspendLayout()
+        Me.PanReportes.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -161,7 +165,7 @@ Partial Class FrmPrincipal
         Me.BtnMarca.ForeColor = System.Drawing.Color.Black
         Me.BtnMarca.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.BtnMarcas
         Me.BtnMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMarca.Location = New System.Drawing.Point(0, 324)
+        Me.BtnMarca.Location = New System.Drawing.Point(0, 375)
         Me.BtnMarca.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnMarca.Name = "BtnMarca"
         Me.BtnMarca.Size = New System.Drawing.Size(293, 62)
@@ -204,7 +208,7 @@ Partial Class FrmPrincipal
         Me.BtnReportes.ForeColor = System.Drawing.Color.Black
         Me.BtnReportes.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
         Me.BtnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnReportes.Location = New System.Drawing.Point(0, 604)
+        Me.BtnReportes.Location = New System.Drawing.Point(0, 655)
         Me.BtnReportes.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnReportes.Name = "BtnReportes"
         Me.BtnReportes.Size = New System.Drawing.Size(293, 62)
@@ -225,7 +229,7 @@ Partial Class FrmPrincipal
         Me.BtnMovimientos.ForeColor = System.Drawing.Color.Black
         Me.BtnMovimientos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.movimientos
         Me.BtnMovimientos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMovimientos.Location = New System.Drawing.Point(3, 534)
+        Me.BtnMovimientos.Location = New System.Drawing.Point(3, 585)
         Me.BtnMovimientos.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnMovimientos.Name = "BtnMovimientos"
         Me.BtnMovimientos.Size = New System.Drawing.Size(293, 62)
@@ -246,7 +250,7 @@ Partial Class FrmPrincipal
         Me.BtnProductos.ForeColor = System.Drawing.Color.Black
         Me.BtnProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.productosman
         Me.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnProductos.Location = New System.Drawing.Point(0, 464)
+        Me.BtnProductos.Location = New System.Drawing.Point(0, 515)
         Me.BtnProductos.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnProductos.Name = "BtnProductos"
         Me.BtnProductos.Size = New System.Drawing.Size(293, 62)
@@ -267,7 +271,7 @@ Partial Class FrmPrincipal
         Me.BtnCategorias.ForeColor = System.Drawing.Color.Black
         Me.BtnCategorias.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.categoriaprod
         Me.BtnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCategorias.Location = New System.Drawing.Point(0, 394)
+        Me.BtnCategorias.Location = New System.Drawing.Point(0, 445)
         Me.BtnCategorias.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnCategorias.Name = "BtnCategorias"
         Me.BtnCategorias.Size = New System.Drawing.Size(293, 62)
@@ -288,7 +292,7 @@ Partial Class FrmPrincipal
         Me.BtnUsuarios.ForeColor = System.Drawing.Color.Black
         Me.BtnUsuarios.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.usuarios
         Me.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 254)
+        Me.BtnUsuarios.Location = New System.Drawing.Point(0, 305)
         Me.BtnUsuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnUsuarios.Name = "BtnUsuarios"
         Me.BtnUsuarios.Size = New System.Drawing.Size(293, 62)
@@ -309,7 +313,7 @@ Partial Class FrmPrincipal
         Me.BtnRoles.ForeColor = System.Drawing.Color.Black
         Me.BtnRoles.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.admin
         Me.BtnRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRoles.Location = New System.Drawing.Point(0, 184)
+        Me.BtnRoles.Location = New System.Drawing.Point(0, 235)
         Me.BtnRoles.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRoles.Name = "BtnRoles"
         Me.BtnRoles.Size = New System.Drawing.Size(293, 62)
@@ -388,6 +392,7 @@ Partial Class FrmPrincipal
         'PanPrincipal
         '
         Me.PanPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.PanPrincipal.Controls.Add(Me.PanReportes)
         Me.PanPrincipal.Controls.Add(Me.LblFecha)
         Me.PanPrincipal.Controls.Add(Me.LblHora)
         Me.PanPrincipal.Controls.Add(Me.PictureBox3)
@@ -397,6 +402,61 @@ Partial Class FrmPrincipal
         Me.PanPrincipal.Name = "PanPrincipal"
         Me.PanPrincipal.Size = New System.Drawing.Size(1062, 848)
         Me.PanPrincipal.TabIndex = 7
+        '
+        'PanReportes
+        '
+        Me.PanReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanReportes.Controls.Add(Me.BtnRepoMov)
+        Me.PanReportes.Controls.Add(Me.BtnRepoProd)
+        Me.PanReportes.Location = New System.Drawing.Point(3, 611)
+        Me.PanReportes.Name = "PanReportes"
+        Me.PanReportes.Size = New System.Drawing.Size(425, 150)
+        Me.PanReportes.TabIndex = 4
+        Me.PanReportes.Visible = False
+        '
+        'BtnRepoMov
+        '
+        Me.BtnRepoMov.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRepoMov.Enabled = False
+        Me.BtnRepoMov.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnRepoMov.FlatAppearance.BorderSize = 0
+        Me.BtnRepoMov.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnRepoMov.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnRepoMov.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRepoMov.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnRepoMov.ForeColor = System.Drawing.Color.Black
+        Me.BtnRepoMov.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnRepoMov.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRepoMov.Location = New System.Drawing.Point(4, 84)
+        Me.BtnRepoMov.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnRepoMov.Name = "BtnRepoMov"
+        Me.BtnRepoMov.Size = New System.Drawing.Size(419, 62)
+        Me.BtnRepoMov.TabIndex = 10
+        Me.BtnRepoMov.Text = "Reportes de Movimientos"
+        Me.BtnRepoMov.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnRepoMov.UseVisualStyleBackColor = True
+        '
+        'BtnRepoProd
+        '
+        Me.BtnRepoProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRepoProd.Enabled = False
+        Me.BtnRepoProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnRepoProd.FlatAppearance.BorderSize = 0
+        Me.BtnRepoProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnRepoProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnRepoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRepoProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnRepoProd.ForeColor = System.Drawing.Color.Black
+        Me.BtnRepoProd.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnRepoProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRepoProd.Location = New System.Drawing.Point(4, 4)
+        Me.BtnRepoProd.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnRepoProd.Name = "BtnRepoProd"
+        Me.BtnRepoProd.Size = New System.Drawing.Size(419, 62)
+        Me.BtnRepoProd.TabIndex = 9
+        Me.BtnRepoProd.Text = "Reportes de Productos"
+        Me.BtnRepoProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnRepoProd.UseVisualStyleBackColor = True
         '
         'LblFecha
         '
@@ -457,6 +517,7 @@ Partial Class FrmPrincipal
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanPrincipal.ResumeLayout(False)
         Me.PanPrincipal.PerformLayout()
+        Me.PanReportes.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -489,4 +550,7 @@ Partial Class FrmPrincipal
     Friend WithEvents LblHora As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PibMaximizar As PictureBox
+    Friend WithEvents PanReportes As Panel
+    Friend WithEvents BtnRepoMov As Button
+    Friend WithEvents BtnRepoProd As Button
 End Class

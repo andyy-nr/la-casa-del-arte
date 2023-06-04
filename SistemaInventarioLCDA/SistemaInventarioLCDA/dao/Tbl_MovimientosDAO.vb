@@ -12,7 +12,7 @@ Public Class Tbl_MovimientosDAO
                                          CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS N'TIPO MOVIMIENTO', 
                                          fecha_movimiento As N'FECHA', 
                                          cantidadProd AS 'CANTIDAD DE PRODUCTO', 
-                                         descripcionMov AS N'DESCRIPCION MOVIMIENTO' 
+                                         descripcionMov AS N'DESCRIPCIÓN MOVIMIENTO' 
                                          FROM Movimiento INNER JOIN Producto ON Producto.id_producto = Movimiento.id_producto 
                                          INNER JOIN Usuario ON Usuario.usuario_id = Movimiento.usuario_id"
             Dim conn As New SqlConnection(strConn)

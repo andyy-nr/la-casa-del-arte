@@ -50,7 +50,7 @@ Partial Class FrmReportes
         Me.PanSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanSuperior.Margin = New System.Windows.Forms.Padding(4)
         Me.PanSuperior.Name = "PanSuperior"
-        Me.PanSuperior.Size = New System.Drawing.Size(1067, 52)
+        Me.PanSuperior.Size = New System.Drawing.Size(1318, 52)
         Me.PanSuperior.TabIndex = 1
         '
         'PibMaximizar
@@ -58,7 +58,7 @@ Partial Class FrmReportes
         Me.PibMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
-        Me.PibMaximizar.Location = New System.Drawing.Point(974, 8)
+        Me.PibMaximizar.Location = New System.Drawing.Point(1225, 8)
         Me.PibMaximizar.Name = "PibMaximizar"
         Me.PibMaximizar.Size = New System.Drawing.Size(39, 36)
         Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -82,7 +82,7 @@ Partial Class FrmReportes
         Me.PibMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
-        Me.PibMinimizar.Location = New System.Drawing.Point(923, 3)
+        Me.PibMinimizar.Location = New System.Drawing.Point(1174, 3)
         Me.PibMinimizar.Name = "PibMinimizar"
         Me.PibMinimizar.Size = New System.Drawing.Size(45, 45)
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -95,7 +95,7 @@ Partial Class FrmReportes
         Me.PibCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
-        Me.PibCerrar.Location = New System.Drawing.Point(1019, 3)
+        Me.PibCerrar.Location = New System.Drawing.Point(1270, 3)
         Me.PibCerrar.Name = "PibCerrar"
         Me.PibCerrar.Size = New System.Drawing.Size(45, 45)
         Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -109,12 +109,12 @@ Partial Class FrmReportes
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Nirmala UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(231, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(350, 8)
+        Me.Label2.Location = New System.Drawing.Point(499, 8)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(367, 37)
+        Me.Label2.Size = New System.Drawing.Size(320, 37)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Reportes Entradas / Salidas"
+        Me.Label2.Text = "Reportes del Inventario"
         '
         'ReportViewer1
         '
@@ -122,14 +122,14 @@ Partial Class FrmReportes
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 52)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(1067, 675)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1318, 675)
         Me.ReportViewer1.TabIndex = 3
         '
         'FrmReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 727)
+        Me.ClientSize = New System.Drawing.Size(1318, 727)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

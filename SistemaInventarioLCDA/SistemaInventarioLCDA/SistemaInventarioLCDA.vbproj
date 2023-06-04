@@ -180,6 +180,7 @@
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="modulos\Modulo1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -203,7 +204,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="diseñosRpt\rptReporte.rdlc" />
+    <EmbeddedResource Include="diseñosRpt\rptProductos.rdlc" />
+    <EmbeddedResource Include="diseñosRpt\rptMovimientos.rdlc" />
     <EmbeddedResource Include="formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +371,7 @@
     <None Include="Resources\PibPermiso.png" />
     <None Include="Resources\BtnPermiso.png" />
     <None Include="Resources\btnMaximizar.png" />
+    <Content Include="scriptBd\ScriptDBLaCasaDelArte.sql" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -90,7 +90,7 @@ Public Class FrmMovimiento
         CbProductos.DataSource = ds.Tables(0)
         CbProductos.DisplayMember = "PRODUCTO" 'Nombre del alias
         CbProductos.ValueMember = "CÓDIGO" 'Nombre del alias
-        CbProductos.Text = "Seleccione el producto"
+        CbProductos.Text = "Seleccione el producto..."
     End Sub
 
     'Función para cargar la información del formulario

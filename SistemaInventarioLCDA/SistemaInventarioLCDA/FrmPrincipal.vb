@@ -53,6 +53,8 @@
         BtnCategorias.Enabled = False
         BtnMovimientos.Enabled = False
         BtnReportes.Enabled = False
+        BtnRepoProd.Enabled = False
+        BtnRepoMov.Enabled = False
     End Sub
 
     Public Sub cargarPermisos()
@@ -63,21 +65,22 @@
             'Habilitar o deshabilitar botones de acuerdo a los permisos de los usuarios
             For Each per In permisos
                 Select Case per
-                    Case 67
+                    Case 1
                         BtnUsuarios.Enabled = True
-                    Case 68
+                    Case 2
                         BtnRoles.Enabled = True
-                    Case 69
+                    Case 3
                         BtnProductos.Enabled = True
-                    Case 70
+                    Case 4
                         BtnMarca.Enabled = True
-                    Case 71
+                    Case 5
                         BtnCategorias.Enabled = True
-                    Case 72
+                    Case 6
                         BtnMovimientos.Enabled = True
-                    Case 73
+                    Case 7
                         BtnReportes.Enabled = True
-
+                        BtnRepoProd.Enabled = True
+                        BtnRepoMov.Enabled = True
                 End Select
             Next
             resp = True
@@ -145,7 +148,13 @@
     End Sub
 
     Private Sub BtnReportes_Click(sender As Object, e As EventArgs) Handles BtnReportes.Click
-        FrmReportes.Show()
+
+        If PanReportes.Visible = False Then
+            PanReportes.Visible = True
+        Else
+            PanReportes.Visible = False
+        End If
+
     End Sub
 
     Private Sub BtnCategorias_Click(sender As Object, e As EventArgs) Handles BtnCategorias.Click
@@ -170,18 +179,30 @@
         FrmMovimiento.Show()
     End Sub
 
+    Private Sub BtnRepoProd_Click(sender As Object, e As EventArgs) Handles BtnRepoProd.Click
+        Dim tbl As New DataTable
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptProductosTableAdapter
+
+        tbl = reporte.GetData
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptProductos.rdlc")
+    End Sub
+
+    Private Sub BtnRepoMov_Click(sender As Object, e As EventArgs) Handles BtnRepoMov.Click
+        Dim tbl As New DataTable
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptMovimientosTableAdapter
+
+        tbl = reporte.GetData
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptMovimientos.rdlc")
+    End Sub
+
     Private Sub PictureBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox2.MouseClick
         MsgBox("Nombre Usuario: " & UsuarioSistema.NombreCompleto & "Rol del Usuario: " & UsuarioSistema.NombreRol, MsgBoxStyle.Information, "Principal")
 
         For Each per In UsuarioSistema.ListaPermisos
             MsgBox("Id Permisos" & per, MsgBoxStyle.Critical, "Usuario")
-        Next
+    Next
 
         cargarPermisos()
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
     End Sub
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click

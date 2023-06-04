@@ -1,8 +1,10 @@
 ﻿Public Class FrmReportes
     Private Sub FrmReportes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Ajustar tamaño del formulario a la pantalla.
+        Size = Screen.PrimaryScreen.WorkingArea.Size
+        Location = Screen.PrimaryScreen.WorkingArea.Location
         Me.ReportViewer1.RefreshReport()
     End Sub
-
 
 
     'Movimientos de Ventana.
@@ -23,15 +25,6 @@
     Private Sub PanSuperior_MouseUp(sender As Object, e As MouseEventArgs) Handles PanSuperior.MouseUp
         Arrastre = False
     End Sub
-
-
-
-    'Ajustar tamaño del formulario a la pantalla.
-    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Size = Screen.PrimaryScreen.WorkingArea.Size
-        Location = Screen.PrimaryScreen.WorkingArea.Location
-    End Sub
-
 
 
     'Botones
