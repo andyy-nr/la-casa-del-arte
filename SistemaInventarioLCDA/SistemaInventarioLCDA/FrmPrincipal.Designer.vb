@@ -48,6 +48,7 @@ Partial Class FrmPrincipal
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanPrincipal = New System.Windows.Forms.Panel()
         Me.PanReportes = New System.Windows.Forms.Panel()
+        Me.BtnReporteMarcasProd = New System.Windows.Forms.Button()
         Me.BtnRepoMov = New System.Windows.Forms.Button()
         Me.BtnRepoProd = New System.Windows.Forms.Button()
         Me.LblFecha = New System.Windows.Forms.Label()
@@ -406,13 +407,36 @@ Partial Class FrmPrincipal
         'PanReportes
         '
         Me.PanReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanReportes.Controls.Add(Me.BtnReporteMarcasProd)
         Me.PanReportes.Controls.Add(Me.BtnRepoMov)
         Me.PanReportes.Controls.Add(Me.BtnRepoProd)
-        Me.PanReportes.Location = New System.Drawing.Point(3, 611)
+        Me.PanReportes.Location = New System.Drawing.Point(3, 515)
         Me.PanReportes.Name = "PanReportes"
-        Me.PanReportes.Size = New System.Drawing.Size(425, 150)
+        Me.PanReportes.Size = New System.Drawing.Size(525, 246)
         Me.PanReportes.TabIndex = 4
         Me.PanReportes.Visible = False
+        '
+        'BtnReporteMarcasProd
+        '
+        Me.BtnReporteMarcasProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnReporteMarcasProd.Enabled = False
+        Me.BtnReporteMarcasProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnReporteMarcasProd.FlatAppearance.BorderSize = 0
+        Me.BtnReporteMarcasProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnReporteMarcasProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnReporteMarcasProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnReporteMarcasProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnReporteMarcasProd.ForeColor = System.Drawing.Color.Black
+        Me.BtnReporteMarcasProd.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnReporteMarcasProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnReporteMarcasProd.Location = New System.Drawing.Point(4, 167)
+        Me.BtnReporteMarcasProd.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnReporteMarcasProd.Name = "BtnReporteMarcasProd"
+        Me.BtnReporteMarcasProd.Size = New System.Drawing.Size(517, 62)
+        Me.BtnReporteMarcasProd.TabIndex = 11
+        Me.BtnReporteMarcasProd.Text = "Reportes de Marcas con más Productos"
+        Me.BtnReporteMarcasProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnReporteMarcasProd.UseVisualStyleBackColor = True
         '
         'BtnRepoMov
         '
@@ -430,7 +454,7 @@ Partial Class FrmPrincipal
         Me.BtnRepoMov.Location = New System.Drawing.Point(4, 84)
         Me.BtnRepoMov.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRepoMov.Name = "BtnRepoMov"
-        Me.BtnRepoMov.Size = New System.Drawing.Size(419, 62)
+        Me.BtnRepoMov.Size = New System.Drawing.Size(517, 62)
         Me.BtnRepoMov.TabIndex = 10
         Me.BtnRepoMov.Text = "Reportes de Movimientos"
         Me.BtnRepoMov.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -452,7 +476,7 @@ Partial Class FrmPrincipal
         Me.BtnRepoProd.Location = New System.Drawing.Point(4, 4)
         Me.BtnRepoProd.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRepoProd.Name = "BtnRepoProd"
-        Me.BtnRepoProd.Size = New System.Drawing.Size(419, 62)
+        Me.BtnRepoProd.Size = New System.Drawing.Size(517, 62)
         Me.BtnRepoProd.TabIndex = 9
         Me.BtnRepoProd.Text = "Reportes de Productos"
         Me.BtnRepoProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -555,4 +579,5 @@ Partial Class FrmPrincipal
     Friend WithEvents PanReportes As Panel
     Friend WithEvents BtnRepoMov As Button
     Friend WithEvents BtnRepoProd As Button
+    Friend WithEvents BtnReporteMarcasProd As Button
 End Class
