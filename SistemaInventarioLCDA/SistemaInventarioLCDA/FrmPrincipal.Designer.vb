@@ -48,13 +48,14 @@ Partial Class FrmPrincipal
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanPrincipal = New System.Windows.Forms.Panel()
         Me.PanReportes = New System.Windows.Forms.Panel()
+        Me.BtnRptMarcasMinProd = New System.Windows.Forms.Button()
         Me.BtnReporteMarcasProd = New System.Windows.Forms.Button()
         Me.BtnRepoMov = New System.Windows.Forms.Button()
         Me.BtnRepoProd = New System.Windows.Forms.Button()
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.BtnRptMarcasMinProd = New System.Windows.Forms.Button()
+        Me.BtnPreciosAltosBajos = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +88,7 @@ Partial Class FrmPrincipal
         Me.PibMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibMaximizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.btnMaximizar
         Me.PibMaximizar.Location = New System.Drawing.Point(946, 6)
-        Me.PibMaximizar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PibMaximizar.Margin = New System.Windows.Forms.Padding(2)
         Me.PibMaximizar.Name = "PibMaximizar"
         Me.PibMaximizar.Size = New System.Drawing.Size(29, 29)
         Me.PibMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -101,7 +102,7 @@ Partial Class FrmPrincipal
         Me.PibMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibMinimizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.minimizarBTN
         Me.PibMinimizar.Location = New System.Drawing.Point(908, 3)
-        Me.PibMinimizar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PibMinimizar.Margin = New System.Windows.Forms.Padding(2)
         Me.PibMinimizar.Name = "PibMinimizar"
         Me.PibMinimizar.Size = New System.Drawing.Size(34, 37)
         Me.PibMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -115,7 +116,7 @@ Partial Class FrmPrincipal
         Me.PibCerrar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PibCerrar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.cerrarBTN
         Me.PibCerrar.Location = New System.Drawing.Point(980, 2)
-        Me.PibCerrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PibCerrar.Margin = New System.Windows.Forms.Padding(2)
         Me.PibCerrar.Name = "PibCerrar"
         Me.PibCerrar.Size = New System.Drawing.Size(34, 37)
         Me.PibCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -325,7 +326,7 @@ Partial Class FrmPrincipal
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(220, 144)
         Me.Panel1.TabIndex = 10
@@ -400,16 +401,38 @@ Partial Class FrmPrincipal
         'PanReportes
         '
         Me.PanReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanReportes.Controls.Add(Me.BtnPreciosAltosBajos)
         Me.PanReportes.Controls.Add(Me.BtnRptMarcasMinProd)
         Me.PanReportes.Controls.Add(Me.BtnReporteMarcasProd)
         Me.PanReportes.Controls.Add(Me.BtnRepoMov)
         Me.PanReportes.Controls.Add(Me.BtnRepoProd)
-        Me.PanReportes.Location = New System.Drawing.Point(2, 354)
-        Me.PanReportes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PanReportes.Location = New System.Drawing.Point(2, 337)
+        Me.PanReportes.Margin = New System.Windows.Forms.Padding(2)
         Me.PanReportes.Name = "PanReportes"
-        Me.PanReportes.Size = New System.Drawing.Size(394, 264)
+        Me.PanReportes.Size = New System.Drawing.Size(394, 281)
         Me.PanReportes.TabIndex = 4
         Me.PanReportes.Visible = False
+        '
+        'BtnRptMarcasMinProd
+        '
+        Me.BtnRptMarcasMinProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRptMarcasMinProd.Enabled = False
+        Me.BtnRptMarcasMinProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnRptMarcasMinProd.FlatAppearance.BorderSize = 0
+        Me.BtnRptMarcasMinProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnRptMarcasMinProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnRptMarcasMinProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRptMarcasMinProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnRptMarcasMinProd.ForeColor = System.Drawing.Color.Black
+        Me.BtnRptMarcasMinProd.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnRptMarcasMinProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRptMarcasMinProd.Location = New System.Drawing.Point(3, 162)
+        Me.BtnRptMarcasMinProd.Name = "BtnRptMarcasMinProd"
+        Me.BtnRptMarcasMinProd.Size = New System.Drawing.Size(388, 50)
+        Me.BtnRptMarcasMinProd.TabIndex = 12
+        Me.BtnRptMarcasMinProd.Text = "Reportes de Marcas con menos Productos"
+        Me.BtnRptMarcasMinProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnRptMarcasMinProd.UseVisualStyleBackColor = True
         '
         'BtnReporteMarcasProd
         '
@@ -424,7 +447,7 @@ Partial Class FrmPrincipal
         Me.BtnReporteMarcasProd.ForeColor = System.Drawing.Color.Black
         Me.BtnReporteMarcasProd.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
         Me.BtnReporteMarcasProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnReporteMarcasProd.Location = New System.Drawing.Point(3, 136)
+        Me.BtnReporteMarcasProd.Location = New System.Drawing.Point(3, 106)
         Me.BtnReporteMarcasProd.Name = "BtnReporteMarcasProd"
         Me.BtnReporteMarcasProd.Size = New System.Drawing.Size(388, 50)
         Me.BtnReporteMarcasProd.TabIndex = 11
@@ -445,7 +468,7 @@ Partial Class FrmPrincipal
         Me.BtnRepoMov.ForeColor = System.Drawing.Color.Black
         Me.BtnRepoMov.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
         Me.BtnRepoMov.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRepoMov.Location = New System.Drawing.Point(3, 68)
+        Me.BtnRepoMov.Location = New System.Drawing.Point(3, 50)
         Me.BtnRepoMov.Name = "BtnRepoMov"
         Me.BtnRepoMov.Size = New System.Drawing.Size(388, 50)
         Me.BtnRepoMov.TabIndex = 10
@@ -511,26 +534,26 @@ Partial Class FrmPrincipal
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
-        'BtnRptMarcasMinProd
+        'BtnPreciosAltosBajos
         '
-        Me.BtnRptMarcasMinProd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRptMarcasMinProd.Enabled = False
-        Me.BtnRptMarcasMinProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnRptMarcasMinProd.FlatAppearance.BorderSize = 0
-        Me.BtnRptMarcasMinProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.BtnRptMarcasMinProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
-        Me.BtnRptMarcasMinProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRptMarcasMinProd.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnRptMarcasMinProd.ForeColor = System.Drawing.Color.Black
-        Me.BtnRptMarcasMinProd.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
-        Me.BtnRptMarcasMinProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRptMarcasMinProd.Location = New System.Drawing.Point(3, 185)
-        Me.BtnRptMarcasMinProd.Name = "BtnRptMarcasMinProd"
-        Me.BtnRptMarcasMinProd.Size = New System.Drawing.Size(388, 50)
-        Me.BtnRptMarcasMinProd.TabIndex = 12
-        Me.BtnRptMarcasMinProd.Text = "Reportes de Marcas con menos Productos"
-        Me.BtnRptMarcasMinProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnRptMarcasMinProd.UseVisualStyleBackColor = True
+        Me.BtnPreciosAltosBajos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnPreciosAltosBajos.Enabled = False
+        Me.BtnPreciosAltosBajos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnPreciosAltosBajos.FlatAppearance.BorderSize = 0
+        Me.BtnPreciosAltosBajos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnPreciosAltosBajos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnPreciosAltosBajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPreciosAltosBajos.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnPreciosAltosBajos.ForeColor = System.Drawing.Color.Black
+        Me.BtnPreciosAltosBajos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnPreciosAltosBajos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnPreciosAltosBajos.Location = New System.Drawing.Point(3, 211)
+        Me.BtnPreciosAltosBajos.Name = "BtnPreciosAltosBajos"
+        Me.BtnPreciosAltosBajos.Size = New System.Drawing.Size(388, 50)
+        Me.BtnPreciosAltosBajos.TabIndex = 13
+        Me.BtnPreciosAltosBajos.Text = "Reportes de Precios Altos a Bajos"
+        Me.BtnPreciosAltosBajos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnPreciosAltosBajos.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -541,7 +564,7 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.PanMenu)
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sistema de Inventario La Casa del Arte"
@@ -595,4 +618,5 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnRepoProd As Button
     Friend WithEvents BtnReporteMarcasProd As Button
     Friend WithEvents BtnRptMarcasMinProd As Button
+    Friend WithEvents BtnPreciosAltosBajos As Button
 End Class

@@ -83,6 +83,7 @@
                         BtnRepoMov.Enabled = True
                         BtnReporteMarcasProd.Enabled = True
                         BtnRptMarcasMinProd.Enabled = True
+                        BtnPreciosAltosBajos.Enabled = True
                 End Select
             Next
             resp = True
@@ -221,6 +222,14 @@
 
         tbl = reporte.GetData
         VerReporte(tbl, "DataSet1", "diseñosRpt\rptMarcasConMenosProductos.rdlc")
+    End Sub
+
+    Private Sub BtnPreciosAltosBajos_Click(sender As Object, e As EventArgs) Handles BtnPreciosAltosBajos.Click
+        Dim tbl As New DataTable
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.MarcaConMasProductosTableAdapter
+
+        tbl = reporte.GetData
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptPreciosAltosABajos.rdlc")
     End Sub
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click

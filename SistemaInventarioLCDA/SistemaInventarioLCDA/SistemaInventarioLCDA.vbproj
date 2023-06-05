@@ -69,7 +69,9 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -207,6 +209,7 @@
     <EmbeddedResource Include="diseñosRpt\rptMarcasConMasProductos.rdlc" />
     <EmbeddedResource Include="diseñosRpt\rptMarcasConMenosProductos.rdlc" />
     <EmbeddedResource Include="diseñosRpt\rptMovimientos.rdlc" />
+    <EmbeddedResource Include="diseñosRpt\rptPreciosAltosABajos.rdlc" />
     <EmbeddedResource Include="diseñosRpt\rptProductos.rdlc" />
     <EmbeddedResource Include="formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
