@@ -73,4 +73,99 @@ Public Class Tbl_MovimientosDAO
         Return resp
     End Function
 
+    Public Function buscarXcodigo(ByVal codigo As Integer) As DataSet
+        Dim ds As New DataSet
+
+        Try
+            Dim tsql As String = "SELECT id_movimiento AS N'CÓDIGO', 
+                                         Producto.nombreProd AS N'PRODUCTO', 
+                                         Usuario.primer_nombre + '' + Usuario.primer_apellido AS N'USUARIO', 
+                                         CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS N'TIPO MOVIMIENTO', 
+                                         fecha_movimiento As N'FECHA', 
+                                         cantidadProd AS 'CANTIDAD DE PRODUCTO', 
+                                         descripcionMov AS N'DESCRIPCIÓN MOVIMIENTO' 
+                                         FROM Movimiento INNER JOIN Producto ON Producto.id_producto = Movimiento.id_producto 
+                                         INNER JOIN Usuario ON Usuario.usuario_id = Movimiento.usuario_id
+										 WHERE Movimiento.id_movimiento = @id_movimiento"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@id_movimiento", codigo)
+            da.Fill(ds)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return ds
+    End Function
+
+    Public Function buscarXproducto(ByVal producto As String) As DataSet
+        Dim ds As New DataSet
+
+        Try
+            Dim tsql As String = "SELECT id_movimiento AS N'CÓDIGO', 
+                                         Producto.nombreProd AS N'PRODUCTO', 
+                                         Usuario.primer_nombre + '' + Usuario.primer_apellido AS N'USUARIO', 
+                                         CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS N'TIPO MOVIMIENTO', 
+                                         fecha_movimiento As N'FECHA', 
+                                         cantidadProd AS 'CANTIDAD DE PRODUCTO', 
+                                         descripcionMov AS N'DESCRIPCIÓN MOVIMIENTO' 
+                                         FROM Movimiento INNER JOIN Producto ON Producto.id_producto = Movimiento.id_producto 
+                                         INNER JOIN Usuario ON Usuario.usuario_id = Movimiento.usuario_id
+										 WHERE Producto.nombreProd = @nombreProd"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.SelectCommand.Parameters.AddWithValue("@nombreProd", producto)
+            da.Fill(ds)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return ds
+    End Function
+
+    Public Function buscarXentrada() As DataSet
+        Dim ds As New DataSet
+
+        Try
+            Dim tsql As String = "SELECT id_movimiento AS N'CÓDIGO', 
+                                         Producto.nombreProd AS N'PRODUCTO', 
+                                         Usuario.primer_nombre + '' + Usuario.primer_apellido AS N'USUARIO', 
+                                         CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS N'TIPO MOVIMIENTO', 
+                                         fecha_movimiento As N'FECHA', 
+                                         cantidadProd AS 'CANTIDAD DE PRODUCTO', 
+                                         descripcionMov AS N'DESCRIPCIÓN MOVIMIENTO' 
+                                         FROM Movimiento INNER JOIN Producto ON Producto.id_producto = Movimiento.id_producto 
+                                         INNER JOIN Usuario ON Usuario.usuario_id = Movimiento.usuario_id
+										 WHERE Movimiento.tipo_movimiento = 1"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.Fill(ds)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return ds
+    End Function
+
+    Public Function buscarXsalida() As DataSet
+        Dim ds As New DataSet
+
+        Try
+            Dim tsql As String = "SELECT id_movimiento AS N'CÓDIGO', 
+                                         Producto.nombreProd AS N'PRODUCTO', 
+                                         Usuario.primer_nombre + '' + Usuario.primer_apellido AS N'USUARIO', 
+                                         CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS N'TIPO MOVIMIENTO', 
+                                         fecha_movimiento As N'FECHA', 
+                                         cantidadProd AS 'CANTIDAD DE PRODUCTO', 
+                                         descripcionMov AS N'DESCRIPCIÓN MOVIMIENTO' 
+                                         FROM Movimiento INNER JOIN Producto ON Producto.id_producto = Movimiento.id_producto 
+                                         INNER JOIN Usuario ON Usuario.usuario_id = Movimiento.usuario_id
+										 WHERE Movimiento.tipo_movimiento = 0"
+            Dim conn As New SqlConnection(strConn)
+            Dim da As New SqlDataAdapter(tsql, conn)
+            da.Fill(ds)
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+        Return ds
+    End Function
+
+
 End Class

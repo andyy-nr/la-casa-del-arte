@@ -6,7 +6,7 @@ Public Class Tbl_CategoriasDAO
         Dim ds As New DataSet
 
         Try
-            Dim tsql As String = "Select id_categoria As N'CÓDIGO', nombreCatg As N'CATEGORÍA', descripcionCatg As N'DESCRIPCIÓN' From Categoría"
+            Dim tsql As String = "Select id_categoria As N'CÓDIGO', nombreCatg As N'CATEGORÍA', descripcionCatg As N'DESCRIPCIÓN' From Categoría WHERE estado <> 0"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
@@ -47,7 +47,7 @@ Public Class Tbl_CategoriasDAO
         Try
             Dim dt As New DataTable
             Dim conn As New SqlConnection(strConn)
-            Dim tsql As String = "SELECT * FROM Categoría WHERE nombreCatg = @nombreCatg"
+            Dim tsql As String = "SELECT * FROM Categoría WHERE nombreCatg = @nombreCatg AND estado <> 0"
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@nombreCatg", categoria.NombreCatg)
             da.Fill(dt)
@@ -106,7 +106,7 @@ Public Class Tbl_CategoriasDAO
     Public Function EliminarCategoria(ByVal id_categoria As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "DELETE FROM Categoría WHERE id_categoria = @id_categoria "
+            Dim tsql As String = "UPDATE Categoría SET estado = 0 WHERE id_categoria = @id_categoria "
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)

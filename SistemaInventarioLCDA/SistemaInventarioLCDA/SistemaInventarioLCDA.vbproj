@@ -371,6 +371,8 @@
     <None Include="Resources\PibPermiso.png" />
     <None Include="Resources\BtnPermiso.png" />
     <None Include="Resources\btnMaximizar.png" />
+    <None Include="Resources\recargar.png" />
+    <None Include="Resources\impresion.png" />
     <Content Include="scriptBd\ScriptDBLaCasaDelArte.sql" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />

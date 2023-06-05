@@ -108,7 +108,7 @@ Public Class FrmMovimiento
         Dim movimientosDAO As New Tbl_MovimientosDAO
         DgvMovimientos.DataSource = movimientosDAO.MostrarMovimientos.Tables(0)
         DgvMovimientos.Refresh()
-        GbMovimientos.Text = "Movimientos Almacenados: " & DgvMovimientos.RowCount
+        GbMovimientos.Text = "Movimientos Realizados: " & DgvMovimientos.RowCount
     End Sub
 
     'Función para llenar los datos del producto en los campos del formulario 
@@ -224,6 +224,7 @@ Public Class FrmMovimiento
         End Try
     End Sub
 
+
     Private Sub BtnAgregarE_Click(sender As Object, e As EventArgs) Handles BtnAgregarE.Click
 
         If Not validarCampos() Then
@@ -255,11 +256,58 @@ Public Class FrmMovimiento
         If (resp) Then
             sumarInventario()
             restarInventario()
-            MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Roles")
+            MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Movimientos")
             LlenarTabla()
             Limpiar()
         End If
 
     End Sub
+
+
+    Private Sub BtnBuscarMov_Click(sender As Object, e As EventArgs) Handles BtnBuscarMov.Click
+        Try
+            Dim buscar As String = TxtBuscar.Text.Trim()
+            Dim ds As New DataSet
+            ds = FiltrarMovimiento(buscar)
+            DgvMovimientos.DataSource = ds.Tables(0)
+            DgvMovimientos.Refresh()
+            GbMovimientos.Text = "Movimientos Realizados: " & DgvMovimientos.RowCount
+
+            If TxtBuscar.Text = "" And CmbFiltrarMov.SelectedIndex <> 2 And CmbFiltrarMov.SelectedIndex <> 3 Then
+                MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Movimientos")
+                LlenarTabla()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+    End Sub
+
+    Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
+        If TxtBuscar.Text = "" Then
+            CmbFiltrarMov.Text = "Filtrar movimientos"
+            LlenarTabla()
+        End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        LlenarTabla()
+    End Sub
+
+    Private Function FiltrarMovimiento(ByVal buscar As String) As DataSet
+        Dim movimientoDAO As New Tbl_MovimientosDAO()
+        Dim ds As New DataSet
+        Select Case CmbFiltrarMov.SelectedIndex
+            Case 0
+                ds = movimientoDAO.buscarXcodigo(Integer.Parse(buscar))
+            Case 1
+                ds = movimientoDAO.buscarXproducto(buscar)
+            Case 2
+                ds = movimientoDAO.buscarXentrada()
+            Case 3
+                ds = movimientoDAO.buscarXsalida()
+        End Select
+        Return ds
+    End Function
 
 End Class

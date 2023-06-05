@@ -14,7 +14,8 @@ Public Class Tbl_RolesDAO
                                          Permiso.permiso as N'PERMISO' 
                                          FROM  RolPermiso INNER JOIN
                                          Rol ON Rol.id_rol = RolPermiso.id_rol INNER JOIN
-                                         Permiso ON RolPermiso.id_permiso = Permiso.id_permiso"
+                                         Permiso ON RolPermiso.id_permiso = Permiso.id_permiso
+										 WHERE Rol.estado <> 0"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
@@ -132,7 +133,7 @@ Public Class Tbl_RolesDAO
     Public Function eliminarRol(ByVal id_rol As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "Delete from Rol where id_rol = @id_rol"
+            Dim tsql As String = "UPDATE Rol SET estado = 0 WHERE id_rol = @id_rol"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)

@@ -63,7 +63,8 @@ Public Class Tbl_UsuariosDAO
                                                  Usuario.telefono as N'TELÉFONO',
                                                  convert(nvarchar(10),Usuario.fecha_nac, 103) as N'FECHA DE NACIMIENTO',
                                                  Usuario.cedula as N'CÉDULA'
-                                                 FROM Usuario INNER JOIN Rol On Usuario.id_rol = Rol.id_rol"
+                                                 FROM Usuario INNER JOIN Rol On Usuario.id_rol = Rol.id_rol
+												 WHERE Usuario.estado <> 0"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
@@ -281,7 +282,7 @@ Public Class Tbl_UsuariosDAO
     Public Function eliminarUsuario(ByVal usuario_id As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "DELETE FROM Usuario WHERE usuario_id = @usuario_id"
+            Dim tsql As String = "UPDATE Usuario SET estado = 0 WHERE usuario_id = @usuario_id"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)

@@ -309,7 +309,8 @@
                 MsgBox("Producto eliminado exitosamente.", MsgBoxStyle.Information, "Productos")
 
                 Limpiar()
-                LlenarTabla()
+                'LlenarTabla()
+                LlenarGridProductos()
 
             Else
                 MsgBox("Error al intentar eliminar el producto", MsgBoxStyle.Critical, "Productos")
@@ -355,7 +356,8 @@
             End If
 
             Limpiar()
-            LlenarTabla()
+            'LlenarTabla()
+            LlenarGridProductos()
         Catch ex As Exception
             MsgBox("Error al intentar editar el registro..." & ex.Message, MsgBoxStyle.Critical, "Productos")
         End Try
@@ -454,6 +456,10 @@
             CmbFiltrarUsu.Text = "Filtrar Productos"
             LlenarTabla()
         End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        LlenarGridProductos()
     End Sub
 
 

@@ -10709,10 +10709,9 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Producto.id_producto, Categoría.nombreCatg, Marca.nombreMarca, Producto.no"& _ 
                 "mbreProd, Producto.precio_unitario, Producto.descripcionProd, Producto.inventari"& _ 
-                "o_inicial, Producto.cantidad_disponible"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                    FRO"& _ 
-                "M     Producto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                        Categoría ON "& _ 
-                "Producto.id_categoria = Categoría.id_categoria INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "                   Marca ON Producto.id_marca = Marca.id_marca"
+                "o_inicial, Producto.cantidad_disponible"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Producto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "         Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Marca ON Producto.id_marca = Marca.id_marca"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Producto"& _ 
+                ".estado <> 0)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -10895,7 +10894,8 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             Me._commandCollection(0).CommandText = "SELECT Producto.id_producto, Producto.nombreProd, Categoría.nombreCatg, Marca.nom"& _ 
                 "breMarca, Producto.precio_unitario, Producto.descripcionProd, Producto.inventari"& _ 
                 "o_inicial, Producto.cantidad_disponible"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Producto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
-                "         Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Marca ON Producto.id_marca = Marca.id_marca"
+                "         Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Marca ON Producto.id_marca = Marca.id_marca"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Producto"& _ 
+                ".estado <> 0)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

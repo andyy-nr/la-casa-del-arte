@@ -228,6 +228,11 @@ SistemaInventarioLCDA
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.impresion">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.ingresar">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -289,6 +294,11 @@ SistemaInventarioLCDA
 </summary>
 </member>
 <member name="P:SistemaInventarioLCDA.My.Resources.Resources.productosman">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:SistemaInventarioLCDA.My.Resources.Resources.recargar">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

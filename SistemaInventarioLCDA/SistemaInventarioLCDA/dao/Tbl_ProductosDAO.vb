@@ -9,7 +9,8 @@ Public Class Tbl_ProductosDAO
             Dim tsql As String = "SELECT Producto.id_producto As N'CÓDIGO', Categoría.nombreCatg As N'CATEGORÍA', Marca.nombreMarca As N'MARCA', Producto.nombreProd As N'PRODUCTO', Producto.precio_unitario As N'PRECIO', Producto.descripcionProd As N'DESCRIPCIÓN', Producto.inventario_inicial As N'INVENTARIO INICIAL', Producto.cantidad_disponible As N'UNIDADES DISPONIBLES'
                                     FROM     Producto INNER JOIN
                                         Categoría ON Producto.id_categoria = Categoría.id_categoria INNER JOIN
-                                        Marca ON Producto.id_marca = Marca.id_marca"
+                                        Marca ON Producto.id_marca = Marca.id_marca
+									WHERE Producto.estado <> 0"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
@@ -86,7 +87,7 @@ Public Class Tbl_ProductosDAO
     Public Function EliminarProducto(ByVal id_producto As String) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "Delete from Producto where id_producto = @id_producto"
+            Dim tsql As String = "UPDATE Producto SET estado = 0 WHERE id_producto = @id_producto"
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)
@@ -156,7 +157,7 @@ Public Class Tbl_ProductosDAO
         Try
             Dim dt As New DataTable
             Dim conn As New SqlConnection(strConn)
-            Dim tsql As String = "SELECT * FROM Producto WHERE id_producto = @id_producto"
+            Dim tsql As String = "SELECT * FROM Producto WHERE id_producto = @id_producto AND estado <> 0"
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@id_producto", producto.Id_producto)
             da.Fill(dt)
@@ -217,7 +218,7 @@ Public Class Tbl_ProductosDAO
         Dim resp = False
         Dim dt As New DataTable
         Try
-            Dim tsql As String = "SELECT * FROM Producto WHERE nombreProd = @nombreProd"
+            Dim tsql As String = "SELECT * FROM Producto WHERE nombreProd = @nombreProd AND estado <> 0"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@nombreProd", producto.NombreProd)

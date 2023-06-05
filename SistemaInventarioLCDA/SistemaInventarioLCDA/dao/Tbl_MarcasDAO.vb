@@ -6,7 +6,7 @@ Public Class Tbl_MarcasDAO
         Dim ds As New DataSet
 
         Try
-            Dim tsql As String = "Select id_marca As N'CÓDIGO', nombreMarca As N'MARCA', descripcionMarca As N'DESCRIPCIÓN' From Marca"
+            Dim tsql As String = "Select id_marca As N'CÓDIGO', nombreMarca As N'MARCA', descripcionMarca As N'DESCRIPCIÓN' From Marca WHERE estado <> 0"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.Fill(ds)
@@ -48,7 +48,7 @@ Public Class Tbl_MarcasDAO
         Try
             Dim dt As New DataTable
             Dim conn As New SqlConnection(strConn)
-            Dim tsql As String = "SELECT * FROM Marca WHERE nombreMarca = @nombreMarca"
+            Dim tsql As String = "SELECT * FROM Marca WHERE nombreMarca = @nombreMarca AND estado <> 0"
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@nombreMarca", marca.NombreMarca)
             da.Fill(dt)
@@ -107,7 +107,7 @@ Public Class Tbl_MarcasDAO
     Public Function EliminarMarca(ByVal id_marca As Integer) As Boolean
         Dim resp As Boolean = False
         Try
-            Dim tsql As String = "DELETE FROM Marca WHERE id_marca = @id_marca"
+            Dim tsql As String = "UPDATE Marca SET estado = 0 WHERE id_marca = @id_marca "
             Dim conn As New SqlConnection(strConn)
             conn.Open()
             Dim cmd As New SqlCommand(tsql, conn)

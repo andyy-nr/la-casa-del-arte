@@ -462,23 +462,25 @@ Partial Class FrmPrincipal
         '
         Me.LblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblFecha.AutoSize = True
-        Me.LblFecha.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFecha.Location = New System.Drawing.Point(944, 809)
+        Me.LblFecha.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblFecha.Location = New System.Drawing.Point(913, 804)
         Me.LblFecha.Name = "LblFecha"
-        Me.LblFecha.Size = New System.Drawing.Size(106, 23)
+        Me.LblFecha.Size = New System.Drawing.Size(136, 28)
         Me.LblFecha.TabIndex = 3
         Me.LblFecha.Text = "dd/MM/yyyy"
+        Me.LblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'LblHora
         '
         Me.LblHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblHora.AutoSize = True
-        Me.LblHora.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblHora.Location = New System.Drawing.Point(972, 784)
+        Me.LblHora.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblHora.Location = New System.Drawing.Point(952, 776)
         Me.LblHora.Name = "LblHora"
-        Me.LblHora.Size = New System.Drawing.Size(50, 23)
+        Me.LblHora.Size = New System.Drawing.Size(65, 28)
         Me.LblHora.TabIndex = 2
         Me.LblHora.Text = "00:00"
+        Me.LblHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PictureBox3
         '
