@@ -816,6 +816,28 @@ SELECT id_producto, nombreProd, descripcionProd, precio_unitario FROM Producto W
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptCategoriasXProductoTableAdapter" GeneratorDataComponentClassName="RptCategoriasXProductoTableAdapter" Name="RptCategoriasXProducto" UserDataComponentName="RptCategoriasXProductoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StrConexion (MySettings)" DbObjectName="DBLaCasaDelArte.dbo.Categoría" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Categoría.nombreCatg, COUNT(Producto.nombreProd) AS nombreProd
+FROM     Categoría INNER JOIN
+                  Producto ON Categoría.id_categoria = Categoría.id_categoria
+WHERE  (Producto.estado &lt;&gt; 0)
+GROUP BY Categoría.nombreCatg
+ORDER BY nombreProd DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombreCatg" DataSetColumn="nombreCatg" />
+              <Mapping SourceColumn="nombreProd" DataSetColumn="nombreProd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1212,8 +1234,8 @@ SELECT id_producto, nombreProd, descripcionProd, precio_unitario FROM Producto W
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="inventario_inicial" msprop:Generator_ColumnPropNameInRow="inventario_inicial" msprop:Generator_ColumnPropNameInTable="inventario_inicialColumn" msprop:Generator_ColumnVarNameInTable="columninventario_inicial" msprop:Generator_UserColumnName="inventario_inicial" type="xs:int" />
-              <xs:element name="cantidadProd" msprop:Generator_ColumnPropNameInRow="cantidadProd" msprop:Generator_ColumnPropNameInTable="cantidadProdColumn" msprop:Generator_ColumnVarNameInTable="columncantidadProd" msprop:Generator_UserColumnName="cantidadProd" type="xs:int" />
+              <xs:element name="inventario_inicial" msprop:Generator_UserColumnName="inventario_inicial" msprop:Generator_ColumnPropNameInTable="inventario_inicialColumn" msprop:Generator_ColumnPropNameInRow="inventario_inicial" msprop:Generator_ColumnVarNameInTable="columninventario_inicial" type="xs:int" />
+              <xs:element name="cantidadProd" msprop:Generator_UserColumnName="cantidadProd" msprop:Generator_ColumnPropNameInTable="cantidadProdColumn" msprop:Generator_ColumnPropNameInRow="cantidadProd" msprop:Generator_ColumnVarNameInTable="columncantidadProd" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1245,31 +1267,45 @@ SELECT id_producto, nombreProd, descripcionProd, precio_unitario FROM Producto W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RptProductosXPrecio" msprop:Generator_RowEvHandlerName="RptProductosXPrecioRowChangeEventHandler" msprop:Generator_RowDeletedName="RptProductosXPrecioRowDeleted" msprop:Generator_RowDeletingName="RptProductosXPrecioRowDeleting" msprop:Generator_RowEvArgName="RptProductosXPrecioRowChangeEvent" msprop:Generator_TablePropName="RptProductosXPrecio" msprop:Generator_RowChangedName="RptProductosXPrecioRowChanged" msprop:Generator_RowChangingName="RptProductosXPrecioRowChanging" msprop:Generator_TableClassName="RptProductosXPrecioDataTable" msprop:Generator_RowClassName="RptProductosXPrecioRow" msprop:Generator_TableVarName="tableRptProductosXPrecio" msprop:Generator_UserTableName="RptProductosXPrecio">
+        <xs:element name="RptProductosXPrecio" msprop:Generator_RowClassName="RptProductosXPrecioRow" msprop:Generator_RowEvHandlerName="RptProductosXPrecioRowChangeEventHandler" msprop:Generator_RowDeletedName="RptProductosXPrecioRowDeleted" msprop:Generator_RowDeletingName="RptProductosXPrecioRowDeleting" msprop:Generator_RowEvArgName="RptProductosXPrecioRowChangeEvent" msprop:Generator_TablePropName="RptProductosXPrecio" msprop:Generator_RowChangedName="RptProductosXPrecioRowChanged" msprop:Generator_UserTableName="RptProductosXPrecio" msprop:Generator_RowChangingName="RptProductosXPrecioRowChanging" msprop:Generator_TableClassName="RptProductosXPrecioDataTable" msprop:Generator_TableVarName="tableRptProductosXPrecio">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_producto" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_ColumnVarNameInTable="columnid_producto" msprop:Generator_UserColumnName="id_producto">
+              <xs:element name="id_producto" msprop:Generator_UserColumnName="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnVarNameInTable="columnid_producto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nombreProd" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnVarNameInTable="columnnombreProd" msprop:Generator_UserColumnName="nombreProd">
+              <xs:element name="nombreProd" msprop:Generator_UserColumnName="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnVarNameInTable="columnnombreProd">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="descripcionProd" msprop:Generator_ColumnPropNameInRow="descripcionProd" msprop:Generator_ColumnPropNameInTable="descripcionProdColumn" msprop:Generator_ColumnVarNameInTable="columndescripcionProd" msprop:Generator_UserColumnName="descripcionProd" minOccurs="0">
+              <xs:element name="descripcionProd" msprop:Generator_UserColumnName="descripcionProd" msprop:Generator_ColumnPropNameInTable="descripcionProdColumn" msprop:Generator_ColumnPropNameInRow="descripcionProd" msprop:Generator_ColumnVarNameInTable="columndescripcionProd" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="precio_unitario" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" msprop:Generator_UserColumnName="precio_unitario" type="xs:double" />
+              <xs:element name="precio_unitario" msprop:Generator_UserColumnName="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RptCategoriasXProducto" msprop:Generator_RowEvHandlerName="RptCategoriasXProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="RptCategoriasXProductoRowDeleted" msprop:Generator_RowDeletingName="RptCategoriasXProductoRowDeleting" msprop:Generator_RowEvArgName="RptCategoriasXProductoRowChangeEvent" msprop:Generator_TablePropName="RptCategoriasXProducto" msprop:Generator_RowChangedName="RptCategoriasXProductoRowChanged" msprop:Generator_RowChangingName="RptCategoriasXProductoRowChanging" msprop:Generator_TableClassName="RptCategoriasXProductoDataTable" msprop:Generator_RowClassName="RptCategoriasXProductoRow" msprop:Generator_TableVarName="tableRptCategoriasXProducto" msprop:Generator_UserTableName="RptCategoriasXProducto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombreCatg" msprop:Generator_ColumnPropNameInRow="nombreCatg" msprop:Generator_ColumnPropNameInTable="nombreCatgColumn" msprop:Generator_ColumnVarNameInTable="columnnombreCatg" msprop:Generator_UserColumnName="nombreCatg">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreProd" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnVarNameInTable="columnnombreProd" msprop:Generator_UserColumnName="nombreProd" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1330,14 +1366,14 @@ SELECT id_producto, nombreProd, descripcionProd, precio_unitario FROM Producto W
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="RefProducto47" msdata:parent="Producto" msdata:child="Movimiento" msdata:parentkey="id_producto" msdata:childkey="id_producto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefProducto47" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_ParentPropName="ProductoRow" msprop:Generator_UserRelationName="RefProducto47" />
-      <msdata:Relationship name="RefUsuario42" msdata:parent="Usuario" msdata:child="Movimiento" msdata:parentkey="usuario_id" msdata:childkey="usuario_id" msprop:Generator_UserParentTable="Usuario" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefUsuario42" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_ParentPropName="UsuarioRow" msprop:Generator_UserRelationName="RefUsuario42" />
-      <msdata:Relationship name="RefCategoría4" msdata:parent="Categoría" msdata:child="Producto" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserParentTable="Categoría" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefCategoría4" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_UserRelationName="RefCategoría4" msprop:Generator_ParentPropName="CategoríaRow" />
-      <msdata:Relationship name="RefMarca37" msdata:parent="Marca" msdata:child="Producto" msdata:parentkey="id_marca" msdata:childkey="id_marca" msprop:Generator_UserParentTable="Marca" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefMarca37" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_UserRelationName="RefMarca37" msprop:Generator_ParentPropName="MarcaRow" />
-      <msdata:Relationship name="RefPermiso35" msdata:parent="Permiso" msdata:child="RolPermiso" msdata:parentkey="id_permiso" msdata:childkey="id_permiso" msprop:Generator_UserParentTable="Permiso" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefPermiso35" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_UserRelationName="RefPermiso35" msprop:Generator_ParentPropName="PermisoRow" />
-      <msdata:Relationship name="RefRol36" msdata:parent="Rol" msdata:child="RolPermiso" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefRol36" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_UserRelationName="RefRol36" msprop:Generator_ParentPropName="RolRow" />
-      <msdata:Relationship name="RefRol34" msdata:parent="Rol" msdata:child="Usuario" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="Usuario" msprop:Generator_RelationVarName="relationRefRol34" msprop:Generator_ChildPropName="GetUsuarioRows" msprop:Generator_UserRelationName="RefRol34" msprop:Generator_ParentPropName="RolRow" />
-      <msdata:Relationship name="RefProducto471" msdata:parent="RptProductosXPrecio" msdata:child="Movimiento" msdata:parentkey="id_producto" msdata:childkey="id_producto" msprop:Generator_UserParentTable="RptProductosXPrecio" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefProducto471" msprop:Generator_UserRelationName="RefProducto471" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_ParentPropName="RptProductosXPrecioRow" />
+      <msdata:Relationship name="RefProducto47" msdata:parent="Producto" msdata:child="Movimiento" msdata:parentkey="id_producto" msdata:childkey="id_producto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefProducto47" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_UserRelationName="RefProducto47" msprop:Generator_ParentPropName="ProductoRow" />
+      <msdata:Relationship name="RefUsuario42" msdata:parent="Usuario" msdata:child="Movimiento" msdata:parentkey="usuario_id" msdata:childkey="usuario_id" msprop:Generator_UserParentTable="Usuario" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefUsuario42" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_UserRelationName="RefUsuario42" msprop:Generator_ParentPropName="UsuarioRow" />
+      <msdata:Relationship name="RefCategoría4" msdata:parent="Categoría" msdata:child="Producto" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserParentTable="Categoría" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefCategoría4" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_ParentPropName="CategoríaRow" msprop:Generator_UserRelationName="RefCategoría4" />
+      <msdata:Relationship name="RefMarca37" msdata:parent="Marca" msdata:child="Producto" msdata:parentkey="id_marca" msdata:childkey="id_marca" msprop:Generator_UserParentTable="Marca" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefMarca37" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_ParentPropName="MarcaRow" msprop:Generator_UserRelationName="RefMarca37" />
+      <msdata:Relationship name="RefPermiso35" msdata:parent="Permiso" msdata:child="RolPermiso" msdata:parentkey="id_permiso" msdata:childkey="id_permiso" msprop:Generator_UserParentTable="Permiso" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefPermiso35" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_ParentPropName="PermisoRow" msprop:Generator_UserRelationName="RefPermiso35" />
+      <msdata:Relationship name="RefRol36" msdata:parent="Rol" msdata:child="RolPermiso" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefRol36" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_ParentPropName="RolRow" msprop:Generator_UserRelationName="RefRol36" />
+      <msdata:Relationship name="RefRol34" msdata:parent="Rol" msdata:child="Usuario" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="Usuario" msprop:Generator_RelationVarName="relationRefRol34" msprop:Generator_ChildPropName="GetUsuarioRows" msprop:Generator_ParentPropName="RolRow" msprop:Generator_UserRelationName="RefRol34" />
+      <msdata:Relationship name="RefProducto471" msdata:parent="RptProductosXPrecio" msdata:child="Movimiento" msdata:parentkey="id_producto" msdata:childkey="id_producto" msprop:Generator_UserParentTable="RptProductosXPrecio" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefProducto471" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_ParentPropName="RptProductosXPrecioRow" msprop:Generator_UserRelationName="RefProducto471" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

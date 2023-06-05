@@ -227,6 +227,14 @@
         VerReporte(tbl, "DataSet1", "diseñosRpt\rptPreciosAltosABajos.rdlc")
     End Sub
 
+    Private Sub BtnRptCatgVend_Click(sender As Object, e As EventArgs) Handles BtnRptCatgVend.Click
+        Dim tbl As New DataTable
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptCategoriasXProductoTableAdapter
+
+        tbl = reporte.GetData
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptCategoriasXProducto.rdlc")
+    End Sub
+
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
         Dim Respuesta = MsgBox("¿Estas seguro que deseas cerrar sesión?", MsgBoxStyle.OkCancel, "Cerrar Sesión")
         If Respuesta = vbOK Then

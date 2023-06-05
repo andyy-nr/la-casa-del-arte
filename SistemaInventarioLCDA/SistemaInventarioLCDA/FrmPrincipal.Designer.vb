@@ -443,7 +443,7 @@ Partial Class FrmPrincipal
         Me.BtnPreciosAltosBajos.Name = "BtnPreciosAltosBajos"
         Me.BtnPreciosAltosBajos.Size = New System.Drawing.Size(517, 62)
         Me.BtnPreciosAltosBajos.TabIndex = 13
-        Me.BtnPreciosAltosBajos.Text = "Reportes de Precios Altos a Bajos"
+        Me.BtnPreciosAltosBajos.Text = "Reporte de Precios Altos a Bajos"
         Me.BtnPreciosAltosBajos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnPreciosAltosBajos.UseVisualStyleBackColor = True
         '
@@ -465,7 +465,7 @@ Partial Class FrmPrincipal
         Me.BtnRptCatgVend.Name = "BtnRptCatgVend"
         Me.BtnRptCatgVend.Size = New System.Drawing.Size(517, 62)
         Me.BtnRptCatgVend.TabIndex = 12
-        Me.BtnRptCatgVend.Text = "Reportes de Categorías más Vendidas"
+        Me.BtnRptCatgVend.Text = "Reporte de Categorías por Producto"
         Me.BtnRptCatgVend.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnRptCatgVend.UseVisualStyleBackColor = True
         '
@@ -487,7 +487,7 @@ Partial Class FrmPrincipal
         Me.BtnReporteMarcasProd.Name = "BtnReporteMarcasProd"
         Me.BtnReporteMarcasProd.Size = New System.Drawing.Size(517, 62)
         Me.BtnReporteMarcasProd.TabIndex = 11
-        Me.BtnReporteMarcasProd.Text = "Reportes de Marcas por Productos"
+        Me.BtnReporteMarcasProd.Text = "Reporte de Marcas por Productos"
         Me.BtnReporteMarcasProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnReporteMarcasProd.UseVisualStyleBackColor = True
         '
@@ -509,7 +509,7 @@ Partial Class FrmPrincipal
         Me.BtnRepoMov.Name = "BtnRepoMov"
         Me.BtnRepoMov.Size = New System.Drawing.Size(517, 62)
         Me.BtnRepoMov.TabIndex = 10
-        Me.BtnRepoMov.Text = "Reportes de Movimientos"
+        Me.BtnRepoMov.Text = "Reporte de Movimientos"
         Me.BtnRepoMov.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnRepoMov.UseVisualStyleBackColor = True
         '
@@ -531,7 +531,7 @@ Partial Class FrmPrincipal
         Me.BtnRepoProd.Name = "BtnRepoProd"
         Me.BtnRepoProd.Size = New System.Drawing.Size(517, 62)
         Me.BtnRepoProd.TabIndex = 9
-        Me.BtnRepoProd.Text = "Reportes de Productos"
+        Me.BtnRepoProd.Text = "Reporte de Productos"
         Me.BtnRepoProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnRepoProd.UseVisualStyleBackColor = True
         '

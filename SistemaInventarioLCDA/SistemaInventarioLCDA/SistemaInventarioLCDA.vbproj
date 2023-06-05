@@ -206,6 +206,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="diseñosRpt\rptCategoriasXProducto.rdlc" />
     <EmbeddedResource Include="diseñosRpt\rptMarcasXProducto.rdlc" />
     <EmbeddedResource Include="diseñosRpt\rptMovimientos.rdlc" />
     <EmbeddedResource Include="diseñosRpt\rptPreciosAltosABajos.rdlc" />
