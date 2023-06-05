@@ -82,7 +82,7 @@
                         BtnRepoProd.Enabled = True
                         BtnRepoMov.Enabled = True
                         BtnReporteMarcasProd.Enabled = True
-                        BtnRptMarcasMinProd.Enabled = True
+                        BtnRptCatgVend.Enabled = True
                         BtnPreciosAltosBajos.Enabled = True
                 End Select
             Next
@@ -182,6 +182,19 @@
         FrmMovimiento.Show()
     End Sub
 
+
+
+
+    Private Sub PictureBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox2.MouseClick
+        MsgBox("Nombre Usuario: " & UsuarioSistema.NombreCompleto & "Rol del Usuario: " & UsuarioSistema.NombreRol, MsgBoxStyle.Information, "Principal")
+
+        For Each per In UsuarioSistema.ListaPermisos
+            MsgBox("Id Permisos" & per, MsgBoxStyle.Critical, "Usuario")
+        Next
+
+        cargarPermisos()
+    End Sub
+
     Private Sub BtnRepoProd_Click(sender As Object, e As EventArgs) Handles BtnRepoProd.Click
         Dim tbl As New DataTable
         Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptProductosTableAdapter
@@ -198,35 +211,17 @@
         VerReporte(tbl, "DataSet1", "diseñosRpt\rptMovimientos.rdlc")
     End Sub
 
-    Private Sub PictureBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox2.MouseClick
-        MsgBox("Nombre Usuario: " & UsuarioSistema.NombreCompleto & "Rol del Usuario: " & UsuarioSistema.NombreRol, MsgBoxStyle.Information, "Principal")
-
-        For Each per In UsuarioSistema.ListaPermisos
-            MsgBox("Id Permisos" & per, MsgBoxStyle.Critical, "Usuario")
-    Next
-
-        cargarPermisos()
-    End Sub
-
     Private Sub BtnReporteMarcasProd_Click(sender As Object, e As EventArgs) Handles BtnReporteMarcasProd.Click
         Dim tbl As New DataTable
-        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.MarcaConMasProductosTableAdapter
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptMarcasXProductoTableAdapter
 
         tbl = reporte.GetData
-        VerReporte(tbl, "DataSet1", "diseñosRpt\rptMarcasConMasProductos.rdlc")
-    End Sub
-
-    Private Sub BtnRptMarcasMinProd_Click(sender As Object, e As EventArgs) Handles BtnRptMarcasMinProd.Click
-        Dim tbl As New DataTable
-        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.MarcaConMasProductosTableAdapter
-
-        tbl = reporte.GetData
-        VerReporte(tbl, "DataSet1", "diseñosRpt\rptMarcasConMenosProductos.rdlc")
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptMarcasXProducto.rdlc")
     End Sub
 
     Private Sub BtnPreciosAltosBajos_Click(sender As Object, e As EventArgs) Handles BtnPreciosAltosBajos.Click
         Dim tbl As New DataTable
-        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.MarcaConMasProductosTableAdapter
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptProductosXPrecioTableAdapter
 
         tbl = reporte.GetData
         VerReporte(tbl, "DataSet1", "diseñosRpt\rptPreciosAltosABajos.rdlc")

@@ -49,11 +49,11 @@ Partial Public Class DBLaCasaDelArteDataSet
     
     Private tableRptMovimientos As RptMovimientosDataTable
     
-    Private tableMarcaConMasProductos As MarcaConMasProductosDataTable
-    
-    Private tableRptMarcaMenosProd As RptMarcaMenosProdDataTable
+    Private tableRptMarcasXProducto As RptMarcasXProductoDataTable
     
     Private tableRptPreciosAltoABajos As RptPreciosAltoABajosDataTable
+    
+    Private tableRptProductosXPrecio As RptProductosXPrecioDataTable
     
     Private relationRefProducto47 As Global.System.Data.DataRelation
     
@@ -68,6 +68,8 @@ Partial Public Class DBLaCasaDelArteDataSet
     Private relationRefRol36 As Global.System.Data.DataRelation
     
     Private relationRefRol34 As Global.System.Data.DataRelation
+    
+    Private relationRefProducto471 As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -134,14 +136,14 @@ Partial Public Class DBLaCasaDelArteDataSet
             If (Not (ds.Tables("RptMovimientos")) Is Nothing) Then
                 MyBase.Tables.Add(New RptMovimientosDataTable(ds.Tables("RptMovimientos")))
             End If
-            If (Not (ds.Tables("MarcaConMasProductos")) Is Nothing) Then
-                MyBase.Tables.Add(New MarcaConMasProductosDataTable(ds.Tables("MarcaConMasProductos")))
-            End If
-            If (Not (ds.Tables("RptMarcaMenosProd")) Is Nothing) Then
-                MyBase.Tables.Add(New RptMarcaMenosProdDataTable(ds.Tables("RptMarcaMenosProd")))
+            If (Not (ds.Tables("RptMarcasXProducto")) Is Nothing) Then
+                MyBase.Tables.Add(New RptMarcasXProductoDataTable(ds.Tables("RptMarcasXProducto")))
             End If
             If (Not (ds.Tables("RptPreciosAltoABajos")) Is Nothing) Then
                 MyBase.Tables.Add(New RptPreciosAltoABajosDataTable(ds.Tables("RptPreciosAltoABajos")))
+            End If
+            If (Not (ds.Tables("RptProductosXPrecio")) Is Nothing) Then
+                MyBase.Tables.Add(New RptProductosXPrecioDataTable(ds.Tables("RptProductosXPrecio")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -284,19 +286,9 @@ Partial Public Class DBLaCasaDelArteDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property MarcaConMasProductos() As MarcaConMasProductosDataTable
+    Public ReadOnly Property RptMarcasXProducto() As RptMarcasXProductoDataTable
         Get
-            Return Me.tableMarcaConMasProductos
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property RptMarcaMenosProd() As RptMarcaMenosProdDataTable
-        Get
-            Return Me.tableRptMarcaMenosProd
+            Return Me.tableRptMarcasXProducto
         End Get
     End Property
     
@@ -307,6 +299,16 @@ Partial Public Class DBLaCasaDelArteDataSet
     Public ReadOnly Property RptPreciosAltoABajos() As RptPreciosAltoABajosDataTable
         Get
             Return Me.tableRptPreciosAltoABajos
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property RptProductosXPrecio() As RptProductosXPrecioDataTable
+        Get
+            Return Me.tableRptProductosXPrecio
         End Get
     End Property
     
@@ -413,14 +415,14 @@ Partial Public Class DBLaCasaDelArteDataSet
             If (Not (ds.Tables("RptMovimientos")) Is Nothing) Then
                 MyBase.Tables.Add(New RptMovimientosDataTable(ds.Tables("RptMovimientos")))
             End If
-            If (Not (ds.Tables("MarcaConMasProductos")) Is Nothing) Then
-                MyBase.Tables.Add(New MarcaConMasProductosDataTable(ds.Tables("MarcaConMasProductos")))
-            End If
-            If (Not (ds.Tables("RptMarcaMenosProd")) Is Nothing) Then
-                MyBase.Tables.Add(New RptMarcaMenosProdDataTable(ds.Tables("RptMarcaMenosProd")))
+            If (Not (ds.Tables("RptMarcasXProducto")) Is Nothing) Then
+                MyBase.Tables.Add(New RptMarcasXProductoDataTable(ds.Tables("RptMarcasXProducto")))
             End If
             If (Not (ds.Tables("RptPreciosAltoABajos")) Is Nothing) Then
                 MyBase.Tables.Add(New RptPreciosAltoABajosDataTable(ds.Tables("RptPreciosAltoABajos")))
+            End If
+            If (Not (ds.Tables("RptProductosXPrecio")) Is Nothing) Then
+                MyBase.Tables.Add(New RptProductosXPrecioDataTable(ds.Tables("RptProductosXPrecio")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -526,22 +528,22 @@ Partial Public Class DBLaCasaDelArteDataSet
                 Me.tableRptMovimientos.InitVars
             End If
         End If
-        Me.tableMarcaConMasProductos = CType(MyBase.Tables("MarcaConMasProductos"),MarcaConMasProductosDataTable)
+        Me.tableRptMarcasXProducto = CType(MyBase.Tables("RptMarcasXProducto"),RptMarcasXProductoDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableMarcaConMasProductos) Is Nothing) Then
-                Me.tableMarcaConMasProductos.InitVars
-            End If
-        End If
-        Me.tableRptMarcaMenosProd = CType(MyBase.Tables("RptMarcaMenosProd"),RptMarcaMenosProdDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableRptMarcaMenosProd) Is Nothing) Then
-                Me.tableRptMarcaMenosProd.InitVars
+            If (Not (Me.tableRptMarcasXProducto) Is Nothing) Then
+                Me.tableRptMarcasXProducto.InitVars
             End If
         End If
         Me.tableRptPreciosAltoABajos = CType(MyBase.Tables("RptPreciosAltoABajos"),RptPreciosAltoABajosDataTable)
         If (initTable = true) Then
             If (Not (Me.tableRptPreciosAltoABajos) Is Nothing) Then
                 Me.tableRptPreciosAltoABajos.InitVars
+            End If
+        End If
+        Me.tableRptProductosXPrecio = CType(MyBase.Tables("RptProductosXPrecio"),RptProductosXPrecioDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableRptProductosXPrecio) Is Nothing) Then
+                Me.tableRptProductosXPrecio.InitVars
             End If
         End If
         Me.relationRefProducto47 = Me.Relations("RefProducto47")
@@ -551,6 +553,7 @@ Partial Public Class DBLaCasaDelArteDataSet
         Me.relationRefPermiso35 = Me.Relations("RefPermiso35")
         Me.relationRefRol36 = Me.Relations("RefRol36")
         Me.relationRefRol34 = Me.Relations("RefRol34")
+        Me.relationRefProducto471 = Me.Relations("RefProducto471")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -585,12 +588,12 @@ Partial Public Class DBLaCasaDelArteDataSet
         MyBase.Tables.Add(Me.tableRptProductos)
         Me.tableRptMovimientos = New RptMovimientosDataTable()
         MyBase.Tables.Add(Me.tableRptMovimientos)
-        Me.tableMarcaConMasProductos = New MarcaConMasProductosDataTable()
-        MyBase.Tables.Add(Me.tableMarcaConMasProductos)
-        Me.tableRptMarcaMenosProd = New RptMarcaMenosProdDataTable()
-        MyBase.Tables.Add(Me.tableRptMarcaMenosProd)
+        Me.tableRptMarcasXProducto = New RptMarcasXProductoDataTable()
+        MyBase.Tables.Add(Me.tableRptMarcasXProducto)
         Me.tableRptPreciosAltoABajos = New RptPreciosAltoABajosDataTable()
         MyBase.Tables.Add(Me.tableRptPreciosAltoABajos)
+        Me.tableRptProductosXPrecio = New RptProductosXPrecioDataTable()
+        MyBase.Tables.Add(Me.tableRptProductosXPrecio)
         Me.relationRefProducto47 = New Global.System.Data.DataRelation("RefProducto47", New Global.System.Data.DataColumn() {Me.tableProducto.id_productoColumn}, New Global.System.Data.DataColumn() {Me.tableMovimiento.id_productoColumn}, false)
         Me.Relations.Add(Me.relationRefProducto47)
         Me.relationRefUsuario42 = New Global.System.Data.DataRelation("RefUsuario42", New Global.System.Data.DataColumn() {Me.tableUsuario.usuario_idColumn}, New Global.System.Data.DataColumn() {Me.tableMovimiento.usuario_idColumn}, false)
@@ -605,6 +608,8 @@ Partial Public Class DBLaCasaDelArteDataSet
         Me.Relations.Add(Me.relationRefRol36)
         Me.relationRefRol34 = New Global.System.Data.DataRelation("RefRol34", New Global.System.Data.DataColumn() {Me.tableRol.ID_RolColumn}, New Global.System.Data.DataColumn() {Me.tableUsuario.ID_RolColumn}, false)
         Me.Relations.Add(Me.relationRefRol34)
+        Me.relationRefProducto471 = New Global.System.Data.DataRelation("RefProducto471", New Global.System.Data.DataColumn() {Me.tableRptProductosXPrecio.id_productoColumn}, New Global.System.Data.DataColumn() {Me.tableMovimiento.id_productoColumn}, false)
+        Me.Relations.Add(Me.relationRefProducto471)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -681,19 +686,19 @@ Partial Public Class DBLaCasaDelArteDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeMarcaConMasProductos() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeRptMarcaMenosProd() As Boolean
+    Private Function ShouldSerializeRptMarcasXProducto() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Private Function ShouldSerializeRptPreciosAltoABajos() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+    Private Function ShouldSerializeRptProductosXPrecio() As Boolean
         Return false
     End Function
     
@@ -792,13 +797,13 @@ Partial Public Class DBLaCasaDelArteDataSet
     Public Delegate Sub RptMovimientosRowChangeEventHandler(ByVal sender As Object, ByVal e As RptMovimientosRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub MarcaConMasProductosRowChangeEventHandler(ByVal sender As Object, ByVal e As MarcaConMasProductosRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub RptMarcaMenosProdRowChangeEventHandler(ByVal sender As Object, ByVal e As RptMarcaMenosProdRowChangeEvent)
+    Public Delegate Sub RptMarcasXProductoRowChangeEventHandler(ByVal sender As Object, ByVal e As RptMarcasXProductoRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Delegate Sub RptPreciosAltoABajosRowChangeEventHandler(ByVal sender As Object, ByVal e As RptPreciosAltoABajosRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+    Public Delegate Sub RptProductosXPrecioRowChangeEventHandler(ByVal sender As Object, ByVal e As RptProductosXPrecioRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -4623,7 +4628,9 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         Private columntipo_movimiento As Global.System.Data.DataColumn
         
-        Private columninventario_final As Global.System.Data.DataColumn
+        Private columninventario_inicial As Global.System.Data.DataColumn
+        
+        Private columncantidadProd As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -4718,9 +4725,17 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property inventario_finalColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property inventario_inicialColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columninventario_final
+                Return Me.columninventario_inicial
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property cantidadProdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncantidadProd
             End Get
         End Property
         
@@ -4761,9 +4776,9 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRptMovimientosRow(ByVal fecha_movimiento As Date, ByVal descripcionMov As String, ByVal nombreProd As String, ByVal cantidad_disponible As Integer, ByVal precio_unitario As Double, ByVal tipo_movimiento As String, ByVal inventario_final As Integer) As RptMovimientosRow
+        Public Overloads Function AddRptMovimientosRow(ByVal fecha_movimiento As Date, ByVal descripcionMov As String, ByVal nombreProd As String, ByVal cantidad_disponible As Integer, ByVal precio_unitario As Double, ByVal tipo_movimiento As String, ByVal inventario_inicial As Integer, ByVal cantidadProd As Integer) As RptMovimientosRow
             Dim rowRptMovimientosRow As RptMovimientosRow = CType(Me.NewRow,RptMovimientosRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, fecha_movimiento, descripcionMov, nombreProd, cantidad_disponible, precio_unitario, tipo_movimiento, inventario_final}
+            Dim columnValuesArray() As Object = New Object() {Nothing, fecha_movimiento, descripcionMov, nombreProd, cantidad_disponible, precio_unitario, tipo_movimiento, inventario_inicial, cantidadProd}
             rowRptMovimientosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRptMovimientosRow)
             Return rowRptMovimientosRow
@@ -4799,7 +4814,8 @@ Partial Public Class DBLaCasaDelArteDataSet
             Me.columncantidad_disponible = MyBase.Columns("cantidad_disponible")
             Me.columnprecio_unitario = MyBase.Columns("precio_unitario")
             Me.columntipo_movimiento = MyBase.Columns("tipo_movimiento")
-            Me.columninventario_final = MyBase.Columns("inventario_final")
+            Me.columninventario_inicial = MyBase.Columns("inventario_inicial")
+            Me.columncantidadProd = MyBase.Columns("cantidadProd")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4819,8 +4835,10 @@ Partial Public Class DBLaCasaDelArteDataSet
             MyBase.Columns.Add(Me.columnprecio_unitario)
             Me.columntipo_movimiento = New Global.System.Data.DataColumn("tipo_movimiento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntipo_movimiento)
-            Me.columninventario_final = New Global.System.Data.DataColumn("inventario_final", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columninventario_final)
+            Me.columninventario_inicial = New Global.System.Data.DataColumn("inventario_inicial", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columninventario_inicial)
+            Me.columncantidadProd = New Global.System.Data.DataColumn("cantidadProd", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncantidadProd)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_movimiento}, true))
             Me.columnid_movimiento.AutoIncrement = true
             Me.columnid_movimiento.AutoIncrementSeed = -1
@@ -4836,7 +4854,8 @@ Partial Public Class DBLaCasaDelArteDataSet
             Me.columnprecio_unitario.AllowDBNull = false
             Me.columntipo_movimiento.ReadOnly = true
             Me.columntipo_movimiento.MaxLength = 7
-            Me.columninventario_final.ReadOnly = true
+            Me.columninventario_inicial.AllowDBNull = false
+            Me.columncantidadProd.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4971,8 +4990,8 @@ Partial Public Class DBLaCasaDelArteDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class MarcaConMasProductosDataTable
-        Inherits Global.System.Data.TypedTableBase(Of MarcaConMasProductosRow)
+    Partial Public Class RptMarcasXProductoDataTable
+        Inherits Global.System.Data.TypedTableBase(Of RptMarcasXProductoRow)
         
         Private columnnombreMarca As Global.System.Data.DataColumn
         
@@ -4982,7 +5001,7 @@ Partial Public Class DBLaCasaDelArteDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "MarcaConMasProductos"
+            Me.TableName = "RptMarcasXProducto"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -5040,44 +5059,44 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As MarcaConMasProductosRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As RptMarcasXProductoRow
             Get
-                Return CType(Me.Rows(index),MarcaConMasProductosRow)
+                Return CType(Me.Rows(index),RptMarcasXProductoRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event MarcaConMasProductosRowChanging As MarcaConMasProductosRowChangeEventHandler
+        Public Event RptMarcasXProductoRowChanging As RptMarcasXProductoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event MarcaConMasProductosRowChanged As MarcaConMasProductosRowChangeEventHandler
+        Public Event RptMarcasXProductoRowChanged As RptMarcasXProductoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event MarcaConMasProductosRowDeleting As MarcaConMasProductosRowChangeEventHandler
+        Public Event RptMarcasXProductoRowDeleting As RptMarcasXProductoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event MarcaConMasProductosRowDeleted As MarcaConMasProductosRowChangeEventHandler
+        Public Event RptMarcasXProductoRowDeleted As RptMarcasXProductoRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddMarcaConMasProductosRow(ByVal row As MarcaConMasProductosRow)
+        Public Overloads Sub AddRptMarcasXProductoRow(ByVal row As RptMarcasXProductoRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddMarcaConMasProductosRow(ByVal nombreMarca As String, ByVal nombreProd As Integer) As MarcaConMasProductosRow
-            Dim rowMarcaConMasProductosRow As MarcaConMasProductosRow = CType(Me.NewRow,MarcaConMasProductosRow)
+        Public Overloads Function AddRptMarcasXProductoRow(ByVal nombreMarca As String, ByVal nombreProd As Integer) As RptMarcasXProductoRow
+            Dim rowRptMarcasXProductoRow As RptMarcasXProductoRow = CType(Me.NewRow,RptMarcasXProductoRow)
             Dim columnValuesArray() As Object = New Object() {nombreMarca, nombreProd}
-            rowMarcaConMasProductosRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowMarcaConMasProductosRow)
-            Return rowMarcaConMasProductosRow
+            rowRptMarcasXProductoRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowRptMarcasXProductoRow)
+            Return rowRptMarcasXProductoRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As MarcaConMasProductosDataTable = CType(MyBase.Clone,MarcaConMasProductosDataTable)
+            Dim cln As RptMarcasXProductoDataTable = CType(MyBase.Clone,RptMarcasXProductoDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -5085,7 +5104,7 @@ Partial Public Class DBLaCasaDelArteDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New MarcaConMasProductosDataTable()
+            Return New RptMarcasXProductoDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5109,28 +5128,28 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewMarcaConMasProductosRow() As MarcaConMasProductosRow
-            Return CType(Me.NewRow,MarcaConMasProductosRow)
+        Public Function NewRptMarcasXProductoRow() As RptMarcasXProductoRow
+            Return CType(Me.NewRow,RptMarcasXProductoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New MarcaConMasProductosRow(builder)
+            Return New RptMarcasXProductoRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(MarcaConMasProductosRow)
+            Return GetType(RptMarcasXProductoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.MarcaConMasProductosRowChangedEvent) Is Nothing) Then
-                RaiseEvent MarcaConMasProductosRowChanged(Me, New MarcaConMasProductosRowChangeEvent(CType(e.Row,MarcaConMasProductosRow), e.Action))
+            If (Not (Me.RptMarcasXProductoRowChangedEvent) Is Nothing) Then
+                RaiseEvent RptMarcasXProductoRowChanged(Me, New RptMarcasXProductoRowChangeEvent(CType(e.Row,RptMarcasXProductoRow), e.Action))
             End If
         End Sub
         
@@ -5138,8 +5157,8 @@ Partial Public Class DBLaCasaDelArteDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.MarcaConMasProductosRowChangingEvent) Is Nothing) Then
-                RaiseEvent MarcaConMasProductosRowChanging(Me, New MarcaConMasProductosRowChangeEvent(CType(e.Row,MarcaConMasProductosRow), e.Action))
+            If (Not (Me.RptMarcasXProductoRowChangingEvent) Is Nothing) Then
+                RaiseEvent RptMarcasXProductoRowChanging(Me, New RptMarcasXProductoRowChangeEvent(CType(e.Row,RptMarcasXProductoRow), e.Action))
             End If
         End Sub
         
@@ -5147,8 +5166,8 @@ Partial Public Class DBLaCasaDelArteDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.MarcaConMasProductosRowDeletedEvent) Is Nothing) Then
-                RaiseEvent MarcaConMasProductosRowDeleted(Me, New MarcaConMasProductosRowChangeEvent(CType(e.Row,MarcaConMasProductosRow), e.Action))
+            If (Not (Me.RptMarcasXProductoRowDeletedEvent) Is Nothing) Then
+                RaiseEvent RptMarcasXProductoRowDeleted(Me, New RptMarcasXProductoRowChangeEvent(CType(e.Row,RptMarcasXProductoRow), e.Action))
             End If
         End Sub
         
@@ -5156,14 +5175,14 @@ Partial Public Class DBLaCasaDelArteDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.MarcaConMasProductosRowDeletingEvent) Is Nothing) Then
-                RaiseEvent MarcaConMasProductosRowDeleting(Me, New MarcaConMasProductosRowChangeEvent(CType(e.Row,MarcaConMasProductosRow), e.Action))
+            If (Not (Me.RptMarcasXProductoRowDeletingEvent) Is Nothing) Then
+                RaiseEvent RptMarcasXProductoRowDeleting(Me, New RptMarcasXProductoRowChangeEvent(CType(e.Row,RptMarcasXProductoRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveMarcaConMasProductosRow(ByVal row As MarcaConMasProductosRow)
+        Public Sub RemoveRptMarcasXProductoRow(ByVal row As RptMarcasXProductoRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -5190,275 +5209,7 @@ Partial Public Class DBLaCasaDelArteDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "MarcaConMasProductosDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class RptMarcaMenosProdDataTable
-        Inherits Global.System.Data.TypedTableBase(Of RptMarcaMenosProdRow)
-        
-        Private columnnombreMarca As Global.System.Data.DataColumn
-        
-        Private columnnombreProd As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "RptMarcaMenosProd"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property nombreMarcaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnombreMarca
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property nombreProdColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnombreProd
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As RptMarcaMenosProdRow
-            Get
-                Return CType(Me.Rows(index),RptMarcaMenosProdRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event RptMarcaMenosProdRowChanging As RptMarcaMenosProdRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event RptMarcaMenosProdRowChanged As RptMarcaMenosProdRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event RptMarcaMenosProdRowDeleting As RptMarcaMenosProdRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event RptMarcaMenosProdRowDeleted As RptMarcaMenosProdRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddRptMarcaMenosProdRow(ByVal row As RptMarcaMenosProdRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRptMarcaMenosProdRow(ByVal nombreMarca As String, ByVal nombreProd As Integer) As RptMarcaMenosProdRow
-            Dim rowRptMarcaMenosProdRow As RptMarcaMenosProdRow = CType(Me.NewRow,RptMarcaMenosProdRow)
-            Dim columnValuesArray() As Object = New Object() {nombreMarca, nombreProd}
-            rowRptMarcaMenosProdRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowRptMarcaMenosProdRow)
-            Return rowRptMarcaMenosProdRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As RptMarcaMenosProdDataTable = CType(MyBase.Clone,RptMarcaMenosProdDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New RptMarcaMenosProdDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnnombreMarca = MyBase.Columns("nombreMarca")
-            Me.columnnombreProd = MyBase.Columns("nombreProd")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnnombreMarca = New Global.System.Data.DataColumn("nombreMarca", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnombreMarca)
-            Me.columnnombreProd = New Global.System.Data.DataColumn("nombreProd", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnombreProd)
-            Me.columnnombreMarca.AllowDBNull = false
-            Me.columnnombreMarca.MaxLength = 50
-            Me.columnnombreProd.ReadOnly = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewRptMarcaMenosProdRow() As RptMarcaMenosProdRow
-            Return CType(Me.NewRow,RptMarcaMenosProdRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New RptMarcaMenosProdRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(RptMarcaMenosProdRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.RptMarcaMenosProdRowChangedEvent) Is Nothing) Then
-                RaiseEvent RptMarcaMenosProdRowChanged(Me, New RptMarcaMenosProdRowChangeEvent(CType(e.Row,RptMarcaMenosProdRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.RptMarcaMenosProdRowChangingEvent) Is Nothing) Then
-                RaiseEvent RptMarcaMenosProdRowChanging(Me, New RptMarcaMenosProdRowChangeEvent(CType(e.Row,RptMarcaMenosProdRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.RptMarcaMenosProdRowDeletedEvent) Is Nothing) Then
-                RaiseEvent RptMarcaMenosProdRowDeleted(Me, New RptMarcaMenosProdRowChangeEvent(CType(e.Row,RptMarcaMenosProdRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.RptMarcaMenosProdRowDeletingEvent) Is Nothing) Then
-                RaiseEvent RptMarcaMenosProdRowDeleting(Me, New RptMarcaMenosProdRowChangeEvent(CType(e.Row,RptMarcaMenosProdRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveRptMarcaMenosProdRow(ByVal row As RptMarcaMenosProdRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DBLaCasaDelArteDataSet = New DBLaCasaDelArteDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "RptMarcaMenosProdDataTable"
+            attribute2.FixedValue = "RptMarcasXProductoDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -5727,6 +5478,311 @@ Partial Public Class DBLaCasaDelArteDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "RptPreciosAltoABajosDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class RptProductosXPrecioDataTable
+        Inherits Global.System.Data.TypedTableBase(Of RptProductosXPrecioRow)
+        
+        Private columnid_producto As Global.System.Data.DataColumn
+        
+        Private columnnombreProd As Global.System.Data.DataColumn
+        
+        Private columndescripcionProd As Global.System.Data.DataColumn
+        
+        Private columnprecio_unitario As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "RptProductosXPrecio"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property id_productoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_producto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property nombreProdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnombreProd
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property descripcionProdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndescripcionProd
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property precio_unitarioColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprecio_unitario
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As RptProductosXPrecioRow
+            Get
+                Return CType(Me.Rows(index),RptProductosXPrecioRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RptProductosXPrecioRowChanging As RptProductosXPrecioRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RptProductosXPrecioRowChanged As RptProductosXPrecioRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RptProductosXPrecioRowDeleting As RptProductosXPrecioRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Event RptProductosXPrecioRowDeleted As RptProductosXPrecioRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Overloads Sub AddRptProductosXPrecioRow(ByVal row As RptProductosXPrecioRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Overloads Function AddRptProductosXPrecioRow(ByVal id_producto As String, ByVal nombreProd As String, ByVal descripcionProd As String, ByVal precio_unitario As Double) As RptProductosXPrecioRow
+            Dim rowRptProductosXPrecioRow As RptProductosXPrecioRow = CType(Me.NewRow,RptProductosXPrecioRow)
+            Dim columnValuesArray() As Object = New Object() {id_producto, nombreProd, descripcionProd, precio_unitario}
+            rowRptProductosXPrecioRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowRptProductosXPrecioRow)
+            Return rowRptProductosXPrecioRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function FindByid_producto(ByVal id_producto As String) As RptProductosXPrecioRow
+            Return CType(Me.Rows.Find(New Object() {id_producto}),RptProductosXPrecioRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As RptProductosXPrecioDataTable = CType(MyBase.Clone,RptProductosXPrecioDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New RptProductosXPrecioDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid_producto = MyBase.Columns("id_producto")
+            Me.columnnombreProd = MyBase.Columns("nombreProd")
+            Me.columndescripcionProd = MyBase.Columns("descripcionProd")
+            Me.columnprecio_unitario = MyBase.Columns("precio_unitario")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid_producto = New Global.System.Data.DataColumn("id_producto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_producto)
+            Me.columnnombreProd = New Global.System.Data.DataColumn("nombreProd", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnombreProd)
+            Me.columndescripcionProd = New Global.System.Data.DataColumn("descripcionProd", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndescripcionProd)
+            Me.columnprecio_unitario = New Global.System.Data.DataColumn("precio_unitario", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprecio_unitario)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_producto}, true))
+            Me.columnid_producto.AllowDBNull = false
+            Me.columnid_producto.Unique = true
+            Me.columnid_producto.MaxLength = 15
+            Me.columnnombreProd.AllowDBNull = false
+            Me.columnnombreProd.MaxLength = 50
+            Me.columndescripcionProd.MaxLength = 100
+            Me.columnprecio_unitario.AllowDBNull = false
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function NewRptProductosXPrecioRow() As RptProductosXPrecioRow
+            Return CType(Me.NewRow,RptProductosXPrecioRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New RptProductosXPrecioRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(RptProductosXPrecioRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.RptProductosXPrecioRowChangedEvent) Is Nothing) Then
+                RaiseEvent RptProductosXPrecioRowChanged(Me, New RptProductosXPrecioRowChangeEvent(CType(e.Row,RptProductosXPrecioRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.RptProductosXPrecioRowChangingEvent) Is Nothing) Then
+                RaiseEvent RptProductosXPrecioRowChanging(Me, New RptProductosXPrecioRowChangeEvent(CType(e.Row,RptProductosXPrecioRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.RptProductosXPrecioRowDeletedEvent) Is Nothing) Then
+                RaiseEvent RptProductosXPrecioRowDeleted(Me, New RptProductosXPrecioRowChangeEvent(CType(e.Row,RptProductosXPrecioRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.RptProductosXPrecioRowDeletingEvent) Is Nothing) Then
+                RaiseEvent RptProductosXPrecioRowDeleting(Me, New RptProductosXPrecioRowChangeEvent(CType(e.Row,RptProductosXPrecioRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub RemoveRptProductosXPrecioRow(ByVal row As RptProductosXPrecioRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DBLaCasaDelArteDataSet = New DBLaCasaDelArteDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "RptProductosXPrecioDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -6236,6 +6292,17 @@ Partial Public Class DBLaCasaDelArteDataSet
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("RefUsuario42"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property RptProductosXPrecioRow() As RptProductosXPrecioRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("RefProducto471")),RptProductosXPrecioRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("RefProducto471"))
             End Set
         End Property
         
@@ -7212,17 +7279,23 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property inventario_final() As Integer
+        Public Property inventario_inicial() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableRptMovimientos.inventario_finalColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'inventario_final' de la tabla 'RptMovimientos' es DBNull."& _ 
-                            "", e)
-                End Try
+                Return CType(Me(Me.tableRptMovimientos.inventario_inicialColumn),Integer)
             End Get
             Set
-                Me(Me.tableRptMovimientos.inventario_finalColumn) = value
+                Me(Me.tableRptMovimientos.inventario_inicialColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property cantidadProd() As Integer
+            Get
+                Return CType(Me(Me.tableRptMovimientos.cantidadProdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableRptMovimientos.cantidadProdColumn) = value
             End Set
         End Property
         
@@ -7249,43 +7322,31 @@ Partial Public Class DBLaCasaDelArteDataSet
         Public Sub Settipo_movimientoNull()
             Me(Me.tableRptMovimientos.tipo_movimientoColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function Isinventario_finalNull() As Boolean
-            Return Me.IsNull(Me.tableRptMovimientos.inventario_finalColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Setinventario_finalNull()
-            Me(Me.tableRptMovimientos.inventario_finalColumn) = Global.System.Convert.DBNull
-        End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class MarcaConMasProductosRow
+    Partial Public Class RptMarcasXProductoRow
         Inherits Global.System.Data.DataRow
         
-        Private tableMarcaConMasProductos As MarcaConMasProductosDataTable
+        Private tableRptMarcasXProducto As RptMarcasXProductoDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableMarcaConMasProductos = CType(Me.Table,MarcaConMasProductosDataTable)
+            Me.tableRptMarcasXProducto = CType(Me.Table,RptMarcasXProductoDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property nombreMarca() As String
             Get
-                Return CType(Me(Me.tableMarcaConMasProductos.nombreMarcaColumn),String)
+                Return CType(Me(Me.tableRptMarcasXProducto.nombreMarcaColumn),String)
             End Get
             Set
-                Me(Me.tableMarcaConMasProductos.nombreMarcaColumn) = value
+                Me(Me.tableRptMarcasXProducto.nombreMarcaColumn) = value
             End Set
         End Property
         
@@ -7294,81 +7355,26 @@ Partial Public Class DBLaCasaDelArteDataSet
         Public Property nombreProd() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableMarcaConMasProductos.nombreProdColumn),Integer)
+                    Return CType(Me(Me.tableRptMarcasXProducto.nombreProdColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nombreProd' de la tabla 'MarcaConMasProductos' es DBNull."& _ 
-                            "", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nombreProd' de la tabla 'RptMarcasXProducto' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableMarcaConMasProductos.nombreProdColumn) = value
+                Me(Me.tableRptMarcasXProducto.nombreProdColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsnombreProdNull() As Boolean
-            Return Me.IsNull(Me.tableMarcaConMasProductos.nombreProdColumn)
+            Return Me.IsNull(Me.tableRptMarcasXProducto.nombreProdColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetnombreProdNull()
-            Me(Me.tableMarcaConMasProductos.nombreProdColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class RptMarcaMenosProdRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableRptMarcaMenosProd As RptMarcaMenosProdDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableRptMarcaMenosProd = CType(Me.Table,RptMarcaMenosProdDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property nombreMarca() As String
-            Get
-                Return CType(Me(Me.tableRptMarcaMenosProd.nombreMarcaColumn),String)
-            End Get
-            Set
-                Me(Me.tableRptMarcaMenosProd.nombreMarcaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property nombreProd() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableRptMarcaMenosProd.nombreProdColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nombreProd' de la tabla 'RptMarcaMenosProd' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableRptMarcaMenosProd.nombreProdColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsnombreProdNull() As Boolean
-            Return Me.IsNull(Me.tableRptMarcaMenosProd.nombreProdColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetnombreProdNull()
-            Me(Me.tableRptMarcaMenosProd.nombreProdColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRptMarcasXProducto.nombreProdColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -7408,6 +7414,93 @@ Partial Public Class DBLaCasaDelArteDataSet
                 Me(Me.tableRptPreciosAltoABajos.precio_unitarioColumn) = value
             End Set
         End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class RptProductosXPrecioRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableRptProductosXPrecio As RptProductosXPrecioDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableRptProductosXPrecio = CType(Me.Table,RptProductosXPrecioDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property id_producto() As String
+            Get
+                Return CType(Me(Me.tableRptProductosXPrecio.id_productoColumn),String)
+            End Get
+            Set
+                Me(Me.tableRptProductosXPrecio.id_productoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property nombreProd() As String
+            Get
+                Return CType(Me(Me.tableRptProductosXPrecio.nombreProdColumn),String)
+            End Get
+            Set
+                Me(Me.tableRptProductosXPrecio.nombreProdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property descripcionProd() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRptProductosXPrecio.descripcionProdColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'descripcionProd' de la tabla 'RptProductosXPrecio' es DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRptProductosXPrecio.descripcionProdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property precio_unitario() As Double
+            Get
+                Return CType(Me(Me.tableRptProductosXPrecio.precio_unitarioColumn),Double)
+            End Get
+            Set
+                Me(Me.tableRptProductosXPrecio.precio_unitarioColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsdescripcionProdNull() As Boolean
+            Return Me.IsNull(Me.tableRptProductosXPrecio.descripcionProdColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetdescripcionProdNull()
+            Me(Me.tableRptProductosXPrecio.descripcionProdColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function GetMovimientoRows() As MovimientoRow()
+            If (Me.Table.ChildRelations("RefProducto471") Is Nothing) Then
+                Return New MovimientoRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("RefProducto471")),MovimientoRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -7846,16 +7939,16 @@ Partial Public Class DBLaCasaDelArteDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class MarcaConMasProductosRowChangeEvent
+    Public Class RptMarcasXProductoRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As MarcaConMasProductosRow
+        Private eventRow As RptMarcasXProductoRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As MarcaConMasProductosRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As RptMarcasXProductoRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -7863,43 +7956,7 @@ Partial Public Class DBLaCasaDelArteDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As MarcaConMasProductosRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class RptMarcaMenosProdRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As RptMarcaMenosProdRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As RptMarcaMenosProdRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As RptMarcaMenosProdRow
+        Public ReadOnly Property Row() As RptMarcasXProductoRow
             Get
                 Return Me.eventRow
             End Get
@@ -7936,6 +7993,42 @@ Partial Public Class DBLaCasaDelArteDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property Row() As RptPreciosAltoABajosRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+    Public Class RptProductosXPrecioRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As RptProductosXPrecioRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub New(ByVal row As RptProductosXPrecioRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property Row() As RptProductosXPrecioRow
             Get
                 Return Me.eventRow
             End Get
@@ -12222,7 +12315,8 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             tableMapping.ColumnMappings.Add("cantidad_disponible", "cantidad_disponible")
             tableMapping.ColumnMappings.Add("precio_unitario", "precio_unitario")
             tableMapping.ColumnMappings.Add("tipo_movimiento", "tipo_movimiento")
-            tableMapping.ColumnMappings.Add("inventario_final", "inventario_final")
+            tableMapping.ColumnMappings.Add("inventario_inicial", "inventario_inicial")
+            tableMapping.ColumnMappings.Add("cantidadProd", "cantidadProd")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -12240,14 +12334,12 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Movimiento.id_movimiento, Movimiento.fecha_movimiento, Movimiento.descripc"& _ 
-                "ionMov, Producto.nombreProd, Producto.cantidad_disponible, Producto.precio_unita"& _ 
-                "rio, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Sali"& _ 
-                "da' END AS tipo_movimiento, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  CASE WHEN tipo_movimiento = 1 TH"& _ 
-                "EN Producto.cantidad_disponible + Movimiento.cantidadProd ELSE Producto.cantidad"& _ 
-                "_disponible - Movimiento.cantidadProd END AS inventario_final"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Movimien"& _ 
-                "to INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Producto ON Movimiento.id_producto = Producto.i"& _ 
-                "d_producto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Usuario ON Movimiento.usuario_id = Usua"& _ 
-                "rio.usuario_id"
+                "ionMov, Producto.nombreProd, Producto.precio_unitario, Producto.inventario_inici"& _ 
+                "al, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salid"& _ 
+                "a' END AS tipo_movimiento, Movimiento.cantidadProd, Producto.cantidad_disponible"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Movimiento INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Producto ON Movimiento.id_pr"& _ 
+                "oducto = Producto.id_producto INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Usuario ON Movimient"& _ 
+                "o.usuario_id = Usuario.usuario_id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -12285,7 +12377,7 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class MarcaConMasProductosTableAdapter
+    Partial Public Class RptMarcasXProductoTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -12402,7 +12494,7 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "MarcaConMasProductos"
+            tableMapping.DataSetTable = "RptMarcasXProducto"
             tableMapping.ColumnMappings.Add("nombreMarca", "nombreMarca")
             tableMapping.ColumnMappings.Add("nombreProd", "nombreProd")
             Me._adapter.TableMappings.Add(tableMapping)
@@ -12432,7 +12524,7 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DBLaCasaDelArteDataSet.MarcaConMasProductosDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DBLaCasaDelArteDataSet.RptMarcasXProductoDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -12445,186 +12537,9 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DBLaCasaDelArteDataSet.MarcaConMasProductosDataTable
+        Public Overloads Overridable Function GetData() As DBLaCasaDelArteDataSet.RptMarcasXProductoDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DBLaCasaDelArteDataSet.MarcaConMasProductosDataTable = New DBLaCasaDelArteDataSet.MarcaConMasProductosDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class RptMarcaMenosProdTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "RptMarcaMenosProd"
-            tableMapping.ColumnMappings.Add("nombreMarca", "nombreMarca")
-            tableMapping.ColumnMappings.Add("nombreProd", "nombreProd")
-            Me._adapter.TableMappings.Add(tableMapping)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.SistemaInventarioLCDA.My.MySettings.Default.StrConexion
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Marca.nombreMarca, COUNT(Producto.nombreProd) AS nombreProd"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "          Marca INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Producto ON Marca.id_marca "& _ 
-                "= Producto.id_marca"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Producto.estado <> 0)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Marca.nombreM"& _ 
-                "arca"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY nombreProd"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DBLaCasaDelArteDataSet.RptMarcaMenosProdDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DBLaCasaDelArteDataSet.RptMarcaMenosProdDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DBLaCasaDelArteDataSet.RptMarcaMenosProdDataTable = New DBLaCasaDelArteDataSet.RptMarcaMenosProdDataTable()
+            Dim dataTable As DBLaCasaDelArteDataSet.RptMarcasXProductoDataTable = New DBLaCasaDelArteDataSet.RptMarcasXProductoDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -12807,6 +12722,342 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class RptProductosXPrecioTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "RptProductosXPrecio"
+            tableMapping.ColumnMappings.Add("id_producto", "id_producto")
+            tableMapping.ColumnMappings.Add("nombreProd", "nombreProd")
+            tableMapping.ColumnMappings.Add("descripcionProd", "descripcionProd")
+            tableMapping.ColumnMappings.Add("precio_unitario", "precio_unitario")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Producto] WHERE (([id_producto] = @Original_id_producto) AND ([nombr"& _ 
+                "eProd] = @Original_nombreProd) AND ((@IsNull_descripcionProd = 1 AND [descripcio"& _ 
+                "nProd] IS NULL) OR ([descripcionProd] = @Original_descripcionProd)) AND ([precio"& _ 
+                "_unitario] = @Original_precio_unitario))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_producto", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_producto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nombreProd", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombreProd", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_descripcionProd", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionProd", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_descripcionProd", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionProd", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_precio_unitario", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "precio_unitario", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Producto] SET [id_producto] = @id_producto, [nombreProd] = @nombreProd, ["& _ 
+                "descripcionProd] = @descripcionProd, [precio_unitario] = @precio_unitario WHERE "& _ 
+                "(([id_producto] = @Original_id_producto) AND ([nombreProd] = @Original_nombrePro"& _ 
+                "d) AND ((@IsNull_descripcionProd = 1 AND [descripcionProd] IS NULL) OR ([descrip"& _ 
+                "cionProd] = @Original_descripcionProd)) AND ([precio_unitario] = @Original_preci"& _ 
+                "o_unitario));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_producto, nombreProd, descripcionProd, precio_unitario "& _ 
+                "FROM Producto WHERE (id_producto = @id_producto) ORDER BY precio_unitario DESC"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_producto", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_producto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombreProd", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombreProd", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@descripcionProd", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionProd", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@precio_unitario", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "precio_unitario", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_producto", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_producto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nombreProd", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombreProd", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_descripcionProd", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionProd", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_descripcionProd", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcionProd", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_precio_unitario", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "precio_unitario", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.SistemaInventarioLCDA.My.MySettings.Default.StrConexion
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT id_producto, nombreProd, descripcionProd, precio_unitario"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Produc"& _ 
+                "to"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE estado <> 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY precio_unitario DESC"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DBLaCasaDelArteDataSet.RptProductosXPrecioDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DBLaCasaDelArteDataSet.RptProductosXPrecioDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DBLaCasaDelArteDataSet.RptProductosXPrecioDataTable = New DBLaCasaDelArteDataSet.RptProductosXPrecioDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DBLaCasaDelArteDataSet.RptProductosXPrecioDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DBLaCasaDelArteDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "RptProductosXPrecio")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_id_producto As String, ByVal Original_nombreProd As String, ByVal Original_descripcionProd As String, ByVal Original_precio_unitario As Double) As Integer
+            If (Original_id_producto Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_id_producto")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id_producto,String)
+            End If
+            If (Original_nombreProd Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_nombreProd")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_nombreProd,String)
+            End If
+            If (Original_descripcionProd Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_descripcionProd,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_precio_unitario,Double)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal id_producto As String, ByVal nombreProd As String, ByVal descripcionProd As String, ByVal precio_unitario As Double, ByVal Original_id_producto As String, ByVal Original_nombreProd As String, ByVal Original_descripcionProd As String, ByVal Original_precio_unitario As Double) As Integer
+            If (id_producto Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("id_producto")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(id_producto,String)
+            End If
+            If (nombreProd Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("nombreProd")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(nombreProd,String)
+            End If
+            If (descripcionProd Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(descripcionProd,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(precio_unitario,Double)
+            If (Original_id_producto Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_id_producto")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_id_producto,String)
+            End If
+            If (Original_nombreProd Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_nombreProd")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_nombreProd,String)
+            End If
+            If (Original_descripcionProd Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_descripcionProd,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_precio_unitario,Double)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal nombreProd As String, ByVal descripcionProd As String, ByVal precio_unitario As Double, ByVal Original_id_producto As String, ByVal Original_nombreProd As String, ByVal Original_descripcionProd As String, ByVal Original_precio_unitario As Double) As Integer
+            Return Me.Update(Original_id_producto, nombreProd, descripcionProd, precio_unitario, Original_id_producto, Original_nombreProd, Original_descripcionProd, Original_precio_unitario)
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -12836,6 +13087,8 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
         Private _rolPermisoTableAdapter As RolPermisoTableAdapter
         
         Private _usuarioTableAdapter As UsuarioTableAdapter
+        
+        Private _rptProductosXPrecioTableAdapter As RptProductosXPrecioTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -12979,6 +13232,20 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property RptProductosXPrecioTableAdapter() As RptProductosXPrecioTableAdapter
+            Get
+                Return Me._rptProductosXPrecioTableAdapter
+            End Get
+            Set
+                Me._rptProductosXPrecioTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -13033,6 +13300,10 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                             AndAlso (Not (Me._usuarioTableAdapter.Connection) Is Nothing)) Then
                     Return Me._usuarioTableAdapter.Connection
                 End If
+                If ((Not (Me._rptProductosXPrecioTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._rptProductosXPrecioTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._rptProductosXPrecioTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -13071,6 +13342,9 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._usuarioTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._rptProductosXPrecioTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -13135,6 +13409,15 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._usuarioTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._rptProductosXPrecioTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.RptProductosXPrecio.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._rptProductosXPrecioTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -13223,6 +13506,14 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._rptProductosXPrecioTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.RptProductosXPrecio.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._rptProductosXPrecioTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._empresaTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Empresa.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -13278,6 +13569,14 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._empresaTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._rptProductosXPrecioTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.RptProductosXPrecio.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._rptProductosXPrecioTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -13415,6 +13714,11 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
+            If ((Not (Me._rptProductosXPrecioTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._rptProductosXPrecioTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
+                        "sma cadena de conexión.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager no contiene información de conexión. Establezca cada propieda"& _ 
@@ -13528,6 +13832,15 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._usuarioTableAdapter.Adapter)
                     End If
                 End If
+                If (Not (Me._rptProductosXPrecioTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._rptProductosXPrecioTableAdapter, Me._rptProductosXPrecioTableAdapter.Connection)
+                    Me._rptProductosXPrecioTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._rptProductosXPrecioTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._rptProductosXPrecioTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._rptProductosXPrecioTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._rptProductosXPrecioTableAdapter.Adapter)
+                    End If
+                End If
                 '
                 '---- Perform updates -----------
                 '
@@ -13623,6 +13936,10 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
                 If (Not (Me._usuarioTableAdapter) Is Nothing) Then
                     Me._usuarioTableAdapter.Connection = CType(revertConnections(Me._usuarioTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._usuarioTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._rptProductosXPrecioTableAdapter) Is Nothing) Then
+                    Me._rptProductosXPrecioTableAdapter.Connection = CType(revertConnections(Me._rptProductosXPrecioTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._rptProductosXPrecioTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

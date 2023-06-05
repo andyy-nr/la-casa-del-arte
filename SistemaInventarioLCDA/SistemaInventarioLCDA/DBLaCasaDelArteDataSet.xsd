@@ -697,12 +697,11 @@ WHERE  (Producto.estado &lt;&gt; 0)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptMovimientosTableAdapter" GeneratorDataComponentClassName="RptMovimientosTableAdapter" Name="RptMovimientos" UserDataComponentName="RptMovimientosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="StrConexion (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="StrConexion (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Movimiento.id_movimiento, Movimiento.fecha_movimiento, Movimiento.descripcionMov, Producto.nombreProd, Producto.cantidad_disponible, Producto.precio_unitario, 
-                  CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS tipo_movimiento, 
-                  CASE WHEN tipo_movimiento = 1 THEN Producto.cantidad_disponible + Movimiento.cantidadProd ELSE Producto.cantidad_disponible - Movimiento.cantidadProd END AS inventario_final
+                    <CommandText>SELECT Movimiento.id_movimiento, Movimiento.fecha_movimiento, Movimiento.descripcionMov, Producto.nombreProd, Producto.precio_unitario, Producto.inventario_inicial, 
+                  CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS tipo_movimiento, Movimiento.cantidadProd, Producto.cantidad_disponible
 FROM     Movimiento INNER JOIN
                   Producto ON Movimiento.id_producto = Producto.id_producto INNER JOIN
                   Usuario ON Movimiento.usuario_id = Usuario.usuario_id</CommandText>
@@ -719,11 +718,12 @@ FROM     Movimiento INNER JOIN
               <Mapping SourceColumn="cantidad_disponible" DataSetColumn="cantidad_disponible" />
               <Mapping SourceColumn="precio_unitario" DataSetColumn="precio_unitario" />
               <Mapping SourceColumn="tipo_movimiento" DataSetColumn="tipo_movimiento" />
-              <Mapping SourceColumn="inventario_final" DataSetColumn="inventario_final" />
+              <Mapping SourceColumn="inventario_inicial" DataSetColumn="inventario_inicial" />
+              <Mapping SourceColumn="cantidadProd" DataSetColumn="cantidadProd" />
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MarcaConMasProductosTableAdapter" GeneratorDataComponentClassName="MarcaConMasProductosTableAdapter" Name="MarcaConMasProductos" UserDataComponentName="MarcaConMasProductosTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptMarcasXProductoTableAdapter" GeneratorDataComponentClassName="RptMarcasXProductoTableAdapter" Name="RptMarcasXProducto" UserDataComponentName="RptMarcasXProductoTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="StrConexion (MySettings)" DbObjectName="DBLaCasaDelArte.dbo.Marca" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
@@ -734,28 +734,6 @@ FROM     Marca INNER JOIN
 WHERE  (Producto.estado &lt;&gt; 0)
 GROUP BY Marca.nombreMarca
 ORDER BY nombreProd DESC</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="nombreMarca" DataSetColumn="nombreMarca" />
-              <Mapping SourceColumn="nombreProd" DataSetColumn="nombreProd" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptMarcaMenosProdTableAdapter" GeneratorDataComponentClassName="RptMarcaMenosProdTableAdapter" Name="RptMarcaMenosProd" UserDataComponentName="RptMarcaMenosProdTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="StrConexion (MySettings)" DbObjectName="DBLaCasaDelArte.dbo.Marca" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Marca.nombreMarca, COUNT(Producto.nombreProd) AS nombreProd
-FROM            Marca INNER JOIN
-                         Producto ON Marca.id_marca = Producto.id_marca
-WHERE        (Producto.estado &lt;&gt; 0)
-GROUP BY Marca.nombreMarca
-ORDER BY nombreProd</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -783,6 +761,57 @@ ORDER BY Producto.precio_unitario DESC</CommandText>
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="nombreProd" DataSetColumn="nombreProd" />
+              <Mapping SourceColumn="precio_unitario" DataSetColumn="precio_unitario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RptProductosXPrecioTableAdapter" GeneratorDataComponentClassName="RptProductosXPrecioTableAdapter" Name="RptProductosXPrecio" UserDataComponentName="RptProductosXPrecioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StrConexion (MySettings)" DbObjectName="DBLaCasaDelArte.dbo.Producto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Producto] WHERE (([id_producto] = @Original_id_producto) AND ([nombreProd] = @Original_nombreProd) AND ((@IsNull_descripcionProd = 1 AND [descripcionProd] IS NULL) OR ([descripcionProd] = @Original_descripcionProd)) AND ([precio_unitario] = @Original_precio_unitario))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_id_producto" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="id_producto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombreProd" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombreProd" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descripcionProd" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descripcionProd" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_descripcionProd" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="descripcionProd" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_precio_unitario" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id_producto, nombreProd, descripcionProd, precio_unitario
+FROM     Producto
+WHERE estado &lt;&gt; 0
+ORDER BY precio_unitario DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Producto] SET [id_producto] = @id_producto, [nombreProd] = @nombreProd, [descripcionProd] = @descripcionProd, [precio_unitario] = @precio_unitario WHERE (([id_producto] = @Original_id_producto) AND ([nombreProd] = @Original_nombreProd) AND ((@IsNull_descripcionProd = 1 AND [descripcionProd] IS NULL) OR ([descripcionProd] = @Original_descripcionProd)) AND ([precio_unitario] = @Original_precio_unitario));
+SELECT id_producto, nombreProd, descripcionProd, precio_unitario FROM Producto WHERE (id_producto = @id_producto) ORDER BY precio_unitario DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@id_producto" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="id_producto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@nombreProd" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombreProd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@descripcionProd" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="descripcionProd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@precio_unitario" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_id_producto" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="id_producto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombreProd" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombreProd" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descripcionProd" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descripcionProd" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_descripcionProd" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="descripcionProd" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_precio_unitario" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_producto" DataSetColumn="id_producto" />
+              <Mapping SourceColumn="nombreProd" DataSetColumn="nombreProd" />
+              <Mapping SourceColumn="descripcionProd" DataSetColumn="descripcionProd" />
               <Mapping SourceColumn="precio_unitario" DataSetColumn="precio_unitario" />
             </Mappings>
             <Sources />
@@ -1183,11 +1212,12 @@ ORDER BY Producto.precio_unitario DESC</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="inventario_final" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="inventario_finalColumn" msprop:Generator_ColumnPropNameInRow="inventario_final" msprop:Generator_UserColumnName="inventario_final" msprop:Generator_ColumnVarNameInTable="columninventario_final" type="xs:int" minOccurs="0" />
+              <xs:element name="inventario_inicial" msprop:Generator_ColumnPropNameInRow="inventario_inicial" msprop:Generator_ColumnPropNameInTable="inventario_inicialColumn" msprop:Generator_ColumnVarNameInTable="columninventario_inicial" msprop:Generator_UserColumnName="inventario_inicial" type="xs:int" />
+              <xs:element name="cantidadProd" msprop:Generator_ColumnPropNameInRow="cantidadProd" msprop:Generator_ColumnPropNameInTable="cantidadProdColumn" msprop:Generator_ColumnVarNameInTable="columncantidadProd" msprop:Generator_UserColumnName="cantidadProd" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MarcaConMasProductos" msprop:Generator_RowEvHandlerName="MarcaConMasProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcaConMasProductosRowDeleted" msprop:Generator_RowDeletingName="MarcaConMasProductosRowDeleting" msprop:Generator_RowEvArgName="MarcaConMasProductosRowChangeEvent" msprop:Generator_TablePropName="MarcaConMasProductos" msprop:Generator_RowChangedName="MarcaConMasProductosRowChanged" msprop:Generator_UserTableName="MarcaConMasProductos" msprop:Generator_RowChangingName="MarcaConMasProductosRowChanging" msprop:Generator_RowClassName="MarcaConMasProductosRow" msprop:Generator_TableClassName="MarcaConMasProductosDataTable" msprop:Generator_TableVarName="tableMarcaConMasProductos">
+        <xs:element name="RptMarcasXProducto" msprop:Generator_RowEvHandlerName="RptMarcasXProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="RptMarcasXProductoRowDeleted" msprop:Generator_RowDeletingName="RptMarcasXProductoRowDeleting" msprop:Generator_RowEvArgName="RptMarcasXProductoRowChangeEvent" msprop:Generator_TablePropName="RptMarcasXProducto" msprop:Generator_RowChangedName="RptMarcasXProductoRowChanged" msprop:Generator_UserTableName="RptMarcasXProducto" msprop:Generator_RowChangingName="RptMarcasXProductoRowChanging" msprop:Generator_RowClassName="RptMarcasXProductoRow" msprop:Generator_TableClassName="RptMarcasXProductoDataTable" msprop:Generator_TableVarName="tableRptMarcasXProducto">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombreMarca" msprop:Generator_ColumnPropNameInTable="nombreMarcaColumn" msprop:Generator_ColumnPropNameInRow="nombreMarca" msprop:Generator_UserColumnName="nombreMarca" msprop:Generator_ColumnVarNameInTable="columnnombreMarca">
@@ -1201,31 +1231,45 @@ ORDER BY Producto.precio_unitario DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RptMarcaMenosProd" msprop:Generator_RowEvHandlerName="RptMarcaMenosProdRowChangeEventHandler" msprop:Generator_RowDeletedName="RptMarcaMenosProdRowDeleted" msprop:Generator_RowDeletingName="RptMarcaMenosProdRowDeleting" msprop:Generator_RowEvArgName="RptMarcaMenosProdRowChangeEvent" msprop:Generator_TablePropName="RptMarcaMenosProd" msprop:Generator_RowChangedName="RptMarcaMenosProdRowChanged" msprop:Generator_UserTableName="RptMarcaMenosProd" msprop:Generator_RowChangingName="RptMarcaMenosProdRowChanging" msprop:Generator_RowClassName="RptMarcaMenosProdRow" msprop:Generator_TableClassName="RptMarcaMenosProdDataTable" msprop:Generator_TableVarName="tableRptMarcaMenosProd">
+        <xs:element name="RptPreciosAltoABajos" msprop:Generator_RowEvHandlerName="RptPreciosAltoABajosRowChangeEventHandler" msprop:Generator_RowDeletedName="RptPreciosAltoABajosRowDeleted" msprop:Generator_RowDeletingName="RptPreciosAltoABajosRowDeleting" msprop:Generator_RowEvArgName="RptPreciosAltoABajosRowChangeEvent" msprop:Generator_TablePropName="RptPreciosAltoABajos" msprop:Generator_RowChangedName="RptPreciosAltoABajosRowChanged" msprop:Generator_UserTableName="RptPreciosAltoABajos" msprop:Generator_RowChangingName="RptPreciosAltoABajosRowChanging" msprop:Generator_RowClassName="RptPreciosAltoABajosRow" msprop:Generator_TableClassName="RptPreciosAltoABajosDataTable" msprop:Generator_TableVarName="tableRptPreciosAltoABajos">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="nombreMarca" msprop:Generator_ColumnPropNameInTable="nombreMarcaColumn" msprop:Generator_ColumnPropNameInRow="nombreMarca" msprop:Generator_UserColumnName="nombreMarca" msprop:Generator_ColumnVarNameInTable="columnnombreMarca">
+              <xs:element name="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_UserColumnName="nombreProd" msprop:Generator_ColumnVarNameInTable="columnnombreProd">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nombreProd" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_UserColumnName="nombreProd" msprop:Generator_ColumnVarNameInTable="columnnombreProd" type="xs:int" minOccurs="0" />
+              <xs:element name="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_UserColumnName="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" type="xs:double" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RptPreciosAltoABajos" msprop:Generator_RowClassName="RptPreciosAltoABajosRow" msprop:Generator_RowEvHandlerName="RptPreciosAltoABajosRowChangeEventHandler" msprop:Generator_RowDeletedName="RptPreciosAltoABajosRowDeleted" msprop:Generator_RowDeletingName="RptPreciosAltoABajosRowDeleting" msprop:Generator_RowEvArgName="RptPreciosAltoABajosRowChangeEvent" msprop:Generator_TablePropName="RptPreciosAltoABajos" msprop:Generator_RowChangedName="RptPreciosAltoABajosRowChanged" msprop:Generator_UserTableName="RptPreciosAltoABajos" msprop:Generator_RowChangingName="RptPreciosAltoABajosRowChanging" msprop:Generator_TableClassName="RptPreciosAltoABajosDataTable" msprop:Generator_TableVarName="tableRptPreciosAltoABajos">
+        <xs:element name="RptProductosXPrecio" msprop:Generator_RowEvHandlerName="RptProductosXPrecioRowChangeEventHandler" msprop:Generator_RowDeletedName="RptProductosXPrecioRowDeleted" msprop:Generator_RowDeletingName="RptProductosXPrecioRowDeleting" msprop:Generator_RowEvArgName="RptProductosXPrecioRowChangeEvent" msprop:Generator_TablePropName="RptProductosXPrecio" msprop:Generator_RowChangedName="RptProductosXPrecioRowChanged" msprop:Generator_RowChangingName="RptProductosXPrecioRowChanging" msprop:Generator_TableClassName="RptProductosXPrecioDataTable" msprop:Generator_RowClassName="RptProductosXPrecioRow" msprop:Generator_TableVarName="tableRptProductosXPrecio" msprop:Generator_UserTableName="RptProductosXPrecio">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="nombreProd" msprop:Generator_UserColumnName="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnVarNameInTable="columnnombreProd">
+              <xs:element name="id_producto" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_ColumnVarNameInTable="columnid_producto" msprop:Generator_UserColumnName="id_producto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreProd" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnVarNameInTable="columnnombreProd" msprop:Generator_UserColumnName="nombreProd">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="precio_unitario" msprop:Generator_UserColumnName="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" type="xs:double" />
+              <xs:element name="descripcionProd" msprop:Generator_ColumnPropNameInRow="descripcionProd" msprop:Generator_ColumnPropNameInTable="descripcionProdColumn" msprop:Generator_ColumnVarNameInTable="columndescripcionProd" msprop:Generator_UserColumnName="descripcionProd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_unitario" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" msprop:Generator_UserColumnName="precio_unitario" type="xs:double" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1279,16 +1323,21 @@ ORDER BY Producto.precio_unitario DESC</CommandText>
       <xs:selector xpath=".//mstns:RptMovimientos" />
       <xs:field xpath="mstns:id_movimiento" />
     </xs:unique>
+    <xs:unique name="RptProductosXPrecio_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RptProductosXPrecio" />
+      <xs:field xpath="mstns:id_producto" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="RefProducto47" msdata:parent="Producto" msdata:child="Movimiento" msdata:parentkey="id_producto" msdata:childkey="id_producto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefProducto47" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_UserRelationName="RefProducto47" msprop:Generator_ParentPropName="ProductoRow" />
-      <msdata:Relationship name="RefUsuario42" msdata:parent="Usuario" msdata:child="Movimiento" msdata:parentkey="usuario_id" msdata:childkey="usuario_id" msprop:Generator_UserParentTable="Usuario" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefUsuario42" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_UserRelationName="RefUsuario42" msprop:Generator_ParentPropName="UsuarioRow" />
-      <msdata:Relationship name="RefCategoría4" msdata:parent="Categoría" msdata:child="Producto" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserParentTable="Categoría" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefCategoría4" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_ParentPropName="CategoríaRow" msprop:Generator_UserRelationName="RefCategoría4" />
-      <msdata:Relationship name="RefMarca37" msdata:parent="Marca" msdata:child="Producto" msdata:parentkey="id_marca" msdata:childkey="id_marca" msprop:Generator_UserParentTable="Marca" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefMarca37" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_ParentPropName="MarcaRow" msprop:Generator_UserRelationName="RefMarca37" />
-      <msdata:Relationship name="RefPermiso35" msdata:parent="Permiso" msdata:child="RolPermiso" msdata:parentkey="id_permiso" msdata:childkey="id_permiso" msprop:Generator_UserParentTable="Permiso" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefPermiso35" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_ParentPropName="PermisoRow" msprop:Generator_UserRelationName="RefPermiso35" />
-      <msdata:Relationship name="RefRol36" msdata:parent="Rol" msdata:child="RolPermiso" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefRol36" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_ParentPropName="RolRow" msprop:Generator_UserRelationName="RefRol36" />
-      <msdata:Relationship name="RefRol34" msdata:parent="Rol" msdata:child="Usuario" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="Usuario" msprop:Generator_RelationVarName="relationRefRol34" msprop:Generator_ChildPropName="GetUsuarioRows" msprop:Generator_ParentPropName="RolRow" msprop:Generator_UserRelationName="RefRol34" />
+      <msdata:Relationship name="RefProducto47" msdata:parent="Producto" msdata:child="Movimiento" msdata:parentkey="id_producto" msdata:childkey="id_producto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefProducto47" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_ParentPropName="ProductoRow" msprop:Generator_UserRelationName="RefProducto47" />
+      <msdata:Relationship name="RefUsuario42" msdata:parent="Usuario" msdata:child="Movimiento" msdata:parentkey="usuario_id" msdata:childkey="usuario_id" msprop:Generator_UserParentTable="Usuario" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefUsuario42" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_ParentPropName="UsuarioRow" msprop:Generator_UserRelationName="RefUsuario42" />
+      <msdata:Relationship name="RefCategoría4" msdata:parent="Categoría" msdata:child="Producto" msdata:parentkey="id_categoria" msdata:childkey="id_categoria" msprop:Generator_UserParentTable="Categoría" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefCategoría4" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_UserRelationName="RefCategoría4" msprop:Generator_ParentPropName="CategoríaRow" />
+      <msdata:Relationship name="RefMarca37" msdata:parent="Marca" msdata:child="Producto" msdata:parentkey="id_marca" msdata:childkey="id_marca" msprop:Generator_UserParentTable="Marca" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationRefMarca37" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_UserRelationName="RefMarca37" msprop:Generator_ParentPropName="MarcaRow" />
+      <msdata:Relationship name="RefPermiso35" msdata:parent="Permiso" msdata:child="RolPermiso" msdata:parentkey="id_permiso" msdata:childkey="id_permiso" msprop:Generator_UserParentTable="Permiso" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefPermiso35" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_UserRelationName="RefPermiso35" msprop:Generator_ParentPropName="PermisoRow" />
+      <msdata:Relationship name="RefRol36" msdata:parent="Rol" msdata:child="RolPermiso" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="RolPermiso" msprop:Generator_RelationVarName="relationRefRol36" msprop:Generator_ChildPropName="GetRolPermisoRows" msprop:Generator_UserRelationName="RefRol36" msprop:Generator_ParentPropName="RolRow" />
+      <msdata:Relationship name="RefRol34" msdata:parent="Rol" msdata:child="Usuario" msdata:parentkey="ID_Rol" msdata:childkey="ID_Rol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="Usuario" msprop:Generator_RelationVarName="relationRefRol34" msprop:Generator_ChildPropName="GetUsuarioRows" msprop:Generator_UserRelationName="RefRol34" msprop:Generator_ParentPropName="RolRow" />
+      <msdata:Relationship name="RefProducto471" msdata:parent="RptProductosXPrecio" msdata:child="Movimiento" msdata:parentkey="id_producto" msdata:childkey="id_producto" msprop:Generator_UserParentTable="RptProductosXPrecio" msprop:Generator_UserChildTable="Movimiento" msprop:Generator_RelationVarName="relationRefProducto471" msprop:Generator_UserRelationName="RefProducto471" msprop:Generator_ChildPropName="GetMovimientoRows" msprop:Generator_ParentPropName="RptProductosXPrecioRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

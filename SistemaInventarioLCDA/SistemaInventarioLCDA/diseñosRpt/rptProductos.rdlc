@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.278cm</Width>
+              <Width>3.8335cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>6.03483cm</Width>
@@ -18,16 +18,16 @@
               <Width>5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.85467cm</Width>
+              <Width>3.1985cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>6.66983cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.93933cm</Width>
+              <Width>4.70133cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.135cm</Width>
+              <Width>5.1035cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -45,6 +45,7 @@
                             <TextRun>
                               <Value>CÓDIGO</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -81,6 +82,7 @@
                             <TextRun>
                               <Value>PRODUCTO</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -117,6 +119,7 @@
                             <TextRun>
                               <Value>CATEGORÍA</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -153,6 +156,7 @@
                             <TextRun>
                               <Value>MARCA</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -189,6 +193,7 @@
                             <TextRun>
                               <Value>PRECIO</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -225,6 +230,7 @@
                             <TextRun>
                               <Value>DESCRIPCIÓN</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -261,6 +267,7 @@
                             <TextRun>
                               <Value>INVENTARIO INICIAL</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -297,6 +304,7 @@
                             <TextRun>
                               <Value>CANTIDAD DISPONIBLE</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#fdf2e7</Color>
                               </Style>
@@ -337,10 +345,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!id_producto.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>id_producto</rd:DefaultName>
@@ -367,10 +379,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nombreProd.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombreProd</rd:DefaultName>
@@ -397,10 +413,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nombreCatg.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombreCatg</rd:DefaultName>
@@ -427,10 +447,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nombreMarca.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombreMarca</rd:DefaultName>
@@ -457,10 +481,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!precio_unitario.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>precio_unitario</rd:DefaultName>
@@ -487,10 +515,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!descripcionProd.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>descripcionProd</rd:DefaultName>
@@ -517,10 +549,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!inventario_inicial.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>inventario_inicial</rd:DefaultName>
@@ -547,10 +583,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!cantidad_disponible.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cantidad_disponible</rd:DefaultName>
@@ -597,7 +637,7 @@
         <Top>1.07527cm</Top>
         <Left>0.37677cm</Left>
         <Height>1.2cm</Height>
-        <Width>37.91166cm</Width>
+        <Width>39.5415cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -608,7 +648,7 @@
     <Height>1.31911in</Height>
     <Style />
   </Body>
-  <Width>15.22252in</Width>
+  <Width>16.01585in</Width>
   <Page>
     <PageHeader>
       <Height>4.44781cm</Height>
@@ -620,7 +660,7 @@
           <Value>logoNuevo</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.4191cm</Top>
-          <Left>34.60826cm</Left>
+          <Left>36.64026cm</Left>
           <Height>3.60961cm</Height>
           <Width>3.68017cm</Width>
           <Style>
@@ -739,7 +779,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.22917cm</Top>
-          <Left>34.32793cm</Left>
+          <Left>36.35993cm</Left>
           <Height>0.87517cm</Height>
           <Width>3.9605cm</Width>
           <Style>

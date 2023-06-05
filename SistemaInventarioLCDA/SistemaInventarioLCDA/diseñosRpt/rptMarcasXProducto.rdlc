@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d8999881-d5a2-4a81-b120-2ba7bde97de0</rd:DataSourceID>
+      <rd:DataSourceID>30d16766-1bb7-4b32-88ed-4e7614338209</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -28,11 +28,11 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DBLaCasaDelArteDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Ingenieria\OneDrive\Escritorio\DBD\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\DBLaCasaDelArteDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>RptMarcaMenosProd</rd:TableName>
+        <rd:SchemaPath>C:\Users\Pala\Desktop\repoPrueba\proyecto\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\DBLaCasaDelArteDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>MarcaConMasProductos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>RptMarcaMenosProdTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>MarcaConMasProductosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -44,10 +44,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.17469cm</Width>
+                  <Width>3.43055cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.47656cm</Width>
+                  <Width>5.14505cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -56,7 +56,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -76,7 +76,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -93,7 +93,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox3">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -113,7 +113,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -217,15 +217,15 @@
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="Detalles" />
+                  <Group Name="Details" />
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.97578cm</Top>
-            <Left>1.05833cm</Left>
+            <Top>1.02589cm</Top>
+            <Left>5.22347cm</Left>
             <Height>1.2cm</Height>
-            <Width>8.65125cm</Width>
+            <Width>8.5756cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -266,9 +266,7 @@
                         <Y>=Sum(Fields!nombreProd.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style>
-                          <FontSize>12pt</FontSize>
-                        </Style>
+                        <Style />
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
@@ -554,7 +552,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Marca con menos Productos</Caption>
+                <Caption>Marcas por Productos</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -575,7 +573,7 @@
               </Style>
             </ChartBorderSkin>
             <ChartNoDataMessage Name="NoDataMessage">
-              <Caption>Sin datos disponibles</Caption>
+              <Caption>No Data Available</Caption>
               <Style>
                 <BackgroundGradientType>None</BackgroundGradientType>
                 <FontWeight>Bold</FontWeight>
@@ -584,8 +582,8 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>2.80749cm</Top>
-            <Left>1.05833cm</Left>
+            <Top>2.82505cm</Top>
+            <Left>5.76127cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
             <ZIndex>1</ZIndex>
@@ -599,13 +597,13 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.20923in</Height>
+        <Height>3.4224in</Height>
         <Style />
       </Body>
-      <Width>6.69833in</Width>
+      <Width>7.48919in</Width>
       <Page>
         <PageHeader>
-          <Height>4.01559cm</Height>
+          <Height>4.44781cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -616,24 +614,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de las Marcas </Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontFamily>Nirmala UI</FontFamily>
-                        <FontSize>24pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>#fdf2e7</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>con menos Productos</Value>
+                      <Value>Reporte de las Marcas por Productos</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Nirmala UI</FontFamily>
@@ -649,10 +630,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.72954cm</Top>
-              <Left>1.05833cm</Left>
+              <Top>0.90593cm</Top>
+              <Left>0.75304cm</Left>
               <Height>2.38337cm</Height>
-              <Width>11.5256cm</Width>
+              <Width>13.69518cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -664,6 +645,21 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Image Name="Image1">
+              <Source>Embedded</Source>
+              <Value>logoNuevo</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.4191cm</Top>
+              <Left>14.58933cm</Left>
+              <Height>3.60961cm</Height>
+              <Width>3.68017cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
             <Textbox Name="ExecutionTime">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -685,11 +681,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>3.2893cm</Top>
-              <Left>1.05833cm</Left>
+              <Top>3.59198cm</Top>
+              <Left>0.75304cm</Left>
               <Height>0.6cm</Height>
               <Width>5.52683cm</Width>
-              <ZIndex>1</ZIndex>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -700,21 +696,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Image Name="Image1">
-              <Source>Embedded</Source>
-              <Value>logoNuevo</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.22959cm</Top>
-              <Left>12.88379cm</Left>
-              <Height>3.60961cm</Height>
-              <Width>3.68017cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
           </ReportItems>
           <Style>
             <Border>
@@ -724,7 +705,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.71979cm</Height>
+          <Height>1.3335cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -749,8 +730,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.42129cm</Top>
-              <Left>12.60346cm</Left>
+              <Top>0.17639cm</Top>
+              <Left>14.309cm</Left>
               <Height>0.87517cm</Height>
               <Width>3.9605cm</Width>
               <Style>
@@ -849,5 +830,5 @@ IiIiAWCgExERCQADnYiISAAY6ERERALAQCciIhIABjoREZEAMNCJiIgEgIFOREQkAAx0IiIiAWCgExER
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>ffce731b-ec1f-439b-8273-eebbc60e26fa</rd:ReportID>
+  <rd:ReportID>cd3a2a01-f1ae-453d-89b0-188b5038927b</rd:ReportID>
 </Report>
