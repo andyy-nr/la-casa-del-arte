@@ -403,6 +403,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMarcaMenosProdDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.CategoríaRow">
 <summary>
 Represents strongly named DataRow class.
@@ -464,6 +469,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.MarcaConMasProductosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMarcaMenosProdRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -533,6 +543,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSet.RptMarcaMenosProdRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.CategoríaTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -594,6 +609,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.MarcaConMasProductosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SistemaInventarioLCDA.DBLaCasaDelArteDataSetTableAdapters.RptMarcaMenosProdTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
