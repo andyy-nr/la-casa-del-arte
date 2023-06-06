@@ -90,6 +90,7 @@
                         BtnReporteMarcasProd.Enabled = True
                         BtnRptCatgVend.Enabled = True
                         BtnPreciosAltosBajos.Enabled = True
+                        BtnRepoProdSalidas.Enabled = True
                 End Select
             Next
             resp = True
@@ -239,6 +240,13 @@
         VerReporte(tbl, "DataSet1", "diseñosRpt\rptCategoriasXProducto.rdlc")
     End Sub
 
+    Private Sub BtnRepoProdSalidas_Click(sender As Object, e As EventArgs) Handles BtnRepoProdSalidas.Click
+        Dim tbl As New DataTable
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptProductosMasSalidasTableAdapter
+
+        tbl = reporte.GetData
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptProductosMasSalidas.rdlc")
+    End Sub
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
         Dim Respuesta = MsgBox("¿Estas seguro que deseas cerrar sesión?", MsgBoxStyle.OkCancel, "Cerrar Sesión")

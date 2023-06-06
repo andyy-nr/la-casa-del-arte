@@ -1364,3 +1364,11 @@ D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\Sis
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductos.rdlc
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductoFiltrado.rdlc
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptMovimientosFiltrados.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptCategoriasXProducto.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptMarcasXProducto.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptMovimientos.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptMovimientosFiltrados.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptPreciosAltosABajos.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductoFiltrado.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductos.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductosMasSalidas.rdlc

@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>30d16766-1bb7-4b32-88ed-4e7614338209</rd:DataSourceID>
+      <rd:DataSourceID>ee9e6674-5de9-48bf-99f2-72575d62dea8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -17,22 +17,26 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="nombreMarca">
-          <DataField>nombreMarca</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="nombreProd">
           <DataField>nombreProd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="movimiento">
+          <DataField>movimiento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tipo_movimiento">
+          <DataField>tipo_movimiento</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DBLaCasaDelArteDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Pala\Desktop\repoPrueba\proyecto\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\DBLaCasaDelArteDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>MarcaConMasProductos</rd:TableName>
+        <rd:SchemaPath>C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\DBLaCasaDelArteDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>RptProductosMasSalidas</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>MarcaConMasProductosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>RptProductosMasSalidasTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -44,16 +48,56 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.43055cm</Width>
+                  <Width>4.56506cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.14505cm</Width>
+                  <Width>4.56506cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4.56506cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
                   <Height>0.6cm</Height>
                   <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>PRODUCTO</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#fdf2e7</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#593832</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox5">
@@ -63,7 +107,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>MARCA</Value>
+                                  <Value>TIPO MOVIMIENTO</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -100,7 +144,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CANTIDAD PRODUCTOS</Value>
+                                  <Value>TOTAL REGISTROS</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -135,40 +179,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="nombreMarca">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!nombreMarca.Value</Value>
-                                  <Style>
-                                    <FontSize>12pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>nombreMarca</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="nombreProd">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -201,12 +211,81 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="movimiento">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!movimiento.Value</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>movimiento</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="tipo_movimiento">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!tipo_movimiento.Value</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>tipo_movimiento</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
               </TablixMembers>
@@ -222,10 +301,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>1.02589cm</Top>
-            <Left>5.22347cm</Left>
+            <Top>0.98356cm</Top>
+            <Left>0.75304cm</Left>
             <Height>1.2cm</Height>
-            <Width>8.5756cm</Width>
+            <Width>13.69518cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -238,32 +317,32 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!nombreMarca.Value</GroupExpression>
+                      <GroupExpression>=Fields!nombreProd.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!nombreMarca.Value</Value>
+                      <Value>=Fields!nombreProd.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!nombreMarca.Value</Label>
+                  <Label>=Fields!nombreProd.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>nombre Prod</Label>
+                  <Label>tipo movimiento</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="nombreProd">
+                <ChartSeries Name="tipo_movimiento">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!nombreProd.Value)</Y>
+                        <Y>=Sum(Fields!tipo_movimiento.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -552,7 +631,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Marcas por Productos</Caption>
+                <Caption>Productos más salidas</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -582,8 +661,8 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>2.82505cm</Top>
-            <Left>5.76127cm</Left>
+            <Top>2.71922cm</Top>
+            <Left>4.4926cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
             <ZIndex>1</ZIndex>
@@ -600,7 +679,7 @@
         <Height>3.4224in</Height>
         <Style />
       </Body>
-      <Width>7.47252in</Width>
+      <Width>7.48919in</Width>
       <Page>
         <PageHeader>
           <Height>4.44781cm</Height>
@@ -614,7 +693,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de las Marcas por Productos</Value>
+                      <Value>Reporte de los Productos con Más Salidas</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Nirmala UI</FontFamily>
@@ -681,7 +760,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>3.59198cm</Top>
+              <Top>3.46569cm</Top>
               <Left>0.75304cm</Left>
               <Height>0.6cm</Height>
               <Width>5.52683cm</Width>
@@ -830,5 +909,5 @@ IiIiAWCgExERCQADnYiISAAY6ERERALAQCciIhIABjoREZEAMNCJiIgEgIFOREQkAAx0IiIiAWCgExER
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>cd3a2a01-f1ae-453d-89b0-188b5038927b</rd:ReportID>
+  <rd:ReportID>dd8b765f-f3bf-4225-af25-cfabb6ed1de5</rd:ReportID>
 </Report>
