@@ -15449,9 +15449,8 @@ Namespace DBLaCasaDelArteDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Categoría.nombreCatg, COUNT(Producto.nombreProd) AS nombreProd"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     C"& _ 
-                "ategoría INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Producto ON Categoría.id_categoria = Cate"& _ 
-                "goría.id_categoria"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Producto.estado <> 0)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Categoría.nombreCatg"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY nombreProd DESC"
+                "ategoría INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Producto ON Categoría.id_categoria = Prod"& _ 
+                "ucto.id_categoria"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Producto.estado <> 0)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Categoría.nombreCatg"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY nombreProd DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
