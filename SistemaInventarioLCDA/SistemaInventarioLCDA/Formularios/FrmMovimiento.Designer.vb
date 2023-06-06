@@ -26,6 +26,7 @@ Partial Class FrmMovimiento
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMovimiento))
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -662,6 +663,7 @@ Partial Class FrmMovimiento
         Me.Controls.Add(Me.PanelCentral)
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmMovimiento"
         Me.Text = "Gestión de Movimientos de Productos"
         Me.PanSuperior.ResumeLayout(False)
