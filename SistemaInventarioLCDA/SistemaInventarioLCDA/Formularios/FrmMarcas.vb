@@ -183,6 +183,13 @@
             marca.NombreMarca = TxtNomMarca.Text.Trim()
             marca.DescripcionMarca = validarCamposNull(marca.DescripcionMarca, TxtDescMarca)
 
+
+            If marcaDao.validarMarca(marca) Then
+                MsgBox("La marca ingresada ya existe.", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
+                Exit Sub
+            End If
+
             Dim resp = marcaDao.EditarMarca(marca)
             If (resp) Then
                 MsgBox("Marca editada exitosamente.", MsgBoxStyle.Information, "Marcas")

@@ -174,6 +174,7 @@
         Try
             If Not validarCamposEditar() Then
                 MsgBox("No ha seleccionado ningún registro", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
                 Exit Sub
             End If
 
@@ -183,6 +184,12 @@
             categoria.Id_categoria = TxtIdCat.Text.Trim()
             categoria.NombreCatg = TxtNombreCat.Text.Trim()
             categoria.DescripcionCatg = validarCamposNull(categoria.DescripcionCatg, TxtDescCat)
+
+            If categoriaDAO.validarCategoria(categoria) Then
+                MsgBox("La categoría ingresada ya existe.", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
+                Exit Sub
+            End If
 
             Dim resp = categoriaDAO.EditarCategoria(categoria)
             If (resp) Then

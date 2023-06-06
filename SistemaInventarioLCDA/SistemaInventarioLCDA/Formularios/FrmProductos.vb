@@ -338,6 +338,12 @@
             producto.Inventario_inicial = TxtInventarioInit.Text.Trim()
             producto.Cantidad_disponible = TxtCantidadDisp.Text.Trim()
 
+            If productoDao.validarProductoNombre(producto) Then
+                MsgBox("Producto " & producto.NombreProd + " ya se encuentra registrado", MsgBoxStyle.Exclamation, "Advertencia")
+                Limpiar()
+                Exit Sub
+            End If
+
             If validarCantidad(TxtPrecioU) Then
                 producto.Precio_unitario = TxtPrecioU.Text.Trim()
             Else
