@@ -1373,3 +1373,4 @@ C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCD
 C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductos.rdlc
 C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductosMasSalidas.rdlc
 C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\RptProductosMasEntradas.rdlc
+C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\RptCantProdMarcaCat.rdlc

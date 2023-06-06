@@ -48,6 +48,8 @@ Partial Class FrmPrincipal
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanPrincipal = New System.Windows.Forms.Panel()
         Me.PanReportes = New System.Windows.Forms.Panel()
+        Me.BtnCantProdMarCat = New System.Windows.Forms.Button()
+        Me.BtnRepoProdEntradas = New System.Windows.Forms.Button()
         Me.BtnRepoProdSalidas = New System.Windows.Forms.Button()
         Me.BtnPreciosAltosBajos = New System.Windows.Forms.Button()
         Me.BtnRptCatgVend = New System.Windows.Forms.Button()
@@ -57,7 +59,6 @@ Partial Class FrmPrincipal
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.BtnRepoProdEntradas = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -415,6 +416,7 @@ Partial Class FrmPrincipal
         'PanReportes
         '
         Me.PanReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanReportes.Controls.Add(Me.BtnCantProdMarCat)
         Me.PanReportes.Controls.Add(Me.BtnRepoProdEntradas)
         Me.PanReportes.Controls.Add(Me.BtnRepoProdSalidas)
         Me.PanReportes.Controls.Add(Me.BtnPreciosAltosBajos)
@@ -422,12 +424,56 @@ Partial Class FrmPrincipal
         Me.PanReportes.Controls.Add(Me.BtnReporteMarcasProd)
         Me.PanReportes.Controls.Add(Me.BtnRepoMov)
         Me.PanReportes.Controls.Add(Me.BtnRepoProd)
-        Me.PanReportes.Location = New System.Drawing.Point(7, 305)
+        Me.PanReportes.Location = New System.Drawing.Point(7, 204)
         Me.PanReportes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PanReportes.Name = "PanReportes"
-        Me.PanReportes.Size = New System.Drawing.Size(525, 487)
+        Me.PanReportes.Size = New System.Drawing.Size(525, 588)
         Me.PanReportes.TabIndex = 4
         Me.PanReportes.Visible = False
+        '
+        'BtnCantProdMarCat
+        '
+        Me.BtnCantProdMarCat.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCantProdMarCat.Enabled = False
+        Me.BtnCantProdMarCat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnCantProdMarCat.FlatAppearance.BorderSize = 0
+        Me.BtnCantProdMarCat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnCantProdMarCat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnCantProdMarCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCantProdMarCat.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnCantProdMarCat.ForeColor = System.Drawing.Color.Black
+        Me.BtnCantProdMarCat.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnCantProdMarCat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCantProdMarCat.Location = New System.Drawing.Point(4, 490)
+        Me.BtnCantProdMarCat.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnCantProdMarCat.Name = "BtnCantProdMarCat"
+        Me.BtnCantProdMarCat.Size = New System.Drawing.Size(517, 94)
+        Me.BtnCantProdMarCat.TabIndex = 16
+        Me.BtnCantProdMarCat.Text = "Reporte de Cantidad Productos por Marca y Categoría"
+        Me.BtnCantProdMarCat.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCantProdMarCat.UseVisualStyleBackColor = True
+        '
+        'BtnRepoProdEntradas
+        '
+        Me.BtnRepoProdEntradas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRepoProdEntradas.Enabled = False
+        Me.BtnRepoProdEntradas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnRepoProdEntradas.FlatAppearance.BorderSize = 0
+        Me.BtnRepoProdEntradas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnRepoProdEntradas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnRepoProdEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRepoProdEntradas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnRepoProdEntradas.ForeColor = System.Drawing.Color.Black
+        Me.BtnRepoProdEntradas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnRepoProdEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRepoProdEntradas.Location = New System.Drawing.Point(4, 420)
+        Me.BtnRepoProdEntradas.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnRepoProdEntradas.Name = "BtnRepoProdEntradas"
+        Me.BtnRepoProdEntradas.Size = New System.Drawing.Size(517, 62)
+        Me.BtnRepoProdEntradas.TabIndex = 15
+        Me.BtnRepoProdEntradas.Text = "Reporte de Productos con más Entradas"
+        Me.BtnRepoProdEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnRepoProdEntradas.UseVisualStyleBackColor = True
         '
         'BtnRepoProdSalidas
         '
@@ -597,28 +643,6 @@ Partial Class FrmPrincipal
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
-        'BtnRepoProdEntradas
-        '
-        Me.BtnRepoProdEntradas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRepoProdEntradas.Enabled = False
-        Me.BtnRepoProdEntradas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnRepoProdEntradas.FlatAppearance.BorderSize = 0
-        Me.BtnRepoProdEntradas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.BtnRepoProdEntradas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
-        Me.BtnRepoProdEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRepoProdEntradas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnRepoProdEntradas.ForeColor = System.Drawing.Color.Black
-        Me.BtnRepoProdEntradas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
-        Me.BtnRepoProdEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRepoProdEntradas.Location = New System.Drawing.Point(4, 420)
-        Me.BtnRepoProdEntradas.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnRepoProdEntradas.Name = "BtnRepoProdEntradas"
-        Me.BtnRepoProdEntradas.Size = New System.Drawing.Size(517, 62)
-        Me.BtnRepoProdEntradas.TabIndex = 15
-        Me.BtnRepoProdEntradas.Text = "Reporte de Productos con más Entradas"
-        Me.BtnRepoProdEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnRepoProdEntradas.UseVisualStyleBackColor = True
-        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -685,4 +709,5 @@ Partial Class FrmPrincipal
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents BtnRepoProdSalidas As Button
     Friend WithEvents BtnRepoProdEntradas As Button
+    Friend WithEvents BtnCantProdMarCat As Button
 End Class

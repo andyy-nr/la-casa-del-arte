@@ -206,6 +206,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="diseñosRpt\rptCantProdMarcaCat.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="diseñosRpt\rptCategoriasXProducto.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -227,7 +230,7 @@
     <EmbeddedResource Include="diseñosRpt\rptProductos.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="diseñosRpt\RptProductosMasEntradas.rdlc">
+    <EmbeddedResource Include="diseñosRpt\rptProductosMasEntradas.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="diseñosRpt\rptProductosMasSalidas.rdlc">
