@@ -23,6 +23,7 @@ Partial Class FrmReportes
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReportes))
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -133,9 +134,10 @@ Partial Class FrmReportes
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmReportes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmReportes"
+        Me.Text = "Reportes"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()

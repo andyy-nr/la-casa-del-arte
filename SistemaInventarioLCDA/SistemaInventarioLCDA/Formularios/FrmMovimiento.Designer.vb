@@ -663,7 +663,7 @@ Partial Class FrmMovimiento
         Me.Controls.Add(Me.PanSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmMovimiento"
-        Me.Text = "FrmEntradas"
+        Me.Text = "Gestión de Movimientos de Productos"
         Me.PanSuperior.ResumeLayout(False)
         Me.PanSuperior.PerformLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
