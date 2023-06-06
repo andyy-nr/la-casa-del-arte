@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FrmMovimiento
+    Dim tblMovimiento As New DBLaCasaDelArteDataSet.DTMovimientosBuscarDataTable
+    Dim rptMovimiento As New DBLaCasaDelArteDataSetTableAdapters.DTMovimientosBuscarTableAdapter
+    Dim tbl As New DataTable
 
     Dim strConn As String = My.Settings.StrConexion
 
@@ -14,6 +17,8 @@ Public Class FrmMovimiento
             _usuarioSistema = value
         End Set
     End Property
+
+
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -33,6 +38,22 @@ Public Class FrmMovimiento
         Arrastre = False
     End Sub
 
+
+    'Datos
+
+    'Función para dar diseño al DgvMovimientos
+    Sub DiseñoTabla()
+        'Titulos o encabezados de la tabla
+        DgvMovimientos.Columns(0).HeaderText = "CÓDIGO"
+        DgvMovimientos.Columns(1).HeaderText = "PRODUCTO"
+        DgvMovimientos.Columns(2).HeaderText = "USUARIO"
+        DgvMovimientos.Columns(3).HeaderText = "TIPO MOVIMIENTO"
+        DgvMovimientos.Columns(4).HeaderText = "FECHA"
+        DgvMovimientos.Columns(5).HeaderText = "CANTIDAD DE PRODUCTO"
+        DgvMovimientos.Columns(6).HeaderText = "DESCRIPCIÓN MOVIMIENTO"
+    End Sub
+
+    'Función para limpiar los campos
     Private Sub Limpiar()
         CbProductos.Text = "Seleccione el producto..."
         TxtMarcaProd.Clear()
@@ -100,7 +121,7 @@ Public Class FrmMovimiento
         Location = Screen.PrimaryScreen.WorkingArea.Location
         TxtUsuarioMov.Text = UsuarioSistema.NombreCompleto
         LlenarComboxProd()
-        LlenarTabla()
+        LlenarGridMovimientos()
         Limpiar()
     End Sub
 
@@ -208,10 +229,10 @@ Public Class FrmMovimiento
     Private Sub DgvMovimientos_MouseClick(sender As Object, e As MouseEventArgs) Handles DgvMovimientos.MouseClick
         Try
             If (validarRegistros()) Then
+                cargarDatosProd()
                 Dim fila As Integer = DgvMovimientos.CurrentRow.Index
                 TxtCodigoMov.Text = DgvMovimientos.Rows(fila).Cells(0).Value
                 CbProductos.Text = DgvMovimientos.Rows(fila).Cells(1).Value
-                cargarDatosProd()
                 TxtUsuarioMov.Text = DgvMovimientos.Rows(fila).Cells(2).Value
                 CbTipoMovimiento.Text = DgvMovimientos.Rows(fila).Cells(3).Value
                 DtpFechaMovimiento.Text = DgvMovimientos.Rows(fila).Cells(4).Value
@@ -257,57 +278,147 @@ Public Class FrmMovimiento
             sumarInventario()
             restarInventario()
             MsgBox("Registro guardado exitosamente.", MsgBoxStyle.Information, "Movimientos")
-            LlenarTabla()
+            LlenarGridMovimientos()
             Limpiar()
         End If
 
     End Sub
 
 
-    Private Sub BtnBuscarMov_Click(sender As Object, e As EventArgs) Handles BtnBuscarMov.Click
-        Try
-            Dim buscar As String = TxtBuscar.Text.Trim()
-            Dim ds As New DataSet
-            ds = FiltrarMovimiento(buscar)
-            DgvMovimientos.DataSource = ds.Tables(0)
-            DgvMovimientos.Refresh()
-            GbMovimientos.Text = "Movimientos Realizados: " & DgvMovimientos.RowCount
 
-            If TxtBuscar.Text = "" And CmbFiltrarMov.SelectedIndex <> 2 And CmbFiltrarMov.SelectedIndex <> 3 Then
-                MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Movimientos")
-                LlenarTabla()
-            End If
-
-        Catch ex As Exception
-            MsgBox("Ocurrió un error al obtener el registro de la BD" & ex.Message, MsgBoxStyle.Critical, "Error")
-        End Try
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        CmbFiltrarMov.Text = "Filtrar movimientos"
+        TxtBuscar.Enabled = True
+        LlenarGridMovimientos()
     End Sub
 
+    'Método LinkQ para filtrar registros de productos
+
+    'Funcion para llenar la tabla con método LinkQ
+    Sub LlenarGridMovimientos()
+        rptMovimiento.Fill(tblMovimiento)
+        DgvMovimientos.DataSource = tblMovimiento
+        DgvMovimientos.Refresh()
+        DiseñoTabla()
+        GbMovimientos.Text = "Movimientos Realizados: " & DgvMovimientos.RowCount
+    End Sub
+
+    'Funcion para crear la tabla aplicando método de LinkQ
+    Private Function CrearTablaMovimientos(query) As DataTable
+        Dim tbl As DataTable = New DataTable("tblMovimiento")
+        Dim fila As DataRow
+
+        tbl.Columns.Add("id_movimiento")
+        tbl.Columns.Add("nombreProd")
+        tbl.Columns.Add("usuario")
+        tbl.Columns.Add("tipo_movimiento")
+        tbl.Columns.Add("fecha_movimiento")
+        tbl.Columns.Add("cantidadProd")
+        tbl.Columns.Add("descripcionMov")
+
+        For Each movm In query
+            fila = tbl.NewRow
+            fila("id_movimiento") = movm.id_movimiento
+            fila("nombreProd") = movm.nombreProd
+            fila("usuario") = movm.usuario
+            fila("tipo_movimiento") = movm.tipo_movimiento
+            fila("fecha_movimiento") = movm.fecha_movimiento
+            fila("cantidadProd") = movm.cantidadProd
+            fila("descripcionMov") = movm.descripcionMov
+            tbl.Rows.Add(fila)
+
+        Next
+        Return tbl
+
+    End Function
+
+    Private Sub BuscarMovimiento()
+        Dim ds As New DataSet
+        Dim dao As New Tbl_MovimientosDAO
+
+        ds = dao.buscarXproducto(TxtBuscar.Text.Trim)
+        DgvMovimientos.DataSource = ds.Tables(0)
+        DiseñoTabla()
+        DgvMovimientos.Refresh()
+    End Sub
+
+    'Funcion para filtrar movimientos haciendo uso de linkQ
+    Private Sub FiltrarMovimiento()
+        Dim dato As String = TxtBuscar.Text.Trim()
+        Dim entrada As String = "Entrada"
+        Dim salida As String = "Salida"
+
+        Dim campo As String = "movm.id_movimiento"
+        Dim query = From movm In tblMovimiento
+                    Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+
+        Select Case CmbFiltrarMov.SelectedIndex
+            Case 0
+                query = From movm In tblMovimiento Where movm.id_movimiento = Integer.Parse(dato)
+                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+
+            Case 1
+                query = From movm In tblMovimiento Where movm.nombreProd Like dato
+                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+
+            Case 2
+                query = From movm In tblMovimiento Where movm.tipo_movimiento Like entrada
+                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+
+            Case 3
+                query = From movm In tblMovimiento Where movm.tipo_movimiento Like salida
+                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+
+            Case 4
+                query = From movm In tblMovimiento Where Month(movm.fecha_movimiento) = dato
+                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+
+        End Select
+
+        tbl = CrearTablaMovimientos(query)
+        DgvMovimientos.DataSource = tbl
+        DiseñoTabla()
+        DgvMovimientos.Refresh()
+        GbMovimientos.Text = "Movimientos Realizados: " & DgvMovimientos.RowCount
+    End Sub
+
+    'Función para refrescar la tabla si no hay busqueda
     Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged
         If TxtBuscar.Text = "" Then
             CmbFiltrarMov.Text = "Filtrar movimientos"
-            LlenarTabla()
+            LlenarGridMovimientos()
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        LlenarTabla()
+    'Función para desactivar la barra de busqueda cuando se busque por entrada o salida
+    Private Sub CmbFiltrarMov_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbFiltrarMov.SelectedIndexChanged
+        If CmbFiltrarMov.SelectedIndex = 2 Or CmbFiltrarMov.SelectedIndex = 3 Then
+            TxtBuscar.Enabled = False
+        Else
+            TxtBuscar.Enabled = True
+        End If
     End Sub
 
-    Private Function FiltrarMovimiento(ByVal buscar As String) As DataSet
-        Dim movimientoDAO As New Tbl_MovimientosDAO()
-        Dim ds As New DataSet
-        Select Case CmbFiltrarMov.SelectedIndex
-            Case 0
-                ds = movimientoDAO.buscarXcodigo(Integer.Parse(buscar))
-            Case 1
-                ds = movimientoDAO.buscarXproducto(buscar)
-            Case 2
-                ds = movimientoDAO.buscarXentrada()
-            Case 3
-                ds = movimientoDAO.buscarXsalida()
-        End Select
-        Return ds
-    End Function
+    'Botón para imprimir reporte
+    Private Sub PibImprimir_Click(sender As Object, e As EventArgs) Handles PibImprimir.Click
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptMovimientosFiltrados.rdlc")
+    End Sub
+
+    'Botón para buscar y filtrar los movimientos
+    Private Sub BtnBuscarMov_Click(sender As Object, e As EventArgs) Handles BtnBuscarMov.Click
+        If TxtBuscar.Text = "" And CmbFiltrarMov.SelectedIndex <> 2 And CmbFiltrarMov.SelectedIndex <> 3 Or TxtBuscar.Text = "" And CmbFiltrarMov.SelectedIndex = 0 Then
+            MsgBox("No hay registros que buscar.", MsgBoxStyle.Information, "Movimientos")
+            LlenarGridMovimientos()
+            Exit Sub
+        End If
+
+        If (CmbFiltrarMov.Text = "Filtrar movimientos") Then
+            BuscarMovimiento()
+            Exit Sub
+        Else
+            FiltrarMovimiento()
+        End If
+    End Sub
+
 
 End Class

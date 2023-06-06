@@ -215,6 +215,9 @@
     <EmbeddedResource Include="diseñosRpt\rptMovimientos.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="diseñosRpt\rptMovimientosFiltrados.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="diseñosRpt\rptPreciosAltosABajos.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

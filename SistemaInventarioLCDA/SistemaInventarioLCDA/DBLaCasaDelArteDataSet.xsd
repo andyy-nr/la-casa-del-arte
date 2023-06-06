@@ -838,6 +838,32 @@ ORDER BY nombreProd DESC</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTMovimientosBuscarTableAdapter" GeneratorDataComponentClassName="DTMovimientosBuscarTableAdapter" Name="DTMovimientosBuscar" UserDataComponentName="DTMovimientosBuscarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StrConexion (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Movimiento.id_movimiento, Producto.nombreProd, Usuario.primer_nombre + '' + Usuario.primer_apellido AS usuario, CASE WHEN tipo_movimiento = 1 THEN 'Entrada' ELSE 'Salida' END AS tipo_movimiento, Movimiento.fecha_movimiento, 
+                  Movimiento.cantidadProd, Movimiento.descripcionMov
+FROM     Movimiento INNER JOIN
+                  Producto ON Producto.id_producto = Movimiento.id_producto INNER JOIN
+                  Usuario ON Usuario.usuario_id = Movimiento.usuario_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_movimiento" DataSetColumn="id_movimiento" />
+              <Mapping SourceColumn="nombreProd" DataSetColumn="nombreProd" />
+              <Mapping SourceColumn="usuario" DataSetColumn="usuario" />
+              <Mapping SourceColumn="tipo_movimiento" DataSetColumn="tipo_movimiento" />
+              <Mapping SourceColumn="fecha_movimiento" DataSetColumn="fecha_movimiento" />
+              <Mapping SourceColumn="cantidadProd" DataSetColumn="cantidadProd" />
+              <Mapping SourceColumn="descripcionMov" DataSetColumn="descripcionMov" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1234,8 +1260,8 @@ ORDER BY nombreProd DESC</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="inventario_inicial" msprop:Generator_UserColumnName="inventario_inicial" msprop:Generator_ColumnPropNameInTable="inventario_inicialColumn" msprop:Generator_ColumnPropNameInRow="inventario_inicial" msprop:Generator_ColumnVarNameInTable="columninventario_inicial" type="xs:int" />
-              <xs:element name="cantidadProd" msprop:Generator_UserColumnName="cantidadProd" msprop:Generator_ColumnPropNameInTable="cantidadProdColumn" msprop:Generator_ColumnPropNameInRow="cantidadProd" msprop:Generator_ColumnVarNameInTable="columncantidadProd" type="xs:int" />
+              <xs:element name="inventario_inicial" msprop:Generator_ColumnPropNameInTable="inventario_inicialColumn" msprop:Generator_ColumnPropNameInRow="inventario_inicial" msprop:Generator_UserColumnName="inventario_inicial" msprop:Generator_ColumnVarNameInTable="columninventario_inicial" type="xs:int" />
+              <xs:element name="cantidadProd" msprop:Generator_ColumnPropNameInTable="cantidadProdColumn" msprop:Generator_ColumnPropNameInRow="cantidadProd" msprop:Generator_UserColumnName="cantidadProd" msprop:Generator_ColumnVarNameInTable="columncantidadProd" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1267,16 +1293,52 @@ ORDER BY nombreProd DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RptProductosXPrecio" msprop:Generator_RowClassName="RptProductosXPrecioRow" msprop:Generator_RowEvHandlerName="RptProductosXPrecioRowChangeEventHandler" msprop:Generator_RowDeletedName="RptProductosXPrecioRowDeleted" msprop:Generator_RowDeletingName="RptProductosXPrecioRowDeleting" msprop:Generator_RowEvArgName="RptProductosXPrecioRowChangeEvent" msprop:Generator_TablePropName="RptProductosXPrecio" msprop:Generator_RowChangedName="RptProductosXPrecioRowChanged" msprop:Generator_UserTableName="RptProductosXPrecio" msprop:Generator_RowChangingName="RptProductosXPrecioRowChanging" msprop:Generator_TableClassName="RptProductosXPrecioDataTable" msprop:Generator_TableVarName="tableRptProductosXPrecio">
+        <xs:element name="RptProductosXPrecio" msprop:Generator_RowEvHandlerName="RptProductosXPrecioRowChangeEventHandler" msprop:Generator_RowDeletedName="RptProductosXPrecioRowDeleted" msprop:Generator_RowDeletingName="RptProductosXPrecioRowDeleting" msprop:Generator_RowEvArgName="RptProductosXPrecioRowChangeEvent" msprop:Generator_TablePropName="RptProductosXPrecio" msprop:Generator_RowChangedName="RptProductosXPrecioRowChanged" msprop:Generator_UserTableName="RptProductosXPrecio" msprop:Generator_RowChangingName="RptProductosXPrecioRowChanging" msprop:Generator_RowClassName="RptProductosXPrecioRow" msprop:Generator_TableClassName="RptProductosXPrecioDataTable" msprop:Generator_TableVarName="tableRptProductosXPrecio">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_producto" msprop:Generator_UserColumnName="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnVarNameInTable="columnid_producto">
+              <xs:element name="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_UserColumnName="id_producto" msprop:Generator_ColumnVarNameInTable="columnid_producto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_UserColumnName="nombreProd" msprop:Generator_ColumnVarNameInTable="columnnombreProd">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcionProd" msprop:Generator_ColumnPropNameInTable="descripcionProdColumn" msprop:Generator_ColumnPropNameInRow="descripcionProd" msprop:Generator_UserColumnName="descripcionProd" msprop:Generator_ColumnVarNameInTable="columndescripcionProd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_UserColumnName="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RptCategoriasXProducto" msprop:Generator_RowEvHandlerName="RptCategoriasXProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="RptCategoriasXProductoRowDeleted" msprop:Generator_RowDeletingName="RptCategoriasXProductoRowDeleting" msprop:Generator_RowEvArgName="RptCategoriasXProductoRowChangeEvent" msprop:Generator_TablePropName="RptCategoriasXProducto" msprop:Generator_RowChangedName="RptCategoriasXProductoRowChanged" msprop:Generator_UserTableName="RptCategoriasXProducto" msprop:Generator_RowChangingName="RptCategoriasXProductoRowChanging" msprop:Generator_RowClassName="RptCategoriasXProductoRow" msprop:Generator_TableClassName="RptCategoriasXProductoDataTable" msprop:Generator_TableVarName="tableRptCategoriasXProducto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombreCatg" msprop:Generator_ColumnPropNameInTable="nombreCatgColumn" msprop:Generator_ColumnPropNameInRow="nombreCatg" msprop:Generator_UserColumnName="nombreCatg" msprop:Generator_ColumnVarNameInTable="columnnombreCatg">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreProd" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_UserColumnName="nombreProd" msprop:Generator_ColumnVarNameInTable="columnnombreProd" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTMovimientosBuscar" msprop:Generator_RowClassName="DTMovimientosBuscarRow" msprop:Generator_RowEvHandlerName="DTMovimientosBuscarRowChangeEventHandler" msprop:Generator_RowDeletedName="DTMovimientosBuscarRowDeleted" msprop:Generator_RowDeletingName="DTMovimientosBuscarRowDeleting" msprop:Generator_RowEvArgName="DTMovimientosBuscarRowChangeEvent" msprop:Generator_TablePropName="DTMovimientosBuscar" msprop:Generator_RowChangedName="DTMovimientosBuscarRowChanged" msprop:Generator_UserTableName="DTMovimientosBuscar" msprop:Generator_RowChangingName="DTMovimientosBuscarRowChanging" msprop:Generator_TableClassName="DTMovimientosBuscarDataTable" msprop:Generator_TableVarName="tableDTMovimientosBuscar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_movimiento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id_movimiento" msprop:Generator_ColumnPropNameInTable="id_movimientoColumn" msprop:Generator_ColumnPropNameInRow="id_movimiento" msprop:Generator_ColumnVarNameInTable="columnid_movimiento" type="xs:int" />
               <xs:element name="nombreProd" msprop:Generator_UserColumnName="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnVarNameInTable="columnnombreProd">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1284,28 +1346,29 @@ ORDER BY nombreProd DESC</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="descripcionProd" msprop:Generator_UserColumnName="descripcionProd" msprop:Generator_ColumnPropNameInTable="descripcionProdColumn" msprop:Generator_ColumnPropNameInRow="descripcionProd" msprop:Generator_ColumnVarNameInTable="columndescripcionProd" minOccurs="0">
+              <xs:element name="usuario" msdata:ReadOnly="true" msprop:Generator_UserColumnName="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo_movimiento" msdata:ReadOnly="true" msprop:Generator_UserColumnName="tipo_movimiento" msprop:Generator_ColumnPropNameInTable="tipo_movimientoColumn" msprop:Generator_ColumnPropNameInRow="tipo_movimiento" msprop:Generator_ColumnVarNameInTable="columntipo_movimiento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_movimiento" msprop:Generator_UserColumnName="fecha_movimiento" msprop:Generator_ColumnPropNameInTable="fecha_movimientoColumn" msprop:Generator_ColumnPropNameInRow="fecha_movimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_movimiento" type="xs:dateTime" />
+              <xs:element name="cantidadProd" msprop:Generator_UserColumnName="cantidadProd" msprop:Generator_ColumnPropNameInTable="cantidadProdColumn" msprop:Generator_ColumnPropNameInRow="cantidadProd" msprop:Generator_ColumnVarNameInTable="columncantidadProd" type="xs:int" />
+              <xs:element name="descripcionMov" msprop:Generator_UserColumnName="descripcionMov" msprop:Generator_ColumnPropNameInTable="descripcionMovColumn" msprop:Generator_ColumnPropNameInRow="descripcionMov" msprop:Generator_ColumnVarNameInTable="columndescripcionMov" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="precio_unitario" msprop:Generator_UserColumnName="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" type="xs:double" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="RptCategoriasXProducto" msprop:Generator_RowEvHandlerName="RptCategoriasXProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="RptCategoriasXProductoRowDeleted" msprop:Generator_RowDeletingName="RptCategoriasXProductoRowDeleting" msprop:Generator_RowEvArgName="RptCategoriasXProductoRowChangeEvent" msprop:Generator_TablePropName="RptCategoriasXProducto" msprop:Generator_RowChangedName="RptCategoriasXProductoRowChanged" msprop:Generator_RowChangingName="RptCategoriasXProductoRowChanging" msprop:Generator_TableClassName="RptCategoriasXProductoDataTable" msprop:Generator_RowClassName="RptCategoriasXProductoRow" msprop:Generator_TableVarName="tableRptCategoriasXProducto" msprop:Generator_UserTableName="RptCategoriasXProducto">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="nombreCatg" msprop:Generator_ColumnPropNameInRow="nombreCatg" msprop:Generator_ColumnPropNameInTable="nombreCatgColumn" msprop:Generator_ColumnVarNameInTable="columnnombreCatg" msprop:Generator_UserColumnName="nombreCatg">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="nombreProd" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnVarNameInTable="columnnombreProd" msprop:Generator_UserColumnName="nombreProd" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1362,6 +1425,10 @@ ORDER BY nombreProd DESC</CommandText>
     <xs:unique name="RptProductosXPrecio_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:RptProductosXPrecio" />
       <xs:field xpath="mstns:id_producto" />
+    </xs:unique>
+    <xs:unique name="DTMovimientosBuscar_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DTMovimientosBuscar" />
+      <xs:field xpath="mstns:id_movimiento" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

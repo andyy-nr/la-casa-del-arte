@@ -1363,3 +1363,4 @@ D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\Sis
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptPreciosAltosABajos.rdlc
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductos.rdlc
 D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptProductoFiltrado.rdlc
+D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\bin\Debug\diseñosRpt\rptMovimientosFiltrados.rdlc
