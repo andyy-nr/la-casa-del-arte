@@ -39,12 +39,14 @@
 
     End Sub
 
+    'Cargar la información del usuario en el menú
     Public Sub cargarEtiquetas()
         'Asignar el nombre a los label con los atributos de la clase Usuario
         Lbl_nombreUser.Text = UsuarioSistema.NombreCompleto
         Lbl_rolUsuario.Text = UsuarioSistema.NombreRol
     End Sub
 
+    'Función para desactivar los botones por defecto
     Public Sub desactivarBotones()
         BtnUsuarios.Enabled = False
         BtnRoles.Enabled = False
@@ -55,8 +57,12 @@
         BtnReportes.Enabled = False
         BtnRepoProd.Enabled = False
         BtnRepoMov.Enabled = False
+        BtnReporteMarcasProd.Enabled = False
+        BtnRptCatgVend.Enabled = False
+        BtnPreciosAltosBajos.Enabled = False
     End Sub
 
+    'Función para cargar los permisos del usuario en base al rol
     Public Sub cargarPermisos()
         desactivarBotones()
         Dim resp As Boolean = False
@@ -126,6 +132,7 @@
 
 
     'Botones
+    'Botón para cerrar el menú principal
     Private Sub PibCerrar_Click(sender As Object, e As EventArgs) Handles PibCerrar.Click
         Dim Respuesta = MsgBox("¿Estas seguro de que deseas salir del programa?", MsgBoxStyle.OkCancel, "Salir")
         If Respuesta = vbOK Then
@@ -133,23 +140,28 @@
         End If
     End Sub
 
+    'Botón para minimizar el formulario
     Private Sub PibMinimizar_Click(sender As Object, e As EventArgs) Handles PibMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    'Botón para maximizar el formulario
     Private Sub PibMaximizar_Click(sender As Object, e As EventArgs) Handles PibMaximizar.Click
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
+    'Botón para mostrar el formulario de usuarios
     Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles BtnUsuarios.Click
         FrmUsuarios.UsuarioSistema = UsuarioSistema
         FrmUsuarios.Show()
     End Sub
 
+    'Botón para mostrar el formulario de productos
     Private Sub BtnProductos_Click(sender As Object, e As EventArgs) Handles BtnProductos.Click
         FrmProductos.Show()
     End Sub
 
+    'Botón para mostrar el formulario de reportes
     Private Sub BtnReportes_Click(sender As Object, e As EventArgs) Handles BtnReportes.Click
 
         If PanReportes.Visible = False Then
@@ -160,39 +172,31 @@
 
     End Sub
 
+    'Botón para mostrar el formulario de categorias
     Private Sub BtnCategorias_Click(sender As Object, e As EventArgs) Handles BtnCategorias.Click
         FrmCategoria.Show()
     End Sub
 
+    'Botón para mostrar el formulario de roles
     Private Sub BtnRoles_Click(sender As Object, e As EventArgs) Handles BtnRoles.Click
         FrmRoles.UsuarioSistema = UsuarioSistema
         FrmRoles.Show()
     End Sub
 
+    'Botón para mostrar el formulario de marcas
     Private Sub BtnMarca_Click(sender As Object, e As EventArgs) Handles BtnMarca.Click
         FrmMarcas.Show()
     End Sub
 
-    Private Sub BtnPermisos_Click(sender As Object, e As EventArgs) 
-        FrmPermiso.Show()
-    End Sub
-
+    'Botón para mostrar el formulario de movimientos
     Private Sub BtnMovimientos_Click(sender As Object, e As EventArgs) Handles BtnMovimientos.Click
         FrmMovimiento.UsuarioSistema = UsuarioSistema
         FrmMovimiento.Show()
     End Sub
 
-
-
-
+    'Botón para mostrar el la informacion del usuario
     Private Sub PictureBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox2.MouseClick
-        MsgBox("Nombre Usuario: " & UsuarioSistema.NombreCompleto & "Rol del Usuario: " & UsuarioSistema.NombreRol, MsgBoxStyle.Information, "Principal")
-
-        For Each per In UsuarioSistema.ListaPermisos
-            MsgBox("Id Permisos" & per, MsgBoxStyle.Critical, "Usuario")
-        Next
-
-        cargarPermisos()
+        MsgBox("Nombre Usuario: " & UsuarioSistema.NombreCompleto & " | Rol del Usuario: " & UsuarioSistema.NombreRol, MsgBoxStyle.Information, "Principal")
     End Sub
 
     Private Sub BtnRepoProd_Click(sender As Object, e As EventArgs) Handles BtnRepoProd.Click
@@ -234,6 +238,7 @@
         tbl = reporte.GetData
         VerReporte(tbl, "DataSet1", "diseñosRpt\rptCategoriasXProducto.rdlc")
     End Sub
+
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
         Dim Respuesta = MsgBox("¿Estas seguro que deseas cerrar sesión?", MsgBoxStyle.OkCancel, "Cerrar Sesión")

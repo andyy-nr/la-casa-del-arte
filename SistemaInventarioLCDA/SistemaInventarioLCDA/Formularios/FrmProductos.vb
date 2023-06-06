@@ -1,9 +1,8 @@
 ﻿Public Class FrmProductos
-
-
     Dim tblProductos As New DBLaCasaDelArteDataSet.DTProductosBuscarDataTable
     Dim rptProductos As New DBLaCasaDelArteDataSetTableAdapters.DTProductosBuscarTableAdapter
     Dim tbl As New DataTable
+
     'Movimiento de Ventana
     Dim ex As Integer, ey As Integer
     Dim Arrastre As Boolean
@@ -458,8 +457,12 @@
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PibActualizar_Click(sender As Object, e As EventArgs) Handles PibActualizar.Click
         LlenarGridProductos()
+    End Sub
+
+    Private Sub PibImprimir_Click(sender As Object, e As EventArgs) Handles PibImprimir.Click
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptProductoFiltrado.rdlc")
     End Sub
 
 

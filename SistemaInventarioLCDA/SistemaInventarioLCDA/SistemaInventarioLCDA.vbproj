@@ -206,11 +206,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="diseñosRpt\rptCategoriasXProducto.rdlc" />
-    <EmbeddedResource Include="diseñosRpt\rptMarcasXProducto.rdlc" />
-    <EmbeddedResource Include="diseñosRpt\rptMovimientos.rdlc" />
-    <EmbeddedResource Include="diseñosRpt\rptPreciosAltosABajos.rdlc" />
-    <EmbeddedResource Include="diseñosRpt\rptProductos.rdlc" />
+    <EmbeddedResource Include="diseñosRpt\rptCategoriasXProducto.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="diseñosRpt\rptMarcasXProducto.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="diseñosRpt\rptMovimientos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="diseñosRpt\rptPreciosAltosABajos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="diseñosRpt\rptProductoFiltrado.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="diseñosRpt\rptProductos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>

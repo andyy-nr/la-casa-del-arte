@@ -9,7 +9,7 @@ Module Modulo1
             With New FrmReportes
                 .ReportViewer1.LocalReport.DataSources.Clear()
                 .ReportViewer1.LocalReport.DataSources.Add(rpt)
-                .ReportViewer1.LocalReport.ReportPath = "C:\" + nombreRpt
+                .ReportViewer1.LocalReport.ReportPath = nombreRpt
                 .ReportViewer1.Refresh()
                 .Show()
             End With

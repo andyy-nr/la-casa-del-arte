@@ -23,9 +23,9 @@ Partial Class FrmProductos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -33,6 +33,8 @@ Partial Class FrmProductos
         Me.PibCerrar = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PibActualizar = New System.Windows.Forms.PictureBox()
+        Me.PibImprimir = New System.Windows.Forms.PictureBox()
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.CmbFiltrarUsu = New System.Windows.Forms.ComboBox()
         Me.BtnBuscarProducto = New System.Windows.Forms.Button()
@@ -61,17 +63,17 @@ Partial Class FrmProductos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.GbProductos = New System.Windows.Forms.GroupBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibImprimir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
         CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbDatosProd.SuspendLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -156,10 +158,35 @@ Partial Class FrmProductos
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Gestión de Productos"
         '
+        'PibActualizar
+        '
+        Me.PibActualizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibActualizar.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.recargar
+        Me.PibActualizar.Location = New System.Drawing.Point(1640, 522)
+        Me.PibActualizar.Name = "PibActualizar"
+        Me.PibActualizar.Size = New System.Drawing.Size(55, 55)
+        Me.PibActualizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PibActualizar.TabIndex = 52
+        Me.PibActualizar.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibActualizar, "Actualizar Tabla")
+        '
+        'PibImprimir
+        '
+        Me.PibImprimir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibImprimir.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.impresion
+        Me.PibImprimir.Location = New System.Drawing.Point(1567, 522)
+        Me.PibImprimir.Name = "PibImprimir"
+        Me.PibImprimir.Size = New System.Drawing.Size(55, 55)
+        Me.PibImprimir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PibImprimir.TabIndex = 53
+        Me.PibImprimir.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibImprimir, "Imprimir Reporte")
+        '
         'PanelCentral
         '
         Me.PanelCentral.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.PanelCentral.Controls.Add(Me.PictureBox1)
+        Me.PanelCentral.Controls.Add(Me.PibImprimir)
+        Me.PanelCentral.Controls.Add(Me.PibActualizar)
         Me.PanelCentral.Controls.Add(Me.CmbFiltrarUsu)
         Me.PanelCentral.Controls.Add(Me.BtnBuscarProducto)
         Me.PanelCentral.Controls.Add(Me.TxtBuscar)
@@ -207,7 +234,7 @@ Partial Class FrmProductos
         Me.BtnBuscarProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnBuscarProducto.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgBuscar
         Me.BtnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnBuscarProducto.Location = New System.Drawing.Point(1485, 522)
+        Me.BtnBuscarProducto.Location = New System.Drawing.Point(1399, 522)
         Me.BtnBuscarProducto.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BtnBuscarProducto.Name = "BtnBuscarProducto"
         Me.BtnBuscarProducto.Size = New System.Drawing.Size(149, 55)
@@ -223,7 +250,7 @@ Partial Class FrmProductos
         Me.TxtBuscar.Location = New System.Drawing.Point(357, 532)
         Me.TxtBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(1122, 34)
+        Me.TxtBuscar.Size = New System.Drawing.Size(1036, 34)
         Me.TxtBuscar.TabIndex = 39
         '
         'DgvProductos
@@ -238,14 +265,14 @@ Partial Class FrmProductos
         Me.DgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvProductos.EnableHeadersVisualStyles = False
         Me.DgvProductos.GridColor = System.Drawing.Color.SaddleBrown
@@ -254,22 +281,22 @@ Partial Class FrmProductos
         Me.DgvProductos.Name = "DgvProductos"
         Me.DgvProductos.ReadOnly = True
         Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DgvProductos.RowHeadersVisible = False
         Me.DgvProductos.RowHeadersWidth = 51
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DgvProductos.RowTemplate.Height = 24
         Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvProductos.Size = New System.Drawing.Size(1642, 145)
@@ -390,7 +417,7 @@ Partial Class FrmProductos
         Me.GbDatosProd.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.GbDatosProd.Name = "GbDatosProd"
         Me.GbDatosProd.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GbDatosProd.Size = New System.Drawing.Size(1654, 386)
+        Me.GbDatosProd.Size = New System.Drawing.Size(1654, 396)
         Me.GbDatosProd.TabIndex = 5
         Me.GbDatosProd.TabStop = False
         Me.GbDatosProd.Text = "Datos del Generales del Producto"
@@ -399,7 +426,7 @@ Partial Class FrmProductos
         '
         Me.TxtCantidadDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCantidadDisp.Enabled = False
-        Me.TxtCantidadDisp.Location = New System.Drawing.Point(921, 300)
+        Me.TxtCantidadDisp.Location = New System.Drawing.Point(921, 322)
         Me.TxtCantidadDisp.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCantidadDisp.Name = "TxtCantidadDisp"
         Me.TxtCantidadDisp.Size = New System.Drawing.Size(130, 34)
@@ -408,7 +435,7 @@ Partial Class FrmProductos
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(706, 302)
+        Me.Label6.Location = New System.Drawing.Point(706, 324)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(194, 28)
@@ -418,7 +445,7 @@ Partial Class FrmProductos
         'TxtInventarioInit
         '
         Me.TxtInventarioInit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtInventarioInit.Location = New System.Drawing.Point(921, 243)
+        Me.TxtInventarioInit.Location = New System.Drawing.Point(921, 259)
         Me.TxtInventarioInit.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtInventarioInit.Name = "TxtInventarioInit"
         Me.TxtInventarioInit.Size = New System.Drawing.Size(130, 34)
@@ -427,7 +454,7 @@ Partial Class FrmProductos
         'TxtPrecioU
         '
         Me.TxtPrecioU.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtPrecioU.Location = New System.Drawing.Point(921, 189)
+        Me.TxtPrecioU.Location = New System.Drawing.Point(921, 197)
         Me.TxtPrecioU.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPrecioU.Name = "TxtPrecioU"
         Me.TxtPrecioU.Size = New System.Drawing.Size(130, 34)
@@ -436,7 +463,7 @@ Partial Class FrmProductos
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(741, 245)
+        Me.Label9.Location = New System.Drawing.Point(741, 261)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(159, 28)
@@ -446,7 +473,7 @@ Partial Class FrmProductos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(754, 189)
+        Me.Label7.Location = New System.Drawing.Point(754, 197)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(146, 28)
@@ -467,7 +494,7 @@ Partial Class FrmProductos
         '
         Me.PibProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PibProductos.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.imgProductos
-        Me.PibProductos.Location = New System.Drawing.Point(1303, 41)
+        Me.PibProductos.Location = New System.Drawing.Point(1303, 46)
         Me.PibProductos.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PibProductos.Name = "PibProductos"
         Me.PibProductos.Size = New System.Drawing.Size(335, 310)
@@ -573,18 +600,6 @@ Partial Class FrmProductos
         Me.GbProductos.TabStop = False
         Me.GbProductos.Text = "Productos Almacenados: 0"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.recargar
-        Me.PictureBox1.Location = New System.Drawing.Point(1640, 522)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(55, 55)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 52
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Actualizar Tabla")
-        '
         'FrmProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -603,13 +618,14 @@ Partial Class FrmProductos
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibActualizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibImprimir, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
         CType(Me.DgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbDatosProd.ResumeLayout(False)
         Me.GbDatosProd.PerformLayout()
         CType(Me.PibProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -649,5 +665,6 @@ Partial Class FrmProductos
     Friend WithEvents CmbFiltrarUsu As ComboBox
     Friend WithEvents TxtCantidadDisp As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PibActualizar As PictureBox
+    Friend WithEvents PibImprimir As PictureBox
 End Class

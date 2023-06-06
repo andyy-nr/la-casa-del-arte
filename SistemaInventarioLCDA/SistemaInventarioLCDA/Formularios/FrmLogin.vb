@@ -87,6 +87,7 @@
                 usuarioLogin.ListaPermisos = rolPermisoDAO.obtenerIdPermisoXIdRol(usuarioLogin.IdRol)
                 limpiarCampos()
                 FrmPrincipal.UsuarioSistema = usuarioLogin
+                MsgBox("Bienvenido al Sistema de Inventario La Casa Del Arte", MsgBoxStyle.Information, "Inicio de Sesión")
                 Me.Hide()
                 FrmPrincipal.Show()
             Else

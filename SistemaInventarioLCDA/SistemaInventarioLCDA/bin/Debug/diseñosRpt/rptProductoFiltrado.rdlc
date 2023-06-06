@@ -635,7 +635,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.07527cm</Top>
-        <Left>0.37677cm</Left>
+        <Left>0.56938cm</Left>
         <Height>1.2cm</Height>
         <Width>39.54149cm</Width>
         <Style>
@@ -655,59 +655,6 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>logoNuevo</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.4191cm</Top>
-          <Left>36.64026cm</Left>
-          <Height>3.60961cm</Height>
-          <Width>3.68017cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Textbox Name="Textbox4">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Reporte de los Productos en Existencia del Inventario</Value>
-                  <Style>
-                    <FontStyle>Normal</FontStyle>
-                    <FontFamily>Nirmala UI</FontFamily>
-                    <FontSize>24pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>#fdf2e7</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>1.03222cm</Top>
-          <Left>6.12083cm</Left>
-          <Height>2.38337cm</Height>
-          <Width>26.42353cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>#593832</BackgroundColor>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>20pt</PaddingTop>
-            <PaddingBottom>10pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="ExecutionTime">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -733,7 +680,6 @@
           <Left>0.37677cm</Left>
           <Height>0.6cm</Height>
           <Width>5.52683cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -742,6 +688,60 @@
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
             <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>logoNuevo</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.4191cm</Top>
+          <Left>36.64026cm</Left>
+          <Height>3.60961cm</Height>
+          <Width>3.68017cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Reporte de los Productos del Inventario</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Nirmala UI</FontFamily>
+                    <FontSize>24pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#fdf2e7</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>1.03222cm</Top>
+          <Left>6.12083cm</Left>
+          <Height>2.38337cm</Height>
+          <Width>26.42353cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BackgroundColor>#593832</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>20pt</PaddingTop>
+            <PaddingBottom>10pt</PaddingBottom>
           </Style>
         </Textbox>
       </ReportItems>
@@ -816,7 +816,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>431018f9-7f9c-46d8-a64c-6635c93389f9</rd:DataSourceID>
+      <rd:DataSourceID>1787b405-0555-4f03-9638-0cc87e122e5a</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -830,16 +830,16 @@
           <DataField>id_producto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="nombreProd">
-          <DataField>nombreProd</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="nombreCatg">
           <DataField>nombreCatg</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nombreMarca">
           <DataField>nombreMarca</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nombreProd">
+          <DataField>nombreProd</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="precio_unitario">
@@ -862,10 +862,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DBLaCasaDelArteDataSet</rd:DataSetName>
         <rd:SchemaPath>D:\Programacion\ProyectoCasaDelArteVB\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\DBLaCasaDelArteDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>RptProductos</rd:TableName>
+        <rd:TableName>DTProductosBuscar</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>RptProductosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>DTProductosBuscarTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -930,5 +930,5 @@ IiIiAWCgExERCQADnYiISAAY6ERERALAQCciIhIABjoREZEAMNCJiIgEgIFOREQkAAx0IiIiAWCgExER
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>f566d3bd-dca7-40bf-a1ce-703ff41ecb6d</rd:ReportID>
+  <rd:ReportID>8d6f4566-c557-4653-9351-92056c2aa9b0</rd:ReportID>
 </Report>
