@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>ee9e6674-5de9-48bf-99f2-72575d62dea8</rd:DataSourceID>
+      <rd:DataSourceID>92c1592e-928b-48cc-b6b2-544867ee34b0</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -33,10 +33,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DBLaCasaDelArteDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Pala\Desktop\finalProject\project\la-casa-del-arte\SistemaInventarioLCDA\SistemaInventarioLCDA\DBLaCasaDelArteDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>RptProductosMasSalidas</rd:TableName>
+        <rd:TableName>RptProductosMasEntradas</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>RptProductosMasSalidasTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>RptProductosMasEntradasTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -63,43 +63,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox2">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>PRODUCTO</Value>
-                                  <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#fdf2e7</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox2</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#593832</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -107,7 +70,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>TIPO MOVIMIENTO</Value>
+                                  <Value>PRODUCTO</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -144,7 +107,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>TOTAL REGISTROS</Value>
+                                  <Value>MOVIMIENTO</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -158,6 +121,43 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#593832</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>TOTAL REGISTROS</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#fdf2e7</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -301,7 +301,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.98356cm</Top>
+            <Top>1.21639cm</Top>
             <Left>0.75304cm</Left>
             <Height>1.2cm</Height>
             <Width>13.69518cm</Width>
@@ -631,7 +631,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Productos más salidas</Caption>
+                <Caption>Productos con más Entradas</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -661,7 +661,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>2.71922cm</Top>
+            <Top>3.05789cm</Top>
             <Left>0.75304cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
@@ -676,16 +676,30 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.4224in</Height>
+        <Height>3.53906in</Height>
         <Style />
       </Body>
-      <Width>7.48919in</Width>
+      <Width>7.47252in</Width>
       <Page>
         <PageHeader>
           <Height>4.44781cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
+            <Image Name="Image1">
+              <Source>Embedded</Source>
+              <Value>logoNuevo</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.4191cm</Top>
+              <Left>14.62461cm</Left>
+              <Height>3.60961cm</Height>
+              <Width>3.68017cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
             <Textbox Name="Textbox4">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -693,7 +707,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de los Productos con más Salidas</Value>
+                      <Value>Reporte de los Productos con más Entradas</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Nirmala UI</FontFamily>
@@ -713,6 +727,7 @@
               <Left>0.75304cm</Left>
               <Height>2.38337cm</Height>
               <Width>13.69518cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -724,21 +739,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Image Name="Image1">
-              <Source>Embedded</Source>
-              <Value>logoNuevo</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.4191cm</Top>
-              <Left>14.62461cm</Left>
-              <Height>3.60961cm</Height>
-              <Width>3.68017cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
             <Textbox Name="ExecutionTime">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -809,8 +809,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>14.309cm</Left>
+              <Top>0.22916cm</Top>
+              <Left>14.34428cm</Left>
               <Height>0.87517cm</Height>
               <Width>3.9605cm</Width>
               <Style>
@@ -909,5 +909,5 @@ IiIiAWCgExERCQADnYiISAAY6ERERALAQCciIhIABjoREZEAMNCJiIgEgIFOREQkAAx0IiIiAWCgExER
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>dd8b765f-f3bf-4225-af25-cfabb6ed1de5</rd:ReportID>
+  <rd:ReportID>ae73f267-7720-4af5-ae1c-3c51ba93b2be</rd:ReportID>
 </Report>

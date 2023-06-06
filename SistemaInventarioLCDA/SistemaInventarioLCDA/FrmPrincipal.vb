@@ -91,6 +91,7 @@
                         BtnRptCatgVend.Enabled = True
                         BtnPreciosAltosBajos.Enabled = True
                         BtnRepoProdSalidas.Enabled = True
+                        BtnRepoProdEntradas.Enabled = True
                 End Select
             Next
             resp = True
@@ -246,6 +247,14 @@
 
         tbl = reporte.GetData
         VerReporte(tbl, "DataSet1", "diseñosRpt\rptProductosMasSalidas.rdlc")
+    End Sub
+
+    Private Sub BtnRepoProdEntradas_Click(sender As Object, e As EventArgs) Handles BtnRepoProdEntradas.Click
+        Dim tbl As New DataTable
+        Dim reporte As New DBLaCasaDelArteDataSetTableAdapters.RptProductosMasEntradasTableAdapter
+
+        tbl = reporte.GetData
+        VerReporte(tbl, "DataSet1", "diseñosRpt\rptProductosMasEntradas.rdlc")
     End Sub
 
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click

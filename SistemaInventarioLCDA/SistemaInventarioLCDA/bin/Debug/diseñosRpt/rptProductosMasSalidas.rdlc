@@ -662,7 +662,7 @@
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
             <Top>2.71922cm</Top>
-            <Left>4.4926cm</Left>
+            <Left>0.75304cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
             <ZIndex>1</ZIndex>
@@ -693,7 +693,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de los Productos con Más Salidas</Value>
+                      <Value>Reporte de los Productos con más Salidas</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Nirmala UI</FontFamily>

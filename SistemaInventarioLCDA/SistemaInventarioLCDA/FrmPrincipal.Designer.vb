@@ -48,6 +48,7 @@ Partial Class FrmPrincipal
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanPrincipal = New System.Windows.Forms.Panel()
         Me.PanReportes = New System.Windows.Forms.Panel()
+        Me.BtnRepoProdSalidas = New System.Windows.Forms.Button()
         Me.BtnPreciosAltosBajos = New System.Windows.Forms.Button()
         Me.BtnRptCatgVend = New System.Windows.Forms.Button()
         Me.BtnReporteMarcasProd = New System.Windows.Forms.Button()
@@ -56,7 +57,7 @@ Partial Class FrmPrincipal
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.BtnRepoProdSalidas = New System.Windows.Forms.Button()
+        Me.BtnRepoProdEntradas = New System.Windows.Forms.Button()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -414,6 +415,7 @@ Partial Class FrmPrincipal
         'PanReportes
         '
         Me.PanReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.PanReportes.Controls.Add(Me.BtnRepoProdEntradas)
         Me.PanReportes.Controls.Add(Me.BtnRepoProdSalidas)
         Me.PanReportes.Controls.Add(Me.BtnPreciosAltosBajos)
         Me.PanReportes.Controls.Add(Me.BtnRptCatgVend)
@@ -426,6 +428,28 @@ Partial Class FrmPrincipal
         Me.PanReportes.Size = New System.Drawing.Size(525, 487)
         Me.PanReportes.TabIndex = 4
         Me.PanReportes.Visible = False
+        '
+        'BtnRepoProdSalidas
+        '
+        Me.BtnRepoProdSalidas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRepoProdSalidas.Enabled = False
+        Me.BtnRepoProdSalidas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnRepoProdSalidas.FlatAppearance.BorderSize = 0
+        Me.BtnRepoProdSalidas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnRepoProdSalidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnRepoProdSalidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRepoProdSalidas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnRepoProdSalidas.ForeColor = System.Drawing.Color.Black
+        Me.BtnRepoProdSalidas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnRepoProdSalidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRepoProdSalidas.Location = New System.Drawing.Point(4, 350)
+        Me.BtnRepoProdSalidas.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnRepoProdSalidas.Name = "BtnRepoProdSalidas"
+        Me.BtnRepoProdSalidas.Size = New System.Drawing.Size(517, 62)
+        Me.BtnRepoProdSalidas.TabIndex = 14
+        Me.BtnRepoProdSalidas.Text = "Reporte de Productos con más Salidas"
+        Me.BtnRepoProdSalidas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnRepoProdSalidas.UseVisualStyleBackColor = True
         '
         'BtnPreciosAltosBajos
         '
@@ -573,27 +597,27 @@ Partial Class FrmPrincipal
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
-        'BtnRepoProdSalidas
+        'BtnRepoProdEntradas
         '
-        Me.BtnRepoProdSalidas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRepoProdSalidas.Enabled = False
-        Me.BtnRepoProdSalidas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnRepoProdSalidas.FlatAppearance.BorderSize = 0
-        Me.BtnRepoProdSalidas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.BtnRepoProdSalidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
-        Me.BtnRepoProdSalidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRepoProdSalidas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnRepoProdSalidas.ForeColor = System.Drawing.Color.Black
-        Me.BtnRepoProdSalidas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
-        Me.BtnRepoProdSalidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnRepoProdSalidas.Location = New System.Drawing.Point(4, 350)
-        Me.BtnRepoProdSalidas.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnRepoProdSalidas.Name = "BtnRepoProdSalidas"
-        Me.BtnRepoProdSalidas.Size = New System.Drawing.Size(517, 62)
-        Me.BtnRepoProdSalidas.TabIndex = 14
-        Me.BtnRepoProdSalidas.Text = "Reporte de Productos con más Salidas"
-        Me.BtnRepoProdSalidas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnRepoProdSalidas.UseVisualStyleBackColor = True
+        Me.BtnRepoProdEntradas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRepoProdEntradas.Enabled = False
+        Me.BtnRepoProdEntradas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnRepoProdEntradas.FlatAppearance.BorderSize = 0
+        Me.BtnRepoProdEntradas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BtnRepoProdEntradas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(149, Byte), Integer), CType(CType(123, Byte), Integer))
+        Me.BtnRepoProdEntradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRepoProdEntradas.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnRepoProdEntradas.ForeColor = System.Drawing.Color.Black
+        Me.BtnRepoProdEntradas.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.reportesMov
+        Me.BtnRepoProdEntradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnRepoProdEntradas.Location = New System.Drawing.Point(4, 420)
+        Me.BtnRepoProdEntradas.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnRepoProdEntradas.Name = "BtnRepoProdEntradas"
+        Me.BtnRepoProdEntradas.Size = New System.Drawing.Size(517, 62)
+        Me.BtnRepoProdEntradas.TabIndex = 15
+        Me.BtnRepoProdEntradas.Text = "Reporte de Productos con más Entradas"
+        Me.BtnRepoProdEntradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnRepoProdEntradas.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -660,4 +684,5 @@ Partial Class FrmPrincipal
     Friend WithEvents LblHora As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents BtnRepoProdSalidas As Button
+    Friend WithEvents BtnRepoProdEntradas As Button
 End Class
