@@ -23,9 +23,9 @@ Partial Class FrmMovimiento
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanSuperior = New System.Windows.Forms.Panel()
         Me.PibMaximizar = New System.Windows.Forms.PictureBox()
         Me.PibRetornar = New System.Windows.Forms.PictureBox()
@@ -34,6 +34,7 @@ Partial Class FrmMovimiento
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PibImprimir = New System.Windows.Forms.PictureBox()
         Me.PanelCentral = New System.Windows.Forms.Panel()
         Me.CmbFiltrarMov = New System.Windows.Forms.ComboBox()
         Me.BtnBuscarMov = New System.Windows.Forms.Button()
@@ -69,19 +70,18 @@ Partial Class FrmMovimiento
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtCategoriaProd = New System.Windows.Forms.TextBox()
         Me.TxtDescripcionProd = New System.Windows.Forms.TextBox()
-        Me.PibImprimir = New System.Windows.Forms.PictureBox()
         Me.PanSuperior.SuspendLayout()
         CType(Me.PibMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibRetornar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PibImprimir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCentral.SuspendLayout()
         CType(Me.DgvMovimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbMovimiento.SuspendLayout()
         CType(Me.PibEntradas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbDatosProd.SuspendLayout()
-        CType(Me.PibImprimir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanSuperior
@@ -166,6 +166,7 @@ Partial Class FrmMovimiento
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.recargar
         Me.PictureBox1.Location = New System.Drawing.Point(1639, 544)
         Me.PictureBox1.Name = "PictureBox1"
@@ -174,6 +175,19 @@ Partial Class FrmMovimiento
         Me.PictureBox1.TabIndex = 51
         Me.PictureBox1.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox1, "Actualizar Tabla")
+        '
+        'PibImprimir
+        '
+        Me.PibImprimir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PibImprimir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PibImprimir.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.impresion
+        Me.PibImprimir.Location = New System.Drawing.Point(1567, 544)
+        Me.PibImprimir.Name = "PibImprimir"
+        Me.PibImprimir.Size = New System.Drawing.Size(55, 55)
+        Me.PibImprimir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PibImprimir.TabIndex = 54
+        Me.PibImprimir.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PibImprimir, "Imprimir Reporte")
         '
         'PanelCentral
         '
@@ -247,14 +261,14 @@ Partial Class FrmMovimiento
         Me.DgvMovimientos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
         Me.DgvMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvMovimientos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(113, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMovimientos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvMovimientos.EnableHeadersVisualStyles = False
         Me.DgvMovimientos.GridColor = System.Drawing.Color.SaddleBrown
@@ -263,22 +277,22 @@ Partial Class FrmMovimiento
         Me.DgvMovimientos.Name = "DgvMovimientos"
         Me.DgvMovimientos.ReadOnly = True
         Me.DgvMovimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvMovimientos.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Nirmala UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(131, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvMovimientos.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvMovimientos.RowHeadersVisible = False
         Me.DgvMovimientos.RowHeadersWidth = 51
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Sienna
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvMovimientos.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(181, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Nirmala UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Sienna
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvMovimientos.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DgvMovimientos.RowTemplate.Height = 24
         Me.DgvMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvMovimientos.Size = New System.Drawing.Size(1642, 134)
@@ -345,6 +359,7 @@ Partial Class FrmMovimiento
         '
         Me.TxtBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtBuscar.Location = New System.Drawing.Point(356, 565)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(1050, 34)
@@ -639,18 +654,6 @@ Partial Class FrmMovimiento
         Me.TxtDescripcionProd.Size = New System.Drawing.Size(360, 83)
         Me.TxtDescripcionProd.TabIndex = 5
         '
-        'PibImprimir
-        '
-        Me.PibImprimir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PibImprimir.Image = Global.SistemaInventarioLCDA.My.Resources.Resources.impresion
-        Me.PibImprimir.Location = New System.Drawing.Point(1567, 544)
-        Me.PibImprimir.Name = "PibImprimir"
-        Me.PibImprimir.Size = New System.Drawing.Size(55, 55)
-        Me.PibImprimir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PibImprimir.TabIndex = 54
-        Me.PibImprimir.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PibImprimir, "Imprimir Reporte")
-        '
         'FrmMovimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -668,6 +671,7 @@ Partial Class FrmMovimiento
         CType(Me.PibMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PibCerrar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PibImprimir, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCentral.ResumeLayout(False)
         Me.PanelCentral.PerformLayout()
         CType(Me.DgvMovimientos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -676,7 +680,6 @@ Partial Class FrmMovimiento
         CType(Me.PibEntradas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbDatosProd.ResumeLayout(False)
         Me.GbDatosProd.PerformLayout()
-        CType(Me.PibImprimir, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

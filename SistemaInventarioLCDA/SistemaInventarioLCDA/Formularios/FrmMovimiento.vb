@@ -344,43 +344,83 @@ Public Class FrmMovimiento
 
     'Funcion para filtrar movimientos haciendo uso de linkQ
     Private Sub FiltrarMovimiento()
-        Dim dato As String = TxtBuscar.Text.Trim()
-        Dim entrada As String = "Entrada"
-        Dim salida As String = "Salida"
+        Try
+            Dim dato As String = TxtBuscar.Text.Trim()
+            Dim entrada As String = "Entrada"
+            Dim salida As String = "Salida"
 
-        Dim campo As String = "movm.id_movimiento"
-        Dim query = From movm In tblMovimiento
-                    Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
-
-        Select Case CmbFiltrarMov.SelectedIndex
-            Case 0
-                query = From movm In tblMovimiento Where movm.id_movimiento = Integer.Parse(dato)
+            Dim campo As String = "movm.id_movimiento"
+            Dim query = From movm In tblMovimiento
                         Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
 
-            Case 1
-                query = From movm In tblMovimiento Where movm.nombreProd Like dato
-                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+            Select Case CmbFiltrarMov.SelectedIndex
+                Case 0
+                    query = From movm In tblMovimiento Where movm.id_movimiento = Integer.Parse(dato)
+                            Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
 
-            Case 2
-                query = From movm In tblMovimiento Where movm.tipo_movimiento Like entrada
-                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+                Case 1
+                    query = From movm In tblMovimiento Where movm.nombreProd Like dato
+                            Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
 
-            Case 3
-                query = From movm In tblMovimiento Where movm.tipo_movimiento Like salida
-                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+                Case 2
+                    query = From movm In tblMovimiento Where movm.tipo_movimiento Like entrada
+                            Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
 
-            Case 4
-                query = From movm In tblMovimiento Where Month(movm.fecha_movimiento) = dato
-                        Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+                Case 3
+                    query = From movm In tblMovimiento Where movm.tipo_movimiento Like salida
+                            Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
 
+                Case 4
+                    query = From movm In tblMovimiento Where Month(movm.fecha_movimiento) = ObtenerNumeroMes(dato)
+                            Select movm.id_movimiento, movm.nombreProd, movm.usuario, movm.tipo_movimiento, movm.fecha_movimiento, movm.cantidadProd, movm.descripcionMov
+
+            End Select
+
+            tbl = CrearTablaMovimientos(query)
+            DgvMovimientos.DataSource = tbl
+            DiseñoTabla()
+            DgvMovimientos.Refresh()
+            GbMovimientos.Text = "Movimientos Realizados: " & DgvMovimientos.RowCount
+        Catch ex As Exception
+            MsgBox("Ocurrió un error: " & ex.Message, MsgBoxStyle.Exclamation, "Advertencia")
+            TxtBuscar.Clear()
+            TxtBuscar.Focus()
+        End Try
+    End Sub
+
+    'Función para obtener el valor numérico de los meses
+    Function ObtenerNumeroMes(ByVal nombreMes As String) As Integer
+        Dim mes As Integer = 0
+
+        Select Case nombreMes.ToUpper()
+            Case "ENERO"
+                mes = 1
+            Case "FEBRERO"
+                mes = 2
+            Case "MARZO"
+                mes = 3
+            Case "ABRIL"
+                mes = 4
+            Case "MAYO"
+                mes = 5
+            Case "JUNIO"
+                mes = 6
+            Case "JULIO"
+                mes = 7
+            Case "AGOSTO"
+                mes = 8
+            Case "SEPTIEMBRE"
+                mes = 9
+            Case "OCTUBRE"
+                mes = 10
+            Case "NOVIEMBRE"
+                mes = 11
+            Case "DICIEMBRE"
+                mes = 12
         End Select
 
-        tbl = CrearTablaMovimientos(query)
-        DgvMovimientos.DataSource = tbl
-        DiseñoTabla()
-        DgvMovimientos.Refresh()
-        GbMovimientos.Text = "Movimientos Realizados: " & DgvMovimientos.RowCount
-    End Sub
+        Return mes
+    End Function
 
     'Función para refrescar la tabla si no hay busqueda
     Private Sub TxtBuscar_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscar.TextChanged

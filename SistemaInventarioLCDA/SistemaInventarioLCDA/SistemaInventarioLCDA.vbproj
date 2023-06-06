@@ -403,6 +403,8 @@
     <None Include="Resources\btnMaximizar.png" />
     <None Include="Resources\recargar.png" />
     <None Include="Resources\impresion.png" />
+    <None Include="Resources\JC-13.ico" />
+    <None Include="Resources\IconoLCDA.ico" />
     <Content Include="scriptBd\ScriptDBLaCasaDelArte.sql" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
