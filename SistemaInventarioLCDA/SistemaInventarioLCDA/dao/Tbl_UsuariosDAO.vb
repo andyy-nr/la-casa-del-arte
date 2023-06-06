@@ -157,7 +157,7 @@ Public Class Tbl_UsuariosDAO
         Try
             Dim tsql As String = "SELECT nombre_usuario, contraseña
                                     FROM     Usuario
-                                    WHERE nombre_usuario = @nombre_usuario AND contraseña = @contraseña"
+                                    WHERE nombre_usuario = @nombre_usuario AND contraseña = @contraseña And estado <> 0"
             Dim conn As New SqlConnection(strConn)
             Dim da As New SqlDataAdapter(tsql, conn)
             da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", nombre_usuario)

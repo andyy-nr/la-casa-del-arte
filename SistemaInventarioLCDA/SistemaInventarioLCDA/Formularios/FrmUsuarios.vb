@@ -434,10 +434,17 @@ Public Class FrmUsuarios
             If (eliminado) Then
                 MsgBox("Usuario eliminado exitosamente", MsgBoxStyle.Information, "Permisos")
                 LlenarTabla()
+                Dim nombreUsu As String = TxtNombreUsuario.Text.Trim
+                If nombreUsu = UsuarioSistema.NombreUsuario Then
+                    Me.Close()
+                    FrmPrincipal.Close()
+                    FrmLogin.Show()
+                End If
                 Limpiar()
             Else
                 Limpiar()
             End If
+
 
         Catch ex As Exception
             MsgBox("Error al intentar eliminar el registro... " & ex.Message, MsgBoxStyle.Critical, "Usuarios")
